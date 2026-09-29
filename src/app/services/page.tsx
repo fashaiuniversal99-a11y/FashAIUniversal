@@ -81,19 +81,25 @@ export default function ServicesPage() {
   return (
     <div className="bg-white dark:bg-[#050505] text-[#111111] dark:text-white pt-16 sm:pt-20 md:pt-24 min-h-screen">
       {/* 01. SERVICES HERO BANNER */}
-      <section className="relative pt-6 sm:pt-10 pb-8 sm:pb-14 border-b border-black/10 dark:border-white/10 bg-[#FAF8F5] dark:bg-[#080706]">
-        <div className="container-editorial max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl space-y-4 sm:space-y-5">
-            <div className="flex items-center gap-3">
-              <span className="w-10 h-[2px] bg-[#F15E1C] dark:bg-[#D4AF37]" />
-              <span className="font-syne text-xs sm:text-sm md:text-base tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
+      <section className="relative pt-8 sm:pt-14 pb-10 sm:pb-16 border-b border-black/10 dark:border-white/10 bg-[#FAF8F5] dark:bg-[#080706]">
+        <div className="w-[min(92vw,1400px)] max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-[950px] mx-auto space-y-4 sm:space-y-6 text-center">
+            {/* 1. SYMMETRIC CENTERED SECTION LABEL */}
+            <div className="flex items-center justify-center gap-3 sm:gap-4 mx-auto">
+              <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-r from-transparent to-[#F15E1C] dark:to-[#D4AF37]" />
+              <span className="font-syne text-xs sm:text-sm md:text-base tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase shrink-0">
                 03 / SERVICES &amp; EVENT ARCHITECTURE
               </span>
+              <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-l from-transparent to-[#F15E1C] dark:to-[#D4AF37]" />
             </div>
-            <h1 className="font-serif-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-[#111111] dark:text-white uppercase leading-[0.95] tracking-tight">
+
+            {/* 2. CENTERED MAIN HEADING */}
+            <h1 className="font-serif-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-[#111111] dark:text-white uppercase leading-[0.95] tracking-tight text-center mx-auto">
               OUR <span className="font-serif italic text-[#F15E1C] dark:text-[#D4AF37]">SERVICES</span> &amp; FORMATS
             </h1>
-            <p className="font-sans text-base sm:text-lg md:text-xl lg:text-2xl text-[#444444] dark:text-white/90 font-light leading-relaxed max-w-3xl text-justify">
+
+            {/* 3. CENTERED INTRO PARAGRAPH */}
+            <p className="font-sans text-base sm:text-lg md:text-xl lg:text-2xl text-[#444444] dark:text-white/90 font-light leading-relaxed max-w-[900px] mx-auto text-center">
               FashAI Universal delivers specialized fashion show production, AI-driven computational design, luxury brand activations, and global talent orchestration bridging Dubai, the UAE, and India.
             </p>
           </div>
