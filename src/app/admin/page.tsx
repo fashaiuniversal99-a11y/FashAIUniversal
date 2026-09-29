@@ -178,13 +178,16 @@ export default function AdminDashboardPage() {
 
   // Calculate Metrics from Persisted Data
   const totalApplications = submissions.filter((s) => s.type === "APPLICATION").length;
+  const eventInquiriesCount = submissions.filter(
+    (s) => s.source === "EVENT_MANAGEMENT_FORM" || s.type === "EVENT_INQUIRY"
+  ).length;
   const totalInquiries = submissions.filter((s) => s.type === "CONTACT" || s.type === "CHATBOT_INQUIRY").length;
   const chatbotLeads = submissions.filter(
     (s) => s.source === "CHATBOT" || s.type.startsWith("CHATBOT_")
   ).length;
   const totalForms = submissions.length;
   const newSubmissionsCount = submissions.filter((s) => s.status === "NEW").length;
-  const pendingReviewCount = submissions.filter((s) => s.status === "UNDER REVIEW").length;
+  const pendingReviewCount = submissions.filter((s) => s.status === "UNDER REVIEW" || s.status === "REVIEWING").length;
 
   // Application Domains List & Counts
   const domainCounts: Record<string, number> = {};
@@ -281,6 +284,25 @@ export default function AdminDashboardPage() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {/* EVENT INQUIRIES COUNT */}
+          <Link
+            href="/admin/submissions"
+            className="p-6 rounded-3xl bg-[#0F0E0D] border border-[#D4AF37]/35 hover:border-[#D4AF37] transition-all shadow-xl group block relative overflow-hidden"
+          >
+            <div className="flex items-center justify-between text-[11px] font-syne font-bold uppercase text-[#D4AF37]">
+              <span className="tracking-wider">EVENT INQUIRIES</span>
+              <div className="w-8 h-8 rounded-full bg-[#D4AF37]/15 flex items-center justify-center text-[#D4AF37] group-hover:scale-110 transition-transform">
+                <Calendar className="w-4 h-4" />
+              </div>
+            </div>
+            <div className="font-serif-display text-3xl sm:text-4xl text-white font-light mt-1">
+              {eventInquiriesCount}
+            </div>
+            <p className="text-[11px] text-white/60 font-sans mt-2">
+              Persisted Plan Your Event briefs
+            </p>
+          </Link>
+
           {/* APPLICATIONS COUNT */}
           <Link
             href="/admin/applications"
