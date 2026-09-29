@@ -93,6 +93,29 @@ export async function updateSubmissionStatus(id: string, status: SubmissionRecor
   const idx = current.findIndex((s) => s.id === id);
   if (idx === -1) return false;
   current[idx].status = status;
+  current[idx].updatedAt = new Date().toISOString();
+  await fs.writeFile(SUBMISSIONS_FILE, JSON.stringify(current, null, 2), "utf-8");
+  return true;
+}
+
+export async function addInternalNoteToSubmission(id: string, author: string, note: string): Promise<boolean> {
+  const current = await getSubmissions();
+  const idx = current.findIndex((s) => s.id === id);
+  if (idx === -1) return false;
+
+  const newNote = {
+    id: `note_${Date.now()}_${Math.random().toString(36).substr(2, 4)}`,
+    author: author || "Admin",
+    note,
+    timestamp: new Date().toISOString(),
+  };
+
+  if (!current[idx].internalNotes) {
+    current[idx].internalNotes = [];
+  }
+  current[idx].internalNotes!.unshift(newNote);
+  current[idx].updatedAt = new Date().toISOString();
+
   await fs.writeFile(SUBMISSIONS_FILE, JSON.stringify(current, null, 2), "utf-8");
   return true;
 }

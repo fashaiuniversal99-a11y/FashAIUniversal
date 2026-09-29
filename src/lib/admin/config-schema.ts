@@ -238,10 +238,26 @@ export interface MasterSiteConfig {
   isDraft?: boolean;
 }
 
+export interface SubmissionAttachment {
+  filename: string;
+  originalName: string;
+  size: number;
+  url: string;
+  mimeType: string;
+}
+
+export interface InternalNote {
+  id: string;
+  author: string;
+  note: string;
+  timestamp: string;
+}
+
 export interface SubmissionRecord {
   id: string;
-  type: "CONTACT" | "APPLICATION" | "CHATBOT_LEAD" | "CHATBOT_INQUIRY" | "CHATBOT_CONVERSATION";
-  source?: "CHATBOT" | "CONTACT_FORM" | "APPLICATION_FORM" | "WEBSITE_POPUP" | "OTHER";
+  referenceNumber?: string;
+  type: "CONTACT" | "APPLICATION" | "CHATBOT_LEAD" | "CHATBOT_INQUIRY" | "CHATBOT_CONVERSATION" | "EVENT_INQUIRY";
+  source?: "CHATBOT" | "CONTACT_FORM" | "APPLICATION_FORM" | "WEBSITE_POPUP" | "EVENT_MANAGEMENT_FORM" | "OTHER";
   applicationType?: string;
   domain?: string;
   fullName: string;
@@ -250,13 +266,49 @@ export interface SubmissionRecord {
   country?: string;
   city?: string;
   organization?: string;
+  company?: string;
   role?: string;
+  preferredContactMethod?: "Email" | "Phone" | "WhatsApp" | string;
   enquiryType?: string;
   eventInterest?: string;
   message?: string;
   categoryDetails?: Record<string, unknown>;
-  status: "NEW" | "UNDER REVIEW" | "CONTACTED" | "IN_PROGRESS" | "RESOLVED" | "ARCHIVED";
+  
+  // Event Inquiry Specific Fields
+  eventName?: string;
+  eventTypes?: string[];
+  eventDescription?: string;
+  preferredDate?: string;
+  dateFlexible?: "Yes" | "No" | "Not decided" | string;
+  alternativeDate?: string;
+  guestCount?: string;
+  guestCountRange?: string;
+  location?: string;
+  venueStatus?: string;
+  venueName?: string;
+  venueAddress?: string;
+  startDateTime?: string;
+  endDateTime?: string;
+  duration?: string;
+  indoorOutdoor?: string;
+  eventScale?: string;
+  servicesRequested?: string[];
+  eventVision?: string;
+  desiredOutcomes?: string[];
+  creativeDirection?: string;
+  budget?: string;
+  budgetCurrency?: string;
+  budgetRange?: string;
+  planningTimeline?: string;
+  proposalDeadline?: string;
+  additionalRequirements?: string;
+  attachments?: SubmissionAttachment[];
+  consent?: boolean;
+  internalNotes?: InternalNote[];
+
+  status: "NEW" | "UNDER REVIEW" | "REVIEWING" | "CONTACTED" | "PROPOSAL_REQUESTED" | "PROPOSAL_SENT" | "IN_DISCUSSION" | "CONFIRMED" | "CLOSED" | "NOT_PROCEEDING" | "IN_PROGRESS" | "RESOLVED" | "ARCHIVED";
   submittedAt: string;
+  updatedAt?: string;
   conversationId?: string;
   conversationHistory?: Array<{ sender: string; text: string; timestamp: string }>;
 }
