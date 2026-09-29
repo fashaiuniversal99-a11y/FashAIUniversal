@@ -87,44 +87,44 @@ export default function ConversationalEnquiry({
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.98 }}
+      initial={{ opacity: 0, scale: 0.96 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="p-4 bg-brand-charcoal/95 border border-brand-orange/40 text-brand-white space-y-3.5 my-2 shadow-lg"
+      className="p-5 bg-brand-charcoal/95 border border-[#D4AF37]/50 text-brand-white space-y-4 my-2.5 shadow-2xl rounded-3xl backdrop-blur-xl"
     >
-      <div className="flex justify-between items-center border-b border-white/10 pb-2">
-        <span className="text-[10px] font-syne font-bold text-brand-orange uppercase tracking-micro">
-          CONVERSATIONAL ENQUIRY · {initialType.toUpperCase()}
+      <div className="flex justify-between items-center border-b border-white/10 pb-2.5">
+        <span className="text-[10px] font-jost font-bold text-[#D4AF37] uppercase tracking-wider">
+          EVENT CONCIERGE · {initialType.toUpperCase()}
         </span>
         <button
           onClick={onCancel}
-          className="text-[10px] font-syne text-brand-platinum hover:text-white uppercase"
+          className="text-[10px] font-jost text-brand-platinum hover:text-white uppercase px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 transition-all"
         >
           Cancel
         </button>
       </div>
 
       {error && (
-        <div className="flex items-center gap-2 p-2 bg-red-950/40 border border-red-500/40 text-red-200 text-xs font-sans">
+        <div className="flex items-center gap-2 p-2.5 bg-red-950/40 border border-red-500/40 text-red-200 text-xs font-jost rounded-2xl">
           <AlertCircle className="w-3.5 h-3.5 flex-shrink-0 text-red-400" />
           <span>{error}</span>
         </div>
       )}
 
       {step === "name" && (
-        <div className="space-y-2">
-          <label className="block text-xs font-syne text-brand-platinum">What is your full name? *</label>
+        <div className="space-y-2.5">
+          <label className="block text-xs font-jost text-brand-platinum font-semibold">What is your full name? *</label>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Your Name"
-            className="w-full bg-brand-void border border-white/20 p-2 text-xs text-brand-white focus:border-brand-orange focus:outline-none"
+            className="w-full bg-brand-void border border-white/20 px-4 py-2.5 rounded-2xl text-xs text-brand-white focus:border-[#D4AF37] focus:outline-none"
             autoFocus
             onKeyDown={(e) => e.key === "Enter" && handleNextStep()}
           />
           <button
             onClick={handleNextStep}
-            className="w-full bg-brand-orange py-2 text-xs font-syne font-bold text-white uppercase tracking-caps hover:bg-[#ff6f2d] transition-colors"
+            className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] py-2.5 rounded-full text-xs font-jost font-bold text-black uppercase tracking-wider transition-all shadow-md"
           >
             Next →
           </button>
@@ -132,20 +132,20 @@ export default function ConversationalEnquiry({
       )}
 
       {step === "email" && (
-        <div className="space-y-2">
-          <label className="block text-xs font-syne text-brand-platinum">Best email for response? *</label>
+        <div className="space-y-2.5">
+          <label className="block text-xs font-jost text-brand-platinum font-semibold">Best email for response? *</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="name@example.com"
-            className="w-full bg-brand-void border border-white/20 p-2 text-xs text-brand-white focus:border-brand-orange focus:outline-none"
+            className="w-full bg-brand-void border border-white/20 px-4 py-2.5 rounded-2xl text-xs text-brand-white focus:border-[#D4AF37] focus:outline-none"
             autoFocus
             onKeyDown={(e) => e.key === "Enter" && handleNextStep()}
           />
           <button
             onClick={handleNextStep}
-            className="w-full bg-brand-orange py-2 text-xs font-syne font-bold text-white uppercase tracking-caps hover:bg-[#ff6f2d] transition-colors"
+            className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] py-2.5 rounded-full text-xs font-jost font-bold text-black uppercase tracking-wider transition-all shadow-md"
           >
             Next →
           </button>
@@ -153,26 +153,26 @@ export default function ConversationalEnquiry({
       )}
 
       {step === "org" && (
-        <div className="space-y-2">
-          <label className="block text-xs font-syne text-brand-platinum">Organization / Role (Optional)</label>
+        <div className="space-y-2.5">
+          <label className="block text-xs font-jost text-brand-platinum font-semibold">Organization / Role (Optional)</label>
           <input
             type="text"
             value={organization}
             onChange={(e) => setOrganization(e.target.value)}
             placeholder="Company or Brand Name"
-            className="w-full bg-brand-void border border-white/20 p-2 text-xs text-brand-white focus:border-brand-orange focus:outline-none mb-1"
+            className="w-full bg-brand-void border border-white/20 px-4 py-2.5 rounded-2xl text-xs text-brand-white focus:border-[#D4AF37] focus:outline-none mb-1"
           />
           <input
             type="text"
             value={role}
             onChange={(e) => setRole(e.target.value)}
             placeholder="Your Position / Role"
-            className="w-full bg-brand-void border border-white/20 p-2 text-xs text-brand-white focus:border-brand-orange focus:outline-none"
+            className="w-full bg-brand-void border border-white/20 px-4 py-2.5 rounded-2xl text-xs text-brand-white focus:border-[#D4AF37] focus:outline-none"
             onKeyDown={(e) => e.key === "Enter" && handleNextStep()}
           />
           <button
             onClick={handleNextStep}
-            className="w-full bg-brand-orange py-2 text-xs font-syne font-bold text-white uppercase tracking-caps hover:bg-[#ff6f2d] transition-colors"
+            className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] py-2.5 rounded-full text-xs font-jost font-bold text-black uppercase tracking-wider transition-all shadow-md"
           >
             Next →
           </button>
@@ -180,19 +180,19 @@ export default function ConversationalEnquiry({
       )}
 
       {step === "message" && (
-        <div className="space-y-2">
-          <label className="block text-xs font-syne text-brand-platinum">Briefly describe your enquiry *</label>
+        <div className="space-y-2.5">
+          <label className="block text-xs font-jost text-brand-platinum font-semibold">Briefly describe your enquiry *</label>
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Details about your participation, sponsorship, or media enquiry..."
+            placeholder="Details about your event brief, participation, sponsorship, or media enquiry..."
             rows={3}
-            className="w-full bg-brand-void border border-white/20 p-2 text-xs text-brand-white focus:border-brand-orange focus:outline-none"
+            className="w-full bg-brand-void border border-white/20 p-3 rounded-2xl text-xs text-brand-white focus:border-[#D4AF37] focus:outline-none"
             autoFocus
           />
           <button
             onClick={handleNextStep}
-            className="w-full bg-brand-orange py-2 text-xs font-syne font-bold text-white uppercase tracking-caps hover:bg-[#ff6f2d] transition-colors"
+            className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] py-2.5 rounded-full text-xs font-jost font-bold text-black uppercase tracking-wider transition-all shadow-md"
           >
             Review Submission →
           </button>
@@ -200,12 +200,12 @@ export default function ConversationalEnquiry({
       )}
 
       {step === "confirm" && (
-        <div className="space-y-2.5">
-          <p className="font-serif italic text-xs text-brand-yellow-golden">
-            “I will use these details only to process your enquiry. Would you like me to submit them?”
+        <div className="space-y-3">
+          <p className="font-serif italic text-xs text-[#D4AF37]">
+            “I will use these details only to process your enquiry with our Event Concierge team. Would you like me to submit them?”
           </p>
 
-          <div className="bg-brand-void p-2.5 border border-white/10 text-[11px] font-sans space-y-1 text-brand-platinum">
+          <div className="bg-brand-void p-3 rounded-2xl border border-white/10 text-[11px] font-jost space-y-1.5 text-brand-platinum">
             <div><strong className="text-white">Name:</strong> {name}</div>
             <div><strong className="text-white">Email:</strong> {email}</div>
             {organization && <div><strong className="text-white">Organization:</strong> {organization}</div>}
@@ -215,13 +215,13 @@ export default function ConversationalEnquiry({
           <div className="flex gap-2">
             <button
               onClick={handleSubmitEnquiry}
-              className="flex-1 bg-brand-orange py-2 text-xs font-syne font-bold text-white uppercase tracking-caps hover:bg-[#ff6f2d] transition-colors"
+              className="flex-1 bg-[#D4AF37] hover:bg-[#FFEC69] py-2.5 rounded-full text-xs font-jost font-bold text-black uppercase tracking-wider transition-all shadow-md"
             >
               Submit Enquiry
             </button>
             <button
               onClick={onCancel}
-              className="px-3 py-2 text-xs font-syne text-brand-platinum border border-white/20 hover:text-white transition-colors"
+              className="px-4 py-2.5 rounded-full text-xs font-jost text-brand-platinum border border-white/20 hover:text-white transition-colors"
             >
               Not Now
             </button>
@@ -231,15 +231,15 @@ export default function ConversationalEnquiry({
 
       {step === "submitting" && (
         <div className="text-center py-4 space-y-2">
-          <div className="w-5 h-5 border-2 border-brand-orange border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="text-xs font-syne tracking-micro text-brand-platinum">Submitting enquiry to FashAI Universal...</p>
+          <div className="w-5 h-5 border-2 border-[#D4AF37] border-t-transparent rounded-full animate-spin mx-auto" />
+          <p className="text-xs font-jost tracking-wider text-brand-platinum">Submitting enquiry to FashAI Event Concierge...</p>
         </div>
       )}
 
       {step === "done" && (
-        <div className="text-center py-3 space-y-2 text-brand-green">
-          <CheckCircle2 className="w-6 h-6 mx-auto text-brand-green" />
-          <p className="text-xs font-syne font-bold uppercase">Submission Complete</p>
+        <div className="text-center py-3 space-y-2 text-[#2E936F]">
+          <CheckCircle2 className="w-6 h-6 mx-auto text-[#2E936F]" />
+          <p className="text-xs font-jost font-bold uppercase">Submission Complete</p>
         </div>
       )}
     </motion.div>

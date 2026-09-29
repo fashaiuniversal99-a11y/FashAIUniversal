@@ -395,6 +395,7 @@ export async function POST(request: Request) {
         phone: whatsapp,
         city: cityCountry,
         categoryDetails,
+        conversationHistory: Array.isArray(body.conversationHistory) ? (body.conversationHistory as any) : undefined,
         status: "NEW",
       });
     } catch (err) {

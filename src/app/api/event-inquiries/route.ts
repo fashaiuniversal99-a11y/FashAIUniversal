@@ -229,7 +229,7 @@ export async function POST(request: Request) {
     // 6. Save Record to Storage
     const newRecord = await saveSubmission({
       type: "EVENT_INQUIRY",
-      source: "EVENT_MANAGEMENT_FORM",
+      source: (body.source as any) || "EVENT_MANAGEMENT_FORM",
       referenceNumber: refNum,
       domain: eventTypes.join(", "),
       fullName,
@@ -276,6 +276,8 @@ export async function POST(request: Request) {
 
       attachments: attachments.length > 0 ? attachments : undefined,
       consent: true,
+      conversationHistory: Array.isArray(body.conversationHistory) ? (body.conversationHistory as any) : undefined,
+      conversationId: typeof body.conversationId === "string" ? body.conversationId : undefined,
 
       status: "NEW",
     });
