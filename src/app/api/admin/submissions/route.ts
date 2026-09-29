@@ -21,19 +21,30 @@ export async function PATCH(request: NextRequest) {
 
   try {
     const body = await request.json();
-    const { id, status } = body;
+    const { id, status, note, author } = body;
 
-    if (!id || !status) {
-      return NextResponse.json({ error: "Submission ID and status are required" }, { status: 400 });
+    if (!id) {
+      return NextResponse.json({ error: "Submission ID is required" }, { status: 400 });
     }
 
-    const updated = await updateSubmissionStatus(id, status);
-    if (!updated) {
-      return NextResponse.json({ error: "Submission not found" }, { status: 404 });
+    if (note && typeof note === "string" && note.trim()) {
+      const { addInternalNoteToSubmission } = await import("@/lib/admin/storage");
+      const noteAdded = await addInternalNoteToSubmission(id, author || "Admin", note.trim());
+      if (!noteAdded) {
+        return NextResponse.json({ error: "Submission not found" }, { status: 404 });
+      }
+      await addActivityLog("SETTINGS", `Added internal note to submission ${id}`);
     }
 
-    await addActivityLog("SETTINGS", `Updated submission ${id} status to ${status}`);
-    return NextResponse.json({ success: true, message: `Submission status updated to ${status}` });
+    if (status) {
+      const updated = await updateSubmissionStatus(id, status);
+      if (!updated) {
+        return NextResponse.json({ error: "Submission not found" }, { status: 404 });
+      }
+      await addActivityLog("SETTINGS", `Updated submission ${id} status to ${status}`);
+    }
+
+    return NextResponse.json({ success: true, message: "Submission updated successfully" });
   } catch (err) {
     console.error("Submission update error:", err);
     return NextResponse.json({ error: "Failed to update submission" }, { status: 500 });
