@@ -1,5 +1,101 @@
 [
   {
+    "type": "EVENT_INQUIRY",
+    "source": "EVENT_MANAGEMENT_FORM",
+    "referenceNumber": "FI-2026-70281",
+    "domain": "Fashion Show",
+    "fullName": "Sarah Maktoum",
+    "email": "sarah@dubai.ae",
+    "phone": "+971 50 123 4567",
+    "preferredContactMethod": "Email",
+    "eventTypes": [
+      "Fashion Show"
+    ],
+    "eventDescription": "Testing AED currency selector submission",
+    "preferredDate": "2026-12-10",
+    "dateFlexible": "Not decided",
+    "guestCountRange": "",
+    "location": "Dubai",
+    "venueStatus": "Not decided",
+    "indoorOutdoor": "Not decided",
+    "eventScale": "Mid-size",
+    "servicesRequested": [],
+    "desiredOutcomes": [],
+    "budgetCurrency": "AED",
+    "budgetRange": "AED 50,000–100,000",
+    "consent": true,
+    "status": "NEW",
+    "id": "sub_1790705350269_mjjdo",
+    "submittedAt": "2026-09-29T18:09:10.269Z"
+  },
+  {
+    "type": "EVENT_INQUIRY",
+    "source": "EVENT_MANAGEMENT_FORM",
+    "referenceNumber": "FI-2026-50893",
+    "domain": "Fashion Show",
+    "fullName": "Rahul Sharma",
+    "company": "Vogue Delhi",
+    "email": "rahul@vogue-delhi.com",
+    "phone": "+919876543210",
+    "preferredContactMethod": "Email",
+    "eventTypes": [
+      "Fashion Show"
+    ],
+    "eventDescription": "High-end winter runway launch for luxury brand collection",
+    "preferredDate": "2026-12-01",
+    "dateFlexible": "Not decided",
+    "guestCountRange": "250-500",
+    "location": "Gurgaon",
+    "venueStatus": "Not decided",
+    "indoorOutdoor": "Not decided",
+    "eventScale": "Mid-size",
+    "servicesRequested": [
+      "Event Production",
+      "Creative Direction",
+      "Fashion Show / Runway"
+    ],
+    "desiredOutcomes": [],
+    "budgetCurrency": "AED",
+    "budgetRange": "?25L-?50L",
+    "consent": true,
+    "status": "NEW",
+    "id": "sub_1790704750812_bs2yv",
+    "submittedAt": "2026-09-29T17:59:10.812Z"
+  },
+  {
+    "type": "EVENT_INQUIRY",
+    "source": "EVENT_MANAGEMENT_FORM",
+    "referenceNumber": "FI-2026-97832",
+    "domain": "Fashion Show, Brand Activation",
+    "fullName": "Test Luxury Client",
+    "email": "client@luxurybrand.com",
+    "phone": "+971501234567",
+    "preferredContactMethod": "Email",
+    "eventTypes": [
+      "Fashion Show",
+      "Brand Activation"
+    ],
+    "eventDescription": "Testing real end-to-end event brief submission",
+    "preferredDate": "2026-11-15",
+    "dateFlexible": "Not decided",
+    "guestCountRange": "250-500",
+    "location": "Dubai",
+    "venueStatus": "Not decided",
+    "indoorOutdoor": "Not decided",
+    "eventScale": "Mid-size",
+    "servicesRequested": [
+      "Event Production",
+      "Runway Production"
+    ],
+    "desiredOutcomes": [],
+    "budgetCurrency": "AED",
+    "budgetRange": "AED 500K-1M",
+    "consent": true,
+    "status": "NEW",
+    "id": "sub_1790703754530_8kzib",
+    "submittedAt": "2026-09-29T17:42:34.530Z"
+  },
+  {
     "id": "sub_1727318001_cb01",
     "type": "CHATBOT_CONVERSATION",
     "source": "CHATBOT",
@@ -15,14 +111,46 @@
     "submittedAt": "2026-09-25T14:30:00.000Z",
     "conversationId": "chat-901",
     "conversationHistory": [
-      { "sender": "bot", "text": "Hi, welcome to FashAI Universal. How can I help?", "timestamp": "02:30 PM" },
-      { "sender": "user", "text": "Register / enquire", "timestamp": "02:30 PM" },
-      { "sender": "bot", "text": "We welcome brand & luxury sponsors for LifeStyle 2026. What is your full name?", "timestamp": "02:31 PM" },
-      { "sender": "user", "text": "Leila Al-Maktoum", "timestamp": "02:31 PM" },
-      { "sender": "bot", "text": "Thanks, Leila Al-Maktoum! What is your company or brand name?", "timestamp": "02:31 PM" },
-      { "sender": "user", "text": "Dubai Luxury Group", "timestamp": "02:32 PM" },
-      { "sender": "bot", "text": "What is your official business email address?", "timestamp": "02:32 PM" },
-      { "sender": "user", "text": "leila.m@dubai-fashion.ae", "timestamp": "02:32 PM" }
+      {
+        "sender": "bot",
+        "text": "Hi, welcome to FashAI Universal. How can I help?",
+        "timestamp": "02:30 PM"
+      },
+      {
+        "sender": "user",
+        "text": "Register / enquire",
+        "timestamp": "02:30 PM"
+      },
+      {
+        "sender": "bot",
+        "text": "We welcome brand & luxury sponsors for LifeStyle 2026. What is your full name?",
+        "timestamp": "02:31 PM"
+      },
+      {
+        "sender": "user",
+        "text": "Leila Al-Maktoum",
+        "timestamp": "02:31 PM"
+      },
+      {
+        "sender": "bot",
+        "text": "Thanks, Leila Al-Maktoum! What is your company or brand name?",
+        "timestamp": "02:31 PM"
+      },
+      {
+        "sender": "user",
+        "text": "Dubai Luxury Group",
+        "timestamp": "02:32 PM"
+      },
+      {
+        "sender": "bot",
+        "text": "What is your official business email address?",
+        "timestamp": "02:32 PM"
+      },
+      {
+        "sender": "user",
+        "text": "leila.m@dubai-fashion.ae",
+        "timestamp": "02:32 PM"
+      }
     ]
   },
   {
@@ -37,7 +165,10 @@
     "city": "Mumbai, India",
     "categoryDetails": {
       "brandName": "Malhotra Haute Couture",
-      "specializations": ["Ethical Bridal", "AI Textile Fusion"],
+      "specializations": [
+        "Ethical Bridal",
+        "AI Textile Fusion"
+      ],
       "experience": "8 years Lakme Fashion Week",
       "portfolioUrl": "https://ananyamalhotra.com",
       "instagramUrl": "@ananyamalhotra_official",
@@ -63,7 +194,10 @@
       "heightCm": 188,
       "measurements": "38-30-38",
       "shoeSize": "43 EU",
-      "categories": ["High Fashion Runway", "Editorial"],
+      "categories": [
+        "High Fashion Runway",
+        "Editorial"
+      ],
       "instagramLink": "@vikramsethi_official",
       "availableTravel": true,
       "notes": "Available for international travel to UAE & Europe."
@@ -83,7 +217,10 @@
     "city": "Abu Dhabi, UAE",
     "categoryDetails": {
       "experience": "6 years Avant-Garde Runway Makeup",
-      "specializations": ["Editorial", "Prosthetic & Glow"],
+      "specializations": [
+        "Editorial",
+        "Prosthetic & Glow"
+      ],
       "portfolioUrl": "https://zoyakhanbeauty.com",
       "instagramUrl": "@zoyakhan_mua",
       "hasKit": true,
@@ -105,7 +242,10 @@
     "city": "Paris, France",
     "categoryDetails": {
       "experience": "10 years Vogue Paris & Milan Fashion Week",
-      "specializations": ["Editorial Styling", "Celebrity Red Carpet"],
+      "specializations": [
+        "Editorial Styling",
+        "Celebrity Red Carpet"
+      ],
       "stylingAesthetic": "Minimalist High-Contrast Luxury",
       "portfolioUrl": "https://jpblanc-styling.fr",
       "instagramUrl": "@jpblanc_stylist",
@@ -127,7 +267,10 @@
     "city": "Mumbai, India",
     "categoryDetails": {
       "stageName": "Tara Kapoor",
-      "contentCategories": ["Luxury Fashion", "AI Wearables"],
+      "contentCategories": [
+        "Luxury Fashion",
+        "AI Wearables"
+      ],
       "primaryPlatform": "Instagram",
       "socialHandle": "@tarakapoor_style",
       "followerCount": 450000,
@@ -172,7 +315,10 @@
       "instagramUrl": "@siddharthroy_official",
       "followerCount": 2800000,
       "majorAchievements": "National Award winner, Brand Ambassador for Luxury Timepieces",
-      "interests": ["Runway Showstopper", "Panel Speaker"]
+      "interests": [
+        "Runway Showstopper",
+        "Panel Speaker"
+      ]
     },
     "status": "IN_PROGRESS",
     "submittedAt": "2026-09-23T15:30:00.000Z"

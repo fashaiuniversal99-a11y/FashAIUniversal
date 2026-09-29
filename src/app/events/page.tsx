@@ -14,10 +14,11 @@ export const metadata: Metadata = {
 
 export default function EventsPage() {
   return (
-    <div className="bg-brand-void text-brand-white pt-14 sm:pt-20 min-h-screen">
+    <div className="bg-brand-void text-brand-white pt-4 sm:pt-6 min-h-screen">
       <AllEventsSection />
       <Chapter2026 />
       <Chapter2025 />
     </div>
   );
 }
+

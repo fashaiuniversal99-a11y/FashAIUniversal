@@ -31,7 +31,7 @@ const HOMEPAGE_EVENTS: HomepageEvent[] = [
     image: "/assets/events/lifestyle_banner.png",
     ctaText: "EXPLORE EVENT",
     ctaHref: "/events",
-    bookNowHref: "/contact?type=EventManagement",
+    bookNowHref: "/plan-your-event",
   },
   {
     id: "runway",
@@ -43,7 +43,7 @@ const HOMEPAGE_EVENTS: HomepageEvent[] = [
     image: "/assets/events/runway_banner.png",
     ctaText: "EXPLORE EVENT",
     ctaHref: "/events",
-    bookNowHref: "/contact?type=EventManagement",
+    bookNowHref: "/plan-your-event",
   },
   {
     id: "brand-shoots",

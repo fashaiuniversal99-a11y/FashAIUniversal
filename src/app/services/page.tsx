@@ -81,19 +81,19 @@ export default function ServicesPage() {
   return (
     <div className="bg-white dark:bg-[#050505] text-[#111111] dark:text-white pt-16 sm:pt-20 md:pt-24 min-h-screen">
       {/* 01. SERVICES HERO BANNER */}
-      <section className="relative pt-3 pb-8 sm:pt-10 sm:pb-14 border-b border-black/10 dark:border-white/10 bg-[#FAF8F5] dark:bg-[#080706]">
+      <section className="relative pt-6 sm:pt-10 pb-8 sm:pb-14 border-b border-black/10 dark:border-white/10 bg-[#FAF8F5] dark:bg-[#080706]">
         <div className="container-editorial max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl space-y-3.5 sm:space-y-4">
+          <div className="max-w-4xl space-y-4 sm:space-y-5">
             <div className="flex items-center gap-3">
               <span className="w-10 h-[2px] bg-[#F15E1C] dark:bg-[#D4AF37]" />
               <span className="font-syne text-xs sm:text-sm md:text-base tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
                 03 / SERVICES &amp; EVENT ARCHITECTURE
               </span>
             </div>
-            <h1 className="font-serif-display text-4xl sm:text-7xl lg:text-8xl xl:text-9xl font-light text-[#111111] dark:text-white uppercase leading-[0.95] tracking-tight">
+            <h1 className="font-serif-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light text-[#111111] dark:text-white uppercase leading-[0.95] tracking-tight">
               OUR <span className="font-serif italic text-[#F15E1C] dark:text-[#D4AF37]">SERVICES</span> &amp; FORMATS
             </h1>
-            <p className="font-sans text-base sm:text-xl md:text-2xl text-[#444444] dark:text-white/85 font-light leading-relaxed max-w-3xl">
+            <p className="font-sans text-base sm:text-lg md:text-xl lg:text-2xl text-[#444444] dark:text-white/90 font-light leading-relaxed max-w-3xl text-justify">
               FashAI Universal delivers specialized fashion show production, AI-driven computational design, luxury brand activations, and global talent orchestration bridging Dubai, the UAE, and India.
             </p>
           </div>
@@ -101,13 +101,13 @@ export default function ServicesPage() {
       </section>
 
       {/* 02. CORE SERVICES ARCHITECTURE GRID */}
-      <section className="pt-8 pb-14 sm:pt-16 sm:pb-24 border-b border-black/10 dark:border-white/10">
+      <section className="pt-8 pb-14 sm:pt-12 sm:pb-20 border-b border-black/10 dark:border-white/10">
         <div className="container-editorial max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8 sm:mb-12">
-            <h2 className="font-syne text-xs sm:text-sm md:text-base tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-2">
+          <div className="mb-8 sm:mb-12 border-b border-black/10 dark:border-white/10 pb-5">
+            <h2 className="font-syne text-xs sm:text-sm md:text-base tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-1.5">
               CORE CAPABILITIES
             </h2>
-            <h3 className="font-serif-display text-3xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-white uppercase tracking-tight">
+            <h3 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-white uppercase tracking-tight">
               WHAT WE DELIVER
             </h3>
           </div>
@@ -118,7 +118,7 @@ export default function ServicesPage() {
               return (
                 <div
                   key={service.id}
-                  className="p-6 sm:p-10 rounded-2xl border border-black/10 dark:border-white/15 bg-[#FAF8F5] dark:bg-[#090807] hover:border-[#F15E1C] dark:hover:border-[#D4AF37] transition-all duration-300 shadow-sm flex flex-col justify-between group"
+                  className="p-6 sm:p-8 md:p-10 rounded-2xl border border-black/10 dark:border-white/15 bg-[#FAF8F5] dark:bg-[#090807] hover:border-[#F15E1C] dark:hover:border-[#D4AF37] transition-all duration-300 shadow-sm flex flex-col justify-between group"
                 >
                   <div className="space-y-4 sm:space-y-5">
                     <div className="flex items-center justify-between">
@@ -130,17 +130,17 @@ export default function ServicesPage() {
                       </span>
                     </div>
 
-                    <h4 className="font-serif-display text-2xl sm:text-4xl lg:text-5xl font-light text-[#111111] dark:text-white group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors leading-snug">
+                    <h4 className="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-light text-[#111111] dark:text-white group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors leading-snug">
                       {service.title}
                     </h4>
 
-                    <p className="font-sans text-base sm:text-lg md:text-xl text-[#444444] dark:text-white/85 leading-relaxed font-light">
+                    <p className="font-sans text-base sm:text-lg text-[#444444] dark:text-white/85 leading-relaxed font-light text-justify">
                       {service.description}
                     </p>
 
                     <div className="pt-4 border-t border-black/10 dark:border-white/10 space-y-2.5 sm:space-y-3">
                       {service.features.map((feat, idx) => (
-                        <div key={idx} className="flex items-center gap-2.5 sm:gap-3 text-sm sm:text-lg font-syne text-[#333333] dark:text-white/90 font-medium">
+                        <div key={idx} className="flex items-center gap-2.5 sm:gap-3 text-sm sm:text-base font-syne text-[#333333] dark:text-white/90 font-medium">
                           <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#F15E1C] dark:bg-[#D4AF37] flex-shrink-0" />
                           <span>{feat}</span>
                         </div>

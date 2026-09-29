@@ -31,7 +31,7 @@ export default function Chapter2026() {
   return (
     <section
       id="2026"
-      className="relative w-full py-10 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#080706] text-[#111111] dark:text-white border-b border-black/10 dark:border-white/10 overflow-hidden select-none"
+      className="relative w-full py-6 sm:py-8 md:py-10 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#080706] text-[#111111] dark:text-white border-b border-black/10 dark:border-white/10 overflow-hidden select-none"
     >
       {/* Background Watermark */}
       <div className="editorial-watermark absolute top-6 right-0 text-[15vw] font-serif-display font-light uppercase tracking-tighter leading-none pointer-events-none select-none text-black/[0.03] dark:text-white/[0.03]">

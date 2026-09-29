@@ -1,5 +1,29 @@
 [
   {
+    "id": "log_1790705350271_1pua7",
+    "category": "CONTENT",
+    "action": "Received new Event Inquiry FI-2026-70281",
+    "actor": "Sarah Maktoum",
+    "timestamp": "2026-09-29T18:09:10.271Z",
+    "details": "Event: Fashion Show"
+  },
+  {
+    "id": "log_1790704750818_31ls9",
+    "category": "CONTENT",
+    "action": "Received new Event Inquiry FI-2026-50893",
+    "actor": "Rahul Sharma",
+    "timestamp": "2026-09-29T17:59:10.818Z",
+    "details": "Event: Fashion Show"
+  },
+  {
+    "id": "log_1790703754553_36fqu",
+    "category": "CONTENT",
+    "action": "Received new Event Inquiry FI-2026-97832",
+    "actor": "Test Luxury Client",
+    "timestamp": "2026-09-29T17:42:34.553Z",
+    "details": "Event: Fashion Show, Brand Activation"
+  },
+  {
     "id": "log_1790373449411_ktwzc",
     "category": "CONTENT",
     "action": "Published website changes",

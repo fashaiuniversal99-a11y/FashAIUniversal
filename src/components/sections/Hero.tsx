@@ -180,7 +180,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto pt-3"
           >
             <DistortionCTAButton
-              href="/contact?type=EventManagement"
+              href="/plan-your-event"
               label="PLAN YOUR EVENT →"
               variant="primary"
               className="w-full sm:w-auto min-w-[240px]"

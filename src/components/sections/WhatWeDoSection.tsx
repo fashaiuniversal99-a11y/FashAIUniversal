@@ -108,7 +108,7 @@ export default function WhatWeDoSection() {
               </Link>
 
               <Link
-                href="/contact?type=EventManagement"
+                href="/plan-your-event"
                 className="inline-flex items-center gap-1 text-xs font-syne font-bold uppercase text-[#111111] dark:text-[#D4AF37] hover:text-[#D4AF37] transition-colors"
               >
                 <span>BOOK EVENT</span>
@@ -180,7 +180,7 @@ export default function WhatWeDoSection() {
               </Link>
 
               <Link
-                href="/contact?type=EventManagement"
+                href="/plan-your-event"
                 className="inline-flex items-center gap-1 text-xs font-syne font-bold uppercase text-[#111111] dark:text-[#D4AF37] hover:text-[#D4AF37] transition-colors"
               >
                 <span>BOOK EVENT</span>

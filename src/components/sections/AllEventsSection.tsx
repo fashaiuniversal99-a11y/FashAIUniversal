@@ -169,12 +169,12 @@ export default function AllEventsSection() {
     : ALL_EVENTS_DATA.filter(e => e.category === selectedCategory);
 
   return (
-    <section className="relative py-12 sm:py-16 md:py-20 bg-white dark:bg-[#050505] text-[#111111] dark:text-white min-h-screen">
+    <section className="relative py-6 sm:py-8 md:py-10 bg-white dark:bg-[#050505] text-[#111111] dark:text-white min-h-screen">
       <div className="container-editorial max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Page Hero Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="flex items-center justify-center gap-3 mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+          <div className="flex items-center justify-center gap-3 mb-2">
             <span className="h-[1px] w-12 bg-gradient-to-r from-transparent to-[#F15E1C] dark:to-[#D4AF37]" />
             <span className="text-xs sm:text-sm font-syne tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
               FASHAI EVENT CATALOGUE
@@ -186,15 +186,15 @@ export default function AllEventsSection() {
             ALL EVENTS
           </h1>
 
-          <p className="font-sans text-base sm:text-lg text-[#555555] dark:text-brand-platinum/85 font-light mt-4 leading-relaxed">
+          <p className="font-sans text-base sm:text-lg text-[#555555] dark:text-brand-platinum/85 font-light mt-3 leading-relaxed">
             Explore the event formats and experiences delivered by FashAI Universal.
           </p>
 
-          <div className="w-20 h-[2px] bg-[#F15E1C] dark:bg-[#D4AF37] mx-auto mt-6" />
+          <div className="w-20 h-[2px] bg-[#F15E1C] dark:bg-[#D4AF37] mx-auto mt-4" />
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex items-center justify-center flex-wrap gap-2.5 sm:gap-3 mb-10 sm:mb-14">
+        <div className="flex items-center justify-center flex-wrap gap-2 sm:gap-2.5 mb-6 sm:mb-8">
           <div className="flex items-center gap-2 text-xs font-syne font-bold text-[#F15E1C] dark:text-[#D4AF37] uppercase mr-2 hidden sm:flex">
             <Filter className="w-4 h-4" />
             <span>FILTER:</span>
@@ -203,7 +203,7 @@ export default function AllEventsSection() {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-syne font-bold uppercase tracking-wider transition-all duration-300 ${
+              className={`px-3.5 sm:px-4.5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-syne font-bold uppercase tracking-wider transition-all duration-300 ${
                 selectedCategory === cat
                   ? "bg-[#F15E1C] dark:bg-[#D4AF37] text-white dark:text-black shadow-md scale-[1.02]"
                   : "bg-black/5 dark:bg-white/5 text-[#333333] dark:text-white/80 border border-black/10 dark:border-white/10 hover:border-[#F15E1C] dark:hover:border-[#D4AF37]"
