@@ -134,6 +134,7 @@ export default function EventAnnouncementModal() {
                 alt="Atmospheric Background Blur"
                 fill
                 priority
+                sizes="(max-width: 1300px) 100vw, 1300px"
                 className="object-cover object-center"
               />
             </div>
@@ -166,7 +167,7 @@ export default function EventAnnouncementModal() {
                 alt="LifeStyle 2026 Dubai Visual"
                 fill
                 priority
-                sizes="100vw"
+                sizes="(max-width: 768px) 92vw, 500px"
                 className="object-cover object-[center_18%] filter contrast-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0908] via-[#0A0908]/30 to-transparent" />

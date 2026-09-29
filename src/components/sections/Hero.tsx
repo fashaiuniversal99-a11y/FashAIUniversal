@@ -26,7 +26,6 @@ export default function Hero() {
       try {
         await video.play();
       } catch {
-        // Retry playing on first touch/click interaction if browser autoplay policy delays startup
         const handleUserInteraction = () => {
           video.play().catch(() => {});
           window.removeEventListener("touchstart", handleUserInteraction);
@@ -41,11 +40,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-[100vh] min-h-[100svh] w-full flex flex-col justify-between pt-24 sm:pt-28 pb-6 sm:pb-8 px-4 sm:px-8 lg:px-12 overflow-hidden bg-black text-brand-white">
+    <section id="hero" className="relative min-h-[100vh] min-h-[100svh] w-full flex flex-col justify-between pt-24 sm:pt-28 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-12 overflow-hidden bg-black text-brand-white select-none">
       
-      {/* LAYER 1: Primary Video & Backup Media Container */}
+      {/* LAYER 1: Primary Runway Video & Backup Media Container */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none select-none overflow-hidden bg-black">
-        {/* Fallback Backup Image (Only rendered if video has a fatal decode/file error) */}
         {videoError && (
           <Image
             src="/assets/hero/fallback.png"
@@ -59,7 +57,6 @@ export default function Hero() {
           />
         )}
 
-        {/* Primary Hero Background Video - Plays Continuously */}
         <video
           ref={videoRef}
           autoPlay
@@ -69,18 +66,21 @@ export default function Hero() {
           preload="auto"
           onTimeUpdate={handleTimeUpdate}
           onError={() => setVideoError(true)}
-          className="absolute inset-0 w-full h-full object-cover object-center scale-[1.05] origin-center opacity-100"
+          className="absolute inset-0 w-full h-full object-cover object-center scale-[1.05] origin-center opacity-90 filter brightness-[0.85] contrast-[1.08]"
         >
           <source src="/videos/homepage-main.mp4" type="video/mp4" />
         </video>
       </div>
 
-      {/* LAYER 2: Readability Gradients */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/45 to-black/90 pointer-events-none z-[1]" />
+      {/* LAYER 2: Cinematic Lighting, Subtle Gold Bokeh & Readability Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/40 to-black/90 pointer-events-none z-[1]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-black/75 via-transparent to-transparent pointer-events-none z-[1]" />
+      
+      {/* Warm Golden Runway Bokeh Glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#D4AF37]/10 blur-[130px] rounded-full pointer-events-none z-[1]" />
 
       {/* LAYER 3: Main Centered Editorial Composition */}
-      <div className="relative z-10 my-auto container-editorial py-4 sm:py-6 flex flex-col items-center justify-center text-center w-full">
+      <div className="relative z-10 my-auto container-editorial py-6 sm:py-8 flex flex-col items-center justify-center text-center w-full">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -88,52 +88,58 @@ export default function Hero() {
             hidden: { opacity: 0 },
             visible: {
               opacity: 1,
-              transition: { staggerChildren: 0.1, delayChildren: 0.1 }
+              transition: { staggerChildren: 0.12, delayChildren: 0.1 }
             }
           }}
-          className="flex flex-col items-center justify-center text-center max-w-5xl lg:max-w-6xl mx-auto space-y-4 sm:space-y-6 w-full"
+          className="flex flex-col items-center justify-center text-center max-w-5xl lg:max-w-6xl mx-auto space-y-5 sm:space-y-6 w-full"
         >
-          {/* 1. TOP EVENT LABEL */}
+          {/* 1. TOP EVENT LABEL: LIFESTYLE / EVENT PLATFORM */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 16 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }
             }}
-            className="flex items-center justify-center gap-3 w-full max-w-xs sm:max-w-md"
+            className="flex items-center justify-center gap-3.5 w-full max-w-xs sm:max-w-md"
           >
             <span className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-brand-yellow-golden/70 to-brand-yellow-golden" />
-            <span className="text-xs sm:text-sm font-syne tracking-[0.25em] text-brand-yellow-golden font-bold uppercase whitespace-nowrap drop-shadow-[0_0_10px_rgba(250,182,10,0.4)]">
+            <span className="text-xs sm:text-sm font-syne tracking-[0.22em] text-brand-yellow-golden font-semibold uppercase whitespace-nowrap drop-shadow-[0_0_12px_rgba(212,175,55,0.45)]">
               LIFESTYLE / EVENT PLATFORM
             </span>
             <span className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-brand-yellow-golden/70 to-brand-yellow-golden" />
           </motion.div>
 
-          {/* 2. PRIMARY HERO HEADLINE */}
+          {/* 2. MAIN HEADLINE TYPOGRAPHY: DM Serif Display (3 Structured Lines) */}
           <motion.h1
             variants={{
               hidden: { opacity: 0, y: 24 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] } }
             }}
             style={{ willChange: "transform, opacity" }}
-            className="font-serif-display leading-[1.05] sm:leading-[1.1] tracking-tight select-none w-full my-2 max-w-5xl mx-auto"
+            className="font-serif-display leading-[0.92] sm:leading-[0.95] tracking-tight select-none w-full my-2 text-center"
           >
-            <span className="block text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif font-normal text-brand-white keep-white tracking-tight drop-shadow-[0_12px_35px_rgba(0,0,0,0.95)]">
-              India and UAE’s premier events platform
+            <span className="block text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] xl:text-[7.5rem] font-serif font-normal text-brand-white keep-white tracking-tight drop-shadow-[0_14px_40px_rgba(0,0,0,0.95)]">
+              India and UAE’s
+            </span>
+            <span className="block text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] xl:text-[7.5rem] font-serif font-normal text-brand-white keep-white tracking-tight drop-shadow-[0_14px_40px_rgba(0,0,0,0.95)]">
+              premier events
+            </span>
+            <span className="block text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] xl:text-[7.5rem] font-serif font-normal text-brand-white keep-white tracking-tight drop-shadow-[0_14px_40px_rgba(0,0,0,0.95)]">
+              platform
             </span>
           </motion.h1>
 
-          {/* 3. SUPPORTING VALUE PROPOSITION */}
+          {/* 3. SUPPORTING VALUE PROPOSITION: Jost */}
           <motion.p
             variants={{
               hidden: { opacity: 0, y: 16 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } }
             }}
-            className="font-jost text-lg xs:text-xl sm:text-2xl md:text-3xl text-brand-white/95 keep-white tracking-wide font-normal max-w-3xl mx-auto drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
+            className="font-jost text-lg xs:text-xl sm:text-2xl md:text-3xl text-brand-white/90 keep-white tracking-wide font-normal max-w-4xl mx-auto pt-1 sm:pt-2 drop-shadow-[0_4px_18px_rgba(0,0,0,0.9)]"
           >
             Everything you need to create exceptional events
           </motion.p>
 
-          {/* 4. TITLE DECORATION DIVIDER: ──────── ✦ ──────── */}
+          {/* 4. ELEGANT GOLD DIVIDER: ──────── ✦ ──────── */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 16 },
@@ -160,18 +166,18 @@ export default function Hero() {
               width={380}
               height={100}
               priority
-              className="h-9 sm:h-12 md:h-16 lg:h-18 w-auto object-contain brightness-110 drop-shadow-[0_0_25px_rgba(212,175,55,0.4)]"
+              className="h-8 sm:h-11 md:h-14 lg:h-16 w-auto object-contain brightness-110 drop-shadow-[0_0_22px_rgba(212,175,55,0.4)]"
             />
           </motion.div>
 
-          {/* 6. CENTERED ACTION CTAs */}
+          {/* 6. HORIZONTALLY ALIGNED ACTION CTAs */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } }
             }}
             style={{ willChange: "transform, opacity" }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto pt-2"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto pt-3"
           >
             <DistortionCTAButton
               href="/contact?type=EventManagement"
@@ -191,28 +197,26 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* LAYER 4: LEFT-SIDE EDITORIAL NAVIGATION RAIL */}
+      {/* LAYER 4: LEFT EDITORIAL RAIL */}
       <div className="hidden lg:flex absolute left-8 xl:left-12 top-1/2 -translate-y-1/2 flex-col items-start space-y-4 text-left z-10 pointer-events-none select-none">
         <div className="flex flex-col items-center gap-1.5 ml-1">
           <span className="w-[1px] h-10 bg-gradient-to-b from-transparent to-brand-yellow-golden" />
           <span className="w-2.5 h-2.5 rounded-full border border-brand-yellow-golden bg-black/80 shadow-[0_0_8px_rgba(250,182,10,0.6)]" />
           <span className="w-[1px] h-6 bg-brand-yellow-golden/60" />
         </div>
-        <div className="flex flex-col items-start space-y-3.5 text-xs sm:text-xs font-syne tracking-[0.22em] text-brand-white/80 keep-white uppercase font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+        <div className="flex flex-col items-start space-y-3.5 text-xs sm:text-xs font-syne tracking-[0.2em] text-brand-white/80 keep-white uppercase font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
           <span className="hover:text-brand-yellow-golden transition-colors">EVENTS</span>
           <span className="hover:text-brand-yellow-golden transition-colors">IDEAS</span>
           <span className="hover:text-brand-yellow-golden transition-colors">CULTURE</span>
-          <div className="flex flex-col items-start">
-            <span className="hover:text-brand-yellow-golden transition-colors">EXCEPTIONAL</span>
-            <span className="hover:text-brand-yellow-golden transition-colors">EXPERIENCES</span>
-            <span className="w-8 h-[1px] bg-brand-white/40 mt-1.5" />
-          </div>
+          <span className="hover:text-brand-yellow-golden transition-colors">EXCEPTIONAL</span>
+          <span className="hover:text-brand-yellow-golden transition-colors">EXPERIENCES</span>
+          <span className="w-8 h-[1px] bg-brand-white/40 mt-1.5" />
         </div>
       </div>
 
-      {/* LAYER 5: RIGHT-SIDE EDITORIAL QUOTE */}
-      <div className="hidden lg:flex absolute right-8 xl:right-12 top-1/2 -translate-y-1/2 flex-col items-end text-right z-10 pointer-events-none select-none max-w-[210px]">
-        <p className="font-serif italic text-xl sm:text-2xl text-brand-white/90 keep-white leading-snug drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+      {/* LAYER 5: RIGHT EDITORIAL QUOTE */}
+      <div className="hidden lg:flex absolute right-8 xl:right-12 top-1/2 -translate-y-1/2 flex-col items-end text-right z-10 pointer-events-none select-none max-w-[240px]">
+        <p className="font-serif italic text-xl sm:text-2xl md:text-[26px] text-brand-white/90 keep-white leading-snug drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
           “Creating<br />
           Exceptional<br />
           Events Across<br />
@@ -224,4 +228,5 @@ export default function Hero() {
     </section>
   );
 }
+
 
