@@ -235,11 +235,11 @@ export default function PlanYourEventPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white flex flex-col font-jost select-none overflow-x-hidden">
+    <div className="min-h-screen bg-[#FAF8F5] dark:bg-[#050505] text-[#111111] dark:text-white flex flex-col font-jost select-none overflow-x-hidden">
       <Header />
 
       {/* HERO SECTION */}
-      <section className="relative pt-28 sm:pt-32 pb-8 sm:pb-12 px-4 bg-gradient-to-b from-black via-[#0A0908] to-[#050505] border-b border-white/10 overflow-hidden">
+      <section className="relative pt-28 sm:pt-32 pb-8 sm:pb-12 px-4 bg-gradient-to-b from-[#F5F2EC] via-[#FAF8F5] to-[#FAF8F5] dark:from-black dark:via-[#0A0908] dark:to-[#050505] border-b border-black/10 dark:border-white/10 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#D4AF37]/10 blur-[120px] pointer-events-none" />
         
         <div className="w-[calc(100%-32px)] lg:w-[min(92vw,1200px)] max-w-[1200px] mx-auto text-center relative z-10 space-y-3 sm:space-y-4">
@@ -248,11 +248,11 @@ export default function PlanYourEventPage() {
             <span>FASHAI UNIVERSAL · EVENT PRODUCTION</span>
           </div>
 
-          <h1 className="font-serif-display text-4xl sm:text-6xl md:text-7xl font-light text-white uppercase tracking-tight leading-none">
+          <h1 className="font-serif-display text-4xl sm:text-6xl md:text-7xl font-light text-[#111111] dark:text-white uppercase tracking-tight leading-none">
             PLAN YOUR <span className="text-[#D4AF37] italic font-serif">EVENT</span>
           </h1>
 
-          <p className="font-jost text-base sm:text-xl md:text-2xl text-white/90 font-normal max-w-3xl mx-auto leading-relaxed">
+          <p className="font-jost text-base sm:text-xl md:text-2xl text-[#111111]/80 dark:text-white/90 font-normal max-w-3xl mx-auto leading-relaxed">
             Tell us about your event. Our team will get back to you to discuss planning, production and execution.
           </p>
         </div>
@@ -266,7 +266,7 @@ export default function PlanYourEventPage() {
             <motion.div
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="p-6 sm:p-12 bg-[#0B0A09] border border-[#D4AF37]/40 rounded-2xl sm:rounded-3xl text-center space-y-6 shadow-[0_0_60px_rgba(212,175,55,0.12)] max-w-2xl mx-auto box-border"
+              className="p-6 sm:p-12 bg-white dark:bg-[#0B0A09] border border-[#D4AF37]/40 rounded-2xl sm:rounded-3xl text-center space-y-6 shadow-xl dark:shadow-[0_0_60px_rgba(212,175,55,0.12)] max-w-2xl mx-auto box-border"
             >
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37] text-[#D4AF37] flex items-center justify-center mx-auto shadow-lg">
                 <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10" />
@@ -276,16 +276,16 @@ export default function PlanYourEventPage() {
                 <span className="font-jost text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
                   CONFIRMATION
                 </span>
-                <h2 className="font-serif-display text-3xl sm:text-5xl font-light uppercase text-white">
+                <h2 className="font-serif-display text-3xl sm:text-5xl font-light uppercase text-[#111111] dark:text-white">
                   EVENT REQUEST RECEIVED
                 </h2>
               </div>
 
-              <div className="inline-block px-5 py-2.5 rounded-xl bg-[#151412] border border-white/15 text-[#D4AF37] font-mono text-sm sm:text-base font-bold tracking-wider">
+              <div className="inline-block px-5 py-2.5 rounded-xl bg-[#F5F2EC] dark:bg-[#151412] border border-black/10 dark:border-white/15 text-[#D4AF37] font-mono text-sm sm:text-base font-bold tracking-wider">
                 Enquiry Reference: {referenceNumber}
               </div>
 
-              <p className="font-jost text-base sm:text-lg text-white/90 max-w-xl mx-auto leading-relaxed">
+              <p className="font-jost text-base sm:text-lg text-[#111111]/80 dark:text-white/90 max-w-xl mx-auto leading-relaxed">
                 Thank you. We've received your event brief. Our event production team will review your requirements and contact you to discuss next steps.
               </p>
 
@@ -300,7 +300,7 @@ export default function PlanYourEventPage() {
                   onClick={() => {
                     setStatus("idle");
                   }}
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-xl border border-white/20 text-white font-jost font-bold text-xs uppercase tracking-wider hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all text-center min-h-[48px] flex items-center justify-center"
+                  className="w-full sm:w-auto px-8 py-3.5 rounded-xl border border-black/20 dark:border-white/20 text-[#111111] dark:text-white font-jost font-bold text-xs uppercase tracking-wider hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all text-center min-h-[48px] flex items-center justify-center"
                 >
                   SUBMIT ANOTHER ENQUIRY
                 </button>
@@ -311,31 +311,31 @@ export default function PlanYourEventPage() {
             <div className="space-y-6 box-border">
               {/* ERROR ALERT */}
               {errorMessage && (
-                <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-300 text-xs sm:text-sm font-jost flex items-center gap-3">
-                  <AlertCircle className="w-5 h-5 shrink-0 text-red-400" />
+                <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-700 dark:text-red-300 text-xs sm:text-sm font-jost flex items-center gap-3">
+                  <AlertCircle className="w-5 h-5 shrink-0 text-red-500 dark:text-red-400" />
                   <span>{errorMessage}</span>
                 </div>
               )}
 
               <form
                 onSubmit={handleSubmit}
-                className="bg-[#0B0A09] border border-white/12 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 lg:p-12 space-y-6 sm:space-y-8 shadow-[0_20px_80px_rgba(0,0,0,0.6)] box-border w-full"
+                className="bg-white dark:bg-[#0B0A09] border border-black/10 dark:border-white/12 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 lg:p-12 space-y-6 sm:space-y-8 shadow-xl dark:shadow-[0_20px_80px_rgba(0,0,0,0.6)] box-border w-full"
               >
-                <div className="border-b border-white/10 pb-4">
+                <div className="border-b border-black/10 dark:border-white/10 pb-4">
                   <span className="font-jost text-xs font-bold text-[#D4AF37] uppercase tracking-wider">
                     EVENT INTAKE BRIEF
                   </span>
-                  <h2 className="font-serif-display text-2xl sm:text-3xl text-white uppercase font-light mt-1">
+                  <h2 className="font-serif-display text-2xl sm:text-3xl text-[#111111] dark:text-white uppercase font-light mt-1">
                     TELL US ABOUT YOUR <span className="text-[#D4AF37]">EVENT</span>
                   </h2>
                 </div>
 
-                {/* RESPONSIVE GRID: 1 column on mobile/tablet (<1024px), 2 columns on desktop (≥1024px) */}
+                {/* RESPONSIVE GRID */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8 font-jost text-sm box-border w-full">
                   
                   {/* 1. FULL NAME * */}
                   <div className="space-y-1.5 w-full box-border">
-                    <label className="block text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       FULL NAME *
                     </label>
                     <input
@@ -345,13 +345,13 @@ export default function PlanYourEventPage() {
                       value={formData.fullName}
                       onChange={handleTextChange}
                       required
-                      className="w-full h-[48px] min-h-[48px] bg-[#141312] border border-white/15 rounded-xl px-4 py-3 text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border"
+                      className="w-full h-[48px] min-h-[48px] bg-[#FAF8F5] dark:bg-[#141312] border border-black/15 dark:border-white/15 rounded-xl px-4 py-3 text-[#111111] dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border"
                     />
                   </div>
 
                   {/* 2. COMPANY / BRAND / ORGANIZATION */}
                   <div className="space-y-1.5 w-full box-border">
-                    <label className="block text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       COMPANY / BRAND / ORGANIZATION
                     </label>
                     <input
@@ -360,13 +360,13 @@ export default function PlanYourEventPage() {
                       placeholder="e.g. Luxury Couture Ltd"
                       value={formData.company}
                       onChange={handleTextChange}
-                      className="w-full h-[48px] min-h-[48px] bg-[#141312] border border-white/15 rounded-xl px-4 py-3 text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border"
+                      className="w-full h-[48px] min-h-[48px] bg-[#FAF8F5] dark:bg-[#141312] border border-black/15 dark:border-white/15 rounded-xl px-4 py-3 text-[#111111] dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border"
                     />
                   </div>
 
                   {/* 3. EMAIL ADDRESS * */}
                   <div className="space-y-1.5 w-full box-border">
-                    <label className="block text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       EMAIL ADDRESS *
                     </label>
                     <input
@@ -376,13 +376,13 @@ export default function PlanYourEventPage() {
                       value={formData.email}
                       onChange={handleTextChange}
                       required
-                      className="w-full h-[48px] min-h-[48px] bg-[#141312] border border-white/15 rounded-xl px-4 py-3 text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border"
+                      className="w-full h-[48px] min-h-[48px] bg-[#FAF8F5] dark:bg-[#141312] border border-black/15 dark:border-white/15 rounded-xl px-4 py-3 text-[#111111] dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border"
                     />
                   </div>
 
                   {/* 4. PHONE / WHATSAPP * */}
                   <div className="space-y-1.5 w-full box-border">
-                    <label className="block text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       PHONE / WHATSAPP *
                     </label>
                     <input
@@ -392,23 +392,23 @@ export default function PlanYourEventPage() {
                       value={formData.phone}
                       onChange={handleTextChange}
                       required
-                      className="w-full h-[48px] min-h-[48px] bg-[#141312] border border-white/15 rounded-xl px-4 py-3 text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border"
+                      className="w-full h-[48px] min-h-[48px] bg-[#FAF8F5] dark:bg-[#141312] border border-black/15 dark:border-white/15 rounded-xl px-4 py-3 text-[#111111] dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border"
                     />
                   </div>
 
                   {/* 5. EVENT TYPE * */}
                   <div className="space-y-1.5 w-full box-border">
-                    <label className="block text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       EVENT TYPE *
                     </label>
                     <select
                       name="eventType"
                       value={formData.eventType}
                       onChange={handleTextChange}
-                      className="w-full h-[48px] min-h-[48px] bg-[#141312] border border-white/15 rounded-xl px-4 py-3 text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border cursor-pointer"
+                      className="w-full h-[48px] min-h-[48px] bg-[#FAF8F5] dark:bg-[#141312] border border-black/15 dark:border-white/15 rounded-xl px-4 py-3 text-[#111111] dark:text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border cursor-pointer"
                     >
                       {EVENT_TYPES.map((t) => (
-                        <option key={t} value={t} className="bg-[#0F0E0D] text-white">
+                        <option key={t} value={t} className="bg-white dark:bg-[#0F0E0D] text-[#111111] dark:text-white">
                           {t}
                         </option>
                       ))}
@@ -417,7 +417,7 @@ export default function PlanYourEventPage() {
 
                   {/* 6. EVENT DATE */}
                   <div className="space-y-1.5 w-full box-border">
-                    <label className="block text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       EVENT DATE
                     </label>
                     <input
@@ -425,23 +425,23 @@ export default function PlanYourEventPage() {
                       name="preferredDate"
                       value={formData.preferredDate}
                       onChange={handleTextChange}
-                      className="w-full h-[48px] min-h-[48px] bg-[#141312] border border-white/15 rounded-xl px-4 py-3 text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border"
+                      className="w-full h-[48px] min-h-[48px] bg-[#FAF8F5] dark:bg-[#141312] border border-black/15 dark:border-white/15 rounded-xl px-4 py-3 text-[#111111] dark:text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border"
                     />
                   </div>
 
                   {/* 7. EXPECTED GUESTS */}
                   <div className="space-y-1.5 w-full box-border">
-                    <label className="block text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       EXPECTED GUESTS
                     </label>
                     <select
                       name="guestCountRange"
                       value={formData.guestCountRange}
                       onChange={handleTextChange}
-                      className="w-full h-[48px] min-h-[48px] bg-[#141312] border border-white/15 rounded-xl px-4 py-3 text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border cursor-pointer"
+                      className="w-full h-[48px] min-h-[48px] bg-[#FAF8F5] dark:bg-[#141312] border border-black/15 dark:border-white/15 rounded-xl px-4 py-3 text-[#111111] dark:text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border cursor-pointer"
                     >
                       {GUEST_RANGES.map((g) => (
-                        <option key={g} value={g} className="bg-[#0F0E0D] text-white">
+                        <option key={g} value={g} className="bg-white dark:bg-[#0F0E0D] text-[#111111] dark:text-white">
                           {g}
                         </option>
                       ))}
@@ -450,7 +450,7 @@ export default function PlanYourEventPage() {
 
                   {/* 8. EVENT LOCATION / CITY */}
                   <div className="space-y-1.5 w-full box-border">
-                    <label className="block text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       EVENT LOCATION / CITY
                     </label>
                     <input
@@ -459,13 +459,13 @@ export default function PlanYourEventPage() {
                       placeholder="e.g. Dubai, Gurgaon, Mumbai, London"
                       value={formData.location}
                       onChange={handleTextChange}
-                      className="w-full h-[48px] min-h-[48px] bg-[#141312] border border-white/15 rounded-xl px-4 py-3 text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border"
+                      className="w-full h-[48px] min-h-[48px] bg-[#FAF8F5] dark:bg-[#141312] border border-black/15 dark:border-white/15 rounded-xl px-4 py-3 text-[#111111] dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border"
                     />
                   </div>
 
                   {/* 9. SERVICES YOU NEED (FULL-WIDTH MULTI-SELECT) */}
                   <div className="lg:col-span-2 space-y-2 pt-1 box-border w-full">
-                    <label className="block text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       SERVICES YOU NEED (MULTI-SELECT)
                     </label>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 box-border w-full">
@@ -478,8 +478,8 @@ export default function PlanYourEventPage() {
                             onClick={() => toggleService(srv)}
                             className={`min-h-[48px] px-3.5 py-2.5 rounded-xl border text-left font-jost text-xs sm:text-sm font-medium transition-all flex items-center justify-between box-border w-full ${
                               selected
-                                ? "bg-[#D4AF37]/15 border-[#D4AF37] text-[#D4AF37] shadow-sm"
-                                : "bg-[#141312] border-white/15 text-white/80 hover:border-white/30"
+                                ? "bg-[#D4AF37]/15 border-[#D4AF37] text-[#D4AF37] shadow-sm font-semibold"
+                                : "bg-white dark:bg-[#141312] border-black/80 dark:border-white/15 text-[#111111] dark:text-white/80 hover:border-black dark:hover:border-white/30"
                             }`}
                           >
                             <span className="truncate pr-1">{srv}</span>
@@ -492,7 +492,7 @@ export default function PlanYourEventPage() {
 
                   {/* 10. TELL US ABOUT YOUR EVENT * (FULL-WIDTH TEXTAREA) */}
                   <div className="lg:col-span-2 space-y-1.5 pt-1 box-border w-full">
-                    <label className="block text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       TELL US ABOUT YOUR EVENT *
                     </label>
                     <textarea
@@ -502,7 +502,7 @@ export default function PlanYourEventPage() {
                       value={formData.eventDescription}
                       onChange={handleTextChange}
                       required
-                      className="w-full bg-[#141312] border border-white/15 rounded-xl p-4 text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base leading-relaxed box-border resize-y min-h-[120px]"
+                      className="w-full bg-[#FAF8F5] dark:bg-[#141312] border border-black/15 dark:border-white/15 rounded-xl p-4 text-[#111111] dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base leading-relaxed box-border resize-y min-h-[120px]"
                     />
                   </div>
 
@@ -511,7 +511,7 @@ export default function PlanYourEventPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4 box-border w-full">
                       {/* CURRENCY SELECTOR */}
                       <div className="space-y-1.5 sm:col-span-1 box-border">
-                        <label className="block text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
+                        <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                           CURRENCY
                         </label>
                         <select
@@ -526,10 +526,10 @@ export default function PlanYourEventPage() {
                               budgetRange: availableRanges[2] || availableRanges[0],
                             }));
                           }}
-                          className="w-full h-[48px] min-h-[48px] bg-[#141312] border border-white/15 rounded-xl px-4 py-3 text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border cursor-pointer"
+                          className="w-full h-[48px] min-h-[48px] bg-[#FAF8F5] dark:bg-[#141312] border border-black/15 dark:border-white/15 rounded-xl px-4 py-3 text-[#111111] dark:text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border cursor-pointer"
                         >
                           {CURRENCIES.map((c) => (
-                            <option key={c.code} value={c.code} className="bg-[#0F0E0D] text-white">
+                            <option key={c.code} value={c.code} className="bg-white dark:bg-[#0F0E0D] text-[#111111] dark:text-white">
                               {c.label}
                             </option>
                           ))}
@@ -538,17 +538,17 @@ export default function PlanYourEventPage() {
 
                       {/* BUDGET RANGE SELECTOR */}
                       <div className="space-y-1.5 sm:col-span-2 box-border">
-                        <label className="block text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
+                        <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                           BUDGET RANGE ({formData.budgetCurrency})
                         </label>
                         <select
                           name="budgetRange"
                           value={formData.budgetRange}
                           onChange={handleTextChange}
-                          className="w-full h-[48px] min-h-[48px] bg-[#141312] border border-white/15 rounded-xl px-4 py-3 text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border cursor-pointer"
+                          className="w-full h-[48px] min-h-[48px] bg-[#FAF8F5] dark:bg-[#141312] border border-black/15 dark:border-white/15 rounded-xl px-4 py-3 text-[#111111] dark:text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border cursor-pointer"
                         >
                           {(BUDGET_RANGES_BY_CURRENCY[formData.budgetCurrency] || BUDGET_RANGES_BY_CURRENCY["AED"]).map((b) => (
-                            <option key={b} value={b} className="bg-[#0F0E0D] text-white">
+                            <option key={b} value={b} className="bg-white dark:bg-[#0F0E0D] text-[#111111] dark:text-white">
                               {b}
                             </option>
                           ))}
@@ -557,9 +557,9 @@ export default function PlanYourEventPage() {
                     </div>
                   </div>
 
-                  {/* 12. ADDITIONAL REQUIREMENTS (FULL-WIDTH TEXTAREA) */}
+                  {/* 12. ADDITIONAL REQUIREMENTS */}
                   <div className="lg:col-span-2 space-y-1.5 pt-1 box-border w-full">
-                    <label className="block text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       ADDITIONAL REQUIREMENTS (OPTIONAL)
                     </label>
                     <textarea
@@ -568,14 +568,13 @@ export default function PlanYourEventPage() {
                       placeholder="Any special requirements, technical constraints, VIP protocols or preferences..."
                       value={formData.additionalRequirements}
                       onChange={handleTextChange}
-                      className="w-full bg-[#141312] border border-white/15 rounded-xl p-4 text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base leading-relaxed box-border resize-y min-h-[90px]"
+                      className="w-full bg-[#FAF8F5] dark:bg-[#141312] border border-black/15 dark:border-white/15 rounded-xl p-4 text-[#111111] dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base leading-relaxed box-border resize-y min-h-[90px]"
                     />
                   </div>
                 </div>
 
-
                 {/* CONSENT & SUBMIT FOOTER */}
-                <div className="border-t border-white/10 pt-6 space-y-6 box-border w-full">
+                <div className="border-t border-black/10 dark:border-white/10 pt-6 space-y-6 box-border w-full">
                   <div className="flex items-start gap-3">
                     <input
                       type="checkbox"
@@ -584,7 +583,7 @@ export default function PlanYourEventPage() {
                       onChange={(e) => setFormData((prev) => ({ ...prev, consent: e.target.checked }))}
                       className="mt-1 w-4 h-4 accent-[#D4AF37] rounded cursor-pointer shrink-0"
                     />
-                    <label htmlFor="consent" className="text-xs sm:text-sm text-white/80 font-jost cursor-pointer leading-relaxed">
+                    <label htmlFor="consent" className="text-xs sm:text-sm text-[#111111]/80 dark:text-white/80 font-jost cursor-pointer leading-relaxed">
                       I agree that FashAI Universal may contact me regarding this event enquiry. Please refer to our{" "}
                       <Link href="/privacy" className="text-[#D4AF37] underline">
                         Privacy Policy

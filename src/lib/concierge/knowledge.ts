@@ -10,7 +10,7 @@ export interface ConciergeKnowledgeResponse {
   quickChips?: QuickChip[];
   navigationTarget?: string;
   detectedRole?: string;
-  startFlow?: "EVENT_PLANNING" | "CREATIVE" | "SPONSORSHIP" | "REGISTRATION" | "CONTACT";
+  startFlow?: "EVENT" | "CREATIVE" | "SPONSORSHIP" | "CONTACT";
 }
 
 export function queryKnowledgeBase(queryText: string, siteConfig?: any): ConciergeKnowledgeResponse {
@@ -21,37 +21,37 @@ export function queryKnowledgeBase(queryText: string, siteConfig?: any): Concier
   const upcomingEventName = siteConfig?.events?.[0]?.title || "LifeStyle 2026";
   const upcomingLocation = siteConfig?.events?.[0]?.location || "Dubai · UAE";
 
-  // 1. GREETINGS & GENERAL BRAND INTENT
+  // 1. GREETINGS & INITIAL WELCOME
   if (q === "hi" || q === "hello" || q === "hey" || q.startsWith("good morning") || q.startsWith("good evening")) {
     return {
-      message: `Hi, welcome to ${brandName}.\nI'm your Event Concierge. How can I help you today?`,
+      message: `Hi, welcome to ${brandName}. I'm your Event Concierge.\n\nWhat can I help you with today?`,
       quickChips: [
-        { id: "qp-plan", label: "Plan an event ✦", actionKey: "START_EVENT_FLOW" },
-        { id: "qp-opp", label: "Explore opportunities ✦", actionKey: "JOIN_NETWORK" },
-        { id: "qp-ask", label: "Ask a question", actionKey: "ASK_QUESTION" },
+        { id: "qp-plan", label: "Plan an event", actionKey: "START_EVENT_FLOW" },
+        { id: "qp-opp", label: "Explore opportunities", actionKey: "JOIN_NETWORK" },
+        { id: "qp-q", label: "Ask a question", actionKey: "ASK_QUESTION" },
       ],
     };
   }
 
-  // 2. EVENT PLANNING INTENT TRIGGER
+  // 2. EVENT PLANNING DIRECT INTENT
   if (
     q.includes("plan an event") ||
     q.includes("organize an event") ||
     q.includes("book an event") ||
-    q.includes("want to organize") ||
-    q.includes("want an event") ||
     q.includes("host an event") ||
-    q.includes("plan event") ||
-    q.includes("event management") ||
-    q.includes("event production")
+    q.includes("create an event") ||
+    q.includes("event planning") ||
+    q.includes("fashion show production")
   ) {
     return {
-      message: "Target event established! I'd be happy to assist you in planning, producing, and executing your event with FashAI Universal.\n\nWhat type of event are you considering?",
-      startFlow: "EVENT_PLANNING",
+      message: "Absolutely. I'd be happy to help you plan it.\n\nWhat type of event are you considering?",
+      startFlow: "EVENT",
       quickChips: [
-        { id: "et-fashion", label: "Fashion Show / Runway", actionKey: "SET_EVENT_TYPE", payload: "Fashion Show" },
-        { id: "et-launch", label: "Brand Launch / Activation", actionKey: "SET_EVENT_TYPE", payload: "Brand Launch" },
-        { id: "et-[#111111]", label: "Corporate Event / Summit", actionKey: "SET_EVENT_TYPE", payload: "Corporate Summit" },
+        { id: "ev-fashion", label: "Fashion Show", actionKey: "SET_EVENT_TYPE", payload: "Fashion Show" },
+        { id: "ev-runway", label: "Runway Presentation", actionKey: "SET_EVENT_TYPE", payload: "Runway Presentation" },
+        { id: "ev-brand", label: "Brand Activation", actionKey: "SET_EVENT_TYPE", payload: "Brand Activation" },
+        { id: "ev-launch", label: "Product Launch", actionKey: "SET_EVENT_TYPE", payload: "Product Launch" },
+        { id: "ev-corp", label: "Corporate Event", actionKey: "SET_EVENT_TYPE", payload: "Corporate Event" },
       ],
     };
   }
@@ -64,109 +64,74 @@ export function queryKnowledgeBase(queryText: string, siteConfig?: any): Concier
     q.includes("who are you")
   ) {
     return {
-      message: `${brandName} is a premier fashion show production and computational experience house connecting designers, talent, luxury brands, and global events across Dubai, the UAE, and India.`,
+      message: `${brandName} is an event management, fashion production, and creative orchestration platform connecting global brands, designers, and talent across Dubai, UAE, and India.\n\nAre you looking to plan an event or explore creative opportunities?`,
       quickChips: [
-        { id: "qp-plan", label: "Plan an event ✦", actionKey: "START_EVENT_FLOW" },
-        { id: "qp-services", label: "Our Services", actionKey: "NAVIGATE", payload: "/services" },
-        { id: "qp-join", label: "Join Network", actionKey: "JOIN_NETWORK" },
-      ],
-    };
-  }
-
-  if (q.includes("how can you help") || q.includes("what can i do here") || q.includes("i want to know more")) {
-    return {
-      message: `I can guide you through planning your custom event, exploring upcoming runway showcases, applying to our global talent network, or establishing a luxury brand partnership.`,
-      quickChips: [
-        { id: "qp-plan", label: "Plan an event ✦", actionKey: "START_EVENT_FLOW" },
+        { id: "qp-plan", label: "Plan an event", actionKey: "START_EVENT_FLOW" },
         { id: "qp-opp", label: "Explore opportunities", actionKey: "JOIN_NETWORK" },
-        { id: "qp-contact", label: "Contact Concierge", actionKey: "CONTACT_TEAM" },
       ],
     };
   }
 
-  // 3. LOCATION & SERVICES INQUIRIES
+  if (q.includes("services") || q.includes("what services") || q.includes("what do you offer")) {
+    return {
+      message: `${brandName} delivers full event planning & production, creative direction, runway choreography, brand activations, and talent coordination.\n\nAre you looking for a specific service for an upcoming event?`,
+      quickChips: [
+        { id: "qp-plan", label: "Plan an event", actionKey: "START_EVENT_FLOW" },
+        { id: "qp-nav-serv", label: "View services ↗", actionKey: "NAVIGATE", payload: "/services" },
+      ],
+    };
+  }
+
+  // 3. LOCATION & PRESENCE
   if (q.includes("where are you based") || q.includes("location") || q.includes("where is fashai")) {
     return {
-      message: `${brandName} operates internationally with strategic hubs in Dubai, United Arab Emirates, and India. Are you planning an event in one of these regions?`,
+      message: `${brandName} operates internationally with primary hubs in Dubai (UAE) and India.\n\nWhere are you planning your upcoming event?`,
       quickChips: [
-        { id: "qp-plan-dubai", label: "Plan event in Dubai", actionKey: "START_EVENT_FLOW", payload: "Dubai" },
-        { id: "qp-contact", label: "Contact team", actionKey: "CONTACT_TEAM" },
+        { id: "loc-dubai", label: "Dubai / UAE", actionKey: "SET_LOCATION", payload: "Dubai · UAE" },
+        { id: "loc-india", label: "India", actionKey: "SET_LOCATION", payload: "India" },
+        { id: "loc-other", label: "Other location", actionKey: "SET_LOCATION", payload: "International" },
       ],
     };
   }
 
-  if (q.includes("what services") || q.includes("services do you offer") || q.includes("services you provide") || q.includes("service list")) {
-    return {
-      message: `${brandName} delivers end-to-end event planning & production, runway creative direction, talent & model coordination, AI computational design, and luxury brand activations.\n\nAre you looking for a specific service for an upcoming event?`,
-      quickChips: [
-        { id: "qp-plan", label: "Plan an event ✦", actionKey: "START_EVENT_FLOW" },
-        { id: "qp-services-page", label: "View Services Page ↗", actionKey: "NAVIGATE", payload: "/services" },
-      ],
-    };
-  }
-
-  // 4. EVENT QUERIES (LifeStyle, Runway, Upcoming)
+  // 4. EVENT QUERIES (LifeStyle 2026, Upcoming)
   if (
     q.includes("what events") ||
     q.includes("upcoming events") ||
-    q.includes("what is upcoming") ||
     q.includes("tell me about lifestyle") ||
-    q.includes("what is lifestyle") ||
-    q.includes("tell me about runway") ||
-    q.includes("runway event") ||
-    q.includes("lifestyle event") ||
-    q.includes("event details") ||
-    q === "show upcoming" ||
-    q === "upcoming"
+    q.includes("lifestyle 2026")
   ) {
     return {
-      message: `${upcomingEventName} is our upcoming flagship international fashion & lifestyle experience in ${upcomingLocation}, featuring runway presentations, couture showcases, and global VIP talent.`,
+      message: `${upcomingEventName} is our flagship upcoming fashion & lifestyle experience in ${upcomingLocation}, bringing together runway showcases, luxury activations, and global talent.\n\nWould you like to register, sponsor, or showcase your brand?`,
       quickChips: [
-        { id: "qp-nav-upcoming", label: "View Upcoming Page ↗", actionKey: "NAVIGATE", payload: "/upcoming" },
-        { id: "qp-reg", label: "Enquire / Attend", actionKey: "START_REGISTRATION" },
-        { id: "qp-sponsor", label: "Sponsorship Enquiry", actionKey: "START_SPONSORSHIP" },
+        { id: "qp-reg", label: "Register / Enquire", actionKey: "START_REGISTRATION" },
+        { id: "qp-sponsor", label: "Brand Sponsorship", actionKey: "START_SPONSORSHIP" },
+        { id: "qp-upcoming", label: "View event page ↗", actionKey: "NAVIGATE", payload: "/upcoming" },
       ],
       navigationTarget: "/upcoming",
     };
   }
 
-  // Specific Date/Venue Guardrail
-  if (
-    q.includes("where is the event") ||
-    q.includes("when is the event") ||
-    q.includes("exact date") ||
-    q.includes("exact venue") ||
-    q.includes("ticket price") ||
-    q.includes("ticket cost")
-  ) {
-    return {
-      message: "Venue and schedule details are shared with registered partners and guests. Would you like to register your interest with our Concierge team?",
-      quickChips: [
-        { id: "qp-reg", label: "Register interest", actionKey: "START_REGISTRATION" },
-        { id: "qp-sponsor", label: "Sponsorship", actionKey: "START_SPONSORSHIP" },
-      ],
-    };
-  }
-
-  // 5. TALENT & ROLES (DESIGNER, MODEL, MAKEUP, STYLIST, CREATOR, CELEBRITY)
+  // 5. DESIGNER ROLE & APPLICATION
   if (
     q.includes("designer") ||
     q.includes("fashion designer") ||
-    q.includes("showcase my designs") ||
     q.includes("i am a designer") ||
-    q.includes("i'm a designer")
+    q.includes("i'm a designer") ||
+    q.includes("showcase my collection")
   ) {
     return {
-      message: "Great! Are you looking to participate in an upcoming runway showcase, present your collection, or connect with the FashAI team?",
+      message: "Great! Are you looking to showcase a collection in an upcoming runway presentation, join our designer network, or connect with the team?",
       detectedRole: "fashion_designer",
       startFlow: "CREATIVE",
       quickChips: [
-        { id: "qp-start-designer", label: "Showcase collection", actionKey: "START_ROLE_APP", payload: "fashion_designer" },
-        { id: "qp-sponsor", label: "Brand partnership", actionKey: "START_SPONSORSHIP" },
+        { id: "qp-des-show", label: "Showcase collection", actionKey: "START_ROLE_APP", payload: "fashion_designer" },
+        { id: "qp-des-team", label: "Connect with team", actionKey: "CONTACT_TEAM" },
       ],
     };
   }
 
+  // 6. MODEL ROLE & APPLICATION
   if (
     q.includes("model") ||
     q.includes("become a model") ||
@@ -175,98 +140,73 @@ export function queryKnowledgeBase(queryText: string, siteConfig?: any): Concier
     q.includes("i'm a model")
   ) {
     return {
-      message: "Wonderful! We coordinate models for runway showcases, brand shoots, and global events. Would you like to submit your portfolio to our network?",
+      message: "Awesome. We casting models for upcoming runway presentations and brand campaigns. Would you like to submit your portfolio?",
       detectedRole: "model",
       startFlow: "CREATIVE",
       quickChips: [
-        { id: "qp-start-model", label: "Submit model profile", actionKey: "START_ROLE_APP", payload: "model" },
+        { id: "qp-mod-sub", label: "Submit portfolio", actionKey: "START_ROLE_APP", payload: "model" },
+        { id: "qp-mod-other", label: "Explore other roles", actionKey: "JOIN_NETWORK" },
       ],
     };
   }
 
-  if (q.includes("makeup") || q.includes("make up") || q.includes("makeup artist")) {
+  // 7. MAKEUP & STYLIST & CREATOR ROLES
+  if (q.includes("makeup") || q.includes("stylist") || q.includes("creator") || q.includes("influencer")) {
+    const detectedRole = q.includes("makeup") ? "makeup_artist" : q.includes("stylist") ? "fashion_stylist" : "influencer_creator";
     return {
-      message: "Applications are open for editorial and runway makeup artists across Dubai and international editions. Would you like to submit your work?",
-      detectedRole: "makeup_artist",
+      message: "We welcome creative talent and visionaries across our international events. Would you like to start your application?",
+      detectedRole,
       startFlow: "CREATIVE",
       quickChips: [
-        { id: "qp-start-makeup", label: "Submit MUA details", actionKey: "START_ROLE_APP", payload: "makeup_artist" },
+        { id: "qp-cr-sub", label: "Start application", actionKey: "START_ROLE_APP", payload: detectedRole },
       ],
     };
   }
 
-  if (q.includes("stylist") || q.includes("fashion stylist") || q.includes("styling")) {
+  // 8. SPONSORSHIP & PARTNERSHIP
+  if (q.includes("sponsor") || q.includes("sponsorship") || q.includes("brand partner") || q.includes("collaborate")) {
     return {
-      message: "We collaborate with editorial and fashion stylists for runway production and brand activations. Would you like to apply to our network?",
-      detectedRole: "fashion_stylist",
-      startFlow: "CREATIVE",
-      quickChips: [
-        { id: "qp-start-stylist", label: "Submit stylist profile", actionKey: "START_ROLE_APP", payload: "fashion_stylist" },
-      ],
-    };
-  }
-
-  if (q.includes("influencer") || q.includes("creator") || q.includes("content creator")) {
-    return {
-      message: "We collaborate with fashion creators and influencers for event access and brand partnerships. Would you like to connect with our media team?",
-      detectedRole: "influencer_creator",
-      startFlow: "CREATIVE",
-      quickChips: [
-        { id: "qp-start-creator", label: "Apply as Creator", actionKey: "START_ROLE_APP", payload: "influencer_creator" },
-      ],
-    };
-  }
-
-  // 6. SPONSORSHIP & BRAND PARTNERSHIPS
-  if (
-    q.includes("sponsor") ||
-    q.includes("sponsorship") ||
-    q.includes("collaborate") ||
-    q.includes("brand partner") ||
-    q.includes("work with you") ||
-    q.includes("partnership")
-  ) {
-    return {
-      message: "FashAI Universal offers title, runway showcase, media, and tech sponsorship opportunities. Is this for a brand partnership, event sponsorship, or showcase collaboration?",
+      message: `We offer title, runway showcase, media, and technology partnerships for ${upcomingEventName}.\n\nIs this for a brand partnership, event sponsorship, or media collaboration?`,
       startFlow: "SPONSORSHIP",
       quickChips: [
-        { id: "qp-start-sp", label: "Start sponsorship enquiry", actionKey: "START_SPONSORSHIP" },
-        { id: "qp-contact", label: "Contact Concierge", actionKey: "CONTACT_TEAM" },
+        { id: "sp-brand", label: "Brand Partnership", actionKey: "START_SPONSORSHIP" },
+        { id: "sp-event", label: "Event Sponsorship", actionKey: "START_SPONSORSHIP" },
+        { id: "sp-media", label: "Media Collaboration", actionKey: "START_SPONSORSHIP" },
       ],
     };
   }
 
-  // 7. GALLERY & VISUAL ARCHIVE
-  if (q.includes("gallery") || q.includes("photos") || q.includes("previous events") || q.includes("lookbook") || q.includes("archive")) {
+  // 9. GALLERY & ARCHIVE
+  if (q.includes("gallery") || q.includes("photos") || q.includes("past events") || q.includes("work")) {
     return {
-      message: "Our Visual Archive showcases moments across Runway & Stage, Couture Details, and VIP Experience.",
+      message: "Our Visual Archive features moments from past runway presentations, couture details, and luxury activations.\n\nWould you like to browse the gallery or plan your own event?",
       quickChips: [
-        { id: "qp-nav-gallery", label: "View Visual Archive ↗", actionKey: "NAVIGATE", payload: "/gallery" },
-        { id: "qp-events", label: "Upcoming Events", actionKey: "EXPLORE_EVENTS" },
+        { id: "qp-gal-link", label: "View Visual Archive ↗", actionKey: "NAVIGATE", payload: "/gallery" },
+        { id: "qp-gal-plan", label: "Plan an event", actionKey: "START_EVENT_FLOW" },
       ],
       navigationTarget: "/gallery",
     };
   }
 
-  // 8. CONTACT & REACH OUT
-  if (q.includes("contact") || q.includes("reach out") || q.includes("speak to someone") || q.includes("talk to human")) {
+  // 10. CONTACT DIRECT
+  if (q.includes("contact") || q.includes("email") || q.includes("phone") || q.includes("speak to someone")) {
     return {
-      message: "You can reach the FashAI Universal Concierge team directly or submit a message here.",
+      message: "You can reach our senior Concierge team directly for custom event inquiries or brand discussions.\n\nHow can we help you today?",
       quickChips: [
-        { id: "qp-start-contact", label: "Send a message", actionKey: "START_CONTACT" },
-        { id: "qp-nav-contact", label: "Contact Page ↗", actionKey: "NAVIGATE", payload: "/contact" },
+        { id: "qp-ct-send", label: "Send a message", actionKey: "START_CONTACT" },
+        { id: "qp-ct-link", label: "View contact page ↗", actionKey: "NAVIGATE", payload: "/contact" },
       ],
-      navigationTarget: "/contact",
     };
   }
 
-  // 9. CONVERSATIONAL FALLBACK (NEVER BLIND ASSUMPTION OR DUMP OF 6 CHIPS)
+  // 11. CONVERSATIONAL FALLBACK (NEVER robotic or Menu-heavy)
   return {
-    message: "I'd be happy to help with that! Could you tell me a bit more about what you're looking for — are you planning an event, exploring talent opportunities, or reaching out for a brand collaboration?",
+    message: "That sounds interesting! Could you tell me a little more about what you have in mind?",
     quickChips: [
-      { id: "qp-plan", label: "Plan an event ✦", actionKey: "START_EVENT_FLOW" },
-      { id: "qp-opp", label: "Explore opportunities ✦", actionKey: "JOIN_NETWORK" },
-      { id: "qp-sponsor", label: "Brand partnership ✦", actionKey: "START_SPONSORSHIP" },
+      { id: "fb-plan", label: "Plan an event", actionKey: "START_EVENT_FLOW" },
+      { id: "fb-opp", label: "Explore opportunities", actionKey: "JOIN_NETWORK" },
+      { id: "fb-contact", label: "Contact team", actionKey: "START_CONTACT" },
     ],
   };
 }
+
