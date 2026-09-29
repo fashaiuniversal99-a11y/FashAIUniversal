@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, HelpCircle, Sparkles } from "lucide-react";
+import { ChevronDown, HelpCircle } from "lucide-react";
 
 interface FaqItem {
   question: string;
@@ -36,6 +36,21 @@ const FAQS: FaqItem[] = [
     answer: "Brands, sponsors, and clients can submit requirements directly via our Create Your Own Event or Contact section on the website. Our event production team reviews every submission promptly.",
     category: "PARTNERSHIPS & INQUIRIES",
   },
+  {
+    question: "WHAT TYPES OF EVENTS CAN FASHAI UNIVERSAL PLAN AND MANAGE?",
+    answer: "FashAI Universal plans and produces a wide spectrum of luxury events, including fashion shows, runway presentations, lifestyle events, brand activations, product launches, corporate galas, and bespoke brand experiences across India and the UAE.",
+    category: "EVENT FORMATS",
+  },
+  {
+    question: "CAN FASHAI UNIVERSAL MANAGE AN EVENT FROM CONCEPT TO EXECUTION?",
+    answer: "Yes. We provide complete end-to-end event management covering every stage of the workflow: Concept → Planning → Production → Talent/Creative Coordination → On-site Execution. Clients can hire FashAI Universal to handle full production seamlessly.",
+    category: "END-TO-END WORKFLOW",
+  },
+  {
+    question: "CAN BRANDS AND EVENT CLIENTS HIRE TALENT THROUGH FASHAI UNIVERSAL?",
+    answer: "Yes. While creative professionals can apply to join our global network, corporate clients and brand partners can directly engage and hire top-tier talent through the FashAI ecosystem, including Designers, Models, Makeup Artists, Fashion Stylists, and Creators for their events and productions.",
+    category: "TALENT & BRAND HIRING",
+  },
 ];
 
 export default function FaqSection() {
@@ -57,11 +72,11 @@ export default function FaqSection() {
             QUESTIONS &amp; <span className="font-serif italic text-brand-yellow-golden">ANSWERS</span>
           </h2>
           <p className="font-sans text-base sm:text-lg md:text-xl lg:text-2xl text-brand-platinum/90 font-light max-w-3xl mx-auto leading-relaxed">
-            Key information regarding FashAI Universal, event participation, talent applications, and sponsorship enquiries.
+            Key information regarding FashAI Universal event management, production services, talent hiring, and sponsorship inquiries.
           </p>
         </div>
 
-        {/* 3-Question Accordion List */}
+        {/* 8-Question Accordion List */}
         <div className="space-y-5">
           {FAQS.map((item, idx) => {
             const isOpen = openIndex === idx;
@@ -78,7 +93,7 @@ export default function FaqSection() {
                   <div className="flex items-center gap-3.5">
                     <HelpCircle className="w-5 h-5 sm:w-7 sm:h-7 text-brand-yellow-golden shrink-0" />
                     <div>
-                      <h3 className="font-serif-display text-[#111111] dark:text-white uppercase text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light leading-tight">
+                      <h3 className="font-serif-display text-brand-white uppercase text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light leading-tight">
                         {item.question}
                       </h3>
                     </div>
@@ -112,3 +127,4 @@ export default function FaqSection() {
     </section>
   );
 }
+
