@@ -1,5 +1,13 @@
 [
   {
+    "id": "log_1790760340556_ej2y9",
+    "category": "CONTENT",
+    "action": "Received new Event Inquiry FI-2026-77668",
+    "actor": "Anupam",
+    "timestamp": "2026-09-30T09:25:40.556Z",
+    "details": "Event: Brand Activation"
+  },
+  {
     "id": "log_1790705350271_1pua7",
     "category": "CONTENT",
     "action": "Received new Event Inquiry FI-2026-70281",
