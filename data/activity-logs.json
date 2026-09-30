@@ -1,5 +1,29 @@
 [
   {
+    "id": "log_1790796442451_toq4m",
+    "category": "AUTH",
+    "action": "Admin logged out",
+    "actor": "Admin",
+    "timestamp": "2026-09-30T19:27:22.451Z",
+    "details": ""
+  },
+  {
+    "id": "log_1790796408427_wju24",
+    "category": "AUTH",
+    "action": "Successful admin login",
+    "actor": "FashAIadmin",
+    "timestamp": "2026-09-30T19:26:48.427Z",
+    "details": "IP ::1"
+  },
+  {
+    "id": "log_1790796388035_8bnjr",
+    "category": "AUTH",
+    "action": "Admin logged out",
+    "actor": "Admin",
+    "timestamp": "2026-09-30T19:26:28.035Z",
+    "details": ""
+  },
+  {
     "id": "log_1790778877969_abxgf",
     "category": "AUTH",
     "action": "Successful admin login",
