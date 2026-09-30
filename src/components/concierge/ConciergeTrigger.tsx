@@ -2,8 +2,8 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import { X, Sparkles } from "lucide-react";
+import { Sparkles, X } from "lucide-react";
+import FashAIChatbotLogo from "./FashAIChatbotLogo";
 
 interface ConciergeTriggerProps {
   isOpen: boolean;
@@ -155,16 +155,8 @@ export default function ConciergeTrigger({ isOpen, onToggle }: ConciergeTriggerP
       >
         {!isOpen ? (
           <div className="relative z-10 w-full h-full p-1 flex items-center justify-center overflow-visible">
-            {/* CONTINUOUS CLOCKWISE ROTATION LOGO */}
-            <div className="relative w-full h-full animate-chatbot-spin flex items-center justify-center rounded-full overflow-hidden">
-              <Image
-                src="/assets/brand/chatbot_logo.png"
-                alt="FashAI Event Concierge"
-                fill
-                priority
-                sizes="(max-width: 640px) 52px, 60px"
-                className="object-contain p-0.5 rounded-full"
-              />
+            <div className="relative w-full h-full flex items-center justify-center rounded-full overflow-hidden">
+              <FashAIChatbotLogo size={48} className="animate-chatbot-spin" />
             </div>
 
             {/* GREEN ONLINE STATUS INDICATOR DOT */}

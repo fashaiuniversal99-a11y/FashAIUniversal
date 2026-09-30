@@ -2,11 +2,11 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, ArrowUpRight } from "lucide-react";
 import { useSiteConfig } from "@/context/SiteConfigContext";
 import { queryKnowledgeBase, QuickChip, ConciergeKnowledgeResponse } from "@/lib/concierge/knowledge";
+import FashAIChatbotLogo from "./FashAIChatbotLogo";
 
 interface MessageItem {
   id: string;
@@ -72,12 +72,14 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
         {
           id: "msg-init",
           sender: "bot",
-          text: "Hi, welcome to FashAI Universal.\nI'm your Event Concierge.\n\nHow can I help you today?",
+          text: "Welcome to FashAI Event Concierge ✨\nHow can our production & concierge team assist your event today?",
           timestamp: time,
           quickChips: [
-            { id: "qp-plan", label: "Plan an event", actionKey: "START_EVENT_FLOW" },
-            { id: "qp-opp", label: "Explore opportunities", actionKey: "JOIN_NETWORK" },
-            { id: "qp-q", label: "Ask a question", actionKey: "ASK_QUESTION" },
+            { id: "qp-plan", label: "Plan an Event ✦", actionKey: "START_EVENT_FLOW" },
+            { id: "qp-events", label: "LifeStyle 2026 Dubai ✦", actionKey: "EXPLORE_EVENTS" },
+            { id: "qp-[#services]", label: "Explore Services ✦", actionKey: "NAVIGATE", payload: "/services" },
+            { id: "qp-join", label: "Book Talent / Network ✦", actionKey: "JOIN_NETWORK" },
+            { id: "qp-contact", label: "Contact Concierge ✦", actionKey: "CONTACT_TEAM" },
           ],
         },
       ]);
@@ -404,6 +406,15 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
         setFlowData((prev) => ({ ...prev, location: loc }));
         return {
           text: `Great, ${loc}.\n\nDo you have a target date or month in mind?`,
+        };
+      } else if (chip.actionKey === "EXPLORE_EVENTS") {
+        return {
+          text: "LifeStyle 2026 is our upcoming flagship international fashion & lifestyle experience in Dubai. Registrations & sponsorships are open.",
+          chips: [
+            { id: "nav-plan", label: "Plan an Event ✦", actionKey: "START_EVENT_FLOW" },
+            { id: "nav-upcoming", label: "View upcoming page ↗", actionKey: "NAVIGATE", payload: "/upcoming" },
+            { id: "nav-gallery", label: "Visual Archive / Gallery ↗", actionKey: "NAVIGATE", payload: "/gallery" },
+          ],
         };
       } else if (chip.actionKey === "JOIN_NETWORK") {
         return {
@@ -745,23 +756,16 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
           exit={{ opacity: 0, y: 24, scale: 0.92 }}
           transition={{ type: "spring", stiffness: 350, damping: 26 }}
           style={{ willChange: "transform, opacity" }}
-          className="relative z-[242] pointer-events-auto w-[calc(100vw-1rem)] sm:w-[440px] h-[84vh] sm:h-[580px] max-h-[640px] bg-[#FAF8F5]/90 dark:bg-[#0C0B0A]/90 border border-white/20 dark:border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.35)] dark:shadow-[0_25px_90px_rgba(0,0,0,0.95)] backdrop-blur-3xl flex flex-col justify-between overflow-hidden rounded-[28px] sm:rounded-[36px] text-[#111111] dark:text-white mb-2 mr-2 sm:mb-0 sm:mr-0"
+          className="relative z-[242] pointer-events-auto w-[calc(100vw-1.5rem)] sm:w-[460px] h-[84vh] sm:h-[580px] max-h-[640px] bg-[#FAF8F5]/92 dark:bg-[#0C0B0A]/92 border border-white/20 dark:border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.35)] dark:shadow-[0_25px_90px_rgba(0,0,0,0.95)] backdrop-blur-3xl flex flex-col justify-between overflow-hidden rounded-[28px] sm:rounded-[36px] text-[#111111] dark:text-white mb-3 mr-3 sm:mb-0 sm:mr-0"
           role="dialog"
           aria-label="FashAI Event Concierge"
         >
-          {/* Header Bar with Circular Logo & Clean Title */}
-          <div className="flex items-center justify-between px-6 py-4.5 border-b border-black/5 dark:border-white/5 bg-transparent shrink-0">
+          {/* Header Bar with Shared Circular Logo & Clean Title */}
+          <div className="flex items-center justify-between px-6 py-4 border-b border-black/5 dark:border-white/5 bg-transparent shrink-0">
             <div className="flex items-center gap-3">
-              {/* Circular Chatbot Header Logo */}
-              <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#111111] dark:bg-[#161514] border border-[#D4AF37]/40 flex items-center justify-center p-1 shadow-sm shrink-0 overflow-hidden">
-                <Image
-                  src="/assets/brand/chatbot_logo.png"
-                  alt="FashAI Logo"
-                  width={30}
-                  height={30}
-                  className="object-contain rounded-full"
-                />
-              </div>
+              {/* Circular Shared Logo Component */}
+              <FashAIChatbotLogo size={38} className="border border-[#D4AF37]/40 shadow-xs" />
+              
               <div className="flex flex-col">
                 <div className="flex items-center gap-2">
                   <span className="font-jost text-sm font-bold uppercase tracking-wider text-[#111111] dark:text-white">
@@ -772,7 +776,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2E936F]" />
                   </span>
                 </div>
-                <span className="font-jost text-[11px] text-[#D4AF37] font-medium tracking-wide">
+                <span className="font-jost text-[11px] text-[#D4AF37] font-semibold tracking-wide">
                   Event Concierge
                 </span>
               </div>
@@ -798,19 +802,12 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                 className={`flex flex-col ${msg.sender === "user" ? "items-end" : "items-start"}`}
               >
                 {msg.sender === "bot" ? (
-                  /* Bot Message with Circular Logo Avatar */
+                  /* Bot Message with Circular Shared Logo Avatar */
                   <div className="flex items-start gap-2.5 max-w-[92%]">
-                    <div className="w-6.5 h-6.5 rounded-full overflow-hidden shrink-0 border border-[#D4AF37]/50 relative bg-[#111111] dark:bg-[#161514] flex items-center justify-center p-0.5 mt-0.5 shadow-xs">
-                      <Image
-                        src="/assets/brand/chatbot_logo.png"
-                        alt="FashAI Event Concierge"
-                        width={20}
-                        height={20}
-                        className="object-contain rounded-full"
-                      />
-                    </div>
+                    <FashAIChatbotLogo size={28} className="border border-[#D4AF37]/40 shadow-xs mt-0.5" />
+                    
                     <div className="flex flex-col items-start min-w-0">
-                      <div className="px-4.5 py-3.5 text-xs leading-relaxed font-jost bg-white/90 dark:bg-[#161514]/90 border border-black/5 dark:border-white/10 text-[#111111] dark:text-white/95 rounded-[22px] rounded-tl-xs shadow-xs">
+                      <div className="px-4.5 py-3.5 text-xs leading-relaxed font-jost bg-white/90 dark:bg-[#161514]/90 border border-black/5 dark:border-white/10 text-[#111111] dark:text-white/95 rounded-[20px] rounded-tl-xs shadow-xs">
                         <p className="whitespace-pre-line">{msg.text}</p>
 
                         {/* Review Summary Card */}
@@ -861,7 +858,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                               }}
                               className="px-4 py-2 rounded-full text-[11px] font-jost font-medium tracking-wide transition-all border bg-[#D4AF37]/10 text-[#D4AF37] border-[#D4AF37]/40 dark:border-[#D4AF37]/50 hover:bg-[#D4AF37] hover:text-black hover:scale-105 active:scale-95 disabled:opacity-40 shadow-xs"
                             >
-                              ( {chip.label} )
+                              {chip.label}
                             </button>
                           ))}
                         </div>
@@ -871,7 +868,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                 ) : (
                   /* User Message (Soft Gold Accent, Zero Orange) */
                   <div className="flex flex-col items-end max-w-[85%] self-end">
-                    <div className="px-4.5 py-3.5 text-xs leading-relaxed font-jost bg-[#FAF8F3] dark:bg-[#1E1C18] border border-[#D4AF37]/50 dark:border-[#D4AF37]/40 text-[#111111] dark:text-white/95 rounded-[22px] rounded-tr-xs shadow-xs font-medium">
+                    <div className="px-4.5 py-3.5 text-xs leading-relaxed font-jost bg-[#FAF8F3] dark:bg-[#1E1C18] border border-[#D4AF37]/50 dark:border-[#D4AF37]/40 text-[#111111] dark:text-white/95 rounded-[20px] rounded-tr-xs shadow-xs font-medium">
                       <p className="whitespace-pre-line">{msg.text}</p>
                     </div>
                     <span className="text-[9px] font-jost text-[#111111]/40 dark:text-white/40 mt-1 px-2 text-right">
@@ -882,7 +879,7 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
               </motion.div>
             ))}
 
-            {/* STAGGERED 3-DOT TYPING ANIMATION WITH LOGO AVATAR */}
+            {/* STAGGERED 3-DOT TYPING ANIMATION WITH SHARED LOGO AVATAR */}
             {isTyping && (
               <motion.div
                 initial={{ opacity: 0, y: 4 }}
@@ -894,16 +891,9 @@ export default function ConciergePanel({ isOpen, onClose }: ConciergePanelProps)
                 aria-live="polite"
                 aria-label="Event Concierge is typing"
               >
-                <div className="w-6.5 h-6.5 rounded-full overflow-hidden shrink-0 border border-[#D4AF37]/50 relative bg-[#111111] dark:bg-[#161514] flex items-center justify-center p-0.5 mt-0.5 shadow-xs">
-                  <Image
-                    src="/assets/brand/chatbot_logo.png"
-                    alt="FashAI"
-                    width={20}
-                    height={20}
-                    className="object-contain rounded-full"
-                  />
-                </div>
-                <div className="bg-white/90 dark:bg-[#161514]/90 border border-black/5 dark:border-[#D4AF37]/40 px-4.5 py-3 rounded-[22px] rounded-tl-xs shadow-xs flex items-center gap-2">
+                <FashAIChatbotLogo size={26} className="border border-[#D4AF37]/40 shadow-xs mt-0.5" />
+                
+                <div className="bg-white/90 dark:bg-[#161514]/90 border border-black/5 dark:border-[#D4AF37]/40 px-4.5 py-3 rounded-[20px] rounded-tl-xs shadow-xs flex items-center gap-2">
                   <span className="sr-only">Event Concierge is typing...</span>
                   <span className="hidden motion-reduce:inline text-xs font-jost text-[#D4AF37]">typing...</span>
                   <div className="flex items-center gap-1.5 motion-reduce:hidden py-0.5">
