@@ -97,24 +97,9 @@ export default function Hero() {
               transition: { staggerChildren: 0.12, delayChildren: 0.1 }
             }
           }}
-          className="flex flex-col items-center justify-center text-center w-full space-y-6 sm:space-y-8"
+          className="flex flex-col items-center justify-center text-center w-full space-y-4 sm:space-y-6"
         >
-          {/* 1. TOP EVENT LABEL: LIFESTYLE / EVENT PLATFORM */}
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 16 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }
-            }}
-            className="flex items-center justify-center gap-3.5 w-full max-w-xs sm:max-w-md"
-          >
-            <span className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#D4AF37]/70 to-[#D4AF37]" />
-            <span className="text-xs sm:text-sm font-jost tracking-[0.22em] text-[#D4AF37] font-semibold uppercase whitespace-nowrap drop-shadow-[0_0_12px_rgba(212,175,55,0.45)]">
-              LIFESTYLE / EVENT PLATFORM
-            </span>
-            <span className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#D4AF37]/70 to-[#D4AF37]" />
-          </motion.div>
-
-          {/* 2. MAIN HEADLINE TYPOGRAPHY: DM Serif Display (Cinematic Glamour) */}
+          {/* 1. MAIN HEADLINE TYPOGRAPHY: DM Serif Display */}
           <motion.h1
             variants={{
               hidden: { opacity: 0, y: 24 },
@@ -125,13 +110,13 @@ export default function Hero() {
               fontSize: "clamp(38px, 6.2vw, 100px)",
               lineHeight: 1.05,
             }}
-            className="font-serif-display text-center font-normal tracking-tight max-w-[1080px] mx-auto my-2 select-none"
+            className="font-serif-display text-center font-normal tracking-tight max-w-[1080px] mx-auto my-1 select-none"
           >
             <span className="block text-brand-white keep-white drop-shadow-[0_12px_36px_rgba(0,0,0,0.95)]">
               Everything you need
             </span>
             <span className="block text-brand-white/95 keep-white drop-shadow-[0_12px_36px_rgba(0,0,0,0.95)]">
-              to create
+              to Create
             </span>
             <span
               style={{
@@ -145,7 +130,22 @@ export default function Hero() {
             </span>
           </motion.h1>
 
-          {/* ELEGANT GOLD DIVIDER ACCENT */}
+          {/* 2. SUPPORTING SUBHEADING */}
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 16 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } }
+            }}
+            style={{
+              fontSize: "clamp(17px, 1.4vw, 22px)",
+              lineHeight: 1.55,
+            }}
+            className="font-jost text-brand-white/90 keep-white text-center font-normal tracking-wide max-w-[360px] sm:max-w-xl md:max-w-2xl mx-auto pt-1 sm:pt-2 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
+          >
+            Fashion Shows, Corporate Summits, and Tech Launches, Planned and Delivered End to End.
+          </motion.p>
+
+          {/* 3. ELEGANT GOLD DIVIDER ACCENT */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 16 },
@@ -158,24 +158,6 @@ export default function Hero() {
             <span className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#D4AF37]/60 to-[#D4AF37]" />
           </motion.div>
 
-          {/* 3. BRANDING LOGO (ENLARGED & POSITIONED BEFORE CTAs) */}
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 16 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } }
-            }}
-            className="flex flex-col items-center justify-center py-2 sm:py-3 transition-opacity"
-          >
-            <Image
-              src="/assets/brand/Final_Powered_by_logo.png"
-              alt="Arav Innovation Logo"
-              width={520}
-              height={140}
-              priority
-              className="h-10 xs:h-12 sm:h-16 md:h-20 lg:h-24 w-auto max-w-[85vw] sm:max-w-[460px] md:max-w-[540px] object-contain brightness-110 drop-shadow-[0_0_24px_rgba(212,175,55,0.45)]"
-            />
-          </motion.div>
-
           {/* 4. HORIZONTALLY ALIGNED ACTION CTAs */}
           <motion.div
             variants={{
@@ -183,7 +165,7 @@ export default function Hero() {
               visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } }
             }}
             style={{ willChange: "transform, opacity" }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto pt-2 sm:pt-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto pt-2 sm:pt-3"
           >
             <DistortionCTAButton
               href="/plan-your-event"
@@ -198,6 +180,24 @@ export default function Hero() {
               variant="secondary"
               className="w-full sm:w-auto min-w-[210px]"
               dataCursor="view"
+            />
+          </motion.div>
+
+          {/* 5. BRANDING LOGO */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 16 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } }
+            }}
+            className="flex flex-col items-center justify-center pt-3 sm:pt-4 opacity-90 hover:opacity-100 transition-opacity"
+          >
+            <Image
+              src="/assets/brand/Final_Powered_by_logo.png"
+              alt="Arav Innovation Logo"
+              width={520}
+              height={140}
+              priority
+              className="h-9 xs:h-11 sm:h-14 md:h-18 lg:h-20 w-auto max-w-[85vw] sm:max-w-[420px] md:max-w-[480px] object-contain brightness-110 drop-shadow-[0_0_24px_rgba(212,175,55,0.45)]"
             />
           </motion.div>
         </motion.div>
