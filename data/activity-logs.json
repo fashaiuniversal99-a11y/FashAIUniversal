@@ -1,5 +1,13 @@
 [
   {
+    "id": "log_1790778877969_abxgf",
+    "category": "AUTH",
+    "action": "Successful admin login",
+    "actor": "FashAIadmin",
+    "timestamp": "2026-09-30T14:34:37.969Z",
+    "details": "IP ::1"
+  },
+  {
     "id": "log_1790760340556_ej2y9",
     "category": "CONTENT",
     "action": "Received new Event Inquiry FI-2026-77668",
