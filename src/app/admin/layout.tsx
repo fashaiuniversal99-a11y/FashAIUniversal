@@ -92,7 +92,12 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
     const verifyAuth = async () => {
       try {
-        const res = await fetch("/api/admin/auth/me", { cache: "no-store" });
+        const token = typeof window !== "undefined" ? sessionStorage.getItem("fashai_admin_token") : null;
+        const headers: Record<string, string> = {};
+        if (token) {
+          headers["Authorization"] = `Bearer ${token}`;
+        }
+        const res = await fetch("/api/admin/auth/me", { cache: "no-store", headers });
         if (res.ok) {
           const data = await res.json();
           if (data.authenticated) {

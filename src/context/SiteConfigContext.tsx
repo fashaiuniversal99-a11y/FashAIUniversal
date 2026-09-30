@@ -125,9 +125,14 @@ export function SiteConfigProvider({ children }: { children: ReactNode }) {
   const saveDraft = async (): Promise<boolean> => {
     setSaveStatus("saving");
     try {
+      const token = typeof window !== "undefined" ? sessionStorage.getItem("fashai_admin_token") : null;
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      if (token) {
+        headers["Authorization"] = `Bearer ${token}`;
+      }
       const res = await fetch("/api/admin/config", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers,
         body: JSON.stringify({ config }),
       });
       if (res.ok) {
@@ -151,9 +156,14 @@ export function SiteConfigProvider({ children }: { children: ReactNode }) {
   const publish = async (note?: string): Promise<boolean> => {
     setSaveStatus("saving");
     try {
+      const token = typeof window !== "undefined" ? sessionStorage.getItem("fashai_admin_token") : null;
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      if (token) {
+        headers["Authorization"] = `Bearer ${token}`;
+      }
       const res = await fetch("/api/admin/config", {
         method: "PUT",
-        headers: { "Content-Type": "application/json" },
+        headers,
         body: JSON.stringify({ config, note }),
       });
       if (res.ok) {

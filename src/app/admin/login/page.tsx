@@ -45,7 +45,7 @@ export default function AdminLoginPage() {
         sessionStorage.setItem("fashai_admin_token", data.token);
       }
 
-      router.push("/admin");
+      window.location.href = "/admin";
     } catch {
       setError("Network error. Could not connect to authentication server.");
       setLoading(false);

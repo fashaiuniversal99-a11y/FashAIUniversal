@@ -79,7 +79,7 @@ export async function POST(request: NextRequest) {
       value: authResult.sessionToken,
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      sameSite: "lax",
       path: "/",
       maxAge: 86400, // 24 hrs
     });
