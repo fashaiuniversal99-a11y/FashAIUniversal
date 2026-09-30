@@ -158,7 +158,25 @@ export default function Hero() {
             <span className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#D4AF37]/60 to-[#D4AF37]" />
           </motion.div>
 
-          {/* 3. HORIZONTALLY ALIGNED ACTION CTAs */}
+          {/* 3. BRANDING LOGO (ENLARGED & POSITIONED BEFORE CTAs) */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 16 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } }
+            }}
+            className="flex flex-col items-center justify-center py-2 sm:py-3 transition-opacity"
+          >
+            <Image
+              src="/assets/brand/Final_Powered_by_logo.png"
+              alt="Arav Innovation Logo"
+              width={520}
+              height={140}
+              priority
+              className="h-10 xs:h-12 sm:h-16 md:h-20 lg:h-24 w-auto max-w-[85vw] sm:max-w-[460px] md:max-w-[540px] object-contain brightness-110 drop-shadow-[0_0_24px_rgba(212,175,55,0.45)]"
+            />
+          </motion.div>
+
+          {/* 4. HORIZONTALLY ALIGNED ACTION CTAs */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 20 },
@@ -180,24 +198,6 @@ export default function Hero() {
               variant="secondary"
               className="w-full sm:w-auto min-w-[210px]"
               dataCursor="view"
-            />
-          </motion.div>
-
-          {/* 4. BRANDING LOGO */}
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 16 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } }
-            }}
-            className="flex flex-col items-center justify-center pt-4 opacity-80 hover:opacity-100 transition-opacity"
-          >
-            <Image
-              src="/assets/brand/Final_Powered_by_logo.png"
-              alt="Arav Innovation Logo"
-              width={380}
-              height={100}
-              priority
-              className="h-7 sm:h-9 md:h-11 w-auto object-contain brightness-110 drop-shadow-[0_0_16px_rgba(212,175,55,0.3)]"
             />
           </motion.div>
         </motion.div>

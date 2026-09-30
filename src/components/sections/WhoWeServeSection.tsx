@@ -110,7 +110,10 @@ export default function WhoWeServeSection() {
               INDUSTRIES WE <span className="font-serif italic font-normal text-[#D4AF37]">SUPPORT</span>
             </h2>
           </div>
-          <p className="font-sans text-lg sm:text-xl md:text-2xl text-[#555555] dark:text-brand-platinum/85 max-w-lg font-light leading-relaxed">
+          <p
+            style={{ fontSize: "clamp(17px, 1.2vw, 19px)", lineHeight: 1.6 }}
+            className="font-sans text-[#222222] dark:text-brand-off-white max-w-lg font-normal tracking-wide"
+          >
             Working with brands and businesses across fashion, lifestyle, technology and consumer categories.
           </p>
         </div>
@@ -171,7 +174,7 @@ export default function WhoWeServeSection() {
                 <h3 className="font-syne text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider text-[#111111] dark:text-brand-white group-hover:text-[#D4AF37] transition-colors mb-1.5">
                   {ind.title}
                 </h3>
-                <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/85 font-light leading-relaxed">
+                <p className="font-sans text-base sm:text-lg text-[#333333] dark:text-brand-off-white font-normal leading-relaxed">
                   {ind.desc}
                 </p>
               </div>
@@ -271,7 +274,7 @@ export default function WhoWeServeSection() {
                   </h3>
                 </div>
 
-                <p className="font-sans text-lg sm:text-xl md:text-2xl text-[#444444] dark:text-brand-platinum/90 font-normal leading-relaxed max-w-2xl">
+                <p className="font-sans text-lg sm:text-xl md:text-2xl text-[#222222] dark:text-brand-off-white font-normal leading-relaxed max-w-2xl">
                   {activeDiscipline.tagline}
                 </p>
 
@@ -280,7 +283,7 @@ export default function WhoWeServeSection() {
                   {activeDiscipline.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="px-3.5 py-1.5 text-xs sm:text-sm font-syne tracking-wider uppercase font-semibold text-[#555555] dark:text-white/80 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-md"
+                      className="px-3.5 py-1.5 text-xs sm:text-sm font-syne tracking-wider uppercase font-semibold text-[#333333] dark:text-brand-off-white bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-md"
                     >
                       {tag}
                     </span>
@@ -351,7 +354,7 @@ export default function WhoWeServeSection() {
             <h4 className="font-serif-display text-2xl sm:text-3xl font-light uppercase text-[#111111] dark:text-white">
               NEED BESPOKE EVENT PRODUCTION FOR YOUR BRAND?
             </h4>
-            <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/85 font-light">
+            <p className="font-sans text-base sm:text-lg text-[#333333] dark:text-brand-off-white font-normal">
               Enquire now for custom event management, runway direction, and brand launches.
             </p>
           </div>

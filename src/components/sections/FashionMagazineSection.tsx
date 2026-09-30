@@ -227,6 +227,53 @@ interface FashionMagazineSectionProps {
   isFullPage?: boolean;
 }
 
+// Shared Editorial Card Heading Component (Single Source of Truth)
+function EditorialHeading({
+  title,
+  level = "h3",
+  className = "",
+}: {
+  title: string;
+  level?: "h3" | "h4";
+  className?: string;
+}) {
+  const Component = level;
+  return (
+    <Component
+      style={{
+        fontSize: "clamp(25px, 2.5vw, 38px)",
+        lineHeight: 1.15,
+      }}
+      className={`font-serif-display font-light text-[#111111] dark:text-[#D4AF37] uppercase tracking-tight group-hover:text-[#FFEC69] transition-colors ${className}`}
+    >
+      {title}
+    </Component>
+  );
+}
+
+// Shared Editorial Card Description Component (Single Source of Truth)
+function EditorialDescription({
+  text,
+  className = "",
+  lineClamp,
+}: {
+  text: string;
+  className?: string;
+  lineClamp?: string;
+}) {
+  return (
+    <p
+      style={{
+        fontSize: "clamp(16px, 1.1vw, 18px)",
+        lineHeight: 1.6,
+      }}
+      className={`font-jost font-normal text-[#222222] dark:text-brand-off-white ${lineClamp ? lineClamp : ""} ${className}`}
+    >
+      {text}
+    </p>
+  );
+}
+
 export default function FashionMagazineSection({ isFullPage = false }: FashionMagazineSectionProps) {
   const [activeFilter, setActiveFilter] = useState<string>("ALL");
   const [selectedArticle, setSelectedArticle] = useState<MagazineArticle | null>(null);
@@ -267,7 +314,7 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
             </h2>
           </div>
           <div className="flex flex-col items-start md:items-end gap-3">
-            <p className="font-sans text-sm sm:text-base md:text-lg text-[#444444] dark:text-brand-platinum/90 max-w-md font-light leading-relaxed text-left md:text-right">
+            <p className="font-sans text-sm sm:text-base md:text-lg text-[#333333] dark:text-brand-off-white max-w-md font-light leading-relaxed text-left md:text-right">
               Fashion stories, event moments, creative perspectives and visual highlights from the FashAI Universal ecosystem.
             </p>
             {!isFullPage && (
@@ -323,13 +370,8 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
                         </span>
                       </div>
 
-                      <h3 className="font-serif-display text-2xl sm:text-4xl lg:text-4xl font-light text-[#111111] dark:text-white uppercase leading-tight group-hover:text-[#D4AF37] transition-colors">
-                        {featuredStory.title}
-                      </h3>
-
-                      <p className="font-sans text-sm sm:text-base text-[#444444] dark:text-neutral-300 font-light leading-relaxed text-justified">
-                        {featuredStory.subtitle}
-                      </p>
+                      <EditorialHeading title={featuredStory.title} level="h3" />
+                      <EditorialDescription text={featuredStory.subtitle} className="text-justified" />
                     </div>
                   </div>
 
@@ -368,21 +410,16 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
 
                     <div className="flex flex-col justify-between flex-grow space-y-2 w-full">
                       <div className="flex items-center justify-between gap-2">
-                        <span className="text-[10px] font-syne font-bold uppercase tracking-wider text-[#D4AF37]">
+                        <span className="text-[10px] sm:text-xs font-syne font-bold uppercase tracking-wider text-[#D4AF37]">
                           {story.category}
                         </span>
-                        <span className="text-[10px] font-syne text-[#555555] dark:text-neutral-400 uppercase font-semibold">
+                        <span className="text-[10px] sm:text-xs font-syne text-[#555555] dark:text-brand-off-white/80 uppercase font-semibold">
                           {story.readTime}
                         </span>
                       </div>
 
-                      <h4 className="font-serif-display text-lg sm:text-xl font-light text-[#111111] dark:text-white uppercase leading-snug group-hover:text-[#D4AF37] transition-colors line-clamp-2">
-                        {story.title}
-                      </h4>
-
-                      <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-neutral-300 font-light leading-relaxed line-clamp-2">
-                        {story.subtitle}
-                      </p>
+                      <EditorialHeading title={story.title} level="h4" className="line-clamp-2" />
+                      <EditorialDescription text={story.subtitle} lineClamp="line-clamp-2" />
 
                       <div className="pt-1">
                         <button
@@ -511,18 +548,13 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
                         <span className="text-[10px] sm:text-xs font-syne text-brand-yellow-golden font-bold uppercase tracking-wider">
                           FEATURED ARTICLE · {archiveFeatured.category}
                         </span>
-                        <span className="text-[10px] sm:text-xs font-syne text-white/60 uppercase">
+                        <span className="text-[10px] sm:text-xs font-syne text-brand-off-white/80 uppercase">
                           {archiveFeatured.readTime}
                         </span>
                       </div>
 
-                      <h3 className="font-serif-display text-2xl sm:text-4xl lg:text-5xl font-light text-white uppercase leading-tight group-hover:text-brand-yellow-golden transition-colors mb-4">
-                        {archiveFeatured.title}
-                      </h3>
-
-                      <p className="font-sans text-sm sm:text-base text-white/90 leading-relaxed font-normal mb-6 text-justified">
-                        {archiveFeatured.subtitle}
-                      </p>
+                      <EditorialHeading title={archiveFeatured.title} level="h3" className="mb-4" />
+                      <EditorialDescription text={archiveFeatured.subtitle} className="mb-6 text-justified" />
                     </div>
 
                     <div>
@@ -569,17 +601,12 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
                           </div>
                         </div>
 
-                        <h4 className="font-serif-display text-xl sm:text-2xl font-light text-white uppercase leading-snug mb-3 group-hover:text-brand-yellow-golden transition-colors">
-                          {article.title}
-                        </h4>
-
-                        <p className="font-sans text-sm sm:text-base text-white/80 leading-relaxed font-normal mb-6 line-clamp-3 text-justified">
-                          {article.subtitle}
-                        </p>
+                        <EditorialHeading title={article.title} level="h4" className="mb-3" />
+                        <EditorialDescription text={article.subtitle} lineClamp="line-clamp-3" className="mb-6 text-justified" />
                       </div>
 
                       <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                        <span className="text-[10px] sm:text-xs font-syne text-white/60 uppercase">
+                        <span className="text-[10px] sm:text-xs font-syne text-brand-off-white/80 uppercase">
                           {article.readTime}
                         </span>
                         <button
