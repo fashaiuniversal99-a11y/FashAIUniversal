@@ -14,6 +14,8 @@ import FaqSection from "@/components/sections/FaqSection";
 import ContactSection from "@/components/sections/ContactSection";
 import InstagramSection from "@/components/sections/InstagramSection";
 
+import HomepageTalentSection from "@/components/talent/HomepageTalentSection";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-brand-white selection:bg-brand-orange selection:text-white">
@@ -43,7 +45,7 @@ export default function Home() {
 
       {/* 09. OPPORTUNITIES & TALENT NETWORK */}
       <OpenNominationsSection />
-      <FashionCommunitySection isHomepage={true} />
+      <HomepageTalentSection />
       <AboutUsSection />
 
       {/* 10. FAQ */}

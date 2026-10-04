@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
+import { LIFESTYLE_2026 } from "@/data/lifestyle-event";
+
 export default function HomeUpcomingFeature() {
   return (
     <section className="relative w-full flex flex-col justify-center py-10 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#080706] border-b border-black/10 dark:border-white/10 text-[#111111] dark:text-white overflow-hidden select-none">
@@ -39,7 +41,7 @@ export default function HomeUpcomingFeature() {
             </p>
 
             <p className="font-sans text-base sm:text-lg md:text-xl lg:text-2xl text-[#333333] dark:text-white/90 font-light max-w-4xl lg:max-w-[950px] mx-auto pt-2 leading-relaxed">
-              An international fashion and lifestyle experience bringing together global designers, runway talent, luxury brands, and delegates.
+              {LIFESTYLE_2026.description}
             </p>
           </div>
 
@@ -70,8 +72,8 @@ export default function HomeUpcomingFeature() {
                 <span className="text-xs sm:text-sm font-syne tracking-widest font-bold text-[#666666] dark:text-white/70 uppercase">
                   EVENT DATE
                 </span>
-                <span className="font-serif-display text-xl sm:text-2xl md:text-3xl font-light text-[#D4AF37] uppercase tracking-wide">
-                  TO BE ANNOUNCED
+                <span className="font-serif-display text-lg sm:text-xl md:text-2xl font-light text-[#D4AF37] uppercase tracking-wide">
+                  {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.dateDisplay : "JOIN THE WAITING LIST"}
                 </span>
                 <span className="font-sans text-xs sm:text-sm md:text-base text-[#555555] dark:text-white/60 uppercase whitespace-nowrap">
                   Dubai · 2026
@@ -83,8 +85,8 @@ export default function HomeUpcomingFeature() {
                 <span className="text-xs sm:text-sm font-syne tracking-widest font-bold text-[#666666] dark:text-white/70 uppercase">
                   EVENT VENUE
                 </span>
-                <span className="font-serif-display text-xl sm:text-2xl md:text-3xl font-light text-[#D4AF37] uppercase tracking-wide">
-                  TO BE ANNOUNCED
+                <span className="font-serif-display text-lg sm:text-xl md:text-2xl font-light text-[#D4AF37] uppercase tracking-wide">
+                  {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.venueDisplay : "JOIN THE WAITING LIST"}
                 </span>
                 <span className="font-sans text-xs sm:text-sm md:text-base text-[#555555] dark:text-white/60 uppercase whitespace-nowrap">
                   Dubai, UAE
@@ -97,7 +99,7 @@ export default function HomeUpcomingFeature() {
                   DRESS CODE
                 </span>
                 <span className="font-serif-display text-xl sm:text-2xl md:text-3xl font-light text-[#111111] dark:text-white uppercase tracking-wide">
-                  HAUTE COUTURE
+                  {LIFESTYLE_2026.dressCode}
                 </span>
                 <span className="font-sans text-xs sm:text-sm md:text-base text-[#555555] dark:text-white/60 uppercase whitespace-nowrap">
                   Fashionable &amp; Luxury
@@ -109,10 +111,10 @@ export default function HomeUpcomingFeature() {
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 w-full sm:w-auto">
             <Link
-              href="/contact?type=Registration"
+              href={LIFESTYLE_2026.waitingListCtaUrl}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-8 py-3.5 rounded-full font-syne text-sm sm:text-base font-bold tracking-wider uppercase transition-all duration-300 shadow-md group"
             >
-              <span>REGISTER NOW</span>
+              <span>JOIN THE WAITING LIST</span>
               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
             </Link>
 

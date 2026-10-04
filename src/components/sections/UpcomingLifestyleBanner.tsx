@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import GradientFlowText from "../ui/GradientFlowText";
+import { LIFESTYLE_2026 } from "@/data/lifestyle-event";
 
 export default function UpcomingLifestyleBanner() {
   return (
@@ -57,7 +58,7 @@ export default function UpcomingLifestyleBanner() {
                     EVENT DATE
                   </span>
                   <span className="text-brand-white font-bold text-sm uppercase">
-                    DATE — TO BE ANNOUNCED
+                    {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.dateDisplay : "JOIN THE WAITING LIST"}
                   </span>
                 </div>
                 <div>
@@ -65,7 +66,7 @@ export default function UpcomingLifestyleBanner() {
                     LOCATION / VENUE
                   </span>
                   <span className="text-brand-yellow-golden font-bold text-sm uppercase">
-                    DUBAI · VENUE TO BE ANNOUNCED
+                    {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.venueDisplay : "DUBAI · JOIN THE WAITING LIST"}
                   </span>
                 </div>
                 <div>
@@ -81,11 +82,11 @@ export default function UpcomingLifestyleBanner() {
               {/* Action CTA Buttons */}
               <div className="flex flex-col sm:flex-row lg:flex-col gap-3 pt-2">
                 <Link
-                  href="/contact?type=Registration"
-                  className="bg-brand-orange px-6 py-3.5 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#ff6f2d] hover:shadow-[0_0_25px_rgba(241,94,28,0.4)] transition-all duration-300 text-center flex items-center justify-center gap-2 group"
+                  href={LIFESTYLE_2026.waitingListCtaUrl}
+                  className="bg-[#D4AF37] hover:bg-[#FFEC69] px-6 py-3.5 text-xs font-syne tracking-caps font-bold text-black transition-all duration-300 text-center flex items-center justify-center gap-2 group"
                   data-cursor="explore"
                 >
-                  <GradientFlowText variant="gold">REGISTRATION</GradientFlowText>
+                  <span>JOIN THE WAITING LIST</span>
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </Link>
                 <Link

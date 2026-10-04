@@ -423,11 +423,14 @@ export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = fal
             <CheckCircle className="w-10 h-10" />
           </div>
           <div>
-            <h2 className="font-serif-display text-3xl sm:text-4xl font-light text-white uppercase mb-3">
-              APPLICATION RECEIVED
+            <h2 className="font-serif-display text-3xl sm:text-5xl font-light text-white uppercase mb-3">
+              THANK YOU
             </h2>
-            <p className="font-sans text-base sm:text-lg text-brand-platinum/90 max-w-lg mx-auto leading-relaxed">
-              Thank you for applying to the FashAI Universal Talent Network. Our team will review your application and contact you if a suitable opportunity becomes available.
+            <p className="font-sans text-base sm:text-lg text-brand-platinum font-normal leading-relaxed max-w-lg mx-auto">
+              We&apos;ve received your request.
+            </p>
+            <p className="font-sans text-sm text-brand-platinum/80 font-light leading-relaxed max-w-lg mx-auto mt-1">
+              Our team will contact you soon. We&apos;ll review your request and get back to you shortly.
             </p>
           </div>
 
@@ -436,7 +439,7 @@ export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = fal
               href="/"
               className="inline-flex items-center gap-2 bg-brand-yellow-golden text-black px-8 py-3.5 text-sm sm:text-base font-syne font-bold tracking-caps rounded-full hover:bg-yellow-400 transition-colors shadow-lg"
             >
-              <GradientFlowText variant="primary">BACK TO FASHAI UNIVERSAL</GradientFlowText> <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span>BACK TO FASHAI UNIVERSAL</span> <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
           </div>
         </div>

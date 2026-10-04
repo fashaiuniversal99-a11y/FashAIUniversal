@@ -97,7 +97,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     id: "lifestyle-2026",
     number: "03",
     title: "LIFESTYLE 2026",
-    subtitle: "UPCOMING EVENT — DUBAI NOVEMBER 2026",
+    subtitle: "UPCOMING EVENT — DUBAI 2026 (JOIN THE WAITING LIST)",
     category: "UPCOMING EVENT",
     year: "2026",
     location: "DUBAI · UNITED ARAB EMIRATES",

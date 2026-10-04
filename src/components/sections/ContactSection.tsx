@@ -7,6 +7,7 @@ import { Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import GradientFlowText from "../ui/GradientFlowText";
 import SubmitSuccessExpand from "../ui/SubmitSuccessExpand";
 import OfficeLocations from "./OfficeLocations";
+import { trackEngagementEvent } from "@/lib/concierge/preferences";
 
 function ContactContent() {
   const searchParams = useSearchParams();
@@ -25,26 +26,51 @@ function ContactContent() {
     message: "",
   });
 
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [hasStarted, setHasStarted] = useState(false);
+
   useEffect(() => {
+    // Requirement 9: Track form_opened
+    trackEngagementEvent("form_opened", { formId: "contact_enquiry" });
+
     if (searchParams?.get("type")) {
       const typeParam = searchParams.get("type")!;
       setFormData((prev) => ({ ...prev, enquiryType: typeParam }));
     }
   }, [searchParams]);
 
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [errorMessage, setErrorMessage] = useState("");
-
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
+    if (!hasStarted) {
+      setHasStarted(true);
+      // Requirement 9: Track form_started
+      trackEngagementEvent("form_started", { formId: "contact_enquiry" });
+    }
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrorMessage("");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
     setErrorMessage("");
+
+    // Requirement 9: Track form_submitted
+    trackEngagementEvent("form_submitted", { formId: "contact_enquiry" });
+
+    // Client side email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setStatus("error");
+      setErrorMessage("Please enter a valid email address.");
+      trackEngagementEvent("form_submission_error", {
+        formId: "contact_enquiry",
+        reason: "invalid_email",
+      });
+      return;
+    }
 
     try {
       const response = await fetch("/api/contact", {
@@ -57,6 +83,11 @@ function ContactContent() {
 
       if (response.ok && data.success) {
         setStatus("success");
+        // Requirement 9: Track form_submission_success
+        trackEngagementEvent("form_submission_success", {
+          formId: "contact_enquiry",
+          enquiryType: formData.enquiryType,
+        });
         setFormData({
           name: "",
           email: "",
@@ -72,10 +103,18 @@ function ContactContent() {
       } else {
         setStatus("error");
         setErrorMessage(data.error || "Failed to submit enquiry. Please try again.");
+        trackEngagementEvent("form_submission_error", {
+          formId: "contact_enquiry",
+          status: response.status,
+        });
       }
     } catch {
       setStatus("error");
       setErrorMessage("Network error. Please check your connection and try again.");
+      trackEngagementEvent("form_submission_error", {
+        formId: "contact_enquiry",
+        reason: "network_error",
+      });
     }
   };
 
@@ -114,20 +153,24 @@ function ContactContent() {
               SUBMIT AN ENQUIRY
             </h3>
 
+            {/* Requirement 8: Thank-You State */}
             <SubmitSuccessExpand show={status === "success"}>
-              <div className="bg-brand-green/10 border border-brand-green/40 p-8 text-center space-y-4">
+              <div className="bg-brand-green/10 border border-brand-green/40 p-8 text-center space-y-4 rounded-2xl">
                 <CheckCircle className="w-12 h-12 text-brand-green mx-auto" />
-                <h4 className="font-syne text-xl text-brand-white font-bold uppercase">
-                  Enquiry Received
+                <h4 className="font-serif-display text-3xl sm:text-4xl text-brand-white font-light uppercase">
+                  THANK YOU
                 </h4>
-                <p className="font-sans text-sm text-brand-platinum font-light leading-relaxed max-w-md mx-auto">
-                  Thank you for reaching out to FashAI Universal. Our delegate team will review your submission promptly.
+                <p className="font-sans text-base text-brand-platinum font-normal leading-relaxed max-w-md mx-auto">
+                  We&apos;ve received your request.
+                </p>
+                <p className="font-sans text-sm text-brand-platinum/80 font-light leading-relaxed max-w-md mx-auto">
+                  Our team will contact you soon. We&apos;ll review your request and get back to you shortly.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
-                  className="bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] font-bold border border-[#D4AF37] px-8 py-3 rounded-full text-xs font-syne tracking-wider uppercase transition-colors"
+                  className="bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] font-bold border border-[#D4AF37] px-8 py-3 rounded-full text-xs font-syne tracking-wider uppercase transition-colors shadow-md mt-2"
                 >
-                  <GradientFlowText variant="gold">SEND ANOTHER ENQUIRY</GradientFlowText>
+                  <span>SEND ANOTHER ENQUIRY</span>
                 </button>
               </div>
             </SubmitSuccessExpand>

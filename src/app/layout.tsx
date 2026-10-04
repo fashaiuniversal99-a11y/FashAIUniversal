@@ -117,12 +117,11 @@ export default function RootLayout({
       {
         "@type": "Event",
         name: "LifeStyle 2026 · Dubai",
-        startDate: "2026-01-01",
-        eventStatus: "https://schema.org/EventScheduled",
+        eventStatus: "https://schema.org/EventRescheduled",
         eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
         location: {
           "@type": "Place",
-          name: "Dubai, United Arab Emirates",
+          name: "Dubai, United Arab Emirates (Venue to be announced)",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Dubai",
@@ -130,7 +129,7 @@ export default function RootLayout({
           },
         },
         description:
-          "An international luxury fashion and lifestyle experience hosted in Dubai. Delegate registrations and sponsorship enquiries are currently open.",
+          "An international luxury fashion and lifestyle experience hosted in Dubai. Dates and venue to be announced — join the waiting list for official updates.",
         organizer: { "@id": "https://fashai-beryl.vercel.app/#organization" },
       },
     ],

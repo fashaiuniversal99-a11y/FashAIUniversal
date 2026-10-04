@@ -6,6 +6,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Calendar, MapPin, Sparkles, ArrowRight, ExternalLink } from "lucide-react";
 import GradientFlowText from "./GradientFlowText";
+import { LIFESTYLE_2026 } from "@/data/lifestyle-event";
 
 export default function EventInfoModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -237,8 +238,8 @@ export default function EventInfoModal() {
                       <Calendar className="w-3 h-3" />
                       <span>EVENT DATE</span>
                     </div>
-                    <span className="font-syne text-[11px] sm:text-xs font-bold text-white uppercase tracking-wide">
-                      TO BE ANNOUNCED
+                    <span className="font-syne text-[10px] sm:text-xs font-bold text-white uppercase tracking-wide">
+                      {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.dateDisplay : "JOIN THE WAITING LIST"}
                     </span>
                   </div>
 
@@ -248,8 +249,8 @@ export default function EventInfoModal() {
                       <MapPin className="w-3 h-3" />
                       <span>EVENT VENUE</span>
                     </div>
-                    <span className="font-syne text-[11px] sm:text-xs font-bold text-white uppercase tracking-wide">
-                      DUBAI, UAE
+                    <span className="font-syne text-[10px] sm:text-xs font-bold text-white uppercase tracking-wide">
+                      {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.venueDisplay : "DUBAI · WAITING LIST"}
                     </span>
                   </div>
 

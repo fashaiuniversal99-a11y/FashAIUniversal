@@ -1,6 +1,7 @@
 [
   {
     "type": "CONTACT",
+    "type": "CONTACT",
     "source": "CHATBOT",
     "domain": "Event Inquiry",
     "fullName": "Anupam",
