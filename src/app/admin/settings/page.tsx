@@ -13,7 +13,7 @@ export default function GlobalSettingsPage() {
     metaTitle: "FashAI Universal — International Fashion & Events Platform",
     metaDescription: "FashAI Universal is an international fashion, lifestyle, and events platform connecting global designers, models, creative talent, and brand experiences across Dubai, UAE & India.",
     favicon: "/favicon.ico",
-    ogImage: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg",
+    ogImage: "/assets/brand/fashai-og-share.png",
     contactEmail: "contact@fashaiuniversal.com",
     instagramUrl: "https://www.instagram.com/fashai_universal",
     copyrightYear: "2026",

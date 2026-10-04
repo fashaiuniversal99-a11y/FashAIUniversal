@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     siteName: "FashAI Universal",
     images: [
       {
-        url: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg",
+        url: "/assets/brand/fashai-og-share.png",
         width: 1200,
         height: 630,
-        alt: "FashAI Universal",
+        alt: "FashAI Universal — Event Management · Production · Experiences",
       },
     ],
     locale: "en_US",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "FashAI Universal — International Fashion & Events Platform",
     description:
       "FashAI Universal provides end-to-end event management, planning, and production for luxury fashion and lifestyle events across the UAE, India, and worldwide.",
-    images: ["/assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg"],
+    images: ["/assets/brand/fashai-og-share.png"],
   },
   robots: {
     index: true,
