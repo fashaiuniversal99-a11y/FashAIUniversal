@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/Hero";
+import HomepageProofSection from "@/components/sections/HomepageProofSection";
 import WhoWeAreSection from "@/components/sections/WhoWeAreSection";
 import WhatWeDoSection from "@/components/sections/WhatWeDoSection";
 import CreateEventSection from "@/components/sections/CreateEventSection";
@@ -21,6 +22,9 @@ export default function Home() {
     <main className="min-h-screen bg-black text-brand-white selection:bg-brand-orange selection:text-white">
       {/* 01. LANDING VIDEO */}
       <Hero />
+
+      {/* 01.5 TRUST & CREDIBILITY PROOF SECTION */}
+      <HomepageProofSection />
 
       {/* 02. EVENT MANAGEMENT POSITIONING & INTRODUCTION */}
       <WhoWeAreSection />
