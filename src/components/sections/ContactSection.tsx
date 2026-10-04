@@ -336,7 +336,7 @@ function ContactContent() {
                       onChange={handleChange}
                       className="w-full bg-brand-void border border-white/20 px-4 py-3 text-sm text-brand-white focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] focus:outline-none transition-colors"
                     >
-                      <option value="LifeStyle 2026">LifeStyle 2026 (Dubai · November 2026)</option>
+                      <option value="LifeStyle 2026">LifeStyle 2026 (Dubai · Date To Be Announced)</option>
                       <option value="Runway">Runway Presentation</option>
                       <option value="LifeStyle 2025">LifeStyle 2025 Archive</option>
                       <option value="General / Other">General / Other Platform Initiatives</option>

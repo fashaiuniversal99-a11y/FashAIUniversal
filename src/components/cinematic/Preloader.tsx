@@ -11,6 +11,17 @@ export default function Preloader() {
   const hasCompletedRef = useRef(false);
 
   useEffect(() => {
+    // 0. Reduced Motion Check for Accessibility: Bypass preloader for users preferring reduced motion
+    try {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        setIsLoading(false);
+        setShouldRender(false);
+        return;
+      }
+    } catch {
+      // Safe fallback
+    }
+
     // 1. Session Persistence Check: Only run full cinematic preloader once per browsing session
     try {
       const alreadyShown = sessionStorage.getItem("fashai_preloader_shown");
@@ -23,11 +34,11 @@ export default function Preloader() {
       // Safe fallback if sessionStorage is disabled
     }
 
-    // 2. Lock body scroll during preloader display
+    // 2. Lock body scroll during preloader transition
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
 
-    // 3. Smooth non-linear progress progression (~1.4s on fast load, ~2.2s max)
+    // 3. Fast non-blocking progress transition (~0.3s - ~0.45s max)
     const startTime = Date.now();
     let isLoaded = document.readyState === "complete";
 
@@ -39,16 +50,42 @@ export default function Preloader() {
       window.addEventListener("load", handleLoad);
     }
 
-    const targetDuration = isLoaded ? 1200 : 2000;
+    const targetDuration = isLoaded ? 300 : 450;
+
+    const finishLoading = () => {
+      if (hasCompletedRef.current) return;
+      hasCompletedRef.current = true;
+      setProgress(100);
+
+      // Restore normal page scrolling immediately
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+
+      // Brief 50ms hold at 100% completed state before smooth reveal
+      setTimeout(() => {
+        setIsLoading(false);
+
+        // Record in sessionStorage
+        try {
+          sessionStorage.setItem("fashai_preloader_shown", "true");
+        } catch {
+          // ignore
+        }
+
+        // Unmount after reveal animation ends
+        setTimeout(() => {
+          setShouldRender(false);
+        }, 300);
+      }, 50);
+    };
 
     const updateProgress = () => {
       if (hasCompletedRef.current) return;
 
       const elapsed = Date.now() - startTime;
-      const effectiveDuration = isLoaded ? Math.min(targetDuration, 1200) : targetDuration;
+      const effectiveDuration = isLoaded ? Math.min(targetDuration, 300) : targetDuration;
       const rawRatio = Math.min(elapsed / effectiveDuration, 1);
 
-      // Smooth cubic curve
       const easedProgress = Math.min(Math.round(rawRatio * 100), 100);
       setProgress(easedProgress);
 
@@ -61,37 +98,10 @@ export default function Preloader() {
 
     const animFrame = requestAnimationFrame(updateProgress);
 
-    // 4. Hard Safety Timeout Maximum (3.0s limit guarantees user is never stuck)
+    // 4. Hard Safety Timeout Maximum (800ms limit guarantees non-blocking experience)
     const hardTimeout = setTimeout(() => {
       finishLoading();
-    }, 3000);
-
-    const finishLoading = () => {
-      if (hasCompletedRef.current) return;
-      hasCompletedRef.current = true;
-      setProgress(100);
-
-      // Brief hold at 100% completed state (200ms) before smooth reveal
-      setTimeout(() => {
-        setIsLoading(false);
-
-        // Restore normal page scrolling
-        document.body.style.overflow = "";
-        document.documentElement.style.overflow = "";
-
-        // Record in sessionStorage
-        try {
-          sessionStorage.setItem("fashai_preloader_shown", "true");
-        } catch {
-          // ignore
-        }
-
-        // Unmount after reveal animation ends
-        setTimeout(() => {
-          setShouldRender(false);
-        }, 600);
-      }, 200);
-    };
+    }, 800);
 
     return () => {
       cancelAnimationFrame(animFrame);
@@ -111,11 +121,11 @@ export default function Preloader() {
           initial={{ opacity: 1 }}
           exit={{
             opacity: 0,
-            y: -24,
-            transition: { duration: 0.55, ease: [0.76, 0, 0.24, 1] },
+            y: -16,
+            transition: { duration: 0.25, ease: [0.76, 0, 0.24, 1] },
           }}
           style={{ willChange: "transform, opacity" }}
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-between bg-[#050505] px-6 py-12 text-brand-off-white overflow-hidden select-none"
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-between bg-[#050505] px-6 py-12 text-brand-off-white overflow-hidden select-none pointer-events-none"
           role="progressbar"
           aria-valuenow={progress}
           aria-valuemin={0}
@@ -133,9 +143,9 @@ export default function Preloader() {
           {/* Central Logo Lockup & Progress Bar */}
           <div className="relative z-10 flex flex-col items-center text-center my-auto w-full max-w-md">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col items-center mb-8"
             >
               {/* Official FashAI Logo Mark Container */}
@@ -175,7 +185,7 @@ export default function Preloader() {
             <div className="w-full max-w-xs sm:max-w-sm px-2">
               <div className="relative h-[2px] w-full bg-white/10 rounded-none overflow-hidden">
                 <div
-                  className="absolute left-0 top-0 h-full w-full bg-brand-yellow-golden shadow-[0_0_15px_#D4AF37] origin-left transition-transform duration-100 ease-out"
+                  className="absolute left-0 top-0 h-full w-full bg-brand-yellow-golden shadow-[0_0_15px_#D4AF37] origin-left transition-transform duration-75 ease-out"
                   style={{ transform: `scaleX(${progress / 100})`, willChange: "transform" }}
                 />
               </div>

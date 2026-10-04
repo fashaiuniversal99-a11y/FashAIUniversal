@@ -239,7 +239,7 @@ export default function EventInfoModal() {
                       <span>EVENT DATE</span>
                     </div>
                     <span className="font-syne text-[10px] sm:text-xs font-bold text-white uppercase tracking-wide">
-                      {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.dateDisplay : "JOIN THE WAITING LIST"}
+                      {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.dateDisplay : "DATE: TO BE ANNOUNCED"}
                     </span>
                   </div>
 
@@ -250,7 +250,7 @@ export default function EventInfoModal() {
                       <span>EVENT VENUE</span>
                     </div>
                     <span className="font-syne text-[10px] sm:text-xs font-bold text-white uppercase tracking-wide">
-                      {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.venueDisplay : "DUBAI · WAITING LIST"}
+                      {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.venueDisplay : "DUBAI · VENUE: TO BE ANNOUNCED"}
                     </span>
                   </div>
 

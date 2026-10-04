@@ -27,7 +27,7 @@ const HOMEPAGE_EVENTS: HomepageEvent[] = [
     subtitle: "FashPrism Lifestyle Week",
     description:
       "Fashion, culture and lifestyle experiences bringing together computational design, haute couture, and spatial atmosphere.",
-    timing: "NOVEMBER 2026",
+    timing: "TO BE ANNOUNCED",
     image: "/assets/events/lifestyle_banner.png",
     ctaText: "EXPLORE EVENT",
     ctaHref: "/events",

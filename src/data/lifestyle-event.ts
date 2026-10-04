@@ -20,8 +20,8 @@ export const LIFESTYLE_2026: LifestyleEventData = {
   subtitle: "AN INTERNATIONAL FASHION & LIFESTYLE EXPERIENCE",
   location: "DUBAI · UNITED ARAB EMIRATES",
   isConfirmed: false, // Date & Venue unconfirmed -> trigger waiting list fallback
-  dateDisplay: "JOIN THE WAITING LIST",
-  venueDisplay: "JOIN THE WAITING LIST",
+  dateDisplay: "TO BE ANNOUNCED",
+  venueDisplay: "TO BE ANNOUNCED",
   dressCode: "HAUTE COUTURE",
   badge: "JOIN THE WAITING LIST",
   description:

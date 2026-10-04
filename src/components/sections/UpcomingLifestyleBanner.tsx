@@ -27,7 +27,7 @@ export default function UpcomingLifestyleBanner() {
                   UPCOMING FLAGSHIP EVENT
                 </span>
                 <span className="text-[10px] sm:text-[11px] font-syne tracking-micro text-brand-yellow-golden font-bold uppercase flex items-center gap-1.5">
-                  DUBAI · NOVEMBER 2026
+                  DUBAI · TO BE ANNOUNCED
                 </span>
               </div>
 
@@ -58,7 +58,7 @@ export default function UpcomingLifestyleBanner() {
                     EVENT DATE
                   </span>
                   <span className="text-brand-white font-bold text-sm uppercase">
-                    {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.dateDisplay : "JOIN THE WAITING LIST"}
+                    {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.dateDisplay : "DATE: TO BE ANNOUNCED"}
                   </span>
                 </div>
                 <div>
@@ -66,7 +66,7 @@ export default function UpcomingLifestyleBanner() {
                     LOCATION / VENUE
                   </span>
                   <span className="text-brand-yellow-golden font-bold text-sm uppercase">
-                    {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.venueDisplay : "DUBAI · JOIN THE WAITING LIST"}
+                    {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.venueDisplay : "DUBAI · VENUE: TO BE ANNOUNCED"}
                   </span>
                 </div>
                 <div>
