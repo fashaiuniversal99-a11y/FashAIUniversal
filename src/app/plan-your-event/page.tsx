@@ -135,14 +135,14 @@ export default function PlanYourEventPage() {
     company: "",
     email: "",
     phone: "",
-    eventType: "Fashion Show",
+    eventType: "",
     preferredDate: "",
-    guestCountRange: "50–100",
+    guestCountRange: "",
     location: "",
     servicesRequested: [] as string[],
     eventDescription: "",
     budgetCurrency: "AED",
-    budgetRange: "AED 50,000–100,000",
+    budgetRange: "",
     additionalRequirements: "",
     consent: true,
   });
@@ -405,8 +405,12 @@ export default function PlanYourEventPage() {
                       name="eventType"
                       value={formData.eventType}
                       onChange={handleTextChange}
+                      required
                       className="w-full h-[48px] min-h-[48px] bg-[#FAF8F5] dark:bg-[#141312] border border-black/15 dark:border-white/15 rounded-xl px-4 py-3 text-[#111111] dark:text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border cursor-pointer"
                     >
+                      <option value="" disabled className="bg-white dark:bg-[#0F0E0D] text-black/50 dark:text-white/50">
+                        Select event type *
+                      </option>
                       {EVENT_TYPES.map((t) => (
                         <option key={t} value={t} className="bg-white dark:bg-[#0F0E0D] text-[#111111] dark:text-white">
                           {t}
@@ -440,6 +444,9 @@ export default function PlanYourEventPage() {
                       onChange={handleTextChange}
                       className="w-full h-[48px] min-h-[48px] bg-[#FAF8F5] dark:bg-[#141312] border border-black/15 dark:border-white/15 rounded-xl px-4 py-3 text-[#111111] dark:text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border cursor-pointer"
                     >
+                      <option value="" className="bg-white dark:bg-[#0F0E0D] text-black/50 dark:text-white/50">
+                        Select expected guests (optional)
+                      </option>
                       {GUEST_RANGES.map((g) => (
                         <option key={g} value={g} className="bg-white dark:bg-[#0F0E0D] text-[#111111] dark:text-white">
                           {g}
@@ -519,11 +526,9 @@ export default function PlanYourEventPage() {
                           value={formData.budgetCurrency}
                           onChange={(e) => {
                             const newCurr = e.target.value;
-                            const availableRanges = BUDGET_RANGES_BY_CURRENCY[newCurr] || BUDGET_RANGES_BY_CURRENCY["AED"];
                             setFormData((prev) => ({
                               ...prev,
                               budgetCurrency: newCurr,
-                              budgetRange: availableRanges[2] || availableRanges[0],
                             }));
                           }}
                           className="w-full h-[48px] min-h-[48px] bg-[#FAF8F5] dark:bg-[#141312] border border-black/15 dark:border-white/15 rounded-xl px-4 py-3 text-[#111111] dark:text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border cursor-pointer"
@@ -547,6 +552,9 @@ export default function PlanYourEventPage() {
                           onChange={handleTextChange}
                           className="w-full h-[48px] min-h-[48px] bg-[#FAF8F5] dark:bg-[#141312] border border-black/15 dark:border-white/15 rounded-xl px-4 py-3 text-[#111111] dark:text-white outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 text-sm sm:text-base transition-all box-border cursor-pointer"
                         >
+                          <option value="" className="bg-white dark:bg-[#0F0E0D] text-black/50 dark:text-white/50">
+                            Select budget range (optional)
+                          </option>
                           {(BUDGET_RANGES_BY_CURRENCY[formData.budgetCurrency] || BUDGET_RANGES_BY_CURRENCY["AED"]).map((b) => (
                             <option key={b} value={b} className="bg-white dark:bg-[#0F0E0D] text-[#111111] dark:text-white">
                               {b}

@@ -54,7 +54,7 @@ export default function HomepageTalentSection() {
               <span>APPLY TO JOIN</span>
             </button>
             <Link
-              href="/contact?type=Model+%2F+Talent"
+              href="/hire-talent"
               className="inline-flex items-center gap-2 bg-transparent border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 px-6 py-3 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300"
             >
               <Briefcase className="w-4 h-4" />
@@ -111,7 +111,7 @@ export default function HomepageTalentSection() {
                 </button>
 
                 <Link
-                  href="/contact?type=Model+%2F+Talent"
+                  href="/hire-talent"
                   className="w-full border border-black/15 dark:border-white/15 bg-transparent hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 text-[#333333] dark:text-white/80 hover:text-[#111111] dark:hover:text-white py-2 px-4 rounded-xl text-xs font-syne font-semibold tracking-wider uppercase transition-all duration-300 flex items-center justify-between"
                 >
                   <span>HIRE TALENT</span>

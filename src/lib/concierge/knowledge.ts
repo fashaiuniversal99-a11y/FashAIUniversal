@@ -33,6 +33,29 @@ export function queryKnowledgeBase(queryText: string, siteConfig?: any): Concier
     };
   }
 
+  // 1.5 HIRE TALENT DIRECT INTENT
+  if (
+    q.includes("hire talent") ||
+    q.includes("book talent") ||
+    q.includes("hire model") ||
+    q.includes("book model") ||
+    q.includes("hire designer") ||
+    q.includes("hire photographer") ||
+    q.includes("book photographer") ||
+    q.includes("hire stylist") ||
+    q.includes("hire makeup") ||
+    q.includes("hire choreographer")
+  ) {
+    return {
+      message: `${brandName} connects brands, designers, and event organizers with verified models, designers, choreographers, stylists, photographers, and creative directors.\n\nWould you like to open our dedicated Hire Talent client enquiry form?`,
+      navigationTarget: "/hire-talent",
+      quickChips: [
+        { id: "ht-open", label: "Open Hire Talent Form ↗", actionKey: "NAVIGATE", payload: "/hire-talent" },
+        { id: "ht-plan", label: "Plan an Event ↗", actionKey: "START_EVENT_FLOW" },
+      ],
+    };
+  }
+
   // 2. EVENT PLANNING DIRECT INTENT
   if (
     q.includes("plan an event") ||
