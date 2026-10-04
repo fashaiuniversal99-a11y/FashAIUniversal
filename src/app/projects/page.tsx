@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Explore delivered fashion showcases, FashPrism India & International editions, VIP guest salons, catwalk choreography direction, and video editing production by FashAI Universal.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app/projects",
+    canonical: "https://www.fashaiuniversal.com/projects",
   },
 };
 

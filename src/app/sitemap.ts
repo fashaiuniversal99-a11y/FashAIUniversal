@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://fashai-beryl.vercel.app";
+  const baseUrl = "https://www.fashaiuniversal.com";
   const now = new Date();
 
   const routes = [

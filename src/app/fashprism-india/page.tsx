@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Explore the FashPrism India visual archive featuring haute couture textile draping, Miss India pageant presentation chapters, and creative talent showcases.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app/fashprism-india",
+    canonical: "https://www.fashaiuniversal.com/fashprism-india",
   },
 };
 

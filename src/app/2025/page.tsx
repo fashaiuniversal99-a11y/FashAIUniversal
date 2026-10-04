@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Review the 2025 inaugural milestone productions, runway moments, and creative showcases of FashAI Universal.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app/2025",
+    canonical: "https://www.fashaiuniversal.com/2025",
   },
   openGraph: {
     title: "2025 Retrospective Chapter — FashAI Universal",
     description:
       "Review the 2025 inaugural milestone productions, runway moments, and creative showcases of FashAI Universal.",
-    url: "https://fashai-beryl.vercel.app/2025",
+    url: "https://www.fashaiuniversal.com/2025",
   },
 };
 

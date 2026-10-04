@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Official Privacy Policy of FashAI Universal governing data privacy, user rights, and security standards.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app/privacy",
+    canonical: "https://www.fashaiuniversal.com/privacy",
   },
   openGraph: {
     title: "Privacy Policy — FashAI Universal",
     description:
       "Official Privacy Policy of FashAI Universal governing data privacy, user rights, and security standards.",
-    url: "https://fashai-beryl.vercel.app/privacy",
+    url: "https://www.fashaiuniversal.com/privacy",
   },
 };
 

@@ -15,7 +15,7 @@ export const DEFAULT_MASTER_CONFIG: MasterSiteConfig = {
   globalSettings: {
     siteTitle: "FashAI Universal — International Luxury Fashion & Events Platform",
     metaTitle: "FashAI Universal — International Fashion & Events Platform",
-    metaDescription: "FashAI Universal is an international fashion, lifestyle, and events platform connecting global designers, models, creative talent, and brand experiences across the UAE, India & Global destinations.",
+    metaDescription: "FashAI Universal provides end-to-end event management, planning, and production for luxury fashion and lifestyle events across the UAE, India, and worldwide.",
     favicon: "/favicon.ico",
     ogImage: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg",
     contactEmail: "contact@fashaiuniversal.com",

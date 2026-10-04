@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Discover FashAI Universal's core services: Haute Couture Catwalk Presentations, AI & Computational Fashion Design, Luxury Brand Activations, International Talent Curation, and Spatial Media across Dubai, UAE & India.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app/services",
+    canonical: "https://www.fashaiuniversal.com/services",
   },
 };
 

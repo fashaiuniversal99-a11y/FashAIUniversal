@@ -3,33 +3,31 @@ import "./globals.css";
 import ClientLayoutWrapper from "@/components/layout/ClientLayoutWrapper";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fashai-beryl.vercel.app"),
+  metadataBase: new URL("https://www.fashaiuniversal.com"),
   title: "FashAI Universal — International Luxury Fashion & Events Platform",
   description:
-    "FashAI Universal is an international fashion, lifestyle, and events platform connecting global designers, models, creative talent, and brand experiences across Dubai, UAE & India.",
+    "FashAI Universal provides end-to-end event management, planning, and production for luxury fashion and lifestyle events across the UAE, India, and worldwide.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app",
+    canonical: "https://www.fashaiuniversal.com",
   },
   keywords: [
     "FashAI Universal",
-    "Fashion AI",
-    "Haute Couture",
-    "2026 Dubai",
-    "Fashion Events Dubai",
-    "Designer Applications",
-    "Fashion Talent Network",
+    "Event Management",
+    "Fashion Event Planning",
+    "Event Production Dubai",
     "Luxury Fashion Events",
     "Lifestyle Events UAE",
-    "Corporate Fashion Events",
-    "Model Applications Dubai",
-    "Choreographer Registrations",
+    "Corporate Event Management",
+    "Fashion Show Production",
+    "Haute Couture Dubai",
+    "Fashion Talent Network",
   ],
   authors: [{ name: "FashAI Universal" }],
   openGraph: {
     title: "FashAI Universal — International Fashion & Events Platform",
     description:
-      "Where fashion, technology and imagination converge. An international luxury fashion, lifestyle and event platform.",
-    url: "https://fashai-beryl.vercel.app",
+      "FashAI Universal provides end-to-end event management, planning, and production for luxury fashion and lifestyle events across the UAE, India, and worldwide.",
+    url: "https://www.fashaiuniversal.com",
     siteName: "FashAI Universal",
     images: [
       {
@@ -46,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "FashAI Universal — International Fashion & Events Platform",
     description:
-      "Where fashion, technology and imagination converge.",
+      "FashAI Universal provides end-to-end event management, planning, and production for luxury fashion and lifestyle events across the UAE, India, and worldwide.",
     images: ["/assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg"],
   },
   robots: {
@@ -75,13 +73,13 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://fashai-beryl.vercel.app/#organization",
+        "@id": "https://www.fashaiuniversal.com/#organization",
         name: "FashAI Universal",
-        url: "https://fashai-beryl.vercel.app",
-        logo: "https://fashai-beryl.vercel.app/assets/brand/fashai_logo_final.png",
+        url: "https://www.fashaiuniversal.com",
+        logo: "https://www.fashaiuniversal.com/assets/brand/fashai_logo_final.png",
         sameAs: ["https://www.instagram.com/fashai_universal"],
         description:
-          "FashAI Universal is an international fashion and events platform focused on fashion experiences, events, creative talent, designers, artists, and brand participation.",
+          "FashAI Universal provides end-to-end event management, planning, and production for luxury fashion and lifestyle events across the UAE, India, and worldwide.",
         location: [
           {
             "@type": "Place",
@@ -109,10 +107,10 @@ export default function RootLayout({
       },
       {
         "@type": "WebSite",
-        "@id": "https://fashai-beryl.vercel.app/#website",
-        url: "https://fashai-beryl.vercel.app",
+        "@id": "https://www.fashaiuniversal.com/#website",
+        url: "https://www.fashaiuniversal.com",
         name: "FashAI Universal",
-        publisher: { "@id": "https://fashai-beryl.vercel.app/#organization" },
+        publisher: { "@id": "https://www.fashaiuniversal.com/#organization" },
       },
       {
         "@type": "Event",
@@ -130,7 +128,7 @@ export default function RootLayout({
         },
         description:
           "An international luxury fashion and lifestyle experience hosted in Dubai. Dates and venue to be announced — join the waiting list for official updates.",
-        organizer: { "@id": "https://fashai-beryl.vercel.app/#organization" },
+        organizer: { "@id": "https://www.fashaiuniversal.com/#organization" },
       },
     ],
   };

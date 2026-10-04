@@ -83,7 +83,7 @@ export default function Chapter2026() {
           >
             <span className="hidden sm:block flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-[#D4AF37]" />
             <span className="font-syne text-xs sm:text-sm md:text-base tracking-wider text-[#111111] dark:text-white/95 font-bold uppercase px-2 text-center leading-normal">
-              “BIGGEST INTERNATIONAL FASHION EVENTS, DUBAI | 2026”
+              “INTERNATIONAL FASHION &amp; LIFESTYLE EXPERIENCE, DUBAI | 2026”
             </span>
             <span className="hidden sm:block flex-1 h-[1px] bg-gradient-to-l from-transparent via-[#D4AF37]/60 to-[#D4AF37]" />
           </motion.div>

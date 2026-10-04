@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Official editorial fashion publication featuring catwalk dynamics, atelier perspectives, backstage beauty direction, and visual retrospectives across the FashAI Universal ecosystem.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app/fashion-magazine",
+    canonical: "https://www.fashaiuniversal.com/fashion-magazine",
   },
 };
 

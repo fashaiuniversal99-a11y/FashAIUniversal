@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Explore the upcoming 2026 Dubai edition of FashAI Universal. High fashion production and global talent integration.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app/2026",
+    canonical: "https://www.fashaiuniversal.com/2026",
   },
   openGraph: {
     title: "2026 Dubai Chapter — FashAI Universal",
     description:
       "Explore the upcoming 2026 Dubai edition of FashAI Universal. High fashion production and global talent integration.",
-    url: "https://fashai-beryl.vercel.app/2026",
+    url: "https://www.fashaiuniversal.com/2026",
   },
 };
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Explore the FashPrism International presentation series featuring cinematic catwalk staging, Miss International showcase editions, and architectural monolith illumination.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app/fashprism-international",
+    canonical: "https://www.fashaiuniversal.com/fashprism-international",
   },
 };
 

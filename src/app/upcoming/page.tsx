@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Explore upcoming fashion shows, flagship chapters, and open delegate registrations for LifeStyle 2026 in Dubai, UAE.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app/upcoming",
+    canonical: "https://www.fashaiuniversal.com/upcoming",
   },
 };
 

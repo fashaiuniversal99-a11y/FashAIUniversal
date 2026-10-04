@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Contact the FashAI Universal team for event production, delegate registrations, brand sponsorships, designer participation, and media inquiries in Dubai, UAE & India.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app/contact",
+    canonical: "https://www.fashaiuniversal.com/contact",
   },
 };
 

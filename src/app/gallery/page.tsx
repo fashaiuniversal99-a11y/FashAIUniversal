@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Editorial visual archive of FashAI Universal captures. Runway, backstage, architecture, lighting and couture details.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app/gallery",
+    canonical: "https://www.fashaiuniversal.com/gallery",
   },
   openGraph: {
     title: "Gallery — FashAI Universal Editorial Visual Archive",
     description:
       "Editorial visual archive of FashAI Universal captures. Runway, backstage, architecture, lighting and couture details.",
-    url: "https://fashai-beryl.vercel.app/gallery",
+    url: "https://www.fashaiuniversal.com/gallery",
   },
 };
 

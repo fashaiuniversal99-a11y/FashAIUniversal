@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Discover FashAI Universal's international creative network connecting Fashion Designers, Models, Makeup Artists, Stylists, Choreographers, Content Creators, and Public Figures.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app/community",
+    canonical: "https://www.fashaiuniversal.com/community",
   },
 };
 

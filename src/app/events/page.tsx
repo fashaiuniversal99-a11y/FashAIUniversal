@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Explore all event experiences produced by FashAI Universal including LifeStyle 2026 Dubai, Haute Catwalk Presentations, Product Launches, Brand Shoots, Corporate Galas, and IT Summits.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app/events",
+    canonical: "https://www.fashaiuniversal.com/events",
   },
 };
 

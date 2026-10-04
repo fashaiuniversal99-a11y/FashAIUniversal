@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Learn about FashAI Universal: a global event management and production platform connecting luxury fashion experiences, brand activations, and creative talent across the UAE, India, and international destinations.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app/about",
+    canonical: "https://www.fashaiuniversal.com/about",
   },
 };
 

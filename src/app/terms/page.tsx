@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Official Terms & Conditions of FashAI Universal outlining platform usage, event participation, and service terms.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app/terms",
+    canonical: "https://www.fashaiuniversal.com/terms",
   },
   openGraph: {
     title: "Terms & Conditions — FashAI Universal",
     description:
       "Official Terms & Conditions of FashAI Universal outlining platform usage, event participation, and service terms.",
-    url: "https://fashai-beryl.vercel.app/terms",
+    url: "https://www.fashaiuniversal.com/terms",
   },
 };
 

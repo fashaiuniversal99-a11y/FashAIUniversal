@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Official application interface for Model, Designer, Makeup Artist, Fashion Stylist, Choreographer, Influencer, CSTP, and Fashion Commentary opportunities.",
   alternates: {
-    canonical: "https://fashai-beryl.vercel.app/apply",
+    canonical: "https://www.fashaiuniversal.com/apply",
   },
   openGraph: {
     title: "Open Nominations & Applications — FashAI Universal Talent Network",
     description:
       "Official application interface for Model, Designer, Makeup Artist, Fashion Stylist, Choreographer, Influencer, CSTP, and Fashion Commentary opportunities.",
-    url: "https://fashai-beryl.vercel.app/apply",
+    url: "https://www.fashaiuniversal.com/apply",
   },
 };
 
