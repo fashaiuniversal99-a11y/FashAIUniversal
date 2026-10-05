@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, HelpCircle } from "lucide-react";
+import Link from "next/link";
+import { ChevronDown, HelpCircle, ArrowRight } from "lucide-react";
 
 interface FaqItem {
   question: string;
@@ -17,14 +18,14 @@ const FAQS: FaqItem[] = [
     category: "EVENT MANAGEMENT",
   },
   {
-    question: "WHAT CORE SERVICES AND EVENT FORMATS ARE OFFERED?",
-    answer: "Our core capabilities include haute couture catwalk presentations, AI and computational fashion design integration, spatial media staging, luxury brand activations, and international talent direction.",
-    category: "SERVICES",
+    question: "HOW MUCH DOES AN EVENT COST?",
+    answer: "Event costs vary based on event type, scale, location, production requirements, talent, and services. Submit an enquiry for a tailored proposal.",
+    category: "PRICING & PROPOSALS",
   },
   {
-    question: "DOES FASHAI UNIVERSAL PRODUCE BRAND SHOOTS AND LOOKBOOKS?",
-    answer: "Yes. We produce high-concept brand shoots, runway lookbooks, editorial campaigns, and digital media assets with dedicated creative direction and production teams.",
-    category: "BRAND SHOOTS",
+    question: "HOW EARLY SHOULD WE BOOK?",
+    answer: "Booking timelines vary by event type, scale, location, and availability. We recommend contacting the team as early as possible so requirements and production planning can be assessed.",
+    category: "TIMELINES & AVAILABILITY",
   },
   {
     question: "WHO CAN APPLY FOR TALENT AND RECRUITMENT OPPORTUNITIES?",
@@ -32,24 +33,14 @@ const FAQS: FaqItem[] = [
     category: "TALENT & OPPORTUNITIES",
   },
   {
-    question: "HOW CAN BRANDS, SPONSORS, AND CLIENTS SUBMIT AN INQUIRY?",
-    answer: "Brands, sponsors, and clients can submit requirements directly via our Create Your Own Event or Contact section on the website. Our event production team reviews every submission promptly.",
-    category: "PARTNERSHIPS & INQUIRIES",
-  },
-  {
-    question: "WHAT TYPES OF EVENTS CAN FASHAI UNIVERSAL PLAN AND MANAGE?",
-    answer: "FashAI Universal plans and produces a wide spectrum of luxury events, including fashion shows, runway presentations, lifestyle events, brand activations, product launches, corporate galas, and bespoke brand experiences across India and the UAE.",
-    category: "EVENT FORMATS",
-  },
-  {
-    question: "CAN FASHAI UNIVERSAL MANAGE AN EVENT FROM CONCEPT TO EXECUTION?",
-    answer: "Yes. We provide complete end-to-end event management covering every stage of the workflow: Concept → Planning → Production → Talent/Creative Coordination → On-site Execution. Clients can hire FashAI Universal to handle full production seamlessly.",
-    category: "END-TO-END WORKFLOW",
-  },
-  {
     question: "CAN BRANDS AND EVENT CLIENTS HIRE TALENT THROUGH FASHAI UNIVERSAL?",
-    answer: "Yes. While creative professionals can apply to join our global network, corporate clients and brand partners can directly engage and hire top-tier talent through the FashAI ecosystem, including Designers, Models, Makeup Artists, Fashion Stylists, and Creators for their events and productions.",
+    answer: "Yes. Corporate clients and brand partners can directly engage and hire top-tier talent through the FashAI ecosystem, including Designers, Models, Makeup Artists, Fashion Stylists, Choreographers, Creators, and Public Figures for their events and productions.",
     category: "TALENT & BRAND HIRING",
+  },
+  {
+    question: "HOW CAN BRANDS, SPONSORS, AND CLIENTS SUBMIT AN INQUIRY?",
+    answer: "Brands, sponsors, and clients can submit requirements directly via our Plan Your Event, Hire Talent, or Contact section on the website. Our event production team reviews every submission promptly.",
+    category: "PARTNERSHIPS & INQUIRIES",
   },
 ];
 
@@ -61,7 +52,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="relative pt-8 sm:pt-10 pb-4 sm:pb-6 bg-[#050505] border-b border-white/10 overflow-hidden">
+    <section id="faq" className="relative pt-8 sm:pt-10 pb-8 sm:pb-10 bg-[#050505] border-b border-white/10 overflow-hidden select-none">
       <div className="container-editorial relative z-10 max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-10">
@@ -71,13 +62,13 @@ export default function FaqSection() {
           <h2 className="font-serif-display text-3xl sm:text-5xl md:text-6xl font-light text-brand-white uppercase mb-4">
             QUESTIONS &amp; <span className="font-serif italic text-brand-yellow-golden">ANSWERS</span>
           </h2>
-          <p className="font-sans text-base sm:text-lg md:text-xl lg:text-2xl text-brand-platinum/90 font-light max-w-3xl mx-auto leading-relaxed">
+          <p className="font-sans text-base sm:text-lg md:text-xl text-brand-platinum/90 font-light max-w-3xl mx-auto leading-relaxed">
             Key information regarding FashAI Universal event management, production services, talent hiring, and sponsorship inquiries.
           </p>
         </div>
 
-        {/* 8-Question Accordion List */}
-        <div className="space-y-5">
+        {/* Question Accordion List */}
+        <div className="space-y-4">
           {FAQS.map((item, idx) => {
             const isOpen = openIndex === idx;
             return (
@@ -87,20 +78,20 @@ export default function FaqSection() {
               >
                 <button
                   onClick={() => toggleFaq(idx)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-1 focus:ring-brand-yellow-golden/50"
+                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-1 focus:ring-brand-yellow-golden/50"
                   aria-expanded={isOpen}
                 >
                   <div className="flex items-center gap-3.5">
-                    <HelpCircle className="w-5 h-5 sm:w-7 sm:h-7 text-brand-yellow-golden shrink-0" />
+                    <HelpCircle className="w-5 h-5 sm:w-6 sm:h-6 text-brand-yellow-golden shrink-0" />
                     <div>
-                      <h3 className="font-serif-display text-brand-white uppercase text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light leading-tight">
+                      <h3 className="font-serif-display text-brand-white uppercase text-lg sm:text-xl md:text-2xl font-light leading-tight">
                         {item.question}
                       </h3>
                     </div>
                   </div>
 
-                  <div className={`p-2.5 rounded-full bg-white/5 text-brand-platinum transition-transform duration-300 ${isOpen ? "rotate-180 bg-brand-yellow-golden text-black" : ""}`}>
-                    <ChevronDown className="w-5 h-5" />
+                  <div className={`p-2 rounded-full bg-white/5 text-brand-platinum transition-transform duration-300 ${isOpen ? "rotate-180 bg-brand-yellow-golden text-black" : ""}`}>
+                    <ChevronDown className="w-4 h-4" />
                   </div>
                 </button>
 
@@ -113,7 +104,7 @@ export default function FaqSection() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 pt-3 text-base sm:text-lg md:text-xl lg:text-2xl text-brand-platinum/90 font-light leading-relaxed border-t border-white/5 pl-6 sm:pl-14">
+                      <div className="px-5 sm:px-6 pb-6 pt-2 text-sm sm:text-base md:text-lg text-brand-platinum/90 font-light leading-relaxed border-t border-white/5 pl-5 sm:pl-14">
                         {item.answer}
                       </div>
                     </motion.div>
@@ -122,6 +113,17 @@ export default function FaqSection() {
               </div>
             );
           })}
+        </div>
+
+        {/* Bottom Section Contact Us CTA */}
+        <div className="mt-8 sm:mt-10 text-center pt-6 border-t border-white/10">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center gap-2.5 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-8 py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
+          >
+            <span>CONTACT US</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
         </div>
       </div>
     </section>

@@ -330,119 +330,65 @@ export default function FashionMagazineSection({ isFullPage = false }: FashionMa
         </div>
 
         {/* ==================================================== */}
-        {/* HOMEPAGE VIEW: EXACTLY 1 BIG FEATURED CARD + 3 SMALL CARDS */}
+        {/* HOMEPAGE VIEW: EXACTLY 3 STORIES & SINGLE VIEW ALL STORIES CTA */}
         {/* ==================================================== */}
         {!isFullPage ? (
           <div className="space-y-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-              {/* 1 BIG FEATURED CARD (lg:col-span-7) */}
-              <div className="lg:col-span-7 flex">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+              {ARTICLES_DATA.slice(0, 3).map((story, idx) => (
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  key={story.id}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className="group relative w-full bg-[#FAF8F5] dark:bg-[#090807] border border-black/10 dark:border-[#D4AF37]/40 rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between hover:border-[#D4AF37] transition-all duration-300"
+                  transition={{ duration: 0.4, delay: idx * 0.08 }}
+                  className="group relative bg-[#FAF8F5] dark:bg-[#090807] border border-black/10 dark:border-white/10 rounded-2xl overflow-hidden p-6 hover:border-[#D4AF37]/60 transition-all duration-300 flex flex-col justify-between shadow-sm"
                 >
                   <div>
-                    {/* Clean Featured Image Frame */}
-                    <div className="relative aspect-[16/10] sm:aspect-[16/9.5] w-full overflow-hidden bg-black">
-                      <Image
-                        src={featuredStory.primaryImage}
-                        alt={featuredStory.primaryImageAlt}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 60vw"
-                        className="object-cover object-top filter contrast-[1.03] group-hover:scale-105 transition-transform duration-700 ease-out"
-                        priority
-                      />
-                      <div className="absolute top-4 left-4 z-10">
-                        <span className="px-3.5 py-1.5 rounded-full text-[10px] sm:text-xs font-syne font-bold uppercase tracking-wider bg-black/80 text-[#D4AF37] border border-[#D4AF37]/40 backdrop-blur-md">
-                          FEATURED STORY · {featuredStory.category}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Featured Story Content Below Image */}
-                    <div className="p-6 sm:p-8 space-y-3">
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs font-syne text-[#D4AF37] font-bold uppercase tracking-wider">
-                          {featuredStory.readTime}
-                        </span>
-                      </div>
-
-                      <EditorialHeading title={featuredStory.title} level="h3" />
-                      <EditorialDescription text={featuredStory.subtitle} className="text-justified" />
-                    </div>
-                  </div>
-
-                  <div className="p-6 sm:p-8 pt-0">
-                    <button
-                      onClick={() => setSelectedArticle(featuredStory)}
-                      className="inline-flex items-center gap-2.5 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-6 py-3 rounded-full text-xs font-syne font-bold tracking-widest uppercase transition-all shadow-md group/btn"
-                    >
-                      <span>READ STORY</span>
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                    </button>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* 3 SMALL CARDS STACKED (lg:col-span-5) */}
-              <div className="lg:col-span-5 flex flex-col justify-between gap-4">
-                {smallStories.map((story, idx) => (
-                  <motion.div
-                    key={story.id}
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: idx * 0.08 }}
-                    className="group relative bg-[#FAF8F5] dark:bg-[#090807] border border-black/10 dark:border-white/10 rounded-2xl p-4 sm:p-5 hover:border-[#D4AF37]/60 transition-all duration-300 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between shadow-sm"
-                  >
-                    <div className="relative w-full sm:w-36 aspect-[16/10] sm:aspect-square shrink-0 rounded-xl overflow-hidden bg-black border border-black/10 dark:border-white/10">
+                    <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl mb-4 bg-black border border-black/10 dark:border-white/10">
                       <Image
                         src={story.primaryImage}
                         alt={story.primaryImageAlt}
                         fill
-                        sizes="(max-width: 640px) 100vw, 150px"
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       />
-                    </div>
-
-                    <div className="flex flex-col justify-between flex-grow space-y-2 w-full">
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="text-[10px] sm:text-xs font-syne font-bold uppercase tracking-wider text-[#D4AF37]">
+                      <div className="absolute top-3 left-3 z-10">
+                        <span className="px-3 py-1 rounded-full text-[10px] font-syne font-bold uppercase tracking-wider bg-black/80 text-[#D4AF37] border border-[#D4AF37]/40 backdrop-blur-md">
                           {story.category}
                         </span>
-                        <span className="text-[10px] sm:text-xs font-syne text-[#555555] dark:text-brand-off-white/80 uppercase font-semibold">
-                          {story.readTime}
-                        </span>
-                      </div>
-
-                      <EditorialHeading title={story.title} level="h4" className="line-clamp-2" />
-                      <EditorialDescription text={story.subtitle} lineClamp="line-clamp-2" />
-
-                      <div className="pt-1">
-                        <button
-                          onClick={() => setSelectedArticle(story)}
-                          className="inline-flex items-center gap-1.5 text-xs font-syne font-bold uppercase text-[#D4AF37] hover:text-[#111111] dark:hover:text-white transition-colors"
-                        >
-                          <span>READ STORY</span>
-                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                        </button>
                       </div>
                     </div>
-                  </motion.div>
-                ))}
-              </div>
+
+                    <div className="space-y-2 mb-4">
+                      <span className="text-xs font-syne text-[#D4AF37] font-bold uppercase tracking-wider block">
+                        {story.readTime}
+                      </span>
+                      <EditorialHeading title={story.title} level="h3" className="line-clamp-2" />
+                      <EditorialDescription text={story.subtitle} lineClamp="line-clamp-3" />
+                    </div>
+                  </div>
+
+                  <div className="pt-3 border-t border-black/10 dark:border-white/10">
+                    <button
+                      onClick={() => setSelectedArticle(story)}
+                      className="inline-flex items-center gap-1.5 text-xs font-syne font-bold uppercase text-[#D4AF37] hover:text-[#111111] dark:hover:text-white transition-colors"
+                    >
+                      <span>READ STORY</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
             </div>
 
-            {/* Bottom Section Explore More CTA */}
+            {/* Bottom Section View All Stories CTA */}
             <div className="mt-6 text-center pt-4 border-t border-black/10 dark:border-white/10">
               <Link
                 href="/fashion-magazine"
                 className="inline-flex items-center justify-center gap-2.5 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-8 py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
               >
-                <span>EXPLORE MORE</span>
+                <span>VIEW ALL STORIES</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>

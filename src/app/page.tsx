@@ -4,6 +4,10 @@ import Chapter2025 from "@/components/sections/Chapter2025";
 import WhatWeDoSection from "@/components/sections/WhatWeDoSection";
 import HomepageTalentSection from "@/components/talent/HomepageTalentSection";
 import HomepageProofSection from "@/components/sections/HomepageProofSection";
+import AboutUsSection from "@/components/sections/AboutUsSection";
+import FashionMagazineSection from "@/components/sections/FashionMagazineSection";
+import WhoWeServeSection from "@/components/sections/WhoWeServeSection";
+import FaqSection from "@/components/sections/FaqSection";
 import FinalConversionSection from "@/components/sections/FinalConversionSection";
 
 export default function Home() {
@@ -21,15 +25,28 @@ export default function Home() {
       {/* 04. SERVICES (4 CONCISE CATEGORIES) */}
       <WhatWeDoSection />
 
-      {/* 05. TALENT NETWORK */}
+      {/* 05. TALENT NETWORK (7 CATEGORIES WITH APPLY & HIRE TALENT) */}
       <HomepageTalentSection />
 
       {/* 06. PROOF & EDITORIAL POSITIONING */}
       <HomepageProofSection />
 
-      {/* 07. FINAL CONVERSION & INQUIRY */}
+      {/* 07. ABOUT FASHAI UNIVERSAL */}
+      <AboutUsSection />
+
+      {/* 08. FASHION MAGAZINE (3 FEATURED STORIES) */}
+      <FashionMagazineSection />
+
+      {/* 09. INDUSTRIES WE SUPPORT */}
+      <WhoWeServeSection />
+
+      {/* 10. FAQ (CONCISE COST & TIMING QUESTIONS) */}
+      <FaqSection />
+
+      {/* 11. FINAL CONVERSION & INQUIRY */}
       <FinalConversionSection />
     </main>
   );
 }
+
 
