@@ -157,6 +157,15 @@ export default function HireTalentPage() {
           <p className="font-sans text-base sm:text-xl md:text-2xl text-[#333333] dark:text-white/90 font-light max-w-2xl mx-auto leading-relaxed">
             Connect with verified models, designers, choreographers, stylists, photographers, and creative directors for your event, campaign, or brand requirement.
           </p>
+
+          <div className="pt-2">
+            <Link
+              href="/apply"
+              className="inline-flex items-center gap-1.5 text-xs font-syne tracking-wider text-[#D4AF37] hover:underline uppercase font-bold"
+            >
+              <span>Are you a creative professional looking to join our network? APPLY AS TALENT →</span>
+            </Link>
+          </div>
         </div>
       </section>
 

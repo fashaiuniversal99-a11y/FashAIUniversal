@@ -164,33 +164,48 @@ export default function MobileMenu({
               })}
             </nav>
 
-            {/* BOTTOM FOOTER LOCKUP IN MOBILE MENU */}
+            {/* BOTTOM CONVERSION LOCKUP IN MOBILE MENU */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.3 }}
-              className="border-t border-black/10 dark:border-white/10 pt-4 flex flex-col space-y-2.5 shrink-0"
+              className="border-t border-black/10 dark:border-white/10 pt-3 flex flex-col space-y-2 shrink-0"
             >
-              <Link
-                href="/services"
-                onClick={onClose}
-                className="w-full border border-[#F15E1C]/40 dark:border-[#D4AF37]/40 bg-[#F15E1C]/10 dark:bg-[#D4AF37]/10 hover:bg-[#F15E1C]/20 text-[#111111] dark:text-white py-2.5 text-center font-syne text-xs tracking-wider font-bold transition-all rounded-xl shadow-sm flex items-center justify-center gap-2"
-              >
-                <Sparkles className="w-3.5 h-3.5 text-[#F15E1C] dark:text-[#D4AF37]" />
-                <GradientFlowText variant="gold">
-                  EXPLORE SERVICES &amp; FORMATS →
-                </GradientFlowText>
-              </Link>
+              <div className="grid grid-cols-2 gap-2">
+                <Link
+                  href="/plan-your-event"
+                  onClick={onClose}
+                  className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] py-2.5 px-2 text-center font-syne text-[11px] font-bold tracking-wider uppercase transition-all rounded-xl shadow-xs flex items-center justify-center"
+                >
+                  PLAN YOUR EVENT
+                </Link>
 
-              <Link
-                href="/contact"
-                onClick={onClose}
-                className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] py-3 text-center font-syne text-xs tracking-wider font-bold text-[#111111] transition-colors rounded-xl shadow-md flex items-center justify-center gap-2"
-              >
-                <GradientFlowText variant="primary">
-                  CONTACT US →
-                </GradientFlowText>
-              </Link>
+                <Link
+                  href="/apply"
+                  onClick={onClose}
+                  className="w-full border border-[#D4AF37] hover:bg-[#D4AF37]/10 text-[#111111] dark:text-white py-2.5 px-2 text-center font-syne text-[11px] font-bold tracking-wider uppercase transition-all rounded-xl flex items-center justify-center"
+                >
+                  APPLY AS TALENT
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2">
+                <Link
+                  href="/hire-talent"
+                  onClick={onClose}
+                  className="w-full border border-black/15 dark:border-white/20 bg-black/5 dark:bg-white/5 text-[#111111] dark:text-white py-2.5 px-2 text-center font-syne text-[11px] font-bold tracking-wider uppercase transition-all rounded-xl flex items-center justify-center"
+                >
+                  HIRE TALENT
+                </Link>
+
+                <Link
+                  href="/contact"
+                  onClick={onClose}
+                  className="w-full border border-black/15 dark:border-white/20 bg-black/5 dark:bg-white/5 text-[#111111] dark:text-white py-2.5 px-2 text-center font-syne text-[11px] font-bold tracking-wider uppercase transition-all rounded-xl flex items-center justify-center"
+                >
+                  CONTACT US
+                </Link>
+              </div>
 
               <div className="flex items-center justify-between text-[11px] font-syne text-neutral-600 dark:text-white/60 pt-1">
                 <span>@fashai_universal</span>

@@ -49,11 +49,12 @@ export default function Header() {
     { id: "events", label: "EVENTS", href: "/events", enabled: true, order: 4 },
     { id: "projects", label: "PROJECTS", href: "/projects", enabled: true, order: 5 },
     { id: "blog", label: "BLOG", href: "/fashion-magazine", enabled: true, order: 6 },
+    { id: "talent", label: "TALENT", href: "/apply", enabled: true, order: 7 },
   ];
 
   const rawConfigNav = (config.navigationSettings && config.navigationSettings.length > 0
     ? config.navigationSettings.filter(
-        (item) => item.enabled && item.id !== "apply" && item.id !== "contact" && item.id !== "gallery"
+        (item) => item.enabled && item.id !== "contact" && item.id !== "gallery"
       )
     : DEFAULT_NAV_ITEMS
   );
@@ -61,6 +62,7 @@ export default function Header() {
   const hasEvents = rawConfigNav.some((item) => item.id === "events" || item.href === "/events");
   const hasProjects = rawConfigNav.some((item) => item.id === "projects" || item.href === "/projects");
   const hasBlog = rawConfigNav.some((item) => item.id === "blog" || item.href === "/fashion-magazine");
+  const hasTalent = rawConfigNav.some((item) => item.id === "talent" || item.id === "apply" || item.href === "/apply");
 
   let mergedNavItems = [...rawConfigNav];
   if (mergedNavItems.length === 0) {
@@ -74,6 +76,9 @@ export default function Header() {
     }
     if (!hasBlog) {
       mergedNavItems.push({ id: "blog", label: "BLOG", href: "/fashion-magazine", enabled: true, order: 6 });
+    }
+    if (!hasTalent) {
+      mergedNavItems.push({ id: "talent", label: "TALENT", href: "/apply", enabled: true, order: 7 });
     }
   }
 
@@ -173,9 +178,17 @@ export default function Header() {
           </nav>
 
           {/* RIGHT CIRCULAR & PILL UNIFIED ACTION CONTROLS */}
-          <div className="flex items-center shrink-0 gap-2.5 sm:gap-3">
+          <div className="flex items-center shrink-0 gap-2 sm:gap-2.5">
             {/* CIRCULAR GLASS THEME TOGGLE (w-9 h-9 sm:w-10 sm:h-10) */}
             <ThemeToggle isHeroHeader={isOverVideo} />
+
+            {/* HIRE TALENT CLIENT ACTION BUTTON */}
+            <Link
+              href="/hire-talent"
+              className="hidden md:inline-flex items-center justify-center border border-[#D4AF37]/60 dark:border-white/30 text-[#111111] dark:text-white hover:border-[#D4AF37] hover:bg-[#D4AF37]/15 font-syne font-bold text-xs tracking-wider uppercase rounded-full h-9 sm:h-10 px-4 sm:px-5 transition-all duration-300 shrink-0 whitespace-nowrap"
+            >
+              HIRE TALENT
+            </Link>
 
             {/* FULLY ROUNDED PILL CONTACT US CTA BUTTON (h-9 sm:h-10 px-5 sm:px-6) */}
             <Link

@@ -107,20 +107,36 @@ export default function ApplicationSelectionPage({
     <section className="relative pt-6 sm:pt-10 pb-12 sm:pb-16 bg-[#050505] min-h-[85vh] text-brand-white">
       <div className="container-editorial relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Section Header */}
-        <div className="max-w-3xl mb-6 sm:mb-8 space-y-2.5">
-          <div className="flex items-center gap-2.5 text-base sm:text-lg md:text-xl font-syne tracking-widest text-brand-yellow-golden font-bold uppercase">
-            <span>FASHAI UNIVERSAL TALENT NETWORK</span>
+        <div className="max-w-4xl mb-6 sm:mb-8 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-brand-yellow-golden/40 bg-brand-yellow-golden/10 text-brand-yellow-golden text-xs font-syne font-bold tracking-wider uppercase">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>FASHAI UNIVERSAL CREATIVE NETWORK</span>
           </div>
 
           <h1 className="font-serif-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-brand-white uppercase leading-tight tracking-tight">
-            OPEN NOMINATIONS &amp; APPLICATIONS
+            APPLY AS <span className="font-serif italic text-brand-yellow-golden">TALENT</span>
           </h1>
 
           <div className="h-[2px] w-20 bg-brand-yellow-golden shadow-[0_0_10px_rgba(250,182,10,0.6)]" />
 
-          <p className="font-sans text-base sm:text-lg md:text-xl text-brand-platinum/90 font-light leading-relaxed max-w-2xl sm:max-w-3xl pt-1">
-            Explore the opportunities currently available across the FashAI Universal ecosystem. Select your domain below to complete your application.
+          <p className="font-sans text-base sm:text-lg md:text-xl text-brand-platinum/95 font-light leading-relaxed max-w-3xl pt-1">
+            Official application portal for fashion designers, runway models, makeup artists, fashion stylists, choreographers, digital creators, public figures, and creative directors seeking representation and participation in international fashion shows, campaigns, and luxury experiences across the UAE, India, and global destinations.
           </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs font-syne text-brand-platinum/80 border-t border-white/10">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-brand-yellow-golden" />
+              <span><strong>1. Select Domain:</strong> Choose your category</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-brand-yellow-golden" />
+              <span><strong>2. Submit Brief:</strong> Provide portfolio &amp; details</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-brand-yellow-golden" />
+              <span><strong>3. Review:</strong> Team evaluates for upcoming events</span>
+            </div>
+          </div>
         </div>
 
         {/* If NO role is selected: Show Category Selection Grid */}
