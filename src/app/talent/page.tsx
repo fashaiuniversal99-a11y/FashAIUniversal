@@ -227,6 +227,51 @@ function TalentDirectoryContent() {
         </div>
       </main>
 
+      {/* TARGETED TALENT & CASTING PATHWAYS */}
+      <section className="py-12 sm:py-16 bg-[#FAF8F5] dark:bg-[#080706] border-t border-black/10 dark:border-white/10">
+        <div className="w-[calc(100%-32px)] lg:w-[min(92vw,1200px)] max-w-[1200px] mx-auto box-border">
+          <div className="max-w-3xl mb-8 space-y-2">
+            <span className="font-jost text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
+              SPECIALIZED OPPORTUNITY PATHWAYS
+            </span>
+            <h2 className="font-serif-display text-3xl sm:text-5xl font-light uppercase tracking-tight">
+              TALENT &amp; CASTING DESTINATIONS
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { title: "Model Casting Dubai", href: "/talent/model-casting-dubai", badge: "DUBAI" },
+              { title: "Become a Model in Dubai", href: "/talent/become-a-model-dubai", badge: "DUBAI" },
+              { title: "Become a Model in India", href: "/talent/become-a-model-india", badge: "INDIA" },
+              { title: "Designer Showcase", href: "/talent/fashion-designer-showcase-opportunities", badge: "GLOBAL" },
+              { title: "Makeup Artist Roles", href: "/talent/makeup-artist-opportunities", badge: "BEAUTY" },
+              { title: "Stylist Opportunities", href: "/talent/stylist-opportunities", badge: "WARDROBE" },
+              { title: "Choreographer Roles", href: "/talent/choreographer-collaborations", badge: "STAGE" },
+              { title: "Creator Collaborations", href: "/talent/creator-collaborations", badge: "MEDIA" },
+            ].map((pathway, idx) => (
+              <Link
+                key={idx}
+                href={pathway.href}
+                className="p-5 rounded-2xl bg-white dark:bg-[#0B0A09] border border-black/10 dark:border-white/10 hover:border-[#D4AF37] transition-all group space-y-2 flex flex-col justify-between"
+              >
+                <div>
+                  <span className="text-[10px] font-jost font-bold uppercase tracking-wider text-[#D4AF37] px-2 py-0.5 rounded-full bg-[#D4AF37]/10 inline-block mb-1">
+                    {pathway.badge}
+                  </span>
+                  <h3 className="font-serif-display text-lg font-light uppercase group-hover:text-[#D4AF37] transition-colors">
+                    {pathway.title}
+                  </h3>
+                </div>
+                <div className="pt-2 flex items-center gap-1 text-xs font-jost font-bold uppercase text-[#D4AF37]">
+                  <span>APPLY &amp; LEARN ↗</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

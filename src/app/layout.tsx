@@ -4,29 +4,27 @@ import ClientLayoutWrapper from "@/components/layout/ClientLayoutWrapper";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fashaiuniversal.com"),
-  title: "FashAI Universal — International Luxury Fashion & Events Platform",
+  title: "Fashion Show and Event Management in Dubai and India | FashAI Universal",
   description:
-    "FashAI Universal provides end-to-end event management, planning, and production for luxury fashion and lifestyle events across the UAE, India, and worldwide.",
+    "FashAI Universal delivers fashion show management, corporate event production, luxury brand experiences, and talent solutions across Dubai, UAE, and Gurgaon, India.",
   alternates: {
     canonical: "https://www.fashaiuniversal.com",
   },
   keywords: [
     "FashAI Universal",
-    "Event Management",
-    "Fashion Event Planning",
-    "Event Production Dubai",
-    "Luxury Fashion Events",
-    "Lifestyle Events UAE",
-    "Corporate Event Management",
-    "Fashion Show Production",
-    "Haute Couture Dubai",
-    "Fashion Talent Network",
+    "Fashion Show Management Dubai",
+    "Event Management Company Gurgaon",
+    "Corporate Events Dubai",
+    "Brand Shoots Dubai",
+    "Luxury Fashion Events UAE",
+    "Talent Solutions India",
+    "Event Production",
   ],
   authors: [{ name: "FashAI Universal" }],
   openGraph: {
-    title: "FashAI Universal — International Fashion & Events Platform",
+    title: "Fashion Show and Event Management in Dubai and India | FashAI Universal",
     description:
-      "FashAI Universal provides end-to-end event management, planning, and production for luxury fashion and lifestyle events across the UAE, India, and worldwide.",
+      "FashAI Universal delivers fashion show management, corporate event production, luxury brand experiences, and talent solutions across Dubai, UAE, and Gurgaon, India.",
     url: "https://www.fashaiuniversal.com",
     siteName: "FashAI Universal",
     images: [
@@ -42,9 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FashAI Universal — International Fashion & Events Platform",
+    title: "Fashion Show and Event Management in Dubai and India | FashAI Universal",
     description:
-      "FashAI Universal provides end-to-end event management, planning, and production for luxury fashion and lifestyle events across the UAE, India, and worldwide.",
+      "FashAI Universal delivers fashion show management, corporate event production, luxury brand experiences, and talent solutions across Dubai, UAE, and Gurgaon, India.",
     images: ["/assets/brand/fashai-og-share.png"],
   },
   robots: {

@@ -157,7 +157,7 @@ export default function ServicesPage() {
                   <div className="pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-black/10 dark:border-white/10 flex justify-end">
                     <Link
                       href="/contact?type=Services"
-                      className="inline-flex items-center gap-2 sm:gap-2.5 text-sm sm:text-base font-syne font-bold uppercase tracking-wider text-[#F15E1C] dark:text-[#D4AF37] hover:underline"
+                      className="inline-flex items-center gap-2 sm:gap-2.5 text-sm sm:text-base font-jost font-bold uppercase tracking-wider text-[#D4AF37] hover:underline"
                     >
                       <span>ENQUIRE FOR THIS SERVICE</span>
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -166,6 +166,71 @@ export default function ServicesPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* SPECIALIZED REGIONAL LANDING HUBS */}
+      <section className="py-12 sm:py-16 bg-[#FAF8F5] dark:bg-[#080706] border-b border-black/10 dark:border-white/10">
+        <div className="w-[min(92vw,1400px)] max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-8 space-y-2">
+            <span className="font-jost text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
+              REGIONAL &amp; SPECIALIZED SERVICES
+            </span>
+            <h2 className="font-serif-display text-3xl sm:text-5xl font-light uppercase tracking-tight">
+              TARGETED SERVICE DESTINATIONS
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: "Fashion Show Management Dubai",
+                location: "Dubai, UAE",
+                href: "/services/fashion-show-management-dubai",
+                desc: "Runway production, catwalk staging, and luxury show management.",
+              },
+              {
+                title: "Event Management Company Gurgaon",
+                location: "Gurgaon, India",
+                href: "/services/event-management-gurgaon",
+                desc: "End-to-end corporate, lifestyle, and fashion event planning.",
+              },
+              {
+                title: "Corporate Events Dubai",
+                location: "Dubai, UAE",
+                href: "/services/corporate-events-dubai",
+                desc: "Executive summits, tech activations, and luxury brand launches.",
+              },
+              {
+                title: "Brand Shoots Dubai",
+                location: "Dubai, UAE",
+                href: "/services/brand-shoots-dubai",
+                desc: "Editorial shoot production, creative direction, and talent booking.",
+              },
+            ].map((hub, i) => (
+              <Link
+                key={i}
+                href={hub.href}
+                className="p-6 rounded-2xl bg-white dark:bg-[#0B0A09] border border-black/10 dark:border-white/10 hover:border-[#D4AF37] transition-all group space-y-3 flex flex-col justify-between"
+              >
+                <div className="space-y-2">
+                  <span className="text-[10px] font-jost font-bold uppercase tracking-wider text-[#D4AF37] px-2.5 py-1 rounded-full bg-[#D4AF37]/10 inline-block">
+                    {hub.location}
+                  </span>
+                  <h3 className="font-serif-display text-xl font-light uppercase group-hover:text-[#D4AF37] transition-colors">
+                    {hub.title}
+                  </h3>
+                  <p className="font-sans text-xs sm:text-sm text-[#555555] dark:text-white/75 font-light leading-relaxed">
+                    {hub.desc}
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-black/10 dark:border-white/10 flex items-center gap-1.5 text-xs font-jost font-bold uppercase text-[#D4AF37]">
+                  <span>EXPLORE SERVICE</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
