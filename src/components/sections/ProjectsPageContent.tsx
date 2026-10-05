@@ -144,7 +144,7 @@ export default function ProjectsPageContent() {
 
               <div className="lg:col-span-5 relative aspect-[4/3] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-black p-2 flex items-center justify-center">
                 <Image
-                  src="/assets/final/WhatsApp Image 2026-09-18 at 15.03.32.jpeg"
+                  src="/assets/final/photo-2026-09-18-15.03.32.jpeg"
                   alt="FashPrism India Feature"
                   fill
                   className="object-contain object-center"
@@ -246,7 +246,7 @@ export default function ProjectsPageContent() {
 
               <div className="lg:col-span-5 relative aspect-[4/3] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-black p-2 flex items-center justify-center">
                 <Image
-                  src="/assets/final/WhatsApp Image 2026-09-18 at 15.02.37.jpeg"
+                  src="/assets/final/photo-2026-09-18-15.02.37.jpeg"
                   alt="FashPrism International Feature"
                   fill
                   className="object-contain object-center"

@@ -152,7 +152,7 @@ export default function VideoLibraryPage() {
             </label>
             <input
               type="text"
-              placeholder="e.g. /assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg"
+              placeholder="e.g. /assets/final/photo-2026-09-18-15.02.32.jpeg"
               value={hero.mobileFallback || ""}
               onChange={(e) => handleHeroVideoChange("mobileFallback", e.target.value)}
               className="w-full bg-[#181715] border border-white/15 text-white text-sm rounded-xl px-4 py-3 outline-none"

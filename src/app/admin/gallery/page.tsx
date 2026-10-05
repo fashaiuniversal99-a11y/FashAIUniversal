@@ -16,7 +16,7 @@ export default function GalleryManagerPage() {
     const newItem: GalleryItemConfig = {
       id: `gal_${Date.now()}`,
       title: "New Gallery Asset",
-      image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg",
+      image: "/assets/final/photo-2026-09-18-15.02.32.jpeg",
       category: "COUTURE DETAILS",
       caption: "Haute couture presentation",
       altText: "Fashion Showcase",

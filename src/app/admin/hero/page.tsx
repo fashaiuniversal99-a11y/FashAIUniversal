@@ -19,7 +19,7 @@ export default function HeroControlPage() {
     ctaText: "SEE UPCOMING",
     ctaUrl: "/upcoming",
     heroImage: "/assets/home/where_fashion_creates_possibilities.png",
-    heroFallbackImage: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg",
+    heroFallbackImage: "/assets/final/photo-2026-09-18-15.02.32.jpeg",
     heroVideo: "",
     posterImage: "/assets/home/where_fashion_creates_possibilities.png",
     overlayOpacity: 0.3,

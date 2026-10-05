@@ -61,7 +61,7 @@ export const DEFAULT_MASTER_CONFIG: MasterSiteConfig = {
     ctaText: "SEE UPCOMING",
     ctaUrl: "/upcoming",
     heroImage: "/assets/home/where_fashion_creates_possibilities.png",
-    heroFallbackImage: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg",
+    heroFallbackImage: "/assets/final/project-lifestyle-2025-hero.jpg",
     heroVideo: "",
     posterImage: "/assets/home/where_fashion_creates_possibilities.png",
     overlayOpacity: 0.3,
@@ -270,10 +270,10 @@ export const DEFAULT_MASTER_CONFIG: MasterSiteConfig = {
     { id: "terms", route: "/terms", title: "Terms & Conditions · FashAI Universal", metaDescription: "Official terms and conditions.", published: true, visibility: "PUBLIC" },
   ],
   galleryItems: [
-    { id: "gal_1", title: "Couture Silhouette", image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg", category: "COUTURE DETAILS", caption: "High-precision garment tailoring", altText: "Couture details", published: true, featured: true, order: 1 },
-    { id: "gal_2", title: "Runway Stage Dubai", image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.33.jpeg", category: "RUNWAY & STAGE", caption: "Spatial lighting and catwalk dynamics", altText: "Runway stage", published: true, featured: true, order: 2 },
-    { id: "gal_3", title: "VIP Delegate Gathering", image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.34.jpeg", category: "PEOPLE & MOMENTS", caption: "Delegate gathering at LifeStyle showcase", altText: "VIP delegates", published: true, featured: true, order: 3 },
-    { id: "gal_4", title: "Architectural Lighting", image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.35.jpeg", category: "ARCHITECTURE & LIGHTING", caption: "Spatial lighting design", altText: "Architecture lighting", published: true, featured: true, order: 4 },
+    { id: "gal_1", title: "Couture Silhouette", image: "/assets/final/project-lifestyle-2025-hero.jpg", category: "COUTURE DETAILS", caption: "High-precision garment tailoring", altText: "Couture details", published: true, featured: true, order: 1 },
+    { id: "gal_2", title: "Runway Stage Dubai", image: "/assets/final/project-lifestyle-2025-01.jpg", category: "RUNWAY & STAGE", caption: "Spatial lighting and catwalk dynamics", altText: "Runway stage", published: true, featured: true, order: 2 },
+    { id: "gal_3", title: "VIP Delegate Gathering", image: "/assets/final/project-lifestyle-2026-hero.jpg", category: "PEOPLE & MOMENTS", caption: "Delegate gathering at LifeStyle showcase", altText: "VIP delegates", published: true, featured: true, order: 3 },
+    { id: "gal_4", title: "Architectural Lighting", image: "/assets/final/project-lifestyle-2025-02.jpg", category: "ARCHITECTURE & LIGHTING", caption: "Spatial lighting design", altText: "Architecture lighting", published: true, featured: true, order: 4 },
   ],
   mediaLibrary: [
     { id: "med_1", filename: "where_fashion_creates_possibilities.png", url: "/assets/home/where_fashion_creates_possibilities.png", type: "image", size: 450000, dimensions: "1200x800", altText: "OUR VISION", caption: "FashAI Universal Vision", category: "Home", tags: ["vision", "hero"], uploadedAt: "2026-09-24T12:00:00Z", usedIn: ["Hero", "Who We Are"] },

@@ -171,11 +171,11 @@ export default function HomepageProofSection() {
           </div>
         </div>
 
-        {/* 3. TESTIMONIALS (EXACTLY TWO AUTHENTIC TESTIMONIALS) */}
+        {/* 3. PLATFORM & PARTNER POSITIONING (NON-TESTIMONIAL PLATFORM STATEMENTS) */}
         <div className="space-y-6 pt-6 border-t border-black/10 dark:border-white/10">
           <div className="text-center">
             <span className="text-xs font-syne tracking-micro text-[#D4AF37] font-bold uppercase">
-              EDITORIAL PERSPECTIVES
+              EDITORIAL &amp; PLATFORM POSITIONING
             </span>
           </div>
 

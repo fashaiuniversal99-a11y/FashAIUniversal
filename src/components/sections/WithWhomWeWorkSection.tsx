@@ -26,7 +26,7 @@ export const DISCIPLINES: DisciplineItem[] = [
     description:
       "Creative direction begins with an idea — from emerging designers and couture houses to the visual language of a complete fashion experience.",
     tags: ["COUTURE", "DESIGN DIRECTION", "SHOWCASE", "COLLABORATION"],
-    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.32.jpeg",
+    image: "/assets/final/photo-2026-09-18-15.02.32.jpeg",
     alt: "FashAI Universal Design Direction Showcase",
   },
   {
@@ -37,7 +37,7 @@ export const DISCIPLINES: DisciplineItem[] = [
     description:
       "Styling shapes the visual identity of a production — from wardrobe direction and editorial lookbooks to the final runway presentation.",
     tags: ["WARDROBE", "EDITORIAL", "RUNWAY", "CAMPAIGNS"],
-    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.35.jpeg",
+    image: "/assets/final/photo-2026-09-18-15.02.35.jpeg",
     alt: "FashAI Universal Styling Direction Showcase",
   },
   {
@@ -48,7 +48,7 @@ export const DISCIPLINES: DisciplineItem[] = [
     description:
       "Makeup, hair, and beauty direction complete the visual narrative of a fashion experience, elevating garment art on stage.",
     tags: ["BEAUTY", "EDITORIAL", "BACKSTAGE", "CAMPAIGNS"],
-    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.40.jpeg",
+    image: "/assets/final/photo-2026-09-18-15.02.40.jpeg",
     alt: "FashAI Universal Beauty Artistry Showcase",
   },
   {
@@ -59,7 +59,7 @@ export const DISCIPLINES: DisciplineItem[] = [
     description:
       "Choreography transforms a runway into a performance, shaping pace, catwalk movement, formations, and audience engagement.",
     tags: ["RUNWAY", "CHOREOGRAPHY", "STAGE", "PERFORMANCE"],
-    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.34.jpeg",
+    image: "/assets/final/photo-2026-09-18-15.02.34.jpeg",
     alt: "FashAI Universal Movement & Stage Showcase",
   },
   {
@@ -70,7 +70,7 @@ export const DISCIPLINES: DisciplineItem[] = [
     description:
       "Runway models, international talent, and creative personalities form the core of productions designed around presence and movement.",
     tags: ["RUNWAY", "EDITORIAL", "CAMPAIGNS", "CASTING"],
-    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.33.jpeg",
+    image: "/assets/final/photo-2026-09-18-15.02.33.jpeg",
     alt: "FashAI Universal Talent Network Showcase",
   },
   {
@@ -81,7 +81,7 @@ export const DISCIPLINES: DisciplineItem[] = [
     description:
       "From architectural staging and lighting design to live execution, production brings the entire creative vision together as one experience.",
     tags: ["RUNWAY", "STAGE", "PRODUCTION", "EVENTS"],
-    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.36.jpeg",
+    image: "/assets/final/photo-2026-09-18-15.02.36.jpeg",
     alt: "FashAI Universal Stage Production Showcase",
   },
   {
@@ -92,7 +92,7 @@ export const DISCIPLINES: DisciplineItem[] = [
     description:
       "Editorial commentary, digital storytelling, press coverage, and content amplification extend the experience beyond the room.",
     tags: ["EDITORIAL", "CONTENT", "COVERAGE", "DIGITAL"],
-    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.45.jpeg",
+    image: "/assets/final/photo-2026-09-18-15.02.45.jpeg",
     alt: "FashAI Universal Media & Storytelling Showcase",
   },
   {
@@ -103,7 +103,7 @@ export const DISCIPLINES: DisciplineItem[] = [
     description:
       "Technology adds new dimensions to fashion and event experiences through spatial design, interactive elements, and AI-led possibilities.",
     tags: ["AI", "DIGITAL", "INTERACTIVE", "EXPERIENCE"],
-    image: "/assets/final/WhatsApp Image 2026-09-18 at 15.02.48.jpeg",
+    image: "/assets/final/photo-2026-09-18-15.02.48.jpeg",
     alt: "FashAI Universal Digital Innovation Showcase",
   },
 ];
