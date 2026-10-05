@@ -1,21 +1,76 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight, UserPlus, Briefcase } from "lucide-react";
-import { PEOPLE_MASTER_DATA, PeopleCategory } from "@/data/people";
-import ShortTalentApplyModal from "./ShortTalentApplyModal";
 
 export default function HomepageTalentSection() {
-  const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<string>("model");
-
-  const handleApplyClick = (catId: string) => {
-    setSelectedCategory(catId);
-    setIsApplyModalOpen(true);
-  };
+  const talentCategories = [
+    {
+      id: "models",
+      categoryId: "model",
+      title: "MODELS",
+      tagline: "RUNWAY & CATWALK DIRECTION",
+      subtitle: "Runway models, commercial talent, editorial fit, and high-fashion catwalk presentation.",
+      primaryImage: "/assets/master/models/model_01.png",
+      objectPosition: "object-top",
+    },
+    {
+      id: "designers",
+      categoryId: "fashion_designer",
+      title: "DESIGNERS",
+      tagline: "COUTURE ATELIER & DIRECTION",
+      subtitle: "Couture designers, fashion houses, luxury apparel creators, and creative directors.",
+      primaryImage: "/assets/master/designer/designer_01.png",
+      objectPosition: "object-top",
+    },
+    {
+      id: "makeup-artists",
+      categoryId: "makeup_artist",
+      title: "MAKEUP ARTISTS",
+      tagline: "BEAUTY & BACKSTAGE ARTISTRY",
+      subtitle: "Editorial beauty directors, runway makeup artists, and professional aesthetic specialists.",
+      primaryImage: "/assets/master/makeup/makeup_01.png",
+      objectPosition: "object-top",
+    },
+    {
+      id: "stylists",
+      categoryId: "fashion_stylist",
+      title: "STYLISTS",
+      tagline: "WARDROBE & STYLING DIRECTION",
+      subtitle: "Fashion stylists, wardrobe consultants, luxury lookbook curators, and campaign directors.",
+      primaryImage: "/assets/master/stylist/stylist_01.png",
+      objectPosition: "object-top",
+    },
+    {
+      id: "choreographers",
+      categoryId: "choreographer",
+      title: "CHOREOGRAPHERS",
+      tagline: "MOVEMENT & CHOREOGRAPHY",
+      subtitle: "Runway movement directors, stage choreographers, and spatial performance artists.",
+      primaryImage: "/assets/master/choreographer/choreographer.png",
+      objectPosition: "object-top",
+    },
+    {
+      id: "creators",
+      categoryId: "influencer_creator",
+      title: "CREATORS",
+      tagline: "DIGITAL CREATORS & VOICES",
+      subtitle: "Fashion content creators, digital storytellers, lifestyle influencers, and brand ambassadors.",
+      primaryImage: "/assets/master/influencers/influencer_01.png",
+      objectPosition: "object-top",
+    },
+    {
+      id: "public-figures",
+      categoryId: "celebrity_public_figure",
+      title: "PUBLIC FIGURES",
+      tagline: "GLOBAL PATRONS & VIP SALONS",
+      subtitle: "Celebrities, public figures, industry icons, and luxury brand patrons.",
+      primaryImage: "/assets/master/celebrity/celebrity_01.png",
+      objectPosition: "object-top",
+    },
+  ];
 
   return (
     <section
@@ -38,21 +93,21 @@ export default function HomepageTalentSection() {
               <span>TALENT &amp; CREATIVE NETWORK</span>
             </div>
             <h2 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-white uppercase leading-tight tracking-tight">
-              TALENT FOR <span className="font-serif italic font-normal text-[#D4AF37]">EXCEPTIONAL EVENTS.</span>
+              TALENT <span className="font-serif italic font-normal text-[#D4AF37]">NETWORK</span>
             </h2>
             <p className="font-sans text-base sm:text-lg md:text-xl text-[#555555] dark:text-brand-platinum/90 font-light mt-3 max-w-2xl leading-relaxed">
-              Connect with, apply to, or hire verified international creative talent across runway shows, brand campaigns, and luxury events.
+              Discover and connect with the creative talent behind fashion, beauty, movement and culture.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3 shrink-0">
-            <button
-              onClick={() => handleApplyClick("model")}
+            <Link
+              href="/apply"
               className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-6 py-3 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-md"
             >
               <UserPlus className="w-4 h-4" />
-              <span>APPLY TO JOIN</span>
-            </button>
+              <span>APPLY AS TALENT</span>
+            </Link>
             <Link
               href="/hire-talent"
               className="inline-flex items-center gap-2 bg-transparent border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 px-6 py-3 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300"
@@ -63,9 +118,9 @@ export default function HomepageTalentSection() {
           </div>
         </div>
 
-        {/* Talent Category Cards Grid — Balanced Multi-Column Responsive Grid */}
+        {/* Talent Category Cards Grid — 7 Categories */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6 items-stretch">
-          {PEOPLE_MASTER_DATA.map((cat: PeopleCategory, idx: number) => (
+          {talentCategories.map((cat, idx) => (
             <motion.div
               key={cat.id}
               initial={{ opacity: 0, y: 20 }}
@@ -74,44 +129,46 @@ export default function HomepageTalentSection() {
               transition={{ duration: 0.4, delay: idx * 0.05 }}
               className="group relative bg-[#FAF8F5] dark:bg-[#0E0D0C] border border-black/10 dark:border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between p-5 hover:border-[#D4AF37]/60 transition-all duration-300 shadow-sm dark:shadow-xl"
             >
-              {/* Category Image Frame */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/10 dark:bg-black rounded-xl mb-4 border border-black/5 dark:border-white/10">
-                <Image
-                  src={cat.primaryImage}
-                  alt={cat.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className={`object-cover ${cat.objectPosition} filter contrast-105 group-hover:scale-105 transition-transform duration-500`}
-                />
+              <div>
+                {/* Category Image Frame */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/10 dark:bg-black rounded-xl mb-4 border border-black/5 dark:border-white/10">
+                  <Image
+                    src={cat.primaryImage}
+                    alt={cat.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className={`object-cover ${cat.objectPosition} filter contrast-105 group-hover:scale-105 transition-transform duration-500`}
+                  />
+                </div>
+
+                {/* Card Content */}
+                <div className="space-y-2 mb-4">
+                  <span className="text-[10px] font-syne tracking-widest font-bold text-[#D4AF37] uppercase block">
+                    {cat.tagline}
+                  </span>
+
+                  <h3 className="font-serif-display text-xl sm:text-2xl font-light text-[#111111] dark:text-white uppercase leading-tight tracking-tight group-hover:text-[#D4AF37] transition-colors">
+                    {cat.title}
+                  </h3>
+
+                  <p className="font-sans text-xs sm:text-sm text-[#555555] dark:text-brand-platinum/80 font-light leading-relaxed">
+                    {cat.subtitle}
+                  </p>
+                </div>
               </div>
 
-              {/* Card Content */}
-              <div className="space-y-2 mb-4 flex-1">
-                <span className="text-[10px] font-syne tracking-widest font-bold text-[#D4AF37] uppercase block">
-                  {cat.tagline}
-                </span>
-
-                <h3 className="font-serif-display text-xl sm:text-2xl font-light text-[#111111] dark:text-white uppercase leading-tight tracking-tight group-hover:text-[#D4AF37] transition-colors">
-                  {cat.title}
-                </h3>
-
-                <p className="font-sans text-xs sm:text-sm text-[#555555] dark:text-brand-platinum/80 font-light leading-relaxed line-clamp-3">
-                  {cat.subtitle}
-                </p>
-              </div>
-
-              {/* Action Buttons: APPLY TO JOIN & HIRE TALENT */}
+              {/* Action Buttons: APPLY & HIRE TALENT */}
               <div className="pt-3 border-t border-black/10 dark:border-white/10 flex flex-col gap-2">
-                <button
-                  onClick={() => handleApplyClick(cat.categoryId)}
+                <Link
+                  href={`/apply?category=${cat.categoryId}`}
                   className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] py-2.5 px-4 rounded-xl text-xs font-syne font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-between shadow-sm"
                 >
-                  <span>APPLY TO JOIN</span>
+                  <span>APPLY</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
-                </button>
+                </Link>
 
                 <Link
-                  href="/hire-talent"
+                  href={`/hire-talent?category=${cat.categoryId}`}
                   className="w-full border border-black/15 dark:border-white/15 bg-transparent hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 text-[#333333] dark:text-white/80 hover:text-[#111111] dark:hover:text-white py-2 px-4 rounded-xl text-xs font-syne font-semibold tracking-wider uppercase transition-all duration-300 flex items-center justify-between"
                 >
                   <span>HIRE TALENT</span>
@@ -122,13 +179,7 @@ export default function HomepageTalentSection() {
           ))}
         </div>
       </div>
-
-      {/* Short Talent Apply Form Modal */}
-      <ShortTalentApplyModal
-        isOpen={isApplyModalOpen}
-        onClose={() => setIsApplyModalOpen(false)}
-        initialCategory={selectedCategory}
-      />
     </section>
   );
+}
 }
