@@ -62,7 +62,7 @@ function ContentRenderer({ children }: { children: ReactNode }) {
       {/* Haute Couture Footer */}
       <Footer />
 
-      {/* FashAI Universal AI Concierge Assistant */}
+      {/* FashAI Universal Event Concierge Assistant */}
       <FashAiConcierge />
 
       {/* Local Development Only Device Preview Switcher */}

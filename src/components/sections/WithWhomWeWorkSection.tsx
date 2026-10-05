@@ -101,8 +101,8 @@ export const DISCIPLINES: DisciplineItem[] = [
     label: "TECHNOLOGY",
     badge: "DIGITAL INNOVATION",
     description:
-      "Technology adds new dimensions to fashion and event experiences through spatial design, interactive elements, and AI-led possibilities.",
-    tags: ["AI", "DIGITAL", "INTERACTIVE", "EXPERIENCE"],
+      "Technology adds new dimensions to fashion and event experiences through spatial stage design, interactive concierge flows, and digital innovation.",
+    tags: ["DIGITAL", "INTERACTIVE", "SPATIAL", "EXPERIENCE"],
     image: "/assets/final/photo-2026-09-18-15.02.48.jpeg",
     alt: "FashAI Universal Digital Innovation Showcase",
   },

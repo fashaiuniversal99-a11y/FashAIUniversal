@@ -203,7 +203,7 @@ export default function Preloader() {
 
           {/* Bottom Bar */}
           <div className="relative z-10 flex w-full justify-between items-center text-[10px] font-syne tracking-micro text-brand-platinum/60 pt-4 border-t border-white/10 max-w-7xl">
-            <span>FASHION × AI × EXPERIENCE</span>
+            <span>FASHION · TALENT · PRODUCTION</span>
             <span>POWERED BY ARAV INNOVATION</span>
           </div>
         </motion.div>

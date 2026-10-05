@@ -127,8 +127,8 @@ export default function DesignerOpportunitiesPage() {
                 desc: "Sculptural silhouette displays and spatial media showcases for gallery style brand unveilings and VIP buyer salons.",
               },
               {
-                title: "AI & 3D Digital Twin Integration",
-                desc: "Computational fashion styling, virtual garment simulation, and generative silhouette exploration for digital forward labels.",
+                title: "3D & Digital Twin Integration",
+                desc: "Computational fashion styling, virtual garment simulation, and 3D silhouette exploration for digital-forward labels.",
               },
             ].map((item, idx) => (
               <div key={idx} className="p-6 sm:p-8 rounded-2xl border border-black/10 dark:border-white/10 bg-[#FAF8F5] dark:bg-[#090807] space-y-3">

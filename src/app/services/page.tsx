@@ -33,15 +33,15 @@ const SERVICES_DETAILED = [
   {
     id: "computational-design",
     number: "02",
-    title: "AI & Computational Fashion Design",
-    category: "INNOVATION & TECH",
+    title: "Spatial & Digital Experience Design",
+    category: "INNOVATION & DIGITAL",
     description:
-      "Integrating cutting-edge generative AI, 3D garment simulation, digital twin creation, and virtual runway models with physical haute couture craftsmanship.",
+      "Combining 3D garment visualization, spatial stage atmosphere design, and digital experience integration to complement physical fashion craftsmanship and runway production.",
     features: [
-      "Generative Silhouette Exploration",
-      "3D Virtual Garment & Fabric Simulation",
-      "Digital Twin Creation for Physical Collections",
-      "AI-Driven Fashion Campaign Storytelling",
+      "Spatial Catwalk & Stage Atmosphere Design",
+      "3D Silhouette & Fabric Visualization",
+      "Interactive Event Concierge Pathways",
+      "Digital Campaign & Experience Storytelling",
     ],
     icon: Cpu,
   },
@@ -100,7 +100,7 @@ export default function ServicesPage() {
 
             {/* 3. CENTERED INTRO PARAGRAPH */}
             <p className="font-sans text-base sm:text-lg md:text-xl lg:text-2xl text-[#444444] dark:text-white/90 font-light leading-relaxed max-w-[900px] mx-auto text-center">
-              Events and talent, handled by one team. FashAI Universal delivers specialized fashion show production, AI-driven computational design, luxury brand activations, and global talent orchestration across Dubai and India.
+              Events and talent, handled by one team. FashAI Universal delivers specialized fashion show production, digital experience design, luxury brand activations, and global talent orchestration across Dubai and India.
             </p>
           </div>
         </div>

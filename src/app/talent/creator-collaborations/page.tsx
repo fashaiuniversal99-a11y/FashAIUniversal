@@ -127,8 +127,8 @@ export default function CreatorCollaborationsPage() {
                 desc: "Co-creating visual narratives, lookbook reactions, and product unveilings for luxury brand sponsors.",
               },
               {
-                title: "AI & Digital Fashion Media",
-                desc: "Exploring computational style, virtual model showcases, and generative fashion commentary across social channels.",
+                title: "Digital Fashion Media",
+                desc: "Exploring computational style, virtual model showcases, and digital fashion commentary across social channels.",
               },
             ].map((item, idx) => (
               <div key={idx} className="p-6 sm:p-8 rounded-2xl border border-black/10 dark:border-white/10 bg-[#FAF8F5] dark:bg-[#090807] space-y-3">

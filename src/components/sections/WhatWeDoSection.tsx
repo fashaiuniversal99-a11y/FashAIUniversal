@@ -150,7 +150,7 @@ export default function WhatWeDoSection() {
           ))}
         </div>
 
-        {/* AI POSITIONING SUBSECTION */}
+        {/* BRAND AI & DIGITAL EXPERIENCE POSITIONING */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -162,28 +162,28 @@ export default function WhatWeDoSection() {
             <div className="space-y-2.5 max-w-3xl">
               <div className="flex items-center gap-2 text-xs font-syne tracking-widest text-[#D4AF37] font-bold uppercase">
                 <Cpu className="w-4 h-4 text-[#D4AF37]" />
-                <span>FASHION × AI × EXPERIENCE</span>
+                <span>INTELLIGENT DIGITAL EXPERIENCES</span>
               </div>
               <h3 className="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-light uppercase text-[#111111] dark:text-brand-white">
-                TECHNOLOGY THAT EXPANDS <span className="font-serif italic text-[#D4AF37]">CREATIVE POSSIBILITIES</span>
+                INTELLIGENT DIGITAL <span className="font-serif italic text-[#D4AF37]">EXPERIENCES</span>
               </h3>
-              <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/90 font-light leading-relaxed text-justify">
-                At FashAI Universal, computational tools and AI-led ideation complement human fashion production and event orchestration. From generative silhouette exploration and visual concept development to 3D garment simulation and stage atmosphere design, computational workflows empower designers and brand partners to push creative boundaries while keeping physical craftsmanship and expert event execution at the core.
+              <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/90 font-light leading-relaxed">
+                FashAI brings fashion events, talent, production, and intelligent digital experiences together in one platform. Our interactive Event Concierge assists visitors in exploring event planning pathways, talent directories, and service inquiries, while digital visualization tools support spatial design — complementing human artistry, physical craftsmanship, and expert production.
               </p>
             </div>
 
             <div className="flex flex-wrap md:flex-col gap-2 shrink-0 border-t md:border-t-0 md:border-l border-black/10 dark:border-white/10 pt-4 md:pt-0 md:pl-6 w-full md:w-auto">
               <div className="flex items-center gap-2 text-xs font-syne font-semibold text-[#333333] dark:text-brand-platinum">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
-                <span>Computational Ideation</span>
+                <span>Interactive Event Concierge</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-syne font-semibold text-[#333333] dark:text-brand-platinum">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
-                <span>3D Silhouette Exploration</span>
+                <span>Spatial &amp; Visual Concepts</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-syne font-semibold text-[#333333] dark:text-brand-platinum">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
-                <span>Stage &amp; Spatial Media</span>
+                <span>Streamlined Inquiry Pathways</span>
               </div>
             </div>
           </div>

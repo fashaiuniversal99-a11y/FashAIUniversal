@@ -59,7 +59,7 @@ export default function FashAiIntro() {
             <div className="pt-8 border-t border-hairline-orange grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
               <div className="md:col-span-8">
                 <span className="font-syne text-[10px] tracking-micro text-brand-orange uppercase font-bold block mb-1">
-                  FASHION × AI × EXPERIENCE
+                  FASHION · TALENT · DIGITAL EXPERIENCES
                 </span>
                 <p className="font-sans text-xs text-brand-platinum font-light">
                   Bridging physical garment art with spatial lighting and high-couture identity.

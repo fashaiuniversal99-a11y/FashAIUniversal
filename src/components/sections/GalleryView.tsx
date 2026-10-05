@@ -66,7 +66,7 @@ export default function GalleryView() {
 
         {/* Right Side Editorial Keyword Stack */}
         <div className="hidden lg:flex flex-col items-end text-right space-y-3 font-syne text-[10px] tracking-micro text-brand-platinum/60 uppercase">
-          <span className="text-brand-orange font-bold">FASHION × AI × EXPERIENCE</span>
+          <span className="text-brand-orange font-bold">FASHION · TALENT · PRODUCTION</span>
           <div className="space-y-1 text-right">
             <div>COUTURE RUNWAY</div>
             <div>SILHOUETTE ART</div>

@@ -84,10 +84,10 @@ const DISCIPLINES: DisciplineItem[] = [
     id: "technology",
     label: "TECHNOLOGY",
     category: "INNOVATION & LUXURY",
-    tagline: "Global sponsors, interactive AI installations, digital trade formats, and luxury platforms.",
+    tagline: "Global sponsors, interactive digital installations, digital trade formats, and luxury platforms.",
     image: "/assets/homepage/Technology.png",
     objectPosition: "center top",
-    tags: ["AI INNOVATION", "INTERACTIVE", "SPONSORS", "LUXURY"],
+    tags: ["DIGITAL INNOVATION", "INTERACTIVE", "SPONSORS", "LUXURY"],
   },
 ];
 
