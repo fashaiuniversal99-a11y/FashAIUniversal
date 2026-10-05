@@ -3,7 +3,9 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import DistortionCTAButton from "@/components/ui/DistortionCTAButton";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   const [videoError, setVideoError] = useState(false);
@@ -99,7 +101,7 @@ export default function Hero() {
           }}
           className="flex flex-col items-center justify-center text-center w-full space-y-4 sm:space-y-6"
         >
-          {/* 1. MAIN HEADLINE TYPOGRAPHY: DM Serif Display */}
+          {/* 1. MAIN HEADLINE TYPOGRAPHY */}
           <motion.h1
             variants={{
               hidden: { opacity: 0, y: 24 },
@@ -107,16 +109,13 @@ export default function Hero() {
             }}
             style={{
               willChange: "transform, opacity",
-              fontSize: "clamp(38px, 6.2vw, 100px)",
-              lineHeight: 1.05,
+              fontSize: "clamp(34px, 5.5vw, 88px)",
+              lineHeight: 1.08,
             }}
             className="font-serif-display text-center font-normal tracking-tight max-w-[1080px] mx-auto my-1 select-none"
           >
             <span className="block text-brand-white keep-white drop-shadow-[0_12px_36px_rgba(0,0,0,0.95)]">
-              Everything you need
-            </span>
-            <span className="block text-brand-white/95 keep-white drop-shadow-[0_12px_36px_rgba(0,0,0,0.95)]">
-              to Create
+              Fashion events and fashion talent, together.
             </span>
             <span
               style={{
@@ -126,23 +125,23 @@ export default function Hero() {
               }}
               className="block italic font-serif-display drop-shadow-[0_0_35px_rgba(212,175,55,0.6)] pt-1"
             >
-              Exceptional Events
+              Dubai and India.
             </span>
           </motion.h1>
 
-          {/* 2. SUPPORTING SUBHEADING */}
+          {/* 2. MERGED EVENT MANAGEMENT INTRO COPY */}
           <motion.p
             variants={{
               hidden: { opacity: 0, y: 16 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } }
             }}
             style={{
-              fontSize: "clamp(17px, 1.4vw, 22px)",
+              fontSize: "clamp(15px, 1.3vw, 20px)",
               lineHeight: 1.55,
             }}
-            className="font-jost text-brand-white/90 keep-white text-center font-normal tracking-wide max-w-[360px] sm:max-w-xl md:max-w-2xl mx-auto pt-1 sm:pt-2 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
+            className="font-jost text-brand-white/90 keep-white text-center font-light tracking-wide max-w-[360px] sm:max-w-xl md:max-w-3xl mx-auto pt-1 sm:pt-2 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
           >
-            Fashion Shows, Corporate Summits, and Tech Launches, Planned and Delivered End to End.
+            End-to-end event planning, fashion runway production, corporate summits, and brand launch management — connecting premier events with exceptional creative talent across Dubai, UAE, and India.
           </motion.p>
 
           {/* 3. ELEGANT GOLD DIVIDER ACCENT */}
@@ -158,29 +157,45 @@ export default function Hero() {
             <span className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#D4AF37]/60 to-[#D4AF37]" />
           </motion.div>
 
-          {/* 4. HORIZONTALLY ALIGNED ACTION CTAs */}
+          {/* 4. TWO EQUAL PRIMARY DOORS & SUPPORTING HIRE TALENT ACTION */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } }
             }}
             style={{ willChange: "transform, opacity" }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto pt-2 sm:pt-3"
+            className="flex flex-col items-center justify-center gap-4 w-full pt-2 sm:pt-3"
           >
-            <DistortionCTAButton
-              href="/plan-your-event"
-              label="PLAN YOUR EVENT →"
-              variant="primary"
-              className="w-full sm:w-auto min-w-[240px]"
-              dataCursor="plan"
-            />
-            <DistortionCTAButton
-              href="/apply"
-              label="APPLY AS TALENT ↗"
-              variant="secondary"
-              className="w-full sm:w-auto min-w-[210px]"
-              dataCursor="view"
-            />
+            {/* The 2 Primary Equal Doors */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto">
+              <DistortionCTAButton
+                href="/plan-your-event"
+                label="PLAN YOUR EVENT →"
+                variant="primary"
+                className="w-full sm:w-[250px] min-h-[54px]"
+                dataCursor="plan"
+              />
+              <DistortionCTAButton
+                href="/apply"
+                label="APPLY AS TALENT ↗"
+                variant="primary"
+                className="w-full sm:w-[250px] min-h-[54px]"
+                dataCursor="apply"
+              />
+            </div>
+
+            {/* Clearly Visible Supporting Action for Hire Talent */}
+            <div className="pt-2">
+              <Link
+                href="/hire-talent"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm font-syne font-semibold tracking-wider text-brand-white/85 hover:text-[#D4AF37] transition-colors group"
+              >
+                <span>Looking to book creative talent?</span>
+                <span className="text-[#D4AF37] font-bold underline underline-offset-4 group-hover:text-white transition-colors inline-flex items-center gap-1">
+                  HIRE TALENT <ArrowRight className="w-3.5 h-3.5 inline transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            </div>
           </motion.div>
 
           {/* 5. BRANDING LOGO */}
