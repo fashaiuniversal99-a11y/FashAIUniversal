@@ -75,7 +75,10 @@ export default function RootLayout({
         name: "FashAI Universal",
         url: "https://www.fashaiuniversal.com",
         logo: "https://www.fashaiuniversal.com/assets/brand/fashai_logo_final.png",
-        sameAs: ["https://www.instagram.com/fashai_universal"],
+        sameAs: [
+          "https://www.instagram.com/fashai_universal",
+          "https://www.facebook.com/profile.php?id=61573489951314"
+        ],
         description:
           "FashAI Universal provides end-to-end event management, planning, and production for luxury fashion and lifestyle events across the UAE, India, and worldwide.",
         location: [
@@ -102,6 +105,35 @@ export default function RootLayout({
             },
           },
         ],
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.fashaiuniversal.com/#localbusiness-gurgaon",
+        name: "FashAI Universal — India HQ",
+        url: "https://www.fashaiuniversal.com",
+        email: "contact@fashaiuniversal.com",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Platinum Floor, 14/23, Ardee City, Sector 52",
+          addressLocality: "Gurgaon",
+          addressRegion: "Haryana",
+          postalCode: "122002",
+          addressCountry: "IN",
+        },
+        hasMap: "https://www.google.com/maps/search/?api=1&query=Platinum+Floor%2C+14%2F23%2C+Ardee+City%2C+Sector+52%2C+Gurgaon%2C+122002",
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.fashaiuniversal.com/#localbusiness-dubai",
+        name: "FashAI Universal — UAE Regional Office",
+        url: "https://www.fashaiuniversal.com",
+        email: "contact@fashaiuniversal.com",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "55764-001 IFZA Business Park FZCO, Building A1, Dubai Silicon Oasis",
+          addressLocality: "Dubai",
+          addressCountry: "AE",
+        },
       },
       {
         "@type": "WebSite",
