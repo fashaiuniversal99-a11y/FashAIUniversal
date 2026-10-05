@@ -106,7 +106,7 @@ export default function CreateEventSection() {
           </h2>
 
           <p className="font-sans text-base sm:text-lg md:text-xl text-brand-platinum/85 font-light leading-relaxed max-w-2xl mx-auto pt-1">
-            Tell us about your event requirement. Our production team will design a customized proposal for your runway show, brand activation, gala, or sponsorship initiative.
+            Events and talent, handled by one team. Tell us about your event requirement across Dubai and India — our production team will design a customized proposal for your runway show, brand activation, gala, or talent staffing.
           </p>
         </div>
 

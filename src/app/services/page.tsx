@@ -8,7 +8,7 @@ import { ArrowRight, Sparkles, Layers, ShieldCheck, Cpu, Globe } from "lucide-re
 export const metadata: Metadata = {
   title: "Services & Event Architecture — FashAI Universal",
   description:
-    "Discover FashAI Universal's core services: Haute Couture Catwalk Presentations, AI & Computational Fashion Design, Luxury Brand Activations, International Talent Curation, and Spatial Media across Dubai, UAE & India.",
+    "Events and talent, handled by one team. Discover FashAI Universal's core services: Haute Couture Catwalk Presentations, Luxury Brand Activations, International Talent Curation, and Event Architecture across Dubai and India.",
   alternates: {
     canonical: "https://www.fashaiuniversal.com/services",
   },
@@ -100,7 +100,7 @@ export default function ServicesPage() {
 
             {/* 3. CENTERED INTRO PARAGRAPH */}
             <p className="font-sans text-base sm:text-lg md:text-xl lg:text-2xl text-[#444444] dark:text-white/90 font-light leading-relaxed max-w-[900px] mx-auto text-center">
-              FashAI Universal delivers specialized fashion show production, AI-driven computational design, luxury brand activations, and global talent orchestration bridging Dubai, the UAE, and India.
+              Events and talent, handled by one team. FashAI Universal delivers specialized fashion show production, AI-driven computational design, luxury brand activations, and global talent orchestration across Dubai and India.
             </p>
           </div>
         </div>

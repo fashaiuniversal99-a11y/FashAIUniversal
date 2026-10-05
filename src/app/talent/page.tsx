@@ -65,9 +65,35 @@ function TalentDirectoryContent() {
             CREATIVE <span className="text-[#D4AF37] italic font-serif">DIRECTORY</span>
           </h1>
 
-          <p className="font-jost text-base sm:text-xl md:text-2xl text-[#111111]/80 dark:text-white/90 font-normal max-w-3xl mx-auto leading-relaxed">
-            Browse approved runway models, couture designers, makeup artists, stylists, choreographers, digital creators, and public figures.
+          <p className="font-jost text-base sm:text-xl md:text-2xl text-[#111111]/90 dark:text-white/95 font-medium max-w-3xl mx-auto leading-relaxed">
+            A platform for fashion talent to apply, be discovered, and connect with opportunities across Dubai and India.
           </p>
+
+          <p className="font-jost text-sm sm:text-base text-[#555555] dark:text-white/80 font-normal max-w-2xl mx-auto">
+            Browse approved runway models, couture designers, makeup artists, stylists, choreographers, and digital creators.
+          </p>
+
+          {/* 4-STEP TALENT JOURNEY STRIP */}
+          <div className="pt-2 pb-1 max-w-3xl mx-auto">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] sm:text-xs font-jost font-semibold text-[#333333] dark:text-white/90 bg-black/5 dark:bg-white/5 p-3 rounded-2xl border border-black/10 dark:border-white/10">
+              <div className="flex items-center gap-1.5 justify-center">
+                <span className="w-4 h-4 rounded-full bg-[#D4AF37] text-black font-bold flex items-center justify-center text-[10px]">1</span>
+                <span>Apply</span>
+              </div>
+              <div className="flex items-center gap-1.5 justify-center">
+                <span className="w-4 h-4 rounded-full bg-[#D4AF37] text-black font-bold flex items-center justify-center text-[10px]">2</span>
+                <span>Selection Review</span>
+              </div>
+              <div className="flex items-center gap-1.5 justify-center">
+                <span className="w-4 h-4 rounded-full bg-[#D4AF37] text-black font-bold flex items-center justify-center text-[10px]">3</span>
+                <span>Approved Roster</span>
+              </div>
+              <div className="flex items-center gap-1.5 justify-center">
+                <span className="w-4 h-4 rounded-full bg-[#D4AF37] text-black font-bold flex items-center justify-center text-[10px]">4</span>
+                <span>Client Request</span>
+              </div>
+            </div>
+          </div>
 
           <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
             <Link

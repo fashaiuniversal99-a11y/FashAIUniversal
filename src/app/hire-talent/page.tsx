@@ -209,7 +209,7 @@ function HireTalentFormContent() {
           </h1>
 
           <p className="font-sans text-base sm:text-xl md:text-2xl text-[#333333] dark:text-white/90 font-light max-w-2xl mx-auto leading-relaxed">
-            Connect with verified models, designers, choreographers, stylists, photographers, and creative directors for your event, campaign, or brand requirement.
+            Events and talent, handled by one team. Connect with approved runway models, designers, choreographers, stylists, photographers, and creative directors for your event, campaign, or brand requirement across Dubai and India.
           </p>
 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-3">

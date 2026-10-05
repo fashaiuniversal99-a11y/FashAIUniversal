@@ -161,7 +161,7 @@ export default function OurEventsSection() {
                   href={item.bookNowHref}
                   className="inline-flex items-center gap-1.5 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] px-4 py-2 rounded-full text-xs font-syne tracking-caps font-bold transition-all shadow-md group/btn whitespace-nowrap"
                 >
-                  <span>BOOK NOW</span>
+                  <span>PLAN YOUR EVENT</span>
                   <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                 </Link>
               </div>

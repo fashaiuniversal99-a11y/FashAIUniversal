@@ -283,7 +283,7 @@ export default function PlanYourEventPage() {
           </h1>
 
           <p className="font-jost text-base sm:text-xl md:text-2xl text-[#111111]/80 dark:text-white/90 font-normal max-w-3xl mx-auto leading-relaxed">
-            Tell us about your event. Our team will get back to you to discuss planning, production and execution.
+            Events and talent, handled by one team. Tell us about your event requirement across Dubai, India, or internationally — our team handles complete planning, production, management, and talent staffing.
           </p>
         </div>
       </section>

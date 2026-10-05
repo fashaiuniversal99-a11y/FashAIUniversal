@@ -23,16 +23,16 @@ export default function AboutUsSection() {
               </div>
 
               <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-brand-white uppercase leading-none mb-6">
-                GLOBAL EVENT MANAGEMENT &amp; <br />
-                <span className="text-[#F15E1C] dark:text-brand-yellow-golden italic font-normal">FASHION PLATFORM</span>
+                FASHION EVENTS &amp; FASHION TALENT, <br />
+                <span className="text-[#F15E1C] dark:text-brand-yellow-golden italic font-normal">TOGETHER.</span>
               </h2>
 
               <p className="font-sans text-lg sm:text-xl md:text-2xl text-[#222222] dark:text-brand-platinum font-normal leading-relaxed mb-4">
-                FashAI Universal is a global event management and production platform that conceives, plans, produces, and executes bespoke fashion shows, haute couture runways, lifestyle activations, product launches, corporate galas, and technology forums across international markets.
+                Fashion events and fashion talent, together. Dubai and India. FashAI Universal offers events and talent, handled by one team — providing end-to-end planning, runway production, corporate activations, and luxury event management.
               </p>
 
               <p className="font-sans text-base sm:text-lg md:text-xl text-[#444444] dark:text-brand-platinum/85 font-normal leading-relaxed">
-                As a broader supporting ecosystem, FashAI Universal connects creative communities, luxury brands, designers, models, stylists, choreographers, and delegates across the UAE, India, and global destinations through curated event formats and talent participation.
+                As an international ecosystem, FashAI Universal provides a platform for fashion talent to apply, be discovered, and connect with opportunities — connecting designers, models, makeup artists, stylists, and choreographers across Dubai and India.
               </p>
             </div>
 

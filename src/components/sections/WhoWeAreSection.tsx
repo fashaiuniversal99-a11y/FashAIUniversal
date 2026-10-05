@@ -22,33 +22,33 @@ export default function WhoWeAreSection() {
             <div className="flex items-center justify-center gap-3 w-full max-w-xs sm:max-w-sm mx-auto mb-2">
               <span className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#D4AF37]/70 to-[#D4AF37]" />
               <span className="text-xs sm:text-sm font-syne tracking-[0.25em] text-[#D4AF37] font-bold uppercase whitespace-nowrap">
-                UAE · INDIA · GLOBAL
+                DUBAI &amp; INDIA · GLOBAL ECOSYSTEM
               </span>
               <span className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#D4AF37]/70 to-[#D4AF37]" />
             </div>
 
             {/* Main Editorial Heading */}
             <h2 className="font-serif-display text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-brand-white uppercase leading-[0.95] tracking-tight">
-              EVENT MANAGEMENT &amp; <br />
-              <span className="font-serif italic font-normal text-[#D4AF37]">PRODUCTION</span>
+              FASHION EVENTS &amp; FASHION TALENT, <br />
+              <span className="font-serif italic font-normal text-[#D4AF37]">TOGETHER.</span>
             </h2>
 
             {/* Concise Subheading */}
             <p className="font-syne text-xs sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.18em] uppercase text-[#333333] dark:text-brand-platinum/90 font-bold mt-2.5 max-w-4xl lg:max-w-5xl mx-auto leading-relaxed text-justify sm:text-center">
-              PLANNING, PRODUCING &amp; EXECUTING BESPOKE FASHION, LIFESTYLE &amp; BRAND EXPERIENCES ACROSS THE UAE, INDIA &amp; GLOBAL DESTINATIONS
+              EVENTS AND TALENT, HANDLED BY ONE TEAM — DUBAI AND INDIA
             </p>
 
             <p className="font-sans text-sm sm:text-base md:text-lg text-[#444444] dark:text-brand-platinum/85 font-light mt-3 max-w-3xl lg:max-w-4xl mx-auto leading-relaxed text-justify sm:text-center">
-              FashAI Universal helps clients plan, produce, manage and execute high-impact fashion events, runway presentations, product launches, corporate galas and luxury brand experiences.
+              FashAI Universal helps clients plan, produce, manage, and execute high-impact fashion events, runway presentations, product launches, corporate galas, and luxury brand experiences.
             </p>
 
-            {/* Primary Event Management CTA — Solid FashAI Gold #D4AF37 */}
+            {/* Primary Event Management CTA */}
             <div className="mt-5 sm:mt-6 flex items-center justify-center">
               <Link
-                href="/contact"
+                href="/plan-your-event"
                 className="inline-flex items-center justify-center gap-2 sm:gap-2.5 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-md group border border-[#D4AF37]"
               >
-                <span>BOOK YOUR EVENTS NOW</span>
+                <span>PLAN YOUR EVENT →</span>
                 <ArrowRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>

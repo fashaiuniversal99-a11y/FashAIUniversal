@@ -96,7 +96,7 @@ export default function HomepageTalentSection() {
               TALENT <span className="font-serif italic font-normal text-[#D4AF37]">NETWORK</span>
             </h2>
             <p className="font-sans text-base sm:text-lg md:text-xl text-[#555555] dark:text-brand-platinum/90 font-light mt-3 max-w-2xl leading-relaxed">
-              Discover and connect with the creative talent behind fashion, beauty, movement and culture.
+              A platform for fashion talent to apply, be discovered, and connect with opportunities. Discover and connect with approved models, designers, stylists, choreographers, and creative directors across Dubai and India.
             </p>
           </div>
 

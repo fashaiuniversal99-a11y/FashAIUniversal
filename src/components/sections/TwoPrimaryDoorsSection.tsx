@@ -60,8 +60,12 @@ export default function TwoPrimaryDoorsSection() {
                   PLAN YOUR <span className="font-serif italic text-[#D4AF37]">EVENT</span>
                 </h3>
 
-                <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/85 font-light leading-relaxed mt-3">
-                  For brands, companies, and organizations looking for end-to-end event planning, runway presentation, spatial production, and luxury event management across the UAE, India, and global destinations.
+                <p className="font-syne text-xs font-bold text-[#D4AF37] uppercase tracking-wider mt-2">
+                  Events and talent, handled by one team.
+                </p>
+
+                <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/85 font-light leading-relaxed mt-2">
+                  For brands, companies, and organizations looking for end-to-end event planning, runway presentation, spatial production, and luxury event management across Dubai and India.
                 </p>
               </div>
 
@@ -116,23 +120,36 @@ export default function TwoPrimaryDoorsSection() {
                   APPLY AS <span className="font-serif italic text-[#D4AF37]">TALENT</span>
                 </h3>
 
-                <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/85 font-light leading-relaxed mt-3">
-                  For designers, models, makeup artists, fashion stylists, choreographers, creators, public figures, and other creative professionals looking to apply and join our international ecosystem.
+                <p className="font-syne text-xs font-bold text-[#D4AF37] uppercase tracking-wider mt-2">
+                  A platform for fashion talent to apply, be discovered, and connect with opportunities.
+                </p>
+
+                <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/85 font-light leading-relaxed mt-2">
+                  For models, designers, makeup artists, stylists, choreographers, and creators looking to apply, be discovered, and connect with client opportunities across Dubai and India.
                 </p>
               </div>
 
               <div className="pt-2 space-y-2">
-                <div className="flex items-center gap-2 text-xs font-syne font-semibold text-[#333333] dark:text-brand-platinum/90">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
-                  <span>Runway, Editorial &amp; Showcase Opportunities</span>
+                <div className="text-[11px] font-syne font-bold uppercase tracking-wider text-[#D4AF37] mb-1">
+                  TALENT JOURNEY:
                 </div>
-                <div className="flex items-center gap-2 text-xs font-syne font-semibold text-[#333333] dark:text-brand-platinum/90">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
-                  <span>Verified Roster &amp; Client Representation</span>
-                </div>
-                <div className="flex items-center gap-2 text-xs font-syne font-semibold text-[#333333] dark:text-brand-platinum/90">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
-                  <span>International Exposure in UAE &amp; Global Capitals</span>
+                <div className="grid grid-cols-2 gap-2 text-xs font-syne font-semibold text-[#333333] dark:text-brand-platinum/90">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-4 h-4 rounded-full bg-[#D4AF37]/20 text-[#D4AF37] flex items-center justify-center text-[10px] font-bold">1</span>
+                    <span>Apply</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-4 h-4 rounded-full bg-[#D4AF37]/20 text-[#D4AF37] flex items-center justify-center text-[10px] font-bold">2</span>
+                    <span>Selection &amp; Review</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-4 h-4 rounded-full bg-[#D4AF37]/20 text-[#D4AF37] flex items-center justify-center text-[10px] font-bold">3</span>
+                    <span>Approved Directory</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-4 h-4 rounded-full bg-[#D4AF37]/20 text-[#D4AF37] flex items-center justify-center text-[10px] font-bold">4</span>
+                    <span>Client Discovery</span>
+                  </div>
                 </div>
               </div>
             </div>

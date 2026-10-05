@@ -61,7 +61,7 @@ export default function WhatWeDoSection() {
           </div>
           <div className="flex flex-col items-start md:items-end gap-3 shrink-0">
             <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/85 max-w-md font-light leading-relaxed">
-              FashAI Universal conceives, designs, and executes specialized event formats across fashion, lifestyle, corporate, product, and technology sectors.
+              Events and talent, handled by one team. FashAI Universal conceives, designs, produces, and executes specialized event formats across fashion, lifestyle, corporate, product, and technology sectors.
             </p>
             <Link
               href="/services"

@@ -29,7 +29,7 @@ export default function HireTalentBridgeSection() {
             </h2>
 
             <p className="font-sans text-sm sm:text-base lg:text-lg text-[#444444] dark:text-brand-platinum/90 font-light leading-relaxed">
-              Looking for models, designers, makeup artists, stylists, choreographers, creators or public figures for your event or campaign? Access our verified talent network.
+              Events and talent, handled by one team. Access our approved creative talent directory for runway models, designers, makeup artists, stylists, and choreographers across Dubai and India.
             </p>
           </div>
 

@@ -142,7 +142,7 @@ export default function Hero() {
             }}
             className="font-jost text-brand-white/90 keep-white text-center font-light tracking-wide max-w-[360px] sm:max-w-xl md:max-w-3xl mx-auto pt-1 sm:pt-2 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
           >
-            End-to-end event planning, fashion runway production, corporate summits, and brand launch management — connecting premier events with exceptional creative talent across Dubai, UAE, and India.
+            Events and talent, handled by one team. End-to-end event planning, fashion runway production, corporate summits, and brand launch management connecting premier events with exceptional creative talent across Dubai, UAE, and India.
           </motion.p>
 
           {/* 3. ELEGANT GOLD DIVIDER ACCENT */}

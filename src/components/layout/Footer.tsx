@@ -83,7 +83,7 @@ export default function Footer() {
             </Link>
 
             <p className="font-sans text-base sm:text-lg md:text-xl text-[#333333] dark:text-white/90 font-normal leading-relaxed max-w-sm">
-              Global fashion, talent and event platform connecting ecosystems across the UAE, India and international markets.
+              Fashion events and fashion talent, together. Dubai and India. Events and talent, handled by one team.
             </p>
 
             {/* Social Links Badges */}
@@ -149,7 +149,7 @@ export default function Footer() {
               className="md:col-span-4"
             >
               <h4 className="font-syne text-sm sm:text-base md:text-lg tracking-caps text-[#D4AF37] font-bold uppercase mb-3 sm:mb-4 pb-2.5 border-b border-black/10 dark:border-white/10 w-full">
-                GET INVOLVED
+                PRIMARY ACTIONS
               </h4>
               <ul className="space-y-2.5 sm:space-y-3 pt-1.5">
                 {[

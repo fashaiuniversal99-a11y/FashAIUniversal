@@ -119,22 +119,36 @@ export default function ApplicationSelectionPage({
 
           <div className="h-[2px] w-20 bg-brand-yellow-golden shadow-[0_0_10px_rgba(250,182,10,0.6)]" />
 
-          <p className="font-sans text-base sm:text-lg md:text-xl text-brand-platinum/95 font-light leading-relaxed max-w-3xl pt-1">
-            Official application portal for fashion designers, runway models, makeup artists, fashion stylists, choreographers, digital creators, public figures, and creative directors seeking representation and participation in international fashion shows, campaigns, and luxury experiences across the UAE, India, and global destinations.
+          <p className="font-syne text-xs sm:text-sm font-bold text-[#D4AF37] uppercase tracking-wider">
+            A platform for fashion talent to apply, be discovered, and connect with opportunities.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs font-syne text-brand-platinum/80 border-t border-white/10">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-brand-yellow-golden" />
-              <span><strong>1. Select Domain:</strong> Choose your category</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-brand-yellow-golden" />
-              <span><strong>2. Submit Brief:</strong> Provide portfolio &amp; details</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-brand-yellow-golden" />
-              <span><strong>3. Review:</strong> Team evaluates for upcoming events</span>
+          <p className="font-sans text-base sm:text-lg md:text-xl text-brand-platinum/95 font-light leading-relaxed max-w-3xl pt-1">
+            Official application portal for fashion designers, runway models, makeup artists, stylists, choreographers, and creative talent seeking participation in international fashion shows, campaigns, and luxury experiences across Dubai, India, and global hubs.
+          </p>
+
+          {/* 4-STEP TALENT JOURNEY */}
+          <div className="pt-3 border-t border-white/10">
+            <span className="font-syne text-[11px] font-bold text-[#D4AF37] uppercase tracking-wider block mb-2">
+              TALENT JOURNEY:
+            </span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs font-syne text-brand-platinum/90">
+              <div className="flex items-center gap-2 p-2 rounded-xl bg-white/5 border border-white/10">
+                <span className="w-5 h-5 rounded-full bg-[#D4AF37] text-black flex items-center justify-center font-bold text-xs shrink-0">1</span>
+                <span><strong>Apply:</strong> Submit application &amp; portfolio</span>
+              </div>
+              <div className="flex items-center gap-2 p-2 rounded-xl bg-white/5 border border-white/10">
+                <span className="w-5 h-5 rounded-full bg-[#D4AF37] text-black flex items-center justify-center font-bold text-xs shrink-0">2</span>
+                <span><strong>Selection:</strong> Editorial review &amp; curation</span>
+              </div>
+              <div className="flex items-center gap-2 p-2 rounded-xl bg-white/5 border border-white/10">
+                <span className="w-5 h-5 rounded-full bg-[#D4AF37] text-black flex items-center justify-center font-bold text-xs shrink-0">3</span>
+                <span><strong>Approved Roster:</strong> Listed in talent directory</span>
+              </div>
+              <div className="flex items-center gap-2 p-2 rounded-xl bg-white/5 border border-white/10">
+                <span className="w-5 h-5 rounded-full bg-[#D4AF37] text-black flex items-center justify-center font-bold text-xs shrink-0">4</span>
+                <span><strong>Client Request:</strong> Discovery &amp; event booking</span>
+              </div>
             </div>
           </div>
         </div>
