@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import DistortionCTAButton from "@/components/ui/DistortionCTAButton";
 import { ArrowRight } from "lucide-react";
+import { trackEvent } from "@/lib/analytics/tracker";
 
 export default function Hero() {
   const [videoError, setVideoError] = useState(false);
@@ -174,6 +175,7 @@ export default function Hero() {
                 variant="primary"
                 className="w-full sm:w-[250px] min-h-[54px]"
                 dataCursor="plan"
+                onClick={() => trackEvent("plan_event_click", { location: "hero" })}
               />
               <DistortionCTAButton
                 href="/apply"
@@ -181,6 +183,7 @@ export default function Hero() {
                 variant="primary"
                 className="w-full sm:w-[250px] min-h-[54px]"
                 dataCursor="apply"
+                onClick={() => trackEvent("apply_talent_click", { location: "hero" })}
               />
             </div>
 
@@ -188,6 +191,7 @@ export default function Hero() {
             <div className="pt-2">
               <Link
                 href="/hire-talent"
+                onClick={() => trackEvent("hire_talent_click", { location: "hero" })}
                 className="inline-flex items-center gap-2 text-xs sm:text-sm font-syne font-semibold tracking-wider text-brand-white/85 hover:text-[#D4AF37] transition-colors group"
               >
                 <span>Looking to book creative talent?</span>

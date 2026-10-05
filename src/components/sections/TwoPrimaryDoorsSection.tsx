@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Calendar, UserPlus, ArrowRight } from "lucide-react";
+import { trackEvent } from "@/lib/analytics/tracker";
 
 export default function TwoPrimaryDoorsSection() {
   return (
@@ -83,6 +84,7 @@ export default function TwoPrimaryDoorsSection() {
             <div className="pt-8 mt-6 border-t border-black/10 dark:border-white/10">
               <Link
                 href="/plan-your-event"
+                onClick={() => trackEvent("plan_event_click", { location: "hero" })}
                 className="w-full inline-flex items-center justify-center gap-3 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] py-4 px-6 rounded-2xl font-syne text-xs sm:text-sm font-bold tracking-widest uppercase transition-all duration-300 shadow-md group/btn"
               >
                 <span>PLAN YOUR EVENT</span>
@@ -138,6 +140,7 @@ export default function TwoPrimaryDoorsSection() {
             <div className="pt-8 mt-6 border-t border-black/10 dark:border-white/10">
               <Link
                 href="/apply"
+                onClick={() => trackEvent("apply_talent_click", { location: "hero" })}
                 className="w-full inline-flex items-center justify-center gap-3 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] py-4 px-6 rounded-2xl font-syne text-xs sm:text-sm font-bold tracking-widest uppercase transition-all duration-300 shadow-md group/btn"
               >
                 <span>APPLY AS TALENT</span>
@@ -151,6 +154,7 @@ export default function TwoPrimaryDoorsSection() {
         <div className="text-center pt-4">
           <Link
             href="/hire-talent"
+            onClick={() => trackEvent("hire_talent_click", { location: "hero" })}
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-syne font-semibold tracking-wider text-[#111111]/80 dark:text-white/85 hover:text-[#D4AF37] transition-colors group"
           >
             <span>Looking to book creative talent for your project?</span>

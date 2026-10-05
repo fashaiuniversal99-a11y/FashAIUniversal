@@ -10,6 +10,8 @@ import ThemeToggle from "../ui/ThemeToggle";
 import GradientFlowText from "../ui/GradientFlowText";
 import { useSiteConfig } from "@/context/SiteConfigContext";
 
+import { trackEvent } from "@/lib/analytics/tracker";
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -185,6 +187,7 @@ export default function Header() {
             {/* HIRE TALENT CLIENT ACTION BUTTON */}
             <Link
               href="/hire-talent"
+              onClick={() => trackEvent("hire_talent_click", { location: "header" })}
               className="hidden md:inline-flex items-center justify-center border border-[#D4AF37]/60 dark:border-white/30 text-[#111111] dark:text-white hover:border-[#D4AF37] hover:bg-[#D4AF37]/15 font-syne font-bold text-xs tracking-wider uppercase rounded-full h-9 sm:h-10 px-4 sm:px-5 transition-all duration-300 shrink-0 whitespace-nowrap"
             >
               HIRE TALENT
@@ -193,6 +196,7 @@ export default function Header() {
             {/* FULLY ROUNDED PILL CONTACT US CTA BUTTON (h-9 sm:h-10 px-5 sm:px-6) */}
             <Link
               href="/contact"
+              onClick={() => trackEvent("contact_click", { location: "header" })}
               className="hidden sm:inline-flex items-center justify-center bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold text-xs tracking-wider uppercase rounded-full h-9 sm:h-10 px-5 sm:px-6 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 shrink-0 whitespace-nowrap"
               data-cursor="explore"
             >

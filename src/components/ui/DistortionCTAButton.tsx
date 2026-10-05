@@ -11,6 +11,7 @@ interface DistortionCTAButtonProps {
   variant?: "primary" | "secondary";
   className?: string;
   dataCursor?: string;
+  onClick?: () => void;
 }
 
 export default function DistortionCTAButton({
@@ -19,6 +20,7 @@ export default function DistortionCTAButton({
   variant = "primary",
   className = "",
   dataCursor = "explore",
+  onClick,
 }: DistortionCTAButtonProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLAnchorElement | null>(null);
@@ -202,6 +204,7 @@ export default function DistortionCTAButton({
     <Link
       ref={containerRef}
       href={href}
+      onClick={onClick}
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}

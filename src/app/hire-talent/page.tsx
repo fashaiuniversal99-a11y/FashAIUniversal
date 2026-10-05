@@ -8,6 +8,7 @@ import { CheckCircle2, Sparkles, AlertCircle, Users, UserCheck } from "lucide-re
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { getTalentById, ApprovedTalentItem } from "@/data/talent";
+import { trackEvent } from "@/lib/analytics/tracker";
 
 const TALENT_TYPES = [
   "Models (Runway & Editorial)",
@@ -170,8 +171,14 @@ function HireTalentFormContent() {
       const data = await res.json();
 
       if (res.ok && data.success) {
-        setReferenceNumber(data.referenceNumber || `FI-2026-${Math.floor(10000 + Math.random() * 90000)}`);
+        const generatedRef = data.referenceNumber || `FI-2026-${Math.floor(10000 + Math.random() * 90000)}`;
+        setReferenceNumber(generatedRef);
         setStatus("success");
+        trackEvent("talent_form_submit", {
+          talent_category: formData.talentType,
+          talent_id: requestedTalent?.id,
+          ref_num: generatedRef,
+        });
         window.scrollTo({ top: 120, behavior: "smooth" });
       } else {
         setStatus("error");

@@ -9,6 +9,7 @@ import { ArrowUpRight, Sparkles, MapPin, Briefcase, UserPlus } from "lucide-reac
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { APPROVED_TALENT_ROSTER, ApprovedTalentItem } from "@/data/talent";
+import { trackEvent } from "@/lib/analytics/tracker";
 
 const CATEGORIES = [
   { id: "ALL", label: "ALL TALENT" },
@@ -172,6 +173,13 @@ function TalentDirectoryContent() {
                     <div className="pt-3 border-t border-black/10 dark:border-white/10">
                       <Link
                         href={`/hire-talent?talent=${person.id}`}
+                        onClick={() =>
+                          trackEvent("talent_request_click", {
+                            talent_id: person.id,
+                            talent_category: person.category,
+                            location: "talent_section",
+                          })
+                        }
                         className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] text-black py-3 px-4 rounded-xl text-xs font-jost font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-between shadow-sm min-h-[44px]"
                       >
                         <span>REQUEST THIS TALENT</span>

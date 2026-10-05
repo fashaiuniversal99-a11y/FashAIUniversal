@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { trackEvent } from "@/lib/analytics/tracker";
 
 const EVENT_TYPES = [
   "Fashion Show",
@@ -197,6 +198,7 @@ export default function PlanYourEventPage() {
   const goToStep2 = () => {
     if (validateStep1()) {
       setCurrentStep(2);
+      trackEvent("event_form_start", { source: "plan_your_event_page", page: "plan-your-event" });
       window.scrollTo({ top: 220, behavior: "smooth" });
     }
   };
@@ -247,8 +249,10 @@ export default function PlanYourEventPage() {
       const data = await res.json();
 
       if (res.ok && data.success) {
-        setReferenceNumber(data.referenceNumber || `FI-2026-${Math.floor(10000 + Math.random() * 90000)}`);
+        const generatedRef = data.referenceNumber || `FI-2026-${Math.floor(10000 + Math.random() * 90000)}`;
+        setReferenceNumber(generatedRef);
         setStatus("success");
+        trackEvent("event_form_submit", { source: "plan_your_event_page", ref_num: generatedRef });
         window.scrollTo({ top: 140, behavior: "smooth" });
       } else {
         setStatus("error");

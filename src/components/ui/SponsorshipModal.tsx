@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Loader2, CheckCircle, AlertCircle, FileText, Send } from "lucide-react";
 import { LIFESTYLE_2026 } from "@/data/lifestyle-event";
+import { trackEvent } from "@/lib/analytics/tracker";
 
 interface SponsorshipModalProps {
   isOpen: boolean;
@@ -29,13 +30,14 @@ export default function SponsorshipModal({
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
-  // Reset form status when modal opens
+  // Reset form status when modal opens & emit form_start
   useEffect(() => {
     if (isOpen) {
       setStatus("idle");
       setErrorMessage("");
+      trackEvent("sponsorship_form_start", { mode: initialMode, location: "lifestyle_2026" });
     }
-  }, [isOpen]);
+  }, [isOpen, initialMode]);
 
   // Handle ESC key to close modal
   const handleKeyDown = useCallback(
@@ -100,6 +102,7 @@ export default function SponsorshipModal({
 
       if (response.ok && (data.success || data.id || data.referenceNumber)) {
         setStatus("success");
+        trackEvent("sponsorship_form_submit", { mode: initialMode, ref_num: data.referenceNumber });
       } else {
         setStatus("error");
         setErrorMessage(data.error || "Failed to submit sponsorship enquiry. Please try again.");

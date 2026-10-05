@@ -7,6 +7,7 @@ import { ArrowUpRight, FileText } from "lucide-react";
 
 import { LIFESTYLE_2026 } from "@/data/lifestyle-event";
 import SponsorshipModal from "@/components/ui/SponsorshipModal";
+import { trackEvent } from "@/lib/analytics/tracker";
 
 export default function Chapter2026() {
   const [isSponsorModalOpen, setIsSponsorModalOpen] = useState(false);
@@ -168,6 +169,7 @@ export default function Chapter2026() {
               onClick={() => {
                 setSponsorModalMode("DECK");
                 setIsSponsorModalOpen(true);
+                trackEvent("sponsorship_cta_click", { location: "lifestyle_2026", mode: "DECK" });
               }}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-transparent border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 px-6 py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 group"
             >
@@ -180,6 +182,7 @@ export default function Chapter2026() {
               onClick={() => {
                 setSponsorModalMode("ENQUIRY");
                 setIsSponsorModalOpen(true);
+                trackEvent("sponsorship_cta_click", { location: "lifestyle_2026", mode: "ENQUIRY" });
               }}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 text-[#666666] dark:text-white/70 hover:text-[#D4AF37] dark:hover:text-[#D4AF37] font-syne text-xs font-bold tracking-wider uppercase transition-colors py-2 px-3"
             >
