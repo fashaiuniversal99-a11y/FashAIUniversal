@@ -24,7 +24,6 @@ export default function Footer() {
     <footer className="relative w-full border-t border-black/10 dark:border-white/10 bg-white dark:bg-[#050505] text-[#111111] dark:text-white overflow-hidden select-none">
       {/* Edge-to-Edge Supplied Footer Background Images (Light & Dark Mode) */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        {/* Slow subtle ambient background motion */}
         <motion.div
           animate={{ scale: [1, 1.03, 1] }}
           transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
@@ -67,7 +66,7 @@ export default function Footer() {
             variants={columnVariants}
             className="md:col-span-5 flex flex-col space-y-3.5 pb-6 md:pb-0 border-b md:border-b-0 border-black/10 dark:border-white/10"
           >
-            {/* Logo Lockup: Official Logo + FashAI Universal Brand Text */}
+            {/* Logo Lockup */}
             <Link href="/" className="inline-flex items-center gap-2 group w-fit">
               <div className="relative w-11 h-11 sm:w-12 sm:h-12 flex-shrink-0 overflow-hidden">
                 <Image
@@ -78,7 +77,7 @@ export default function Footer() {
                   className="object-contain group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <span className="font-serif-display text-2xl sm:text-3xl font-light text-[#111111] dark:text-white uppercase tracking-tight group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors duration-300">
+              <span className="font-serif-display text-2xl sm:text-3xl font-light text-[#111111] dark:text-white uppercase tracking-tight group-hover:text-[#D4AF37] transition-colors duration-300">
                 FashAI Universal
               </span>
             </Link>
@@ -93,16 +92,16 @@ export default function Footer() {
                 href="https://www.instagram.com/fashai_universal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-black/10 dark:border-white/15 bg-white/80 dark:bg-white/10 text-xs font-syne font-semibold text-[#111111] dark:text-white hover:text-[#E4405F] dark:hover:text-[#D4AF37] hover:border-[#E4405F]/40 dark:hover:border-[#D4AF37] transition-all duration-300 shadow-sm"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-black/10 dark:border-white/15 bg-white/80 dark:bg-white/10 text-xs font-syne font-semibold text-[#111111] dark:text-white hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-300 shadow-sm"
               >
-                <Instagram className="w-4 h-4 text-[#E4405F]" />
+                <Instagram className="w-4 h-4 text-[#D4AF37]" />
                 <span>@fashai_universal</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#E4405F]" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#D4AF37]" />
               </a>
             </div>
           </motion.div>
 
-          {/* COLUMN 2 & 3 CONTAINER: EDITORIAL 2-COLUMN GRID (MOBILE) / 7-COL SPAN (DESKTOP) */}
+          {/* COLUMN 2 & 3 CONTAINER */}
           <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-7 gap-6 sm:gap-8 md:gap-10 items-start pb-8 border-b border-black/10 dark:border-white/10 md:border-b-0 md:pb-0">
             {/* COLUMN 2: EXPLORE (md:col-span-3) */}
             <motion.div
@@ -113,7 +112,7 @@ export default function Footer() {
               variants={columnVariants}
               className="md:col-span-3"
             >
-              <h4 className="font-syne text-sm sm:text-base md:text-lg tracking-caps text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-3 sm:mb-4 pb-2.5 border-b border-black/10 dark:border-white/10 w-full">
+              <h4 className="font-syne text-sm sm:text-base md:text-lg tracking-caps text-[#D4AF37] font-bold uppercase mb-3 sm:mb-4 pb-2.5 border-b border-black/10 dark:border-white/10 w-full">
                 EXPLORE
               </h4>
               <ul className="space-y-2.5 sm:space-y-3 pt-1.5">
@@ -128,19 +127,19 @@ export default function Footer() {
                   <li key={idx}>
                     <Link
                       href={link.href}
-                      className="group inline-flex items-center gap-1.5 sm:gap-2 font-sans text-base sm:text-lg md:text-xl text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors duration-300 leading-snug"
+                      className="group inline-flex items-center gap-1.5 sm:gap-2 font-sans text-base sm:text-lg md:text-xl text-[#111111] dark:text-white/90 hover:text-[#D4AF37] transition-colors duration-300 leading-snug"
                     >
                       <span className="transform group-hover:translate-x-1 transition-transform duration-300">
                         {link.label}
                       </span>
-                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-[#F15E1C] dark:text-[#D4AF37] transition-all duration-300 shrink-0" />
+                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-[#D4AF37] transition-all duration-300 shrink-0" />
                     </Link>
                   </li>
                 ))}
               </ul>
             </motion.div>
 
-            {/* COLUMN 3: GET INVOLVED (md:col-span-4) */}
+            {/* COLUMN 3: GET INVOLVED / TALENT (md:col-span-4) */}
             <motion.div
               custom={2}
               initial="hidden"
@@ -149,23 +148,25 @@ export default function Footer() {
               variants={columnVariants}
               className="md:col-span-4"
             >
-              <h4 className="font-syne text-sm sm:text-base md:text-lg tracking-caps text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-3 sm:mb-4 pb-2.5 border-b border-black/10 dark:border-white/10 w-full">
+              <h4 className="font-syne text-sm sm:text-base md:text-lg tracking-caps text-[#D4AF37] font-bold uppercase mb-3 sm:mb-4 pb-2.5 border-b border-black/10 dark:border-white/10 w-full">
                 GET INVOLVED
               </h4>
               <ul className="space-y-2.5 sm:space-y-3 pt-1.5">
                 {[
-                  { label: "Opportunities", href: "/apply" },
+                  { label: "Plan Your Event", href: "/plan-your-event" },
+                  { label: "Hire Talent", href: "/hire-talent" },
+                  { label: "Apply as Talent", href: "/apply" },
                   { label: "Contact Us", href: "/contact" },
                 ].map((link, idx) => (
                   <li key={idx}>
                     <Link
                       href={link.href}
-                      className="group inline-flex items-center gap-1.5 sm:gap-2 font-sans text-base sm:text-lg md:text-xl text-[#111111] dark:text-white/90 hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors duration-300 leading-snug"
+                      className="group inline-flex items-center gap-1.5 sm:gap-2 font-sans text-base sm:text-lg md:text-xl text-[#111111] dark:text-white/90 hover:text-[#D4AF37] transition-colors duration-300 leading-snug"
                     >
                       <span className="transform group-hover:translate-x-1 transition-transform duration-300 whitespace-nowrap min-[380px]:whitespace-normal">
                         {link.label}
                       </span>
-                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-[#F15E1C] dark:text-[#D4AF37] transition-all duration-300 shrink-0" />
+                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-[#D4AF37] transition-all duration-300 shrink-0" />
                     </Link>
                   </li>
                 ))}
@@ -184,8 +185,8 @@ export default function Footer() {
           className="my-8 pt-8 border-t border-black/10 dark:border-white/10"
         >
           <div className="flex items-center gap-2 mb-4">
-            <MapPin className="w-4 h-4 text-[#F15E1C] dark:text-[#D4AF37]" />
-            <h4 className="font-syne text-xs sm:text-sm tracking-caps text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
+            <MapPin className="w-4 h-4 text-[#D4AF37]" />
+            <h4 className="font-syne text-xs sm:text-sm tracking-caps text-[#D4AF37] font-bold uppercase">
               OFFICIAL OFFICE LOCATIONS
             </h4>
           </div>
@@ -201,7 +202,7 @@ export default function Footer() {
                     <span className="text-xl" role="img" aria-label={office.countryCode}>
                       {office.flag}
                     </span>
-                    <span className="font-syne text-[10px] tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
+                    <span className="font-syne text-[10px] tracking-widest text-[#D4AF37] font-bold uppercase">
                       {office.cityRegion}
                     </span>
                   </div>
@@ -239,8 +240,8 @@ export default function Footer() {
           className="my-6 p-4 sm:p-5 rounded-xl border border-black/15 dark:border-white/15 bg-transparent flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-none"
         >
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-full bg-[#E4405F]/10 dark:bg-[#D4AF37]/15 border border-[#E4405F]/30 dark:border-[#D4AF37]/30 flex items-center justify-center shrink-0">
-              <Instagram className="w-5 h-5 text-[#E4405F] dark:text-[#D4AF37]" />
+            <div className="w-10 h-10 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center shrink-0">
+              <Instagram className="w-5 h-5 text-[#D4AF37]" />
             </div>
             <div>
               <h5 className="font-syne text-xs sm:text-sm font-bold text-[#111111] dark:text-white uppercase tracking-wider">
@@ -272,9 +273,9 @@ export default function Footer() {
           variants={columnVariants}
           className="pt-4 pb-2 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-syne tracking-wider text-[#333333] dark:text-white/70 border-t md:border-t-0 border-black/10 dark:border-white/10"
         >
-          {/* POWERED BY BRANDING SECTION (Mobile isolated block with divider) */}
+          {/* POWERED BY BRANDING SECTION */}
           <div className="w-full md:w-auto flex flex-col sm:flex-row items-center justify-between md:justify-start gap-3 pb-4 md:pb-0 border-b md:border-b-0 border-black/10 dark:border-white/10">
-            <span className="text-[10px] uppercase tracking-widest text-[#F15E1C] dark:text-[#D4AF37] font-bold md:hidden">
+            <span className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold md:hidden">
               POWERED BY
             </span>
             <div className="flex items-center gap-3 sm:gap-4 shrink-0 flex-wrap justify-center sm:justify-end">
@@ -302,11 +303,11 @@ export default function Footer() {
             </div>
 
             <div className="flex items-center gap-4 sm:gap-6 text-xs">
-              <Link href="/privacy" className="hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors">
+              <Link href="/privacy" className="hover:text-[#D4AF37] transition-colors">
                 Privacy Policy
               </Link>
               <span className="text-black/30 dark:text-white/20">•</span>
-              <Link href="/terms" className="hover:text-[#F15E1C] dark:hover:text-[#D4AF37] transition-colors">
+              <Link href="/terms" className="hover:text-[#D4AF37] transition-colors">
                 Terms &amp; Conditions
               </Link>
             </div>

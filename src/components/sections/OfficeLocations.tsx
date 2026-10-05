@@ -19,12 +19,12 @@ export default function OfficeLocations({
     <div className={`w-full ${className}`}>
       {showHeading && (
         <div className="mb-8 sm:mb-12 text-center md:text-left">
-          <div className="flex items-center justify-center md:justify-start gap-3 text-xs sm:text-sm font-syne tracking-micro text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-3">
-            <span className="h-px w-8 bg-[#F15E1C] dark:bg-[#D4AF37]" />
+          <div className="flex items-center justify-center md:justify-start gap-3 text-xs sm:text-sm font-syne tracking-micro text-[#D4AF37] font-bold uppercase mb-3">
+            <span className="h-px w-8 bg-[#D4AF37]" />
             <span>GLOBAL PRESENCE</span>
           </div>
           <h2 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-white uppercase leading-none tracking-tight">
-            OUR <span className="italic font-normal text-[#F15E1C] dark:text-[#D4AF37]">OFFICE LOCATIONS</span>
+            OUR <span className="italic font-normal text-[#D4AF37]">OFFICE LOCATIONS</span>
           </h2>
           <p className="font-sans text-base sm:text-lg text-[#444444] dark:text-brand-platinum/90 font-light mt-3 max-w-2xl leading-relaxed">
             FashAI Universal operates from key global headquarters and regional offices connecting strategic fashion, lifestyle, and corporate markets.
@@ -41,10 +41,10 @@ export default function OfficeLocations({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: idx * 0.15 }}
-            className="group relative flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#0A0908] border border-black/10 dark:border-white/10 hover:border-[#D4AF37]/50 dark:hover:border-[#D4AF37]/60 transition-all duration-300 shadow-sm dark:shadow-2xl overflow-hidden"
+            className="group relative flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#0A0908] border border-black/10 dark:border-white/10 hover:border-[#D4AF37]/60 transition-all duration-300 shadow-sm dark:shadow-2xl overflow-hidden"
           >
             {/* Top Accent Line */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#F15E1C] via-[#D4AF37] to-[#F15E1C] opacity-80" />
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D4AF37] via-[#FFEC69] to-[#D4AF37] opacity-80" />
 
             <div>
               {/* Country Badge & Flag Header */}
@@ -53,21 +53,21 @@ export default function OfficeLocations({
                   <span className="text-2xl sm:text-3xl leading-none" role="img" aria-label={loc.countryCode}>
                     {loc.flag}
                   </span>
-                  <span className="font-syne text-[11px] sm:text-xs tracking-caps font-bold text-[#F15E1C] dark:text-[#D4AF37] uppercase">
+                  <span className="font-syne text-[11px] sm:text-xs tracking-caps font-bold text-[#D4AF37] uppercase">
                     {loc.cityRegion}
                   </span>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 dark:bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center shrink-0">
-                  <Building2 className="w-4 h-4 text-[#F15E1C] dark:text-[#D4AF37]" />
+                <div className="w-8 h-8 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center shrink-0">
+                  <Building2 className="w-4 h-4 text-[#D4AF37]" />
                 </div>
               </div>
 
-              {/* Major Location Heading — DM Serif Display */}
-              <h3 className="font-serif-display text-2xl sm:text-3xl font-light text-[#111111] dark:text-white uppercase leading-tight mb-4 tracking-tight group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37] transition-colors duration-300">
+              {/* Major Location Heading */}
+              <h3 className="font-serif-display text-2xl sm:text-3xl font-light text-[#111111] dark:text-white uppercase leading-tight mb-4 tracking-tight group-hover:text-[#D4AF37] transition-colors duration-300">
                 {loc.title}
               </h3>
 
-              {/* Address Details — Jost Font */}
+              {/* Address Details */}
               <div className="space-y-1 sm:space-y-1.5 font-sans text-sm sm:text-base text-[#333333] dark:text-brand-platinum/90 font-normal leading-relaxed mb-6">
                 {loc.addressLines.map((line, lIdx) => (
                   <p key={lIdx} className={lIdx === 0 ? "font-semibold text-[#111111] dark:text-white" : ""}>
@@ -77,7 +77,7 @@ export default function OfficeLocations({
               </div>
             </div>
 
-            {/* Google Maps Location Button — Gold Accent */}
+            {/* Google Maps Location Button */}
             <div className="pt-4 border-t border-black/10 dark:border-white/10 mt-auto">
               <a
                 href={loc.mapUrl}
