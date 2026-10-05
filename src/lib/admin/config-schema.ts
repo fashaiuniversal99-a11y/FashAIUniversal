@@ -257,7 +257,7 @@ export interface SubmissionRecord {
   id: string;
   referenceNumber?: string;
   type: "CONTACT" | "APPLICATION" | "CHATBOT_LEAD" | "CHATBOT_INQUIRY" | "CHATBOT_CONVERSATION" | "EVENT_INQUIRY";
-  source?: "CHATBOT" | "CONTACT_FORM" | "APPLICATION_FORM" | "WEBSITE_POPUP" | "EVENT_MANAGEMENT_FORM" | "OTHER";
+  source?: "CHATBOT" | "CONTACT_FORM" | "APPLICATION_FORM" | "WEBSITE_POPUP" | "EVENT_MANAGEMENT_FORM" | "LIFESTYLE_2026_SPONSORSHIP" | "OTHER";
   applicationType?: string;
   domain?: string;
   fullName: string;

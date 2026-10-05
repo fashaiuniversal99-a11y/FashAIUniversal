@@ -135,7 +135,8 @@ export async function POST(request: Request) {
     const rawEmail = sanitizeInput(body.email);
     const phone = sanitizeInput(body.phone);
     const role = sanitizeInput(body.role);
-    const preferredContactMethod = sanitizeInput(body.preferredContactMethod || "WhatsApp");
+    const preferredContactMethod = sanitizeInput(body.preferredContactMethod || "Email");
+    const rawSource = sanitizeInput(body.source);
 
     const eventName = sanitizeInput(body.eventName);
     const eventTypes = sanitizeArray(body.eventTypes || body.eventType);
@@ -169,15 +170,27 @@ export async function POST(request: Request) {
 
     const planningTimeline = sanitizeInput(body.planningTimeline || body.timeline);
     const proposalDeadline = sanitizeInput(body.proposalDeadline);
-    const additionalRequirements = sanitizeInput(body.additionalRequirements);
+    const additionalRequirements = sanitizeInput(body.additionalRequirements || body.sponsorshipRequirements);
     const consent = body.consent === true || body.consent === "true" || body.consent === "on";
 
+    const isSponsorship = rawSource === "LIFESTYLE_2026_SPONSORSHIP" || body.enquiryType === "Sponsorship";
+    const source = isSponsorship ? "LIFESTYLE_2026_SPONSORSHIP" : (rawSource || "EVENT_MANAGEMENT_FORM");
+
     // 4. Server-Side Validation
-    if (!fullName || !phone) {
-      return NextResponse.json(
-        { error: "Please complete all mandatory contact fields (Full Name, Phone/WhatsApp)." },
-        { status: 400 }
-      );
+    if (isSponsorship) {
+      if (!fullName || !company || !rawEmail) {
+        return NextResponse.json(
+          { error: "Please complete all required fields (Full Name, Company/Brand, Email)." },
+          { status: 400 }
+        );
+      }
+    } else {
+      if (!fullName || !phone) {
+        return NextResponse.json(
+          { error: "Please complete all mandatory contact fields (Full Name, Phone/WhatsApp)." },
+          { status: 400 }
+        );
+      }
     }
 
     // Auto-fallback email if omitted in short form
@@ -192,49 +205,51 @@ export async function POST(request: Request) {
       }
     }
 
-    if (!eventTypes || eventTypes.length === 0) {
+    if (!isSponsorship && (!eventTypes || eventTypes.length === 0)) {
       return NextResponse.json(
         { error: "Please select an event type." },
         { status: 400 }
       );
     }
 
-    const eventDescription = rawEventDescription || `Event Request: ${eventTypes.join(", ")} in ${location}.`;
+    const finalEventTypes = isSponsorship ? ["SPONSORSHIP"] : (eventTypes.length > 0 ? eventTypes : ["EVENT"]);
+    const eventDescription = rawEventDescription || (isSponsorship ? `Sponsorship Enquiry for Lifestyle 2026 from ${company || fullName}` : `Event Request: ${finalEventTypes.join(", ")} in ${location}.`);
 
-    if (!consent) {
+    if (!consent && !isSponsorship) {
       return NextResponse.json(
         { error: "Please check the consent box to allow FashAI Universal to contact you regarding your event brief." },
         { status: 400 }
       );
     }
 
-    // 5. Generate Unique Reference Number (FI-2026-XXXXX)
-    const refNum = `FI-2026-${Math.floor(10000 + Math.random() * 90000)}`;
+    // 5. Generate Unique Reference Number (SP-2026-XXXXX or FI-2026-XXXXX)
+    const refPrefix = isSponsorship ? "SP-2026" : "FI-2026";
+    const refNum = `${refPrefix}-${Math.floor(10000 + Math.random() * 90000)}`;
 
     // 6. Save Record to Storage
     const newRecord = await saveSubmission({
       type: "EVENT_INQUIRY",
-      source: "EVENT_MANAGEMENT_FORM",
+      source: source as any,
       referenceNumber: refNum,
-      domain: eventTypes.join(", "),
+      domain: isSponsorship ? "LIFESTYLE_2026_SPONSORSHIP" : finalEventTypes.join(", "),
       fullName,
       company: company || undefined,
       email,
-      phone,
+      phone: phone || undefined,
       preferredContactMethod,
       role: role || undefined,
 
-      eventName: eventName || undefined,
-      eventTypes,
+      eventName: eventName || (isSponsorship ? "Lifestyle 2026 Sponsorship" : undefined),
+      eventTypes: finalEventTypes,
       eventDescription,
 
-      preferredDate,
+      preferredDate: isSponsorship ? "Lifestyle 2026 (TBA)" : preferredDate,
       dateFlexible,
       alternativeDate: alternativeDate || undefined,
 
       guestCount: guestCount || undefined,
       guestCountRange,
-      location,
+      location: isSponsorship ? "Dubai, UAE" : location,
       venueStatus,
       venueName: venueName || undefined,
       venueAddress: venueAddress || undefined,
@@ -265,7 +280,7 @@ export async function POST(request: Request) {
       status: "NEW",
     });
 
-    await addActivityLog("CONTENT", `Received new Event Inquiry ${refNum}`, fullName, `Event: ${eventName || eventTypes.join(", ")}`);
+    await addActivityLog("CONTENT", `Received new ${isSponsorship ? "Sponsorship Enquiry" : "Event Inquiry"} ${refNum}`, fullName, `Company: ${company || "N/A"}`);
 
     return NextResponse.json({
       success: true,

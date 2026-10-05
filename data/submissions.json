@@ -1,6 +1,37 @@
 [
   {
-    "type": "CONTACT",
+    "type": "EVENT_INQUIRY",
+    "source": "LIFESTYLE_2026_SPONSORSHIP",
+    "referenceNumber": "SP-2026-18872",
+    "domain": "LIFESTYLE_2026_SPONSORSHIP",
+    "fullName": "Test Sponsor",
+    "company": "Luxury Brand Co",
+    "email": "sponsor@luxurybrand.com",
+    "phone": "+971501234567",
+    "preferredContactMethod": "Email",
+    "eventName": "Lifestyle 2026 Sponsorship",
+    "eventTypes": [
+      "SPONSORSHIP"
+    ],
+    "eventDescription": "Sponsorship Enquiry for Lifestyle 2026 from Luxury Brand Co",
+    "preferredDate": "Lifestyle 2026 (TBA)",
+    "dateFlexible": "Not decided",
+    "guestCountRange": "",
+    "location": "Dubai, UAE",
+    "venueStatus": "Not decided",
+    "indoorOutdoor": "Not decided",
+    "eventScale": "Mid-size",
+    "servicesRequested": [],
+    "desiredOutcomes": [],
+    "budgetCurrency": "AED",
+    "budgetRange": "",
+    "additionalRequirements": "Runway Title Sponsorship request",
+    "consent": true,
+    "status": "NEW",
+    "id": "sub_1791222892778_kdl7r",
+    "submittedAt": "2026-10-05T17:54:52.778Z"
+  },
+  {
     "type": "CONTACT",
     "source": "CHATBOT",
     "domain": "Event Inquiry",

@@ -19,6 +19,7 @@ import {
   Phone,
   Globe,
   Tag,
+  Award,
 } from "lucide-react";
 import { SubmissionRecord } from "@/lib/admin/config-schema";
 
@@ -141,8 +142,10 @@ export default function FormSubmissionsPage() {
     const matchesSource =
       sourceFilter === "ALL"
         ? true
+        : sourceFilter === "LIFESTYLE_2026_SPONSORSHIP"
+        ? s.source === "LIFESTYLE_2026_SPONSORSHIP" || s.domain === "LIFESTYLE_2026_SPONSORSHIP" || s.enquiryType === "Sponsorship"
         : sourceFilter === "EVENT_MANAGEMENT_FORM"
-        ? s.source === "EVENT_MANAGEMENT_FORM" || s.type === "EVENT_INQUIRY"
+        ? (s.source === "EVENT_MANAGEMENT_FORM" || s.type === "EVENT_INQUIRY") && s.source !== "LIFESTYLE_2026_SPONSORSHIP"
         : s.source === sourceFilter;
     const matchesSearch =
       s.fullName.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -155,8 +158,12 @@ export default function FormSubmissionsPage() {
     return matchesStatus && matchesSource && matchesSearch;
   });
 
+  const sponsorshipCount = submissions.filter(
+    (s) => s.source === "LIFESTYLE_2026_SPONSORSHIP" || s.domain === "LIFESTYLE_2026_SPONSORSHIP" || s.enquiryType === "Sponsorship"
+  ).length;
+
   const eventInquiriesCount = submissions.filter(
-    (s) => s.source === "EVENT_MANAGEMENT_FORM" || s.type === "EVENT_INQUIRY"
+    (s) => (s.source === "EVENT_MANAGEMENT_FORM" || s.type === "EVENT_INQUIRY") && s.source !== "LIFESTYLE_2026_SPONSORSHIP"
   ).length;
 
   return (
@@ -198,11 +205,23 @@ export default function FormSubmissionsPage() {
         </button>
 
         <button
+          onClick={() => setSourceFilter("LIFESTYLE_2026_SPONSORSHIP")}
+          className={`px-4 py-2 rounded-xl text-xs font-syne uppercase font-bold tracking-wider transition-all flex items-center gap-1.5 ${
+            sourceFilter === "LIFESTYLE_2026_SPONSORSHIP"
+              ? "bg-[#D4AF37] text-black shadow-md"
+              : "bg-[#141312] text-[#D4AF37] hover:bg-[#D4AF37]/15 border border-[#D4AF37]/40"
+          }`}
+        >
+          <Award className="w-3.5 h-3.5" />
+          <span>SPONSORSHIPS ({sponsorshipCount})</span>
+        </button>
+
+        <button
           onClick={() => setSourceFilter("EVENT_MANAGEMENT_FORM")}
           className={`px-4 py-2 rounded-xl text-xs font-syne uppercase font-bold tracking-wider transition-all flex items-center gap-1.5 ${
             sourceFilter === "EVENT_MANAGEMENT_FORM"
               ? "bg-[#D4AF37] text-black shadow-md"
-              : "bg-[#141312] text-[#D4AF37] hover:bg-[#D4AF37]/15 border border-[#D4AF37]/40"
+              : "bg-[#141312] text-white/70 hover:text-white border border-white/10"
           }`}
         >
           <Building className="w-3.5 h-3.5" />

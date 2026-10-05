@@ -1,5 +1,13 @@
 [
   {
+    "id": "log_1791222892788_ygvm4",
+    "category": "CONTENT",
+    "action": "Received new Sponsorship Enquiry SP-2026-18872",
+    "actor": "Test Sponsor",
+    "timestamp": "2026-10-05T17:54:52.788Z",
+    "details": "Company: Luxury Brand Co"
+  },
+  {
     "id": "log_1790796442451_toq4m",
     "category": "AUTH",
     "action": "Admin logged out",

@@ -1,12 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, FileText } from "lucide-react";
 
 import { LIFESTYLE_2026 } from "@/data/lifestyle-event";
+import SponsorshipModal from "@/components/ui/SponsorshipModal";
 
 export default function HomeUpcomingFeature() {
+  const [isSponsorModalOpen, setIsSponsorModalOpen] = useState(false);
+  const [sponsorModalMode, setSponsorModalMode] = useState<"DECK" | "ENQUIRY">("DECK");
+
   return (
     <section className="relative w-full flex flex-col justify-center py-10 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#080706] border-b border-black/10 dark:border-white/10 text-[#111111] dark:text-white overflow-hidden select-none">
       {/* Background Watermark */}
@@ -109,25 +114,49 @@ export default function HomeUpcomingFeature() {
           </div>
 
           {/* Action CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 w-full sm:w-auto">
             <Link
               href={LIFESTYLE_2026.waitingListCtaUrl}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-8 py-3.5 rounded-full font-syne text-sm sm:text-base font-bold tracking-wider uppercase transition-all duration-300 shadow-md group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-6 py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-md group"
             >
               <span>JOIN THE WAITING LIST</span>
-              <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
             </Link>
 
-            <Link
-              href="/contact?type=Sponsorship"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-transparent border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 px-8 py-3.5 rounded-full font-syne text-sm sm:text-base font-bold tracking-wider uppercase transition-all duration-300 group"
+            <button
+              type="button"
+              onClick={() => {
+                setSponsorModalMode("DECK");
+                setIsSponsorModalOpen(true);
+              }}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-transparent border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 px-6 py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 group"
+            >
+              <FileText className="w-4 h-4 text-[#D4AF37]" />
+              <span>GET SPONSORSHIP DECK</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setSponsorModalMode("ENQUIRY");
+                setIsSponsorModalOpen(true);
+              }}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 text-[#666666] dark:text-white/70 hover:text-[#D4AF37] dark:hover:text-[#D4AF37] font-syne text-xs font-bold tracking-wider uppercase transition-colors py-2 px-3"
             >
               <span>SPONSORSHIP ENQUIRY</span>
-              <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-            </Link>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </button>
           </div>
         </motion.div>
       </div>
+
+      {/* Sponsorship Modal */}
+      <SponsorshipModal
+        isOpen={isSponsorModalOpen}
+        onClose={() => setIsSponsorModalOpen(false)}
+        initialMode={sponsorModalMode}
+      />
     </section>
   );
 }
+
