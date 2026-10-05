@@ -169,8 +169,8 @@ function TalentDirectoryContent() {
                       </div>
                     </div>
 
-                    {/* Client Action: REQUEST THIS TALENT */}
-                    <div className="pt-3 border-t border-black/10 dark:border-white/10">
+                    {/* Actions: REQUEST THIS TALENT & SHARE CARD */}
+                    <div className="pt-3 border-t border-black/10 dark:border-white/10 space-y-2">
                       <Link
                         href={`/hire-talent?talent=${person.id}`}
                         onClick={() =>
@@ -180,10 +180,18 @@ function TalentDirectoryContent() {
                             location: "talent_section",
                           })
                         }
-                        className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] text-black py-3 px-4 rounded-xl text-xs font-jost font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-between shadow-sm min-h-[44px]"
+                        className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] text-black py-2.5 px-3 rounded-xl text-xs font-jost font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-between shadow-sm min-h-[40px]"
                       >
                         <span>REQUEST THIS TALENT</span>
                         <ArrowUpRight className="w-4 h-4" />
+                      </Link>
+
+                      <Link
+                        href={`/talent/share/${person.id}`}
+                        className="w-full bg-transparent border border-black/15 dark:border-white/15 text-[#333333] dark:text-white/80 hover:border-[#D4AF37] hover:text-[#D4AF37] py-1.5 px-3 rounded-xl text-[10px] font-jost font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-1.5"
+                      >
+                        <Sparkles className="w-3 h-3 text-[#D4AF37]" />
+                        <span>TALENT SHARE CARD</span>
                       </Link>
                     </div>
                   </motion.div>

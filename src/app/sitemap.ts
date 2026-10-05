@@ -1,8 +1,15 @@
 import { MetadataRoute } from "next";
+import { MAGAZINE_ARTICLES } from "@/data/magazine";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.fashaiuniversal.com";
   const now = new Date();
+
+  const magazineRoutes = MAGAZINE_ARTICLES.map((article) => ({
+    url: `${baseUrl}/fashion-magazine/${article.slug}`,
+    priority: 0.8,
+    changeFrequency: "monthly" as const,
+  }));
 
   const routes = [
     { url: baseUrl, priority: 1.0, changeFrequency: "daily" as const },
@@ -15,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/events`, priority: 0.9, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/projects`, priority: 0.9, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/fashion-magazine`, priority: 0.8, changeFrequency: "weekly" as const },
+    ...magazineRoutes,
     { url: `${baseUrl}/community`, priority: 0.8, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/talent`, priority: 0.9, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/talent/model-casting-dubai`, priority: 0.8, changeFrequency: "weekly" as const },
