@@ -9,7 +9,11 @@ import SubmitSuccessExpand from "../ui/SubmitSuccessExpand";
 import OfficeLocations from "./OfficeLocations";
 import { trackEngagementEvent } from "@/lib/concierge/preferences";
 
-function ContactContent() {
+interface ContactSectionProps {
+  showOfficeLocations?: boolean;
+}
+
+function ContactContent({ showOfficeLocations = false }: ContactSectionProps) {
   const searchParams = useSearchParams();
   const initialType = searchParams?.get("type") || "Registration";
 
@@ -136,9 +140,11 @@ function ContactContent() {
         </div>
 
         {/* Office Locations Section */}
-        <div className="mb-8 sm:mb-10">
-          <OfficeLocations showHeading={true} />
-        </div>
+        {showOfficeLocations && (
+          <div className="mb-8 sm:mb-10">
+            <OfficeLocations showHeading={true} />
+          </div>
+        )}
 
         {/* Single Centered Professional Enquiry Form Container */}
         <div className="max-w-4xl mx-auto">
@@ -386,10 +392,10 @@ function ContactContent() {
   );
 }
 
-export default function ContactSection() {
+export default function ContactSection({ showOfficeLocations = false }: ContactSectionProps) {
   return (
     <Suspense fallback={<div className="py-24 bg-brand-void text-center text-brand-platinum">Loading Contact Form...</div>}>
-      <ContactContent />
+      <ContactContent showOfficeLocations={showOfficeLocations} />
     </Suspense>
   );
 }

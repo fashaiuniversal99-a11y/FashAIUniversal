@@ -153,10 +153,10 @@ export default function Chapter2025() {
         <div className="pt-4 text-center border-t border-black/10 dark:border-white/10">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-3 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-8 py-3.5 text-sm font-syne tracking-wider font-bold transition-all rounded-full shadow-lg"
+            className="inline-flex items-center gap-3 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-8 py-3.5 text-sm font-syne tracking-wider font-bold transition-all rounded-full shadow-lg group"
           >
-            <span>EXPLORE MORE PROJECTS</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>VIEW PROJECTS</span>
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
       </div>

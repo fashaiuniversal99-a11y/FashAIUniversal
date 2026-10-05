@@ -110,7 +110,7 @@ export default function Chapter2026() {
                   EVENT DATE
                 </span>
                 <span className="font-serif-display text-lg sm:text-xl md:text-2xl font-light text-[#D4AF37] uppercase tracking-wide">
-                  {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.dateDisplay : "JOIN THE WAITING LIST"}
+                  {LIFESTYLE_2026.dateDisplay}
                 </span>
                 <span className="font-sans text-xs sm:text-sm md:text-base text-[#555555] dark:text-white/60 uppercase whitespace-nowrap">
                   Dubai · 2026
@@ -123,7 +123,7 @@ export default function Chapter2026() {
                   EVENT VENUE
                 </span>
                 <span className="font-serif-display text-lg sm:text-xl md:text-2xl font-light text-[#D4AF37] uppercase tracking-wide">
-                  {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.venueDisplay : "JOIN THE WAITING LIST"}
+                  {LIFESTYLE_2026.venueDisplay}
                 </span>
                 <span className="font-sans text-xs sm:text-sm md:text-base text-[#555555] dark:text-white/60 uppercase whitespace-nowrap">
                   Dubai, UAE

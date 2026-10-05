@@ -1,69 +1,46 @@
 import Hero from "@/components/sections/Hero";
-import HomepageProofSection from "@/components/sections/HomepageProofSection";
-import WhoWeAreSection from "@/components/sections/WhoWeAreSection";
+import TwoPrimaryDoorsSection from "@/components/sections/TwoPrimaryDoorsSection";
+import HireTalentBridgeSection from "@/components/sections/HireTalentBridgeSection";
+import Chapter2026 from "@/components/sections/Chapter2026";
 import WhatWeDoSection from "@/components/sections/WhatWeDoSection";
-import CreateEventSection from "@/components/sections/CreateEventSection";
-import WhoWeServeSection from "@/components/sections/WhoWeServeSection";
-import OpenNominationsSection from "@/components/sections/OpenNominationsSection";
-import FashionCommunitySection from "@/components/sections/FashionCommunitySection";
 import OurEventsSection from "@/components/sections/OurEventsSection";
-import FashionMagazineSection from "@/components/sections/FashionMagazineSection";
 import Chapter2025 from "@/components/sections/Chapter2025";
-import FashPrismStoriesSection from "@/components/sections/FashPrismStoriesSection";
-import AboutUsSection from "@/components/sections/AboutUsSection";
-import FaqSection from "@/components/sections/FaqSection";
-import ContactSection from "@/components/sections/ContactSection";
-import InstagramSection from "@/components/sections/InstagramSection";
-
 import HomepageTalentSection from "@/components/talent/HomepageTalentSection";
+import HomepageProofSection from "@/components/sections/HomepageProofSection";
+import FinalConversionSection from "@/components/sections/FinalConversionSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-brand-white selection:bg-brand-orange selection:text-white">
-      {/* 01. LANDING VIDEO */}
+    <main className="min-h-screen bg-black text-brand-white selection:bg-[#D4AF37] selection:text-black">
+      {/* 01. HERO SECTION */}
       <Hero />
 
-      {/* 01.5 TRUST & CREDIBILITY PROOF SECTION */}
-      <HomepageProofSection />
+      {/* 02. TWO PRIMARY DOORS: PLAN YOUR EVENT / APPLY AS TALENT */}
+      <TwoPrimaryDoorsSection />
 
-      {/* 02. EVENT MANAGEMENT POSITIONING & INTRODUCTION */}
-      <WhoWeAreSection />
+      {/* 03. HIRE TALENT BRIDGE */}
+      <HireTalentBridgeSection />
 
-      {/* 03. OUR EVENTS & FLAGSHIP EXPERIENCES */}
-      <OurEventsSection />
+      {/* 04. LIFESTYLE 2026 */}
+      <Chapter2026 />
 
-      {/* 04. WHAT WE DO / SERVICES */}
+      {/* 05. WHAT WE DO / SERVICES */}
       <WhatWeDoSection />
 
-      {/* 05. FASHION MAGAZINE */}
-      <FashionMagazineSection />
+      {/* 06. OUR EVENTS / EXPERIENCE PROOF */}
+      <OurEventsSection />
 
-      {/* 06. INDUSTRIES WE SUPPORT */}
-      <WhoWeServeSection />
-
-      {/* 07. OUR PROJECTS */}
+      {/* 07. PROJECTS / WORK */}
       <Chapter2025 />
 
-      {/* 08. FASHPRISM / PROJECT CONTENT */}
-      <FashPrismStoriesSection />
-
-      {/* 09. OPPORTUNITIES & TALENT NETWORK */}
-      <OpenNominationsSection />
+      {/* 08. TALENT / NETWORK */}
       <HomepageTalentSection />
-      <AboutUsSection />
 
-      {/* 10. FAQ */}
-      <FaqSection />
+      {/* 09. PROOF / TRUST */}
+      <HomepageProofSection />
 
-      {/* 11. CREATE YOUR OWN EVENT */}
-      <CreateEventSection />
-
-      {/* 12. CONTACT & ENQUIRIES */}
-      <ContactSection />
-
-      {/* 13. FOLLOW OUR JOURNEY */}
-      <InstagramSection />
+      {/* 10. FINAL CONVERSION / CONTACT */}
+      <FinalConversionSection />
     </main>
   );
 }
-

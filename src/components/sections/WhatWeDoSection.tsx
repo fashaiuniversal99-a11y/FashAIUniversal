@@ -34,9 +34,18 @@ export default function WhatWeDoSection() {
               WHAT WE <span className="font-serif italic font-normal text-[#D4AF37]">DO</span>
             </h2>
           </div>
-          <p className="font-sans text-base sm:text-lg md:text-xl text-[#555555] dark:text-brand-platinum/85 max-w-lg font-light leading-relaxed text-justify">
-            FashAI Universal conceives, designs, and executes specialized event formats across fashion, lifestyle, corporate, product, and technology sectors.
-          </p>
+          <div className="flex flex-col items-start md:items-end gap-3 shrink-0">
+            <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/85 max-w-md font-light leading-relaxed">
+              FashAI Universal conceives, designs, and executes specialized event formats across fashion, lifestyle, corporate, product, and technology sectors.
+            </p>
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] px-6 py-3 rounded-full font-syne text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-md group"
+            >
+              <span>EXPLORE SERVICES</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
 
         {/* Compact Editorial Event Grid */}

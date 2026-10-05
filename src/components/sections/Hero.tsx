@@ -176,7 +176,7 @@ export default function Hero() {
             />
             <DistortionCTAButton
               href="/apply"
-              label="GET INVOLVED ↗"
+              label="APPLY AS TALENT ↗"
               variant="secondary"
               className="w-full sm:w-auto min-w-[210px]"
               dataCursor="view"
