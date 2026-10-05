@@ -146,6 +146,19 @@ export default function TwoPrimaryDoorsSection() {
             </div>
           </motion.div>
         </div>
+
+        {/* Supporting Hire Talent Pathway */}
+        <div className="text-center pt-4">
+          <Link
+            href="/hire-talent"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-syne font-semibold tracking-wider text-[#111111]/80 dark:text-white/85 hover:text-[#D4AF37] transition-colors group"
+          >
+            <span>Looking to book creative talent for your project?</span>
+            <span className="text-[#D4AF37] font-bold underline underline-offset-4 group-hover:text-white transition-colors inline-flex items-center gap-1">
+              HIRE TALENT <ArrowRight className="w-3.5 h-3.5 inline transition-transform group-hover:translate-x-1" />
+            </span>
+          </Link>
+        </div>
       </div>
     </section>
   );

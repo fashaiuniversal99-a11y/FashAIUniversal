@@ -132,21 +132,21 @@ export async function POST(request: Request) {
     // 3. Extract & Sanitize Input Fields
     const fullName = sanitizeInput(body.fullName || body.name);
     const company = sanitizeInput(body.company || body.organization);
-    const email = sanitizeInput(body.email);
+    const rawEmail = sanitizeInput(body.email);
     const phone = sanitizeInput(body.phone);
     const role = sanitizeInput(body.role);
-    const preferredContactMethod = sanitizeInput(body.preferredContactMethod || "Email");
+    const preferredContactMethod = sanitizeInput(body.preferredContactMethod || "WhatsApp");
 
     const eventName = sanitizeInput(body.eventName);
     const eventTypes = sanitizeArray(body.eventTypes || body.eventType);
-    const eventDescription = sanitizeInput(body.eventDescription || body.message);
+    const rawEventDescription = sanitizeInput(body.eventDescription || body.message);
 
-    const preferredDate = sanitizeInput(body.preferredDate || body.date);
+    const preferredDate = sanitizeInput(body.preferredDate || body.date) || "To be confirmed";
     const dateFlexible = sanitizeInput(body.dateFlexible || "Not decided");
     const alternativeDate = sanitizeInput(body.alternativeDate);
     const guestCountRange = sanitizeInput(body.guestCountRange || body.guestCount);
     const guestCount = sanitizeInput(body.guestCountExact || body.guestCount);
-    const location = sanitizeInput(body.location || body.city);
+    const location = sanitizeInput(body.location || body.city) || "To be discussed";
     const venueStatus = sanitizeInput(body.venueStatus || "Not decided");
     const venueName = sanitizeInput(body.venueName);
     const venueAddress = sanitizeInput(body.venueAddress);
@@ -173,48 +173,33 @@ export async function POST(request: Request) {
     const consent = body.consent === true || body.consent === "true" || body.consent === "on";
 
     // 4. Server-Side Validation
-    if (!fullName || !email || !phone) {
+    if (!fullName || !phone) {
       return NextResponse.json(
-        { error: "Please complete all mandatory contact fields (Full Name, Work Email, Phone/WhatsApp)." },
+        { error: "Please complete all mandatory contact fields (Full Name, Phone/WhatsApp)." },
         { status: 400 }
       );
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: "Please enter a valid work email address." },
-        { status: 400 }
-      );
+    // Auto-fallback email if omitted in short form
+    const email = rawEmail || `${phone.replace(/\D/g, "") || "client"}@inquiry.fashaiuniversal.com`;
+    if (rawEmail) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(rawEmail)) {
+        return NextResponse.json(
+          { error: "Please enter a valid email address." },
+          { status: 400 }
+        );
+      }
     }
 
     if (!eventTypes || eventTypes.length === 0) {
       return NextResponse.json(
-        { error: "Please select at least one event type you are planning." },
+        { error: "Please select an event type." },
         { status: 400 }
       );
     }
 
-    if (!eventDescription || eventDescription.length < 10) {
-      return NextResponse.json(
-        { error: "Please provide a brief description of your event (minimum 10 characters)." },
-        { status: 400 }
-      );
-    }
-
-    if (!preferredDate) {
-      return NextResponse.json(
-        { error: "Please select your preferred event date." },
-        { status: 400 }
-      );
-    }
-
-    if (!location) {
-      return NextResponse.json(
-        { error: "Please specify your target event location or city." },
-        { status: 400 }
-      );
-    }
+    const eventDescription = rawEventDescription || `Event Request: ${eventTypes.join(", ")} in ${location}.`;
 
     if (!consent) {
       return NextResponse.json(

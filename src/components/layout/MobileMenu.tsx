@@ -99,7 +99,7 @@ export default function MobileMenu({
                 </div>
                 <div className="flex flex-col justify-center">
                   <span className="font-serif-display text-base font-light tracking-wider text-[#111111] dark:text-white uppercase leading-none">
-                    FashAI <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37] capitalize">Universal</span>
+                    FashAI <span className="font-serif italic font-normal text-[#D4AF37] capitalize">Universal</span>
                   </span>
                 </div>
               </Link>
@@ -120,7 +120,7 @@ export default function MobileMenu({
                 {/* Floating Circular X Close Button */}
                 <button
                   onClick={onClose}
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/5 dark:bg-white/15 border border-black/10 dark:border-white/20 text-[#111111] dark:text-white hover:bg-[#F15E1C] hover:border-[#F15E1C] hover:text-white transition-all flex items-center justify-center shrink-0 shadow-sm aspect-square"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/5 dark:bg-white/15 border border-black/10 dark:border-white/20 text-[#111111] dark:text-white hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:text-black transition-all flex items-center justify-center shrink-0 shadow-sm aspect-square"
                   aria-label="Close Navigation Menu"
                 >
                   <X className="w-5 h-5" />
