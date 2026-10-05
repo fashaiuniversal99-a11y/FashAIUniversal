@@ -102,11 +102,10 @@ export default function HomepageTalentSection() {
 
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <Link
-              href="/apply"
+              href="/talent"
               className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-6 py-3 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-md"
             >
-              <UserPlus className="w-4 h-4" />
-              <span>APPLY AS TALENT</span>
+              <span>BROWSE DIRECTORY →</span>
             </Link>
             <Link
               href="/hire-talent"
@@ -114,6 +113,13 @@ export default function HomepageTalentSection() {
             >
               <Briefcase className="w-4 h-4" />
               <span>HIRE TALENT</span>
+            </Link>
+            <Link
+              href="/apply"
+              className="inline-flex items-center gap-2 bg-black/5 dark:bg-white/5 border border-black/15 dark:border-white/15 text-[#111111] dark:text-white hover:border-[#D4AF37] hover:text-[#D4AF37] px-5 py-3 rounded-full font-syne text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300"
+            >
+              <UserPlus className="w-4 h-4" />
+              <span>APPLY</span>
             </Link>
           </div>
         </div>
@@ -157,13 +163,13 @@ export default function HomepageTalentSection() {
                 </div>
               </div>
 
-              {/* Action Buttons: APPLY & HIRE TALENT */}
+              {/* Action Buttons: BROWSE CATEGORY & HIRE TALENT */}
               <div className="pt-3 border-t border-black/10 dark:border-white/10 flex flex-col gap-2">
                 <Link
-                  href={`/apply?category=${cat.categoryId}`}
+                  href={`/talent?category=${cat.id}`}
                   className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] py-2.5 px-4 rounded-xl text-xs font-syne font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-between shadow-sm"
                 >
-                  <span>APPLY</span>
+                  <span>BROWSE {cat.title}</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
 
@@ -171,7 +177,7 @@ export default function HomepageTalentSection() {
                   href={`/hire-talent?category=${cat.categoryId}`}
                   className="w-full border border-black/15 dark:border-white/15 bg-transparent hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 text-[#333333] dark:text-white/80 hover:text-[#111111] dark:hover:text-white py-2 px-4 rounded-xl text-xs font-syne font-semibold tracking-wider uppercase transition-all duration-300 flex items-center justify-between"
                 >
-                  <span>HIRE TALENT</span>
+                  <span>HIRE {cat.title}</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -181,5 +187,4 @@ export default function HomepageTalentSection() {
       </div>
     </section>
   );
-}
 }

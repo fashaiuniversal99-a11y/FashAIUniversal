@@ -49,7 +49,7 @@ export default function Header() {
     { id: "events", label: "EVENTS", href: "/events", enabled: true, order: 4 },
     { id: "projects", label: "PROJECTS", href: "/projects", enabled: true, order: 5 },
     { id: "blog", label: "BLOG", href: "/fashion-magazine", enabled: true, order: 6 },
-    { id: "talent", label: "TALENT", href: "/apply", enabled: true, order: 7 },
+    { id: "talent", label: "TALENT", href: "/talent", enabled: true, order: 7 },
   ];
 
   const rawConfigNav = (config.navigationSettings && config.navigationSettings.length > 0
@@ -62,7 +62,7 @@ export default function Header() {
   const hasEvents = rawConfigNav.some((item) => item.id === "events" || item.href === "/events");
   const hasProjects = rawConfigNav.some((item) => item.id === "projects" || item.href === "/projects");
   const hasBlog = rawConfigNav.some((item) => item.id === "blog" || item.href === "/fashion-magazine");
-  const hasTalent = rawConfigNav.some((item) => item.id === "talent" || item.id === "apply" || item.href === "/apply");
+  const hasTalent = rawConfigNav.some((item) => item.id === "talent" || item.id === "apply" || item.href === "/apply" || item.href === "/talent");
 
   let mergedNavItems = [...rawConfigNav];
   if (mergedNavItems.length === 0) {
@@ -78,7 +78,7 @@ export default function Header() {
       mergedNavItems.push({ id: "blog", label: "BLOG", href: "/fashion-magazine", enabled: true, order: 6 });
     }
     if (!hasTalent) {
-      mergedNavItems.push({ id: "talent", label: "TALENT", href: "/apply", enabled: true, order: 7 });
+      mergedNavItems.push({ id: "talent", label: "TALENT", href: "/talent", enabled: true, order: 7 });
     }
   }
 

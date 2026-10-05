@@ -1,12 +1,11 @@
-"use client";
-
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { CheckCircle2, Sparkles, AlertCircle, Users, ArrowRight } from "lucide-react";
+import { CheckCircle2, Sparkles, AlertCircle, Users, UserCheck } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { PEOPLE_MASTER_DATA } from "@/data/people";
+import { getTalentById, ApprovedTalentItem } from "@/data/talent";
 
 const TALENT_TYPES = [
   "Models (Runway & Editorial)",
@@ -38,7 +37,12 @@ const TALENT_COUNT_OPTIONS = [
   "Custom / Full Team",
 ];
 
-export default function HireTalentPage() {
+function HireTalentFormContent() {
+  const searchParams = useSearchParams();
+  const talentParam = searchParams.get("talent");
+  const categoryParam = searchParams.get("category");
+
+  const [requestedTalent, setRequestedTalent] = useState<ApprovedTalentItem | null>(null);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [referenceNumber, setReferenceNumber] = useState("");
@@ -56,6 +60,43 @@ export default function HireTalentPage() {
     brief: "",
     consent: true,
   });
+
+  useEffect(() => {
+    if (talentParam) {
+      const talent = getTalentById(talentParam);
+      if (talent) {
+        setRequestedTalent(talent);
+        setFormData((prev) => ({
+          ...prev,
+          talentType:
+            talent.category === "MODELS"
+              ? "Models (Runway & Editorial)"
+              : talent.category === "DESIGNERS"
+              ? "Fashion Designers & Ateliers"
+              : talent.category === "MAKEUP ARTISTS"
+              ? "Makeup & Hair Stylists"
+              : talent.category === "STYLISTS"
+              ? "Fashion Stylists & Art Directors"
+              : talent.category === "CHOREOGRAPHERS"
+              ? "Choreographers & Movement Directors"
+              : talent.category === "CREATORS"
+              ? "Content Creators & Influencers"
+              : talent.category === "PUBLIC FIGURES"
+              ? "Celebrities & Public Figures"
+              : prev.talentType,
+        }));
+      }
+    } else if (categoryParam) {
+      const catLower = categoryParam.toLowerCase();
+      if (catLower.includes("model")) setFormData((prev) => ({ ...prev, talentType: "Models (Runway & Editorial)" }));
+      else if (catLower.includes("design")) setFormData((prev) => ({ ...prev, talentType: "Fashion Designers & Ateliers" }));
+      else if (catLower.includes("makeup")) setFormData((prev) => ({ ...prev, talentType: "Makeup & Hair Stylists" }));
+      else if (catLower.includes("styl")) setFormData((prev) => ({ ...prev, talentType: "Fashion Stylists & Art Directors" }));
+      else if (catLower.includes("choreo")) setFormData((prev) => ({ ...prev, talentType: "Choreographers & Movement Directors" }));
+      else if (catLower.includes("creator") || catLower.includes("influenc")) setFormData((prev) => ({ ...prev, talentType: "Content Creators & Influencers" }));
+      else if (catLower.includes("celebrity") || catLower.includes("public")) setFormData((prev) => ({ ...prev, talentType: "Celebrities & Public Figures" }));
+    }
+  }, [talentParam, categoryParam]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -101,17 +142,21 @@ export default function HireTalentPage() {
         eventTypes: [`Hire Talent - ${formData.talentType}`],
         preferredDate: formData.preferredDate || "To be discussed",
         location: formData.location || "To be discussed",
+        talentRequested: requestedTalent ? `${requestedTalent.name} (${requestedTalent.id})` : undefined,
         servicesRequested: [
           `Talent Category: ${formData.talentType}`,
+          requestedTalent ? `Requested Talent: ${requestedTalent.name}` : "Talent Selection: General Category",
           formData.talentCount ? `Talent Count: ${formData.talentCount}` : "Talent Count: Flexible",
           formData.eventType ? `Project Type: ${formData.eventType}` : "Project Type: General",
         ],
-        eventDescription: `CLIENT TALENT HIRING BRIEF\n\nTalent Category Required: ${formData.talentType}\nTalent Count: ${formData.talentCount || "Not specified"}\nProject/Campaign Type: ${formData.eventType || "Not specified"}\nLocation: ${formData.location || "Not specified"}\nTarget Date: ${formData.preferredDate || "To be discussed"}\n\nClient Brief & Requirements:\n${formData.brief}`,
+        eventDescription: `CLIENT TALENT HIRING BRIEF\n\n${
+          requestedTalent ? `REQUESTED SPECIFIC TALENT: ${requestedTalent.name} (${requestedTalent.specialty})\n` : ""
+        }Talent Category Required: ${formData.talentType}\nTalent Count: ${formData.talentCount || "Not specified"}\nProject/Campaign Type: ${formData.eventType || "Not specified"}\nLocation: ${formData.location || "Not specified"}\nTarget Date: ${formData.preferredDate || "To be discussed"}\n\nClient Brief & Requirements:\n${formData.brief}`,
         budgetCurrency: "AED",
         budgetRange: "To be discussed",
         consent: true,
         enquiryType: "Hire Talent",
-        source: "CLIENT_HIRE_TALENT_FORM",
+        source: requestedTalent ? "TALENT_CARD_DIRECT_REQUEST" : "CLIENT_HIRE_TALENT_FORM",
       };
 
       const res = await fetch("/api/event-inquiries", {
@@ -158,12 +203,19 @@ export default function HireTalentPage() {
             Connect with verified models, designers, choreographers, stylists, photographers, and creative directors for your event, campaign, or brand requirement.
           </p>
 
-          <div className="pt-2">
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
             <Link
-              href="/apply"
+              href="/talent"
               className="inline-flex items-center gap-1.5 text-xs font-syne tracking-wider text-[#D4AF37] hover:underline uppercase font-bold"
             >
-              <span>Are you a creative professional looking to join our network? APPLY AS TALENT →</span>
+              <span>BROWSE TALENT DIRECTORY →</span>
+            </Link>
+            <span className="text-black/30 dark:text-white/30">•</span>
+            <Link
+              href="/apply"
+              className="inline-flex items-center gap-1.5 text-xs font-syne tracking-wider text-[#111111]/70 dark:text-white/70 hover:text-[#D4AF37] uppercase font-semibold"
+            >
+              <span>APPLY AS TALENT ↗</span>
             </Link>
           </div>
         </div>
@@ -217,6 +269,34 @@ export default function HireTalentPage() {
           ) : (
             /* SHORT CLIENT HIRE TALENT FORM */
             <div className="space-y-6 box-border max-w-3xl mx-auto">
+              {/* SELECTED TALENT CONFIRMATION BANNER */}
+              {requestedTalent && (
+                <div className="p-4 sm:p-5 rounded-2xl bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#111111] dark:text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-md">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-[#D4AF37] text-black flex items-center justify-center shrink-0">
+                      <UserCheck className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-syne font-bold tracking-wider text-[#D4AF37] uppercase block">
+                        REQUESTING SPECIFIC TALENT
+                      </span>
+                      <h3 className="font-serif-display text-lg sm:text-xl font-light uppercase text-[#111111] dark:text-white">
+                        {requestedTalent.name}
+                      </h3>
+                      <p className="text-xs text-[#555555] dark:text-white/70 font-sans">
+                        {requestedTalent.specialty} · {requestedTalent.location || requestedTalent.category}
+                      </p>
+                    </div>
+                  </div>
+                  <Link
+                    href="/talent"
+                    className="text-xs font-syne font-bold text-[#D4AF37] hover:underline uppercase shrink-0"
+                  >
+                    CHANGE TALENT
+                  </Link>
+                </div>
+              )}
+
               {errorMessage && (
                 <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-700 dark:text-red-300 text-xs sm:text-sm font-sans flex items-center gap-3">
                   <AlertCircle className="w-5 h-5 shrink-0 text-red-500 dark:text-red-400" />
@@ -362,7 +442,7 @@ export default function HireTalentPage() {
                     </select>
                   </div>
 
-                  {/* 8. TARGET DATE & LOCATION */}
+                  {/* 8. LOCATION */}
                   <div className="space-y-1.5 w-full box-border">
                     <label className="block text-[#111111]/80 dark:text-white/90 font-syne font-semibold uppercase text-xs tracking-wider">
                       LOCATION / CITY
@@ -415,5 +495,13 @@ export default function HireTalentPage() {
 
       <Footer />
     </div>
+  );
+}
+
+export default function HireTalentPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#FAF8F5] dark:bg-[#050505]" />}>
+      <HireTalentFormContent />
+    </Suspense>
   );
 }
