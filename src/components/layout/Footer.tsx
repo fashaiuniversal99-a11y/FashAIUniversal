@@ -281,14 +281,14 @@ export default function Footer() {
             <div className="flex items-center gap-3 sm:gap-4 shrink-0 flex-wrap justify-center sm:justify-end">
               <Image
                 src="/assets/brand/arav_green_logo.png"
-                alt="Arav Innovation Logo Mark"
+                alt="Arav Innovations Logo Mark"
                 width={120}
                 height={120}
                 className="h-7 sm:h-9 md:h-11 w-auto object-contain filter contrast-[1.05]"
               />
               <Image
                 src="/assets/brand/Final_Powered_by_logo.png"
-                alt="Powered by Arav Innovation"
+                alt="Powered by Arav Innovations"
                 width={240}
                 height={60}
                 className="h-7 sm:h-9 md:h-11 w-auto object-contain filter contrast-[1.05]"

@@ -23,7 +23,7 @@ export default function HomeContactInvitation() {
             />
           </div>
           <span className="text-[10px] font-syne tracking-[0.25em] text-[#D4AF37] uppercase font-bold">
-            Powered by Arav Innovation
+            Powered by Arav Innovations
           </span>
         </div>
 
