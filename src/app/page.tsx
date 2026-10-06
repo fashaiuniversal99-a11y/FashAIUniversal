@@ -7,6 +7,7 @@ import HomepageProofSection from "@/components/sections/HomepageProofSection";
 import AboutUsSection from "@/components/sections/AboutUsSection";
 import FashionMagazineSection from "@/components/sections/FashionMagazineSection";
 import WhoWeServeSection from "@/components/sections/WhoWeServeSection";
+import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import FaqSection from "@/components/sections/FaqSection";
 import FinalConversionSection from "@/components/sections/FinalConversionSection";
 
@@ -40,10 +41,13 @@ export default function Home() {
       {/* 09. INDUSTRIES WE SUPPORT */}
       <WhoWeServeSection />
 
-      {/* 10. FAQ (CONCISE COST & TIMING QUESTIONS) */}
+      {/* 10. TWO-TRACK HOW IT WORKS (CLIENT & TALENT TRACKS) */}
+      <HowItWorksSection />
+
+      {/* 11. FAQ (CONCISE COST & TIMING QUESTIONS) */}
       <FaqSection />
 
-      {/* 11. FINAL CONVERSION & INQUIRY */}
+      {/* 12. FINAL CONVERSION & INQUIRY */}
       <FinalConversionSection />
     </main>
   );

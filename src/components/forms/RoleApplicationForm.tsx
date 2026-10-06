@@ -423,23 +423,29 @@ export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = fal
             <CheckCircle className="w-10 h-10" />
           </div>
           <div>
-            <h2 className="font-serif-display text-3xl sm:text-5xl font-light text-white uppercase mb-3">
-              THANK YOU
+            <h2 className="font-serif-display text-3xl sm:text-5xl font-light text-white tracking-tight mb-3">
+              Application Received
             </h2>
             <p className="font-sans text-base sm:text-lg text-brand-platinum font-normal leading-relaxed max-w-lg mx-auto">
-              We&apos;ve received your request.
+              Thank you for applying to the FashAI Universal talent network.
             </p>
             <p className="font-sans text-sm text-brand-platinum/80 font-light leading-relaxed max-w-lg mx-auto mt-1">
-              Our team will contact you soon. We&apos;ll review your request and get back to you shortly.
+              Your details have been submitted for review.
             </p>
           </div>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/"
-              className="inline-flex items-center gap-2 bg-brand-yellow-golden text-black px-8 py-3.5 text-sm sm:text-base font-syne font-bold tracking-caps rounded-full hover:bg-yellow-400 transition-colors shadow-lg"
+              href="/talent"
+              className="inline-flex items-center gap-2 bg-brand-yellow-golden text-black px-6 py-3.5 text-xs sm:text-sm font-jost font-bold tracking-wider rounded-full hover:bg-yellow-400 transition-colors shadow-lg uppercase"
             >
-              <span>BACK TO FASHAI UNIVERSAL</span> <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span>VIEW TALENT NETWORK</span> <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 border border-white/20 text-white px-6 py-3.5 text-xs sm:text-sm font-jost font-bold tracking-wider rounded-full hover:bg-white/10 transition-colors uppercase"
+            >
+              <span>RETURN HOME</span>
             </Link>
           </div>
         </div>

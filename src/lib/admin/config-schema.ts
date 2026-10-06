@@ -17,6 +17,18 @@ export interface GlobalSettings {
   favicon: string;
   ogImage: string;
   contactEmail: string;
+  contactPhone?: string;
+  contactWhatsApp?: string;
+  whatsappEnabled?: boolean;
+  responseTime?: {
+    enabled: boolean;
+    label: string;
+  };
+  analyticsConfig?: {
+    ga4MeasurementId?: string;
+    metaPixelId?: string;
+    linkedInPartnerId?: string;
+  };
   instagramUrl: string;
   copyrightYear: string;
   defaultCtaText: string;

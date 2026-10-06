@@ -15,6 +15,7 @@ import MaintenanceScreen from "@/components/layout/MaintenanceScreen";
 const EventInfoModal = dynamic(() => import("@/components/ui/EventInfoModal"));
 const FashAiConcierge = dynamic(() => import("@/components/concierge/FashAiConcierge"));
 const LocalDevicePreview = dynamic(() => import("@/components/ui/LocalDevicePreview"));
+const StickyWhatsAppButton = dynamic(() => import("@/components/ui/StickyWhatsAppButton"));
 
 function ContentRenderer({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -61,6 +62,9 @@ function ContentRenderer({ children }: { children: ReactNode }) {
 
       {/* Haute Couture Footer */}
       <Footer />
+
+      {/* Sticky WhatsApp Floating Button (Renders safely null if unconfigured) */}
+      <StickyWhatsAppButton />
 
       {/* FashAI Universal Event Concierge Assistant */}
       <FashAiConcierge />

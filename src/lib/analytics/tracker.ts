@@ -2,6 +2,7 @@
  * FashAI Universal Centralized Conversion & Analytics Tracker
  * Handles event measurement across forms, CTAs, talent requests, and sponsorship flows.
  * Strictly enforces PII protection and snake_case event naming conventions.
+ * Supports GA4, Meta Pixel, and LinkedIn Insight Tag configuration safely.
  */
 
 export type CtaLocation =
@@ -11,6 +12,9 @@ export type CtaLocation =
   | "services"
   | "lifestyle_2026"
   | "final_conversion"
+  | "final_cta"
+  | "how_it_works"
+  | "sticky_button"
   | "mobile_menu"
   | "footer";
 
@@ -89,13 +93,33 @@ export function trackEvent(eventName: AnalyticsEventName, params?: EventParamete
     window.dispatchEvent(customEvent);
   } catch {}
 
-  // 3. Optional integration hook for Google Analytics 4 (if NEXT_PUBLIC_GA_MEASUREMENT_ID is configured)
-  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+  // 3. Config-driven GA4 integration (safe no-op when unconfigured)
+  const gaId = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID || process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
   if (gaId && typeof (window as any).gtag === "function") {
     try {
       (window as any).gtag("event", eventName, sanitized);
     } catch (e) {
       console.warn("GA4 event tracking error:", e);
+    }
+  }
+
+  // 4. Config-driven Meta Pixel integration (safe no-op when unconfigured)
+  const metaId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+  if (metaId && typeof (window as any).fbq === "function") {
+    try {
+      (window as any).fbq("trackCustom", eventName, sanitized);
+    } catch (e) {
+      console.warn("Meta Pixel tracking error:", e);
+    }
+  }
+
+  // 5. Config-driven LinkedIn Insight Tag integration (safe no-op when unconfigured)
+  const linkedInId = process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID;
+  if (linkedInId && typeof (window as any).lintrk === "function") {
+    try {
+      (window as any).lintrk("track", { conversion_id: eventName });
+    } catch (e) {
+      console.warn("LinkedIn tracking error:", e);
     }
   }
 }

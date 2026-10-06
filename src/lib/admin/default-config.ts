@@ -19,6 +19,18 @@ export const DEFAULT_MASTER_CONFIG: MasterSiteConfig = {
     favicon: "/favicon.ico",
     ogImage: "/assets/brand/fashai-og-share.png",
     contactEmail: "contact@fashaiuniversal.com",
+    contactPhone: "",
+    contactWhatsApp: "",
+    whatsappEnabled: false,
+    responseTime: {
+      enabled: false,
+      label: "",
+    },
+    analyticsConfig: {
+      ga4MeasurementId: process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID || "",
+      metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID || "",
+      linkedInPartnerId: process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID || "",
+    },
     instagramUrl: "https://www.instagram.com/fashai_universal",
     copyrightYear: "2026",
     defaultCtaText: "CONTACT US →",
