@@ -28,14 +28,14 @@ export default function WhoWeAreSection() {
             </div>
 
             {/* Main Editorial Heading */}
-            <h2 className="font-serif-display text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-brand-white uppercase leading-[0.95] tracking-tight">
-              FASHION EVENTS &amp; FASHION TALENT, <br />
-              <span className="font-serif italic font-normal text-[#D4AF37]">TOGETHER.</span>
+            <h2 className="font-serif-display text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-brand-white leading-[0.95] tracking-tight">
+              Fashion events &amp; fashion talent, <br />
+              <span className="font-serif italic font-normal text-[#D4AF37]">together.</span>
             </h2>
 
             {/* Concise Subheading */}
-            <p className="font-syne text-xs sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.18em] uppercase text-[#333333] dark:text-brand-platinum/90 font-bold mt-2.5 max-w-4xl lg:max-w-5xl mx-auto leading-relaxed text-justify sm:text-center">
-              EVENTS AND TALENT, HANDLED BY ONE TEAM — DUBAI AND INDIA
+            <p className="font-jost text-sm sm:text-base md:text-lg text-[#333333] dark:text-brand-platinum/90 font-medium mt-2.5 max-w-4xl lg:max-w-5xl mx-auto leading-relaxed text-center">
+              Events and talent, handled by one team — Dubai and India.
             </p>
 
             <p className="font-sans text-sm sm:text-base md:text-lg text-[#444444] dark:text-brand-platinum/85 font-light mt-3 max-w-3xl lg:max-w-4xl mx-auto leading-relaxed text-justify sm:text-center">

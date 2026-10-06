@@ -31,14 +31,14 @@ export default function UpcomingCampaign() {
 
           {/* Monolithic 2026 Typography */}
           <h2 className="font-serif-display text-6xl sm:text-8xl md:text-9xl font-light text-brand-off-white tracking-tighter leading-none mb-4">
-            FASHAI
+            FashAI
             <span className="block text-brand-orange font-normal italic">
-              LIFESTYLE 2026
+              LifeStyle 2026
             </span>
           </h2>
 
           <p className="font-syne text-sm sm:text-base tracking-caps text-brand-gold max-w-2xl mt-4 mb-8">
-            DUBAI, UNITED ARAB EMIRATES — AUTUMN EDITION
+            Dubai, United Arab Emirates — Date &amp; Venue TBA
           </p>
 
           <p className="font-sans text-base sm:text-lg text-brand-platinum max-w-xl font-light leading-relaxed mb-12">

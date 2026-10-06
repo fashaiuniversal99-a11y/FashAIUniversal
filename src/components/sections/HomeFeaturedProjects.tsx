@@ -15,7 +15,7 @@ export default function HomeFeaturedProjects() {
             02 / LIFESTYLE EDITIONS
           </span>
           <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white">
-            LIFESTYLE EDITIONS
+            LifeStyle Editions
           </h2>
         </div>
         <p className="font-sans text-xs sm:text-sm text-brand-platinum max-w-xs mt-4 sm:mt-0 font-light leading-relaxed">

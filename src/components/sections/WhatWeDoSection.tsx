@@ -55,8 +55,8 @@ export default function WhatWeDoSection() {
               <Layers className="w-4 h-4 text-[#D4AF37]" />
               <span>EVENT FORMATS &amp; SERVICES</span>
             </div>
-            <h2 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-brand-white uppercase leading-none tracking-tight">
-              OUR <span className="font-serif italic font-normal text-[#D4AF37]">SERVICES</span>
+            <h2 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-brand-white leading-none tracking-tight">
+              Our <span className="font-serif italic font-normal text-[#D4AF37]">Services</span>
             </h2>
           </div>
           <div className="flex flex-col items-start md:items-end gap-3 shrink-0">
@@ -106,7 +106,7 @@ export default function WhatWeDoSection() {
                 </div>
 
                 <div>
-                  <h3 className="font-serif-display text-xl sm:text-2xl font-light uppercase text-[#111111] dark:text-brand-white group-hover:text-[#D4AF37] transition-colors mb-1.5 leading-tight">
+                  <h3 className="font-serif-display text-xl sm:text-2xl font-light text-[#111111] dark:text-brand-white group-hover:text-[#D4AF37] transition-colors mb-1.5 leading-tight">
                     {item.title}
                   </h3>
 
@@ -164,8 +164,8 @@ export default function WhatWeDoSection() {
                 <Cpu className="w-4 h-4 text-[#D4AF37]" />
                 <span>INTELLIGENT DIGITAL EXPERIENCES</span>
               </div>
-              <h3 className="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-light uppercase text-[#111111] dark:text-brand-white">
-                INTELLIGENT DIGITAL <span className="font-serif italic text-[#D4AF37]">EXPERIENCES</span>
+              <h3 className="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-light text-[#111111] dark:text-brand-white">
+                Intelligent Digital <span className="font-serif italic text-[#D4AF37]">Experiences</span>
               </h3>
               <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/90 font-light leading-relaxed">
                 FashAI brings fashion events, talent, production, and intelligent digital experiences together in one platform. Our interactive Event Concierge assists visitors in exploring event planning pathways, talent directories, and service inquiries, while digital visualization tools support spatial design — complementing human artistry, physical craftsmanship, and expert production.

@@ -38,7 +38,7 @@ export default function HomeUpcomingFeature() {
 
           {/* Main Title Block */}
           <div className="space-y-3 text-center w-full max-w-5xl mx-auto">
-            <h2 className="font-serif-display text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight leading-[0.95] uppercase">
+            <h2 className="font-serif-display text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight leading-[0.95]">
               LifeStyle <span className="text-[#D4AF37] italic font-normal">2026</span>
             </h2>
 
@@ -54,16 +54,16 @@ export default function HomeUpcomingFeature() {
           {/* Minimal Position Statement */}
           <div className="flex items-center justify-center gap-3 w-full max-w-3xl lg:max-w-[900px] py-1 mx-auto">
             <span className="hidden sm:block flex-1 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-[#D4AF37]" />
-            <span className="font-syne text-xs sm:text-sm md:text-base tracking-wider text-[#111111] dark:text-white/95 font-bold uppercase px-2 text-center leading-normal">
-              “INTERNATIONAL FASHION &amp; LIFESTYLE EXPERIENCE, DUBAI | 2026”
+            <span className="font-jost text-sm sm:text-base md:text-lg tracking-wide text-[#111111] dark:text-white/95 font-medium px-2 text-center leading-normal">
+              “International Fashion &amp; Lifestyle Experience, Dubai | 2026”
             </span>
             <span className="hidden sm:block flex-1 h-[1px] bg-gradient-to-l from-transparent via-[#D4AF37]/60 to-[#D4AF37]" />
           </div>
 
           {/* Open Registrations & Sponsorships Announcement Banner */}
           <div className="w-full max-w-4xl lg:max-w-[1050px] bg-[#FAF8F5] dark:bg-white/5 border border-[#D4AF37]/40 rounded-2xl p-6 sm:p-8 text-center shadow-md space-y-3 mx-auto">
-            <h3 className="font-syne text-sm sm:text-base md:text-lg tracking-[0.2em] font-bold text-[#D4AF37] uppercase block">
-              REGISTRATIONS &amp; SPONSORSHIPS ARE OPEN
+            <h3 className="font-serif-display text-xl sm:text-2xl tracking-wide font-normal text-[#D4AF37] block">
+              Registrations &amp; Sponsorships Open
             </h3>
             <p className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-[#444444] dark:text-white/90 font-light max-w-3xl mx-auto leading-relaxed">
               Enquire now for delegate registration, international designer participation, and brand sponsorship opportunities for LifeStyle 2026.

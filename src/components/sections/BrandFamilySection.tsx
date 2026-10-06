@@ -16,8 +16,8 @@ export default function BrandFamilySection() {
             <Layers className="w-3.5 h-3.5" />
             <span>BRAND ARCHITECTURE</span>
           </div>
-          <h2 className="font-serif-display text-3xl sm:text-5xl font-light uppercase tracking-tight text-[#111111] dark:text-white">
-            THE FASHAI UNIVERSAL <span className="italic text-[#D4AF37]">BRAND ECOSYSTEM</span>
+          <h2 className="font-serif-display text-3xl sm:text-5xl font-light tracking-tight text-[#111111] dark:text-white">
+            The FashAI Universal <span className="italic text-[#D4AF37]">Brand Ecosystem</span>
           </h2>
           <p className="font-jost text-sm sm:text-base text-[#444444] dark:text-white/80 font-light leading-relaxed">
             {masterBrand.description}
@@ -32,7 +32,7 @@ export default function BrandFamilySection() {
               <span className="text-[10px] font-jost font-bold uppercase tracking-[0.25em] text-[#D4AF37] px-3 py-1 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/50 inline-block">
                 MASTER BRAND
               </span>
-              <h3 className="font-serif-display text-3xl sm:text-4xl font-light uppercase tracking-tight text-white">
+              <h3 className="font-serif-display text-3xl sm:text-4xl font-light tracking-tight text-white">
                 {masterBrand.name}
               </h3>
               <p className="font-jost text-xs sm:text-sm text-white/80 font-light leading-relaxed">
@@ -46,7 +46,7 @@ export default function BrandFamilySection() {
                 <span className="font-jost text-[10px] uppercase font-bold text-white/60 tracking-wider block">
                   PARENT &amp; TECHNOLOGY FOUNDATION
                 </span>
-                <span className="font-serif-display text-lg text-[#D4AF37] font-light uppercase block">
+                <span className="font-serif-display text-lg text-[#D4AF37] font-light block">
                   {parentEntity.lockupText}
                 </span>
               </div>
@@ -65,7 +65,7 @@ export default function BrandFamilySection() {
                   <span className="text-[10px] font-jost font-bold uppercase tracking-wider text-[#D4AF37] px-2.5 py-0.5 rounded-full bg-[#D4AF37]/10 inline-block">
                     {item.type}
                   </span>
-                  <h4 className="font-serif-display text-xl font-light uppercase text-[#111111] dark:text-white group-hover:text-[#D4AF37] transition-colors">
+                  <h4 className="font-serif-display text-xl font-light text-[#111111] dark:text-white group-hover:text-[#D4AF37] transition-colors">
                     {item.name}
                   </h4>
                   <p className="font-jost text-xs text-[#555555] dark:text-white/75 font-light leading-relaxed">
@@ -77,9 +77,9 @@ export default function BrandFamilySection() {
                   <div className="pt-3 border-t border-black/10 dark:border-white/10">
                     <Link
                       href={item.href}
-                      className="inline-flex items-center gap-1 text-[11px] font-jost font-bold uppercase text-[#D4AF37] hover:underline"
+                      className="inline-flex items-center gap-1 text-[11px] font-jost font-bold text-[#D4AF37] hover:underline"
                     >
-                      <span>EXPLORE {item.name.toUpperCase()}</span>
+                      <span>Explore {item.name}</span>
                       <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>

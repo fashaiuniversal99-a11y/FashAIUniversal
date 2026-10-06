@@ -106,8 +106,8 @@ export default function WhoWeServeSection() {
             <div className="flex items-center gap-2.5 text-xs sm:text-sm md:text-base font-syne tracking-widest text-[#D4AF37] font-bold uppercase mb-2.5">
               <span>WHO WE WORK WITH</span>
             </div>
-            <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-brand-white uppercase leading-tight tracking-tight">
-              INDUSTRIES WE <span className="font-serif italic font-normal text-[#D4AF37]">SUPPORT</span>
+            <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-brand-white leading-tight tracking-tight">
+              Industries We <span className="font-serif italic font-normal text-[#D4AF37]">Support</span>
             </h2>
           </div>
           <p

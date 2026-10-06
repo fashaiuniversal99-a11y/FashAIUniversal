@@ -22,9 +22,9 @@ export default function AboutUsSection() {
                 <span>ABOUT FASHAI UNIVERSAL</span>
               </div>
 
-              <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-brand-white uppercase leading-none mb-6">
-                FASHION EVENTS &amp; FASHION TALENT, <br />
-                <span className="text-[#F15E1C] dark:text-brand-yellow-golden italic font-normal">TOGETHER.</span>
+              <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-[#111111] dark:text-brand-white leading-none mb-6">
+                Fashion events &amp; fashion talent, <br />
+                <span className="text-[#F15E1C] dark:text-brand-yellow-golden italic font-normal">together.</span>
               </h2>
 
               <p className="font-sans text-lg sm:text-xl md:text-2xl text-[#222222] dark:text-brand-platinum font-normal leading-relaxed mb-4">

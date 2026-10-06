@@ -77,7 +77,7 @@ export default function Footer() {
                   className="object-contain group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <span className="font-serif-display text-2xl sm:text-3xl font-light text-[#111111] dark:text-white uppercase tracking-tight group-hover:text-[#D4AF37] transition-colors duration-300">
+              <span className="font-serif-display text-2xl sm:text-3xl font-light text-[#111111] dark:text-white tracking-tight group-hover:text-[#D4AF37] transition-colors duration-300">
                 FashAI Universal
               </span>
             </Link>

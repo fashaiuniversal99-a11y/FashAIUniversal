@@ -136,8 +136,8 @@ export default function WithWhomWeWorkSection() {
           </div>
 
           {/* Large Editorial Headline */}
-          <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase leading-[0.92] tracking-tight mb-4">
-            GLOBAL <span className="font-serif italic text-brand-yellow-golden font-normal">CONNECTIONS</span>
+          <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white leading-[0.92] tracking-tight mb-4">
+            Global <span className="font-serif italic text-brand-yellow-golden font-normal">Connections</span>
           </h2>
 
           {/* Thin Gold Accent Line */}
