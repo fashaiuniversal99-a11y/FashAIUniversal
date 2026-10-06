@@ -47,3 +47,18 @@ export const BRAND_PROOF_DATA: BrandProofData = {
   mediaPartners: [],
   creativePartners: [],
 };
+
+/**
+ * Helper to obtain verified ecosystem metrics derived strictly from repository data.
+ * Zero unverified or fabricated figures are returned.
+ */
+export function getVerifiedMetrics() {
+  return {
+    verifiedParentEntity: "Arav Innovations",
+    verifiedKeyPlatforms: ["LifeStyle", "FashPrism", "Brand Shoots"],
+    hasVerifiedGuests: BRAND_PROOF_DATA.guests.length > 0,
+    hasVerifiedSponsors: BRAND_PROOF_DATA.sponsors.length > 0,
+    verifiedPartnerCount: BRAND_PROOF_DATA.partners.length,
+  };
+}
+
