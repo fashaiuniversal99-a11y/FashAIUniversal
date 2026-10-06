@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import AboutUsSection from "@/components/sections/AboutUsSection";
 import WhoWeAreSection from "@/components/sections/WhoWeAreSection";
 import BrandFamilySection from "@/components/sections/BrandFamilySection";
+import VerifiedGuestsPartnersSection from "@/components/sections/VerifiedGuestsPartnersSection";
 import LeadershipSection from "@/components/sections/LeadershipSection";
 import OfficeLocations from "@/components/sections/OfficeLocations";
 import InstagramSection from "@/components/sections/InstagramSection";
@@ -20,6 +21,7 @@ export default function AboutPage() {
     <div className="bg-brand-void text-brand-white pt-20 min-h-screen">
       <AboutUsSection />
       <BrandFamilySection />
+      <VerifiedGuestsPartnersSection />
       <WhoWeAreSection />
       <LeadershipSection />
       <section className="py-12 sm:py-16 bg-white dark:bg-[#050505] border-b border-black/10 dark:border-white/10">
@@ -31,3 +33,4 @@ export default function AboutPage() {
     </div>
   );
 }
+
