@@ -21,6 +21,13 @@ export const metadata: Metadata = {
     siteName: "FashAI Universal",
     images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Creator Collaborations | FashAI Universal Talent Network",
+    description:
+      "Digital media amplification and creator content collaboration opportunities for fashion shows and luxury brand events.",
+    images: ["/assets/brand/fashai-og-share.png"],
+  },
 };
 
 const CREATORS = APPROVED_TALENT_ROSTER.filter(
@@ -49,15 +56,44 @@ const FAQS = [
 export default function CreatorCollaborationsPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Creator Collaborations",
-    "url": "https://www.fashaiuniversal.com/talent/creator-collaborations",
-    "description": "Application pathway for digital fashion creators and influencers joining the FashAI Universal network.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "FashAI Universal",
-      "url": "https://www.fashaiuniversal.com",
-    },
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.fashaiuniversal.com/talent/creator-collaborations#webpage",
+        "name": "Creator Collaborations",
+        "url": "https://www.fashaiuniversal.com/talent/creator-collaborations",
+        "description": "Application pathway for digital fashion creators and influencers joining the FashAI Universal network.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "FashAI Universal",
+          "url": "https://www.fashaiuniversal.com",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.fashaiuniversal.com/talent/creator-collaborations#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.fashaiuniversal.com",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Talent Network",
+            "item": "https://www.fashaiuniversal.com/talent",
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Creator Collaborations",
+            "item": "https://www.fashaiuniversal.com/talent/creator-collaborations",
+          },
+        ],
+      },
+    ],
   };
 
   return (

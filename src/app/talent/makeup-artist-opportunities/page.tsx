@@ -21,6 +21,13 @@ export const metadata: Metadata = {
     siteName: "FashAI Universal",
     images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Makeup Artist Opportunities | FashAI Universal Talent Network",
+    description:
+      "Backstage beauty direction and makeup artist opportunities for fashion shows and editorial shoot productions.",
+    images: ["/assets/brand/fashai-og-share.png"],
+  },
 };
 
 const MAKEUP_ARTISTS = APPROVED_TALENT_ROSTER.filter(
@@ -49,15 +56,44 @@ const FAQS = [
 export default function MakeupArtistOpportunitiesPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Makeup Artist Opportunities",
-    "url": "https://www.fashaiuniversal.com/talent/makeup-artist-opportunities",
-    "description": "Application pathway for beauty directors and makeup artists joining the FashAI Universal production network.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "FashAI Universal",
-      "url": "https://www.fashaiuniversal.com",
-    },
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.fashaiuniversal.com/talent/makeup-artist-opportunities#webpage",
+        "name": "Makeup Artist Opportunities",
+        "url": "https://www.fashaiuniversal.com/talent/makeup-artist-opportunities",
+        "description": "Application pathway for beauty directors and makeup artists joining the FashAI Universal production network.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "FashAI Universal",
+          "url": "https://www.fashaiuniversal.com",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.fashaiuniversal.com/talent/makeup-artist-opportunities#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.fashaiuniversal.com",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Talent Network",
+            "item": "https://www.fashaiuniversal.com/talent",
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Makeup Artist Opportunities",
+            "item": "https://www.fashaiuniversal.com/talent/makeup-artist-opportunities",
+          },
+        ],
+      },
+    ],
   };
 
   return (

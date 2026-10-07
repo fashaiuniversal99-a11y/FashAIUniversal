@@ -21,6 +21,13 @@ export const metadata: Metadata = {
     siteName: "FashAI Universal",
     images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Stylist Opportunities | FashAI Universal Talent Network",
+    description:
+      "Fashion styling and editorial wardrobe coordination opportunities for runway shows, luxury brand shoots, and event productions.",
+    images: ["/assets/brand/fashai-og-share.png"],
+  },
 };
 
 const STYLISTS = APPROVED_TALENT_ROSTER.filter(
@@ -49,15 +56,44 @@ const FAQS = [
 export default function StylistOpportunitiesPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Stylist Opportunities",
-    "url": "https://www.fashaiuniversal.com/talent/stylist-opportunities",
-    "description": "Application pathway for fashion and editorial stylists joining the FashAI Universal production network.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "FashAI Universal",
-      "url": "https://www.fashaiuniversal.com",
-    },
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.fashaiuniversal.com/talent/stylist-opportunities#webpage",
+        "name": "Stylist Opportunities",
+        "url": "https://www.fashaiuniversal.com/talent/stylist-opportunities",
+        "description": "Application pathway for fashion and editorial stylists joining the FashAI Universal production network.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "FashAI Universal",
+          "url": "https://www.fashaiuniversal.com",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.fashaiuniversal.com/talent/stylist-opportunities#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.fashaiuniversal.com",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Talent Network",
+            "item": "https://www.fashaiuniversal.com/talent",
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Stylist Opportunities",
+            "item": "https://www.fashaiuniversal.com/talent/stylist-opportunities",
+          },
+        ],
+      },
+    ],
   };
 
   return (

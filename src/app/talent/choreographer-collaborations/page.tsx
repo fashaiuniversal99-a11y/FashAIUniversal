@@ -21,6 +21,13 @@ export const metadata: Metadata = {
     siteName: "FashAI Universal",
     images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Choreographer Collaborations | FashAI Universal Talent Network",
+    description:
+      "Stage direction, runway choreography, and catwalk movement collaboration opportunities for fashion shows and live event productions.",
+    images: ["/assets/brand/fashai-og-share.png"],
+  },
 };
 
 const CHOREOGRAPHERS = APPROVED_TALENT_ROSTER.filter(
@@ -49,15 +56,44 @@ const FAQS = [
 export default function ChoreographerCollaborationsPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Choreographer Collaborations",
-    "url": "https://www.fashaiuniversal.com/talent/choreographer-collaborations",
-    "description": "Application pathway for runway choreographers and movement directors joining the FashAI Universal production network.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "FashAI Universal",
-      "url": "https://www.fashaiuniversal.com",
-    },
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.fashaiuniversal.com/talent/choreographer-collaborations#webpage",
+        "name": "Choreographer Collaborations",
+        "url": "https://www.fashaiuniversal.com/talent/choreographer-collaborations",
+        "description": "Application pathway for runway choreographers and movement directors joining the FashAI Universal production network.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "FashAI Universal",
+          "url": "https://www.fashaiuniversal.com",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.fashaiuniversal.com/talent/choreographer-collaborations#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.fashaiuniversal.com",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Talent Network",
+            "item": "https://www.fashaiuniversal.com/talent",
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Choreographer Collaborations",
+            "item": "https://www.fashaiuniversal.com/talent/choreographer-collaborations",
+          },
+        ],
+      },
+    ],
   };
 
   return (

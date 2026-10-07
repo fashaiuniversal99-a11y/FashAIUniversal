@@ -21,6 +21,13 @@ export const metadata: Metadata = {
     siteName: "FashAI Universal",
     images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Become a Model in Dubai | FashAI Universal Talent Network",
+    description:
+      "Official application pathway and guidance for models seeking presentation and casting opportunities in Dubai, UAE.",
+    images: ["/assets/brand/fashai-og-share.png"],
+  },
 };
 
 const DUB_MODELS = APPROVED_TALENT_ROSTER.filter(
@@ -49,15 +56,44 @@ const FAQS = [
 export default function BecomeAModelDubaiPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Become a Model in Dubai",
-    "url": "https://www.fashaiuniversal.com/talent/become-a-model-dubai",
-    "description": "Application guide and entry pathway for models applying to the FashAI Universal talent network in Dubai, UAE.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "FashAI Universal",
-      "url": "https://www.fashaiuniversal.com",
-    },
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.fashaiuniversal.com/talent/become-a-model-dubai#webpage",
+        "name": "Become a Model in Dubai",
+        "url": "https://www.fashaiuniversal.com/talent/become-a-model-dubai",
+        "description": "Application guide and entry pathway for models applying to the FashAI Universal talent network in Dubai, UAE.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "FashAI Universal",
+          "url": "https://www.fashaiuniversal.com",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.fashaiuniversal.com/talent/become-a-model-dubai#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.fashaiuniversal.com",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Talent Network",
+            "item": "https://www.fashaiuniversal.com/talent",
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Become a Model Dubai",
+            "item": "https://www.fashaiuniversal.com/talent/become-a-model-dubai",
+          },
+        ],
+      },
+    ],
   };
 
   return (

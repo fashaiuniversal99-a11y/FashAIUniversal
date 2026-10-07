@@ -21,6 +21,13 @@ export const metadata: Metadata = {
     siteName: "FashAI Universal",
     images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fashion Designer Showcase Opportunities | FashAI Universal",
+    description:
+      "Showcase opportunities for independent fashion designers, ateliers, and couture labels across FashAI Universal runway platforms.",
+    images: ["/assets/brand/fashai-og-share.png"],
+  },
 };
 
 const DESIGNERS = APPROVED_TALENT_ROSTER.filter(
@@ -49,15 +56,44 @@ const FAQS = [
 export default function DesignerOpportunitiesPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Fashion Designer Showcase Opportunities",
-    "url": "https://www.fashaiuniversal.com/talent/fashion-designer-showcase-opportunities",
-    "description": "Application pathway for haute couture and independent fashion designers seeking runway showcase consideration with FashAI Universal.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "FashAI Universal",
-      "url": "https://www.fashaiuniversal.com",
-    },
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.fashaiuniversal.com/talent/fashion-designer-showcase-opportunities#webpage",
+        "name": "Fashion Designer Showcase Opportunities",
+        "url": "https://www.fashaiuniversal.com/talent/fashion-designer-showcase-opportunities",
+        "description": "Application pathway for haute couture and independent fashion designers seeking runway showcase consideration with FashAI Universal.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "FashAI Universal",
+          "url": "https://www.fashaiuniversal.com",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.fashaiuniversal.com/talent/fashion-designer-showcase-opportunities#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.fashaiuniversal.com",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Talent Network",
+            "item": "https://www.fashaiuniversal.com/talent",
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Fashion Designer Showcase Opportunities",
+            "item": "https://www.fashaiuniversal.com/talent/fashion-designer-showcase-opportunities",
+          },
+        ],
+      },
+    ],
   };
 
   return (

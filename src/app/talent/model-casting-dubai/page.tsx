@@ -21,6 +21,13 @@ export const metadata: Metadata = {
     siteName: "FashAI Universal",
     images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Model Casting Dubai | FashAI Universal Talent Network",
+    description:
+      "Model casting opportunities for fashion shows, brand shoots, and catwalk presentations in Dubai, UAE.",
+    images: ["/assets/brand/fashai-og-share.png"],
+  },
 };
 
 const DUB_MODELS = APPROVED_TALENT_ROSTER.filter(
@@ -49,15 +56,44 @@ const FAQS = [
 export default function ModelCastingDubaiPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Model Casting Dubai",
-    "url": "https://www.fashaiuniversal.com/talent/model-casting-dubai",
-    "description": "Model casting consideration and application pathway for runway shows, editorial shoots, and brand events in Dubai, UAE.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "FashAI Universal",
-      "url": "https://www.fashaiuniversal.com",
-    },
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.fashaiuniversal.com/talent/model-casting-dubai#webpage",
+        "name": "Model Casting Dubai",
+        "url": "https://www.fashaiuniversal.com/talent/model-casting-dubai",
+        "description": "Model casting consideration and application pathway for runway shows, editorial shoots, and brand events in Dubai, UAE.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "FashAI Universal",
+          "url": "https://www.fashaiuniversal.com",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.fashaiuniversal.com/talent/model-casting-dubai#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.fashaiuniversal.com",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Talent Network",
+            "item": "https://www.fashaiuniversal.com/talent",
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Model Casting Dubai",
+            "item": "https://www.fashaiuniversal.com/talent/model-casting-dubai",
+          },
+        ],
+      },
+    ],
   };
 
   return (

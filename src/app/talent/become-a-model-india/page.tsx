@@ -21,6 +21,13 @@ export const metadata: Metadata = {
     siteName: "FashAI Universal",
     images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Become a Model in India | FashAI Universal Talent Network",
+    description:
+      "Official model application pathway for couture runways, designer showcases, and editorial shoot productions in India.",
+    images: ["/assets/brand/fashai-og-share.png"],
+  },
 };
 
 const IND_MODELS = APPROVED_TALENT_ROSTER.filter(
@@ -49,15 +56,44 @@ const FAQS = [
 export default function BecomeAModelIndiaPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Become a Model in India",
-    "url": "https://www.fashaiuniversal.com/talent/become-a-model-india",
-    "description": "Application guide and entry pathway for models applying to the FashAI Universal talent network in Gurgaon and India.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "FashAI Universal",
-      "url": "https://www.fashaiuniversal.com",
-    },
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.fashaiuniversal.com/talent/become-a-model-india#webpage",
+        "name": "Become a Model in India",
+        "url": "https://www.fashaiuniversal.com/talent/become-a-model-india",
+        "description": "Application guide and entry pathway for models applying to the FashAI Universal talent network in Gurgaon and India.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "FashAI Universal",
+          "url": "https://www.fashaiuniversal.com",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.fashaiuniversal.com/talent/become-a-model-india#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.fashaiuniversal.com",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Talent Network",
+            "item": "https://www.fashaiuniversal.com/talent",
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Become a Model India",
+            "item": "https://www.fashaiuniversal.com/talent/become-a-model-india",
+          },
+        ],
+      },
+    ],
   };
 
   return (
