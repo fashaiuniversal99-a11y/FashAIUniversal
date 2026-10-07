@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Event Formats — FashAI Universal",
   description:
     "Discover the specialized event formats of FashAI Universal: Fashion, Lifestyle, Product, Corporate, and IT events.",
+  alternates: {
+    canonical: "https://www.fashaiuniversal.com/events",
+  },
 };
 
 export default function EventFormatsPage() {

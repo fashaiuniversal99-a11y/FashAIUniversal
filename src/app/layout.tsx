@@ -142,24 +142,6 @@ export default function RootLayout({
         name: "FashAI Universal",
         publisher: { "@id": "https://www.fashaiuniversal.com/#organization" },
       },
-      {
-        "@type": "Event",
-        name: "LifeStyle 2026 · Dubai",
-        eventStatus: "https://schema.org/EventRescheduled",
-        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-        location: {
-          "@type": "Place",
-          name: "Dubai, United Arab Emirates (Venue to be announced)",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Dubai",
-            addressCountry: "AE",
-          },
-        },
-        description:
-          "An international luxury fashion and lifestyle experience hosted in Dubai. Dates and venue to be announced — join the waiting list for official updates.",
-        organizer: { "@id": "https://www.fashaiuniversal.com/#organization" },
-      },
     ],
   };
 

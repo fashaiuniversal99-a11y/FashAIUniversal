@@ -4,7 +4,10 @@ import ApplicationSelectionPage from "@/components/sections/ApplicationSelection
 export const metadata: Metadata = {
   title: "OPEN NOMINATIONS & APPLICATIONS | FashAI Universal Talent Network",
   description:
-    "Official application interface for Model, Designer, Makeup Artist, Fashion Stylist, Choreographer, Influencer, Celebrity, CSTP, and Fashion Commentary opportunities.",
+    "Official application interface for Model, Designer, Makeup Artist, Fashion Stylist, Choreographer, Creator, and Fashion Commentary opportunities.",
+  alternates: {
+    canonical: "https://www.fashaiuniversal.com/apply",
+  },
 };
 
 export default function ApplicationsPage() {

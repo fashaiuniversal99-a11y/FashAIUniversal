@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "What We Do — FashAI Universal",
   description:
     "Explore FashAI Universal's event formats, haute couture presentations, talent networks, lifestyle summits, and corporate event management.",
+  alternates: {
+    canonical: "https://www.fashaiuniversal.com/services",
+  },
 };
 
 export default function WhatWeDoPage() {

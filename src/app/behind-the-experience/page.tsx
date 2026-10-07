@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Behind the Experience — FashAI Universal",
   description:
     "An inside look into the runway productions, backstage captures, and couture stories of FashAI Universal.",
+  alternates: {
+    canonical: "https://www.fashaiuniversal.com/projects",
+  },
 };
 
 export default function BehindTheExperiencePage() {

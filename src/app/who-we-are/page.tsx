@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Who We Are — FashAI Universal",
   description:
     "Discover the vision, ecosystem, and cross-border reach of FashAI Universal across Dubai, UAE, and India.",
+  alternates: {
+    canonical: "https://www.fashaiuniversal.com/about",
+  },
 };
 
 export default function WhoWeArePage() {

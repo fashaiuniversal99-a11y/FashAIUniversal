@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "VIP Guests & Dignitaries — FashAI Universal",
   description:
     "Distinguished VIP guests, celebrity attendees, brand patrons, and international dignitaries at FashAI Universal events.",
+  alternates: {
+    canonical: "https://www.fashaiuniversal.com/events",
+  },
 };
 
 export default function VipGuestsPage() {
