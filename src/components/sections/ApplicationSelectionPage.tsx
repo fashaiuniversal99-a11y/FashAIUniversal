@@ -108,7 +108,7 @@ export default function ApplicationSelectionPage({
       <div className="container-editorial relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Section Header */}
         <div className="max-w-4xl mb-6 sm:mb-8 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-brand-yellow-golden/40 bg-brand-yellow-golden/10 text-brand-yellow-golden text-xs font-syne font-bold tracking-wider uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-brand-yellow-golden/40 bg-brand-yellow-golden/10 text-brand-yellow-golden text-xs font-jost font-bold tracking-wider uppercase">
             <Sparkles className="w-3.5 h-3.5" />
             <span>FASHAI UNIVERSAL CREATIVE NETWORK</span>
           </div>
@@ -119,7 +119,7 @@ export default function ApplicationSelectionPage({
 
           <div className="h-[2px] w-20 bg-brand-yellow-golden shadow-[0_0_10px_rgba(250,182,10,0.6)]" />
 
-          <p className="font-syne text-xs sm:text-sm font-bold text-[#D4AF37] uppercase tracking-wider">
+          <p className="font-jost text-xs sm:text-sm font-bold text-[#D4AF37] uppercase tracking-wider">
             A platform for fashion talent to apply, be discovered, and connect with opportunities.
           </p>
 
@@ -129,10 +129,10 @@ export default function ApplicationSelectionPage({
 
           {/* 4-STEP TALENT JOURNEY */}
           <div className="pt-3 border-t border-white/10">
-            <span className="font-syne text-[11px] font-bold text-[#D4AF37] uppercase tracking-wider block mb-2">
+            <span className="font-jost text-[11px] font-bold text-[#D4AF37] uppercase tracking-wider block mb-2">
               TALENT JOURNEY:
             </span>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs font-syne text-brand-platinum/90">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs font-jost text-brand-platinum/90">
               <div className="flex items-center gap-2 p-2 rounded-xl bg-white/5 border border-white/10">
                 <span className="w-5 h-5 rounded-full bg-[#D4AF37] text-black flex items-center justify-center font-bold text-xs shrink-0">1</span>
                 <span><strong>Apply:</strong> Submit application &amp; portfolio</span>
@@ -160,7 +160,7 @@ export default function ApplicationSelectionPage({
               <h2 className="font-serif-display text-2xl sm:text-3xl lg:text-4xl font-light uppercase text-brand-yellow-golden tracking-wider">
                 CHOOSE AN OPPORTUNITY
               </h2>
-              <span className="text-xs sm:text-sm font-syne text-brand-platinum/70 font-bold uppercase">
+              <span className="text-xs sm:text-sm font-jost text-brand-platinum/70 font-bold uppercase">
                 {CATEGORIES.length} CATEGORIES AVAILABLE
               </span>
             </div>
@@ -174,7 +174,7 @@ export default function ApplicationSelectionPage({
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs sm:text-sm font-syne font-bold uppercase tracking-wider text-brand-yellow-golden">
+                      <span className="text-xs sm:text-sm font-jost font-bold uppercase tracking-wider text-brand-yellow-golden">
                         {cat.badge}
                       </span>
                       {cat.isNomination && (
@@ -191,7 +191,7 @@ export default function ApplicationSelectionPage({
                     </p>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-sm sm:text-base font-syne font-bold uppercase tracking-wider text-brand-yellow-golden group-hover:text-white transition-colors">
+                  <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-sm sm:text-base font-jost font-bold uppercase tracking-wider text-brand-yellow-golden group-hover:text-white transition-colors">
                     <span>APPLY NOW</span>
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-brand-yellow-golden group-hover:translate-x-1.5 transition-transform duration-300" />
                   </div>
@@ -205,12 +205,12 @@ export default function ApplicationSelectionPage({
             <div className="flex items-center justify-between border-b border-white/10 pb-3.5">
               <button
                 onClick={() => setSelectedRole(null)}
-                className="inline-flex items-center gap-2 text-xs sm:text-sm font-syne tracking-wider font-bold text-brand-yellow-golden hover:text-white transition-colors uppercase"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm font-jost tracking-wider font-bold text-brand-yellow-golden hover:text-white transition-colors uppercase"
               >
                 <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" /> ALL CATEGORIES
               </button>
               {activeCategory && (
-                <span className="text-xs sm:text-sm font-syne text-brand-yellow-golden font-bold uppercase">
+                <span className="text-xs sm:text-sm font-jost text-brand-yellow-golden font-bold uppercase">
                   {activeCategory.label}
                 </span>
               )}

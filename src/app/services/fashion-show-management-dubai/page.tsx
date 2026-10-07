@@ -126,7 +126,7 @@ export default function FashionShowManagementDubaiPage() {
 
       {/* 01. HERO SECTION */}
       <section className="relative pt-10 sm:pt-16 pb-12 sm:pb-20 border-b border-black/10 dark:border-white/10 bg-[#FAF8F5] dark:bg-[#080706]">
-        <div className="w-[min(92vw,1400px)] max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container-editorial relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/35 text-[#D4AF37] font-jost text-xs font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
@@ -161,7 +161,7 @@ export default function FashionShowManagementDubaiPage() {
 
       {/* 02. KEY DELIVERABLES GRID */}
       <section className="py-12 sm:py-16 border-b border-black/10 dark:border-white/10">
-        <div className="w-[min(92vw,1400px)] max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container-editorial relative z-10">
           <div className="max-w-3xl mb-10">
             <span className="font-jost text-xs font-bold uppercase tracking-wider text-[#D4AF37] block mb-2">
               EXECUTIVE SERVICES
@@ -196,7 +196,7 @@ export default function FashionShowManagementDubaiPage() {
 
       {/* 03. PROCESS / HOW IT WORKS */}
       <section className="py-12 sm:py-16 bg-[#FAF8F5] dark:bg-[#080706] border-b border-black/10 dark:border-white/10">
-        <div className="w-[min(92vw,1400px)] max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container-editorial relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-10 space-y-2">
             <span className="font-jost text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
               PRODUCTION WORKFLOW
@@ -225,7 +225,7 @@ export default function FashionShowManagementDubaiPage() {
 
       {/* 04. LOCATION CONTEXT */}
       <section className="py-12 sm:py-16 border-b border-black/10 dark:border-white/10">
-        <div className="w-[min(92vw,1400px)] max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container-editorial relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-4">
               <span className="font-jost text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
@@ -263,7 +263,7 @@ export default function FashionShowManagementDubaiPage() {
 
       {/* 05. FAQS */}
       <section className="py-12 sm:py-16 bg-[#FAF8F5] dark:bg-[#080706] border-b border-black/10 dark:border-white/10">
-        <div className="w-[min(92vw,1400px)] max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container-editorial relative z-10">
           <div className="max-w-3xl mx-auto space-y-6">
             <div className="text-center space-y-2">
               <span className="font-jost text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
@@ -293,7 +293,7 @@ export default function FashionShowManagementDubaiPage() {
 
       {/* 06. CONVERSION CTA */}
       <section className="py-14 sm:py-20 border-b border-black/10 dark:border-white/10">
-        <div className="w-[min(92vw,1400px)] max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        <div className="container-editorial relative z-10 text-center space-y-6">
           <span className="font-jost text-xs sm:text-sm font-bold uppercase tracking-wider text-[#D4AF37]">
             READY TO PRODUCE YOUR RUNWAY SHOW?
           </span>

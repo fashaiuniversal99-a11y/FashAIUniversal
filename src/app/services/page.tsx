@@ -97,13 +97,13 @@ export default function ServicesPage() {
     <div className="bg-white dark:bg-[#050505] text-[#111111] dark:text-white pt-16 sm:pt-20 md:pt-24 min-h-screen">
       {/* 01. SERVICES HERO BANNER */}
       <section className="relative pt-8 sm:pt-14 pb-10 sm:pb-16 border-b border-black/10 dark:border-white/10 bg-[#FAF8F5] dark:bg-[#080706]">
-        <div className="w-[min(92vw,1400px)] max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-[950px] mx-auto space-y-4 sm:space-y-6 text-center">
+        <div className="container-editorial relative z-10 text-center">
+          <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 text-center">
             {/* 1. SYMMETRIC CENTERED SECTION LABEL */}
             <div className="flex items-center justify-center gap-3 sm:gap-4 mx-auto">
               <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-r from-transparent to-[#F15E1C] dark:to-[#D4AF37]" />
-              <span className="font-syne text-xs sm:text-sm md:text-base tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase shrink-0">
-                03 / SERVICES &amp; EVENT ARCHITECTURE
+              <span className="font-jost text-xs sm:text-sm md:text-base tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase shrink-0">
+                SERVICES &amp; EVENT ARCHITECTURE
               </span>
               <span className="w-8 sm:w-12 h-[1px] bg-gradient-to-l from-transparent to-[#F15E1C] dark:to-[#D4AF37]" />
             </div>
@@ -114,7 +114,7 @@ export default function ServicesPage() {
             </h1>
 
             {/* 3. CENTERED INTRO PARAGRAPH */}
-            <p className="font-sans text-base sm:text-lg md:text-xl lg:text-2xl text-[#444444] dark:text-white/90 font-light leading-relaxed max-w-[900px] mx-auto text-center">
+            <p className="font-sans text-base sm:text-lg md:text-xl lg:text-2xl text-[#444444] dark:text-white/90 font-light leading-relaxed max-w-3xl mx-auto text-center">
               Events and talent, handled by one team. FashAI Universal delivers specialized fashion show production, digital experience design, luxury brand activations, and global talent orchestration across Dubai and India.
             </p>
           </div>
@@ -123,9 +123,9 @@ export default function ServicesPage() {
 
       {/* 02. CORE SERVICES ARCHITECTURE GRID */}
       <section className="pt-8 pb-14 sm:pt-12 sm:pb-20 border-b border-black/10 dark:border-white/10">
-        <div className="container-editorial max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container-editorial relative z-10">
           <div className="mb-8 sm:mb-12 border-b border-black/10 dark:border-white/10 pb-5">
-            <h2 className="font-syne text-xs sm:text-sm md:text-base tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-1.5">
+            <h2 className="font-jost text-xs sm:text-sm md:text-base tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-1.5">
               CORE CAPABILITIES
             </h2>
             <h3 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-white uppercase tracking-tight">
@@ -146,7 +146,7 @@ export default function ServicesPage() {
                       <span className="font-serif-display text-4xl sm:text-6xl font-light text-[#F15E1C] dark:text-[#D4AF37]">
                         {service.number}
                       </span>
-                      <span className="text-xs sm:text-sm font-syne tracking-wider text-[#F15E1C] dark:text-[#D4AF37] bg-[#F15E1C]/10 dark:bg-[#D4AF37]/10 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full font-bold uppercase">
+                      <span className="text-xs sm:text-sm font-jost tracking-wider text-[#F15E1C] dark:text-[#D4AF37] bg-[#F15E1C]/10 dark:bg-[#D4AF37]/10 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full font-bold uppercase">
                         {service.category}
                       </span>
                     </div>
@@ -161,7 +161,7 @@ export default function ServicesPage() {
 
                     <div className="pt-4 border-t border-black/10 dark:border-white/10 space-y-2.5 sm:space-y-3">
                       {service.features.map((feat, idx) => (
-                        <div key={idx} className="flex items-center gap-2.5 sm:gap-3 text-sm sm:text-base font-syne text-[#333333] dark:text-white/90 font-medium">
+                        <div key={idx} className="flex items-center gap-2.5 sm:gap-3 text-sm sm:text-base font-jost text-[#333333] dark:text-white/90 font-medium">
                           <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#F15E1C] dark:bg-[#D4AF37] flex-shrink-0" />
                           <span>{feat}</span>
                         </div>
@@ -171,10 +171,10 @@ export default function ServicesPage() {
 
                   <div className="pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-black/10 dark:border-white/10 flex justify-end">
                     <Link
-                      href="/contact?type=Services"
+                      href="/plan-your-event"
                       className="inline-flex items-center gap-2 sm:gap-2.5 text-sm sm:text-base font-jost font-bold uppercase tracking-wider text-[#D4AF37] hover:underline"
                     >
-                      <span>ENQUIRE FOR THIS SERVICE</span>
+                      <span>PLAN YOUR EVENT →</span>
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                     </Link>
                   </div>
@@ -187,7 +187,7 @@ export default function ServicesPage() {
 
       {/* SPECIALIZED REGIONAL LANDING HUBS */}
       <section className="py-12 sm:py-16 bg-[#FAF8F5] dark:bg-[#080706] border-b border-black/10 dark:border-white/10">
-        <div className="w-[min(92vw,1400px)] max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container-editorial relative z-10">
           <div className="max-w-3xl mb-8 space-y-2">
             <span className="font-jost text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
               REGIONAL &amp; SPECIALIZED SERVICES
@@ -261,8 +261,8 @@ export default function ServicesPage() {
 
       {/* 06. SERVICE INQUIRY CTA */}
       <section className="py-14 sm:py-24 bg-[#FAF8F5] dark:bg-[#080706] border-t border-black/10 dark:border-white/10">
-        <div className="container-editorial max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8">
-          <span className="text-xs sm:text-sm md:text-base font-syne tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
+        <div className="container-editorial relative z-10 max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
+          <span className="text-xs sm:text-sm md:text-base font-jost tracking-[0.25em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
             COMMISSION A SHOW OR BRAND EXPERIENCE
           </span>
           <h2 className="font-serif-display text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-[#111111] dark:text-white uppercase leading-tight tracking-tight">
@@ -270,20 +270,20 @@ export default function ServicesPage() {
             <span className="font-serif italic font-normal text-[#F15E1C] dark:text-[#D4AF37]">FASHION EXPERIENCE?</span>
           </h2>
           <p className="font-sans text-base sm:text-lg md:text-xl text-[#444444] dark:text-white/85 max-w-2xl mx-auto leading-relaxed font-light">
-            Contact our editorial team to discuss runway presentations, computational design collaborations, or sponsorship partnerships in Dubai, UAE &amp; India.
+            Contact our event production team to discuss runway presentations, corporate summits, or brand collaborations across Dubai and India.
           </p>
           <div className="pt-4 sm:pt-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
             <Link
-              href="/contact"
-              className="bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold text-sm sm:text-base md:text-lg tracking-caps px-8 sm:px-9 py-4 sm:py-4.5 rounded-full shadow-lg transition-all duration-300 w-full sm:w-auto"
+              href="/plan-your-event"
+              className="bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] font-jost font-bold text-xs sm:text-sm tracking-wider uppercase px-8 sm:px-9 py-4 sm:py-4.5 rounded-full shadow-lg transition-all duration-300 w-full sm:w-auto"
             >
-              INITIATE SERVICE ENQUIRY →
+              PLAN YOUR EVENT →
             </Link>
             <Link
-              href="/apply"
-              className="border border-[#F15E1C] dark:border-white/30 text-[#111111] dark:text-white hover:bg-[#F15E1C]/10 dark:hover:bg-white/10 font-syne font-bold text-sm sm:text-base md:text-lg tracking-caps px-8 sm:px-9 py-4 sm:py-4.5 rounded-full transition-all duration-300 w-full sm:w-auto"
+              href="/contact"
+              className="border border-[#D4AF37] text-[#111111] dark:text-white hover:bg-[#D4AF37]/10 font-jost font-bold text-xs sm:text-sm tracking-wider uppercase px-8 sm:px-9 py-4 sm:py-4.5 rounded-full transition-all duration-300 w-full sm:w-auto"
             >
-              APPLY FOR NOMINATION →
+              CONTACT US →
             </Link>
           </div>
         </div>

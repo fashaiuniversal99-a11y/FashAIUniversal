@@ -198,8 +198,8 @@ function HireTalentFormContent() {
       <section className="relative pt-28 sm:pt-32 pb-8 sm:pb-12 px-4 bg-gradient-to-b from-[#F5F2EC] via-[#FAF8F5] to-[#FAF8F5] dark:from-black dark:via-[#0A0908] dark:to-[#050505] border-b border-black/10 dark:border-white/10 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px] bg-[#D4AF37]/10 blur-[100px] pointer-events-none" />
 
-        <div className="w-[calc(100%-32px)] lg:w-[min(92vw,1100px)] max-w-[1100px] mx-auto text-center relative z-10 space-y-3 sm:space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/35 text-[#D4AF37] font-syne text-xs font-bold uppercase tracking-wider">
+        <div className="container-editorial relative z-10 text-center space-y-3 sm:space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/35 text-[#D4AF37] font-jost text-xs font-bold uppercase tracking-wider">
             <Users className="w-3.5 h-3.5" />
             <span>FASHAI UNIVERSAL · CLIENT TALENT BOOKING</span>
           </div>
@@ -215,14 +215,14 @@ function HireTalentFormContent() {
           <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/talent"
-              className="inline-flex items-center gap-1.5 text-xs font-syne tracking-wider text-[#D4AF37] hover:underline uppercase font-bold"
+              className="inline-flex items-center gap-1.5 text-xs font-jost tracking-wider text-[#D4AF37] hover:underline uppercase font-bold"
             >
               <span>BROWSE TALENT DIRECTORY →</span>
             </Link>
             <span className="text-black/30 dark:text-white/30">•</span>
             <Link
               href="/apply"
-              className="inline-flex items-center gap-1.5 text-xs font-syne tracking-wider text-[#111111]/70 dark:text-white/70 hover:text-[#D4AF37] uppercase font-semibold"
+              className="inline-flex items-center gap-1.5 text-xs font-jost tracking-wider text-[#111111]/70 dark:text-white/70 hover:text-[#D4AF37] uppercase font-semibold"
             >
               <span>APPLY AS TALENT ↗</span>
             </Link>
@@ -232,7 +232,7 @@ function HireTalentFormContent() {
 
       {/* MAIN CONTENT AREA */}
       <main className="flex-1 py-8 sm:py-12 md:py-16">
-        <div className="w-[calc(100%-32px)] lg:w-[min(92vw,1100px)] max-w-[1100px] mx-auto box-border">
+        <div className="container-editorial relative z-10 box-border">
           {status === "success" ? (
             /* REAL CONFIRMED SUCCESS STATE */
             <motion.div
@@ -263,13 +263,13 @@ function HireTalentFormContent() {
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Link
                   href="/"
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#D4AF37] text-black font-syne font-bold text-xs uppercase tracking-wider hover:bg-[#FFEC69] transition-all shadow-md text-center flex items-center justify-center"
+                  className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#D4AF37] text-black font-jost font-bold text-xs uppercase tracking-wider hover:bg-[#FFEC69] transition-all shadow-md text-center flex items-center justify-center"
                 >
                   RETURN TO HOMEPAGE →
                 </Link>
                 <button
                   onClick={() => setStatus("idle")}
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-xl border border-black/20 dark:border-white/20 text-[#111111] dark:text-white font-syne font-bold text-xs uppercase tracking-wider hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all text-center flex items-center justify-center"
+                  className="w-full sm:w-auto px-8 py-3.5 rounded-xl border border-black/20 dark:border-white/20 text-[#111111] dark:text-white font-jost font-bold text-xs uppercase tracking-wider hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all text-center flex items-center justify-center"
                 >
                   SUBMIT ANOTHER REQUEST
                 </button>
@@ -286,7 +286,7 @@ function HireTalentFormContent() {
                       <UserCheck className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-syne font-bold tracking-wider text-[#D4AF37] uppercase block">
+                      <span className="text-[10px] font-jost font-bold tracking-wider text-[#D4AF37] uppercase block">
                         REQUESTING SPECIFIC TALENT
                       </span>
                       <h3 className="font-serif-display text-lg sm:text-xl font-light uppercase text-[#111111] dark:text-white">
@@ -299,7 +299,7 @@ function HireTalentFormContent() {
                   </div>
                   <Link
                     href="/talent"
-                    className="text-xs font-syne font-bold text-[#D4AF37] hover:underline uppercase shrink-0"
+                    className="text-xs font-jost font-bold text-[#D4AF37] hover:underline uppercase shrink-0"
                   >
                     CHANGE TALENT
                   </Link>
@@ -318,7 +318,7 @@ function HireTalentFormContent() {
                 className="bg-white dark:bg-[#0B0A09] border border-black/10 dark:border-white/12 rounded-2xl sm:rounded-3xl p-6 sm:p-10 space-y-6 shadow-xl dark:shadow-[0_20px_80px_rgba(0,0,0,0.6)] box-border w-full"
               >
                 <div className="border-b border-black/10 dark:border-white/10 pb-4">
-                  <span className="font-syne text-xs font-bold text-[#D4AF37] uppercase tracking-wider">
+                  <span className="font-jost text-xs font-bold text-[#D4AF37] uppercase tracking-wider">
                     CLIENT ENQUIRY FORM
                   </span>
                   <h2 className="font-serif-display text-2xl sm:text-3xl text-[#111111] dark:text-white uppercase font-light mt-1">
@@ -329,7 +329,7 @@ function HireTalentFormContent() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 font-sans text-sm box-border w-full">
                   {/* 1. FULL NAME * */}
                   <div className="space-y-1.5 w-full box-border">
-                    <label className="block text-[#111111]/80 dark:text-white/90 font-syne font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       FULL NAME *
                     </label>
                     <input
@@ -345,7 +345,7 @@ function HireTalentFormContent() {
 
                   {/* 2. COMPANY / BRAND */}
                   <div className="space-y-1.5 w-full box-border">
-                    <label className="block text-[#111111]/80 dark:text-white/90 font-syne font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       COMPANY / BRAND / AGENCY
                     </label>
                     <input
@@ -360,7 +360,7 @@ function HireTalentFormContent() {
 
                   {/* 3. EMAIL ADDRESS * */}
                   <div className="space-y-1.5 w-full box-border">
-                    <label className="block text-[#111111]/80 dark:text-white/90 font-syne font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       EMAIL ADDRESS *
                     </label>
                     <input
@@ -376,7 +376,7 @@ function HireTalentFormContent() {
 
                   {/* 4. PHONE / WHATSAPP * */}
                   <div className="space-y-1.5 w-full box-border">
-                    <label className="block text-[#111111]/80 dark:text-white/90 font-syne font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       PHONE / WHATSAPP *
                     </label>
                     <input
@@ -392,7 +392,7 @@ function HireTalentFormContent() {
 
                   {/* 5. TALENT TYPE REQUIRED * */}
                   <div className="space-y-1.5 w-full box-border">
-                    <label className="block text-[#111111]/80 dark:text-white/90 font-syne font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       TALENT CATEGORY REQUIRED *
                     </label>
                     <select
@@ -413,7 +413,7 @@ function HireTalentFormContent() {
 
                   {/* 6. NUMBER OF TALENT REQUIRED */}
                   <div className="space-y-1.5 w-full box-border">
-                    <label className="block text-[#111111]/80 dark:text-white/90 font-syne font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       NUMBER OF TALENT REQUIRED
                     </label>
                     <select
@@ -433,7 +433,7 @@ function HireTalentFormContent() {
 
                   {/* 7. EVENT / CAMPAIGN TYPE */}
                   <div className="space-y-1.5 w-full box-border">
-                    <label className="block text-[#111111]/80 dark:text-white/90 font-syne font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       EVENT / CAMPAIGN TYPE
                     </label>
                     <select
@@ -453,7 +453,7 @@ function HireTalentFormContent() {
 
                   {/* 8. LOCATION */}
                   <div className="space-y-1.5 w-full box-border">
-                    <label className="block text-[#111111]/80 dark:text-white/90 font-syne font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       LOCATION / CITY
                     </label>
                     <input
@@ -468,7 +468,7 @@ function HireTalentFormContent() {
 
                   {/* 9. BRIEF & REQUIREMENTS * (FULL WIDTH) */}
                   <div className="sm:col-span-2 space-y-1.5 w-full box-border pt-1">
-                    <label className="block text-[#111111]/80 dark:text-white/90 font-syne font-semibold uppercase text-xs tracking-wider">
+                    <label className="block text-[#111111]/80 dark:text-white/90 font-jost font-semibold uppercase text-xs tracking-wider">
                       BRIEF &amp; REQUIREMENTS *
                     </label>
                     <textarea
@@ -491,7 +491,7 @@ function HireTalentFormContent() {
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="w-full sm:w-auto bg-[#D4AF37] hover:bg-[#FFEC69] text-black px-8 py-3.5 rounded-xl font-syne text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-md flex items-center justify-center gap-2 shrink-0 disabled:opacity-50 cursor-pointer min-h-[48px]"
+                    className="w-full sm:w-auto bg-[#D4AF37] hover:bg-[#FFEC69] text-black px-8 py-3.5 rounded-xl font-jost text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-md flex items-center justify-center gap-2 shrink-0 disabled:opacity-50 cursor-pointer min-h-[48px]"
                   >
                     <span>{status === "submitting" ? "SUBMITTING BRIEF..." : "BOOK TALENT →"}</span>
                   </button>

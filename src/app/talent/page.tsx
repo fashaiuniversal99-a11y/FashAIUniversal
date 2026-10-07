@@ -55,7 +55,7 @@ function TalentDirectoryContent() {
       <section className="relative pt-28 sm:pt-32 pb-8 sm:pb-12 px-4 bg-gradient-to-b from-[#F5F2EC] via-[#FAF8F5] to-[#FAF8F5] dark:from-black dark:via-[#0A0908] dark:to-[#050505] border-b border-black/10 dark:border-white/10 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#D4AF37]/10 blur-[120px] pointer-events-none" />
 
-        <div className="w-[calc(100%-32px)] lg:w-[min(92vw,1200px)] max-w-[1200px] mx-auto text-center relative z-10 space-y-3 sm:space-y-4">
+        <div className="container-editorial relative z-10 text-center space-y-3 sm:space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/35 text-[#D4AF37] font-jost text-xs font-semibold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
             <span>FASHAI UNIVERSAL · TALENT NETWORK</span>
@@ -116,7 +116,7 @@ function TalentDirectoryContent() {
 
       {/* CATEGORY FILTER NAVIGATION BAR */}
       <section className="sticky top-16 z-30 bg-[#FAF8F5]/90 dark:bg-[#080706]/90 backdrop-blur-md border-b border-black/10 dark:border-white/10 py-3 sm:py-4">
-        <div className="w-[calc(100%-32px)] lg:w-[min(92vw,1200px)] max-w-[1200px] mx-auto box-border overflow-x-auto scrollbar-none">
+        <div className="container-editorial relative z-10 overflow-x-auto scrollbar-none">
           <div className="flex items-center gap-2 sm:gap-3 min-w-max pb-1">
             {CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat.id;
@@ -145,7 +145,7 @@ function TalentDirectoryContent() {
 
       {/* MAIN TALENT DIRECTORY GRID */}
       <main className="flex-1 py-8 sm:py-12 md:py-16">
-        <div className="w-[calc(100%-32px)] lg:w-[min(92vw,1200px)] max-w-[1200px] mx-auto box-border">
+        <div className="container-editorial relative z-10 box-border">
           {filteredTalent.length > 0 ? (
             <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               <AnimatePresence>
@@ -263,7 +263,7 @@ function TalentDirectoryContent() {
 
       {/* TARGETED TALENT & CASTING PATHWAYS */}
       <section className="py-12 sm:py-16 bg-[#FAF8F5] dark:bg-[#080706] border-t border-black/10 dark:border-white/10">
-        <div className="w-[calc(100%-32px)] lg:w-[min(92vw,1200px)] max-w-[1200px] mx-auto box-border">
+        <div className="container-editorial relative z-10 box-border">
           <div className="max-w-3xl mb-8 space-y-2">
             <span className="font-jost text-xs font-bold uppercase tracking-wider text-[#D4AF37]">
               SPECIALIZED OPPORTUNITY PATHWAYS
