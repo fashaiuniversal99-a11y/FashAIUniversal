@@ -191,7 +191,7 @@ export default function MagazineArticleDetailPage({ params }: ArticlePageProps) 
         </p>
 
         {article.content.map((paragraph, idx) => (
-          <p key={idx} className="text-justify font-light">
+          <p key={idx} className="text-left font-light leading-relaxed">
             {paragraph}
           </p>
         ))}
