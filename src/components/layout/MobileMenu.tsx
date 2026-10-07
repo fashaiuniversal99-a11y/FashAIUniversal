@@ -175,7 +175,7 @@ export default function MobileMenu({
                 <Link
                   href="/plan-your-event"
                   onClick={onClose}
-                  className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] py-2.5 px-2 text-center font-syne text-[11px] font-bold tracking-wider uppercase transition-all rounded-xl shadow-xs flex items-center justify-center"
+                  className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] min-h-[44px] py-2.5 px-2 text-center font-jost text-xs font-bold tracking-wider uppercase transition-all rounded-xl shadow-xs flex items-center justify-center"
                 >
                   PLAN YOUR EVENT
                 </Link>
@@ -183,7 +183,7 @@ export default function MobileMenu({
                 <Link
                   href="/apply"
                   onClick={onClose}
-                  className="w-full border border-[#D4AF37] hover:bg-[#D4AF37]/10 text-[#111111] dark:text-white py-2.5 px-2 text-center font-syne text-[11px] font-bold tracking-wider uppercase transition-all rounded-xl flex items-center justify-center"
+                  className="w-full border border-[#D4AF37] hover:bg-[#D4AF37]/10 text-[#111111] dark:text-white min-h-[44px] py-2.5 px-2 text-center font-jost text-xs font-bold tracking-wider uppercase transition-all rounded-xl flex items-center justify-center"
                 >
                   APPLY AS TALENT
                 </Link>
@@ -193,7 +193,7 @@ export default function MobileMenu({
                 <Link
                   href="/hire-talent"
                   onClick={onClose}
-                  className="w-full border border-black/15 dark:border-white/20 bg-black/5 dark:bg-white/5 text-[#111111] dark:text-white py-2.5 px-2 text-center font-syne text-[11px] font-bold tracking-wider uppercase transition-all rounded-xl flex items-center justify-center"
+                  className="w-full border border-black/15 dark:border-white/20 bg-black/5 dark:bg-white/5 text-[#111111] dark:text-white min-h-[44px] py-2.5 px-2 text-center font-jost text-xs font-bold tracking-wider uppercase transition-all rounded-xl flex items-center justify-center"
                 >
                   HIRE TALENT
                 </Link>
@@ -201,7 +201,7 @@ export default function MobileMenu({
                 <Link
                   href="/contact"
                   onClick={onClose}
-                  className="w-full border border-black/15 dark:border-white/20 bg-black/5 dark:bg-white/5 text-[#111111] dark:text-white py-2.5 px-2 text-center font-syne text-[11px] font-bold tracking-wider uppercase transition-all rounded-xl flex items-center justify-center"
+                  className="w-full border border-black/15 dark:border-white/20 bg-black/5 dark:bg-white/5 text-[#111111] dark:text-white min-h-[44px] py-2.5 px-2 text-center font-jost text-xs font-bold tracking-wider uppercase transition-all rounded-xl flex items-center justify-center"
                 >
                   CONTACT US
                 </Link>

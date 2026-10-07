@@ -32,13 +32,13 @@ export default function Button({
 
   const sizeClasses =
     size === "sm"
-      ? "text-xs px-4 py-2"
+      ? "text-xs px-4 py-2 min-h-[38px]"
       : size === "lg"
-      ? "text-sm sm:text-base px-8 py-4"
-      : "text-xs sm:text-sm px-6 py-3";
+      ? "text-sm sm:text-base px-8 py-3.5 min-h-[52px]"
+      : "text-xs sm:text-sm px-6 py-3 min-h-[44px]";
 
   const baseClasses =
-    "inline-flex items-center justify-center font-syne font-bold tracking-wider uppercase rounded-full transition-all duration-300 select-none whitespace-nowrap";
+    "inline-flex items-center justify-center font-jost font-bold tracking-wider uppercase rounded-full transition-all duration-300 select-none whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-black";
 
   const variantClasses =
     variant === "primary"
