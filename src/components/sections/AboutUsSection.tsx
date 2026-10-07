@@ -19,7 +19,7 @@ export default function AboutUsSection() {
             className="lg:col-span-7 space-y-6 sm:space-y-8"
           >
             <div>
-              <div className="flex items-center gap-2 text-xs sm:text-sm font-syne tracking-micro text-[#D4AF37] font-bold uppercase mb-3">
+              <div className="flex items-center gap-2 text-xs sm:text-sm font-jost tracking-widest text-[#D4AF37] font-bold uppercase mb-3">
                 <span>ABOUT FASHAI UNIVERSAL</span>
               </div>
 
@@ -41,20 +41,20 @@ export default function AboutUsSection() {
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <Link
                 href="/plan-your-event"
-                className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] font-syne text-xs sm:text-sm font-bold tracking-wider uppercase px-5 py-3 rounded-full transition-all shadow-md"
+                className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] font-jost text-xs sm:text-sm font-bold tracking-wider uppercase px-5 py-3 rounded-full transition-all shadow-md"
               >
                 <span>PLAN YOUR EVENT</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/hire-talent"
-                className="inline-flex items-center gap-2 border border-[#D4AF37] hover:bg-[#D4AF37]/10 text-[#111111] dark:text-white font-syne text-xs sm:text-sm font-bold tracking-wider uppercase px-5 py-3 rounded-full transition-all"
+                className="inline-flex items-center gap-2 border border-[#D4AF37] hover:bg-[#D4AF37]/10 text-[#111111] dark:text-white font-jost text-xs sm:text-sm font-bold tracking-wider uppercase px-5 py-3 rounded-full transition-all"
               >
                 <span>HIRE TALENT</span>
               </Link>
               <Link
                 href="/apply"
-                className="inline-flex items-center gap-2 border border-black/20 dark:border-white/20 hover:border-[#D4AF37] text-[#111111] dark:text-white font-syne text-xs sm:text-sm font-bold tracking-wider uppercase px-5 py-3 rounded-full transition-all"
+                className="inline-flex items-center gap-2 border border-black/20 dark:border-white/20 hover:border-[#D4AF37] text-[#111111] dark:text-white font-jost text-xs sm:text-sm font-bold tracking-wider uppercase px-5 py-3 rounded-full transition-all"
               >
                 <span>APPLY AS TALENT</span>
               </Link>
@@ -64,7 +64,7 @@ export default function AboutUsSection() {
             <div className="grid grid-cols-1 sm:grid-cols-3 pt-6 border-t border-black/10 dark:border-white/10 divide-y sm:divide-y-0 sm:divide-x divide-black/10 dark:divide-white/10">
               <div className="pb-5 sm:pb-0 sm:pr-5 lg:pr-6">
                 <Compass className="w-5 h-5 text-[#D4AF37] mb-2" />
-                <h3 className="font-syne text-sm sm:text-base font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
+                <h3 className="font-jost text-sm sm:text-base font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
                   EVENT MANAGEMENT
                 </h3>
                 <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
@@ -74,7 +74,7 @@ export default function AboutUsSection() {
 
               <div className="py-5 sm:py-0 sm:px-5 lg:px-6">
                 <Globe className="w-5 h-5 text-[#D4AF37] mb-2" />
-                <h3 className="font-syne text-sm sm:text-base font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
+                <h3 className="font-jost text-sm sm:text-base font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
                   GLOBAL REACH
                 </h3>
                 <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
@@ -84,7 +84,7 @@ export default function AboutUsSection() {
 
               <div className="pt-5 sm:pt-0 sm:pl-5 lg:pl-6">
                 <ShieldCheck className="w-5 h-5 text-[#D4AF37] mb-2" />
-                <h3 className="font-syne text-sm sm:text-base font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
+                <h3 className="font-jost text-sm sm:text-base font-bold text-[#111111] dark:text-white uppercase tracking-wider mb-1">
                   TALENT ECOSYSTEM
                 </h3>
                 <p className="font-sans text-sm sm:text-base text-[#555555] dark:text-brand-platinum/80 font-normal leading-relaxed">
@@ -113,10 +113,10 @@ export default function AboutUsSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70" />
               <div className="absolute bottom-6 left-6 right-6 p-6 bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl">
-                <span className="font-syne text-xs font-bold text-[#D4AF37] tracking-widest uppercase block mb-1">
+                <span className="font-jost text-xs font-bold text-[#D4AF37] tracking-widest uppercase block mb-1">
                   FASHAI UNIVERSAL
                 </span>
-                <span className="font-syne text-xs font-bold text-white uppercase tracking-wider block mb-1">
+                <span className="font-jost text-xs font-bold text-white uppercase tracking-wider block mb-1">
                   Fashion Events &amp; Talent Platform
                 </span>
                 <span className="font-sans text-xs text-white/90 font-light block">

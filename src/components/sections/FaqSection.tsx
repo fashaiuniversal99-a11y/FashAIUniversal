@@ -56,7 +56,7 @@ export default function FaqSection() {
       <div className="container-editorial relative z-10 max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-10">
-          <div className="flex items-center justify-center gap-2 text-xs sm:text-sm font-syne tracking-micro text-brand-yellow-golden font-bold uppercase mb-3">
+          <div className="flex items-center justify-center gap-2 text-xs sm:text-sm font-jost tracking-widest text-brand-yellow-golden font-bold uppercase mb-3">
             <span>FREQUENTLY ASKED QUESTIONS</span>
           </div>
           <h2 className="font-serif-display text-3xl sm:text-5xl md:text-6xl font-light text-brand-white uppercase mb-4">
@@ -119,7 +119,7 @@ export default function FaqSection() {
         <div className="mt-8 sm:mt-10 text-center pt-6 border-t border-white/10">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-2.5 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-8 py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
+            className="inline-flex items-center justify-center gap-2.5 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-8 py-3.5 rounded-full font-jost text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
           >
             <span>CONTACT US</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

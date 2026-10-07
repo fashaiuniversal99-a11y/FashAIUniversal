@@ -57,7 +57,7 @@ export default function Chapter2026() {
           {/* 1. EVENT LABEL */}
           <motion.div variants={itemVariants} className="flex items-center gap-2.5">
             <span className="w-2.5 h-2.5 rounded-full bg-[#D4AF37] animate-pulse" />
-            <span className="font-syne text-xs sm:text-sm md:text-base tracking-[0.25em] text-[#D4AF37] font-bold uppercase">
+            <span className="font-jost text-xs sm:text-sm md:text-base tracking-[0.25em] text-[#D4AF37] font-bold uppercase">
               UPCOMING EVENT · DUBAI 2026
             </span>
           </motion.div>
@@ -72,7 +72,7 @@ export default function Chapter2026() {
             </h2>
 
             {/* DUBAI · 2026 LOCATION LABEL */}
-            <p className="font-syne text-xs sm:text-sm md:text-base tracking-[0.25em] text-[#2E936F] dark:text-[#2E936F] font-bold uppercase pt-1">
+            <p className="font-jost text-xs sm:text-sm md:text-base tracking-[0.25em] text-[#2E936F] dark:text-[#2E936F] font-bold uppercase pt-1">
               DUBAI &nbsp;·&nbsp; 2026
             </p>
 
@@ -112,7 +112,7 @@ export default function Chapter2026() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-black/10 dark:divide-white/15 border-y border-black/10 dark:border-white/15 py-6 sm:py-8 items-stretch">
               {/* COL 1: EVENT DATE */}
               <div className="flex flex-col items-center justify-between p-4 text-center space-y-2 min-h-[130px]">
-                <span className="text-xs sm:text-sm font-syne tracking-widest font-bold text-[#666666] dark:text-white/70 uppercase">
+                <span className="text-xs sm:text-sm font-jost tracking-widest font-bold text-[#666666] dark:text-white/70 uppercase">
                   EVENT DATE
                 </span>
                 <span className="font-serif-display text-lg sm:text-xl md:text-2xl font-light text-[#D4AF37] uppercase tracking-wide">
@@ -125,7 +125,7 @@ export default function Chapter2026() {
 
               {/* COL 2: EVENT VENUE */}
               <div className="flex flex-col items-center justify-between p-4 text-center space-y-2 min-h-[130px]">
-                <span className="text-xs sm:text-sm font-syne tracking-widest font-bold text-[#666666] dark:text-white/70 uppercase">
+                <span className="text-xs sm:text-sm font-jost tracking-widest font-bold text-[#666666] dark:text-white/70 uppercase">
                   EVENT VENUE
                 </span>
                 <span className="font-serif-display text-lg sm:text-xl md:text-2xl font-light text-[#D4AF37] uppercase tracking-wide">
@@ -138,7 +138,7 @@ export default function Chapter2026() {
 
               {/* COL 3: DRESS CODE */}
               <div className="flex flex-col items-center justify-between p-4 text-center space-y-2 min-h-[130px]">
-                <span className="text-xs sm:text-sm font-syne tracking-widest font-bold text-[#666666] dark:text-white/70 uppercase">
+                <span className="text-xs sm:text-sm font-jost tracking-widest font-bold text-[#666666] dark:text-white/70 uppercase">
                   DRESS CODE
                 </span>
                 <span className="font-serif-display text-xl sm:text-2xl md:text-3xl font-light text-[#111111] dark:text-white uppercase tracking-wide">
@@ -158,7 +158,7 @@ export default function Chapter2026() {
           >
             <Link
               href={LIFESTYLE_2026.waitingListCtaUrl}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-6 py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-md group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-6 py-3.5 rounded-full font-jost text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-md group"
             >
               <span>JOIN THE WAITING LIST</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
@@ -171,7 +171,7 @@ export default function Chapter2026() {
                 setIsSponsorModalOpen(true);
                 trackEvent("sponsorship_cta_click", { location: "lifestyle_2026", mode: "DECK" });
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-transparent border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 px-6 py-3.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-transparent border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 px-6 py-3.5 rounded-full font-jost text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 group"
             >
               <FileText className="w-4 h-4 text-[#D4AF37]" />
               <span>GET SPONSORSHIP DECK</span>
@@ -184,7 +184,7 @@ export default function Chapter2026() {
                 setIsSponsorModalOpen(true);
                 trackEvent("sponsorship_cta_click", { location: "lifestyle_2026", mode: "ENQUIRY" });
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 text-[#666666] dark:text-white/70 hover:text-[#D4AF37] dark:hover:text-[#D4AF37] font-syne text-xs font-bold tracking-wider uppercase transition-colors py-2 px-3"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 text-[#666666] dark:text-white/70 hover:text-[#D4AF37] dark:hover:text-[#D4AF37] font-jost text-xs font-bold tracking-wider uppercase transition-colors py-2 px-3"
             >
               <span>SPONSORSHIP ENQUIRY</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

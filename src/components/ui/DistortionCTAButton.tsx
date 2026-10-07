@@ -224,7 +224,7 @@ export default function DistortionCTAButton({
       )}
 
       {/* STABLE CRISP GRADIENT FLOW TEXT LAYER */}
-      <span className="relative z-10 pointer-events-none font-syne font-bold tracking-caps text-xs sm:text-sm uppercase flex items-center justify-center gap-1.5">
+      <span className="relative z-10 pointer-events-none font-jost font-bold tracking-widest text-xs sm:text-sm uppercase flex items-center justify-center gap-1.5">
         <GradientFlowText variant={isPrimary ? "primary" : "secondary"}>
           {label}
         </GradientFlowText>

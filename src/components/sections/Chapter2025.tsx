@@ -45,7 +45,7 @@ export default function Chapter2025() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-black/10 dark:border-white/10 mb-6 sm:mb-8">
           <div>
-            <div className="flex items-center gap-3 text-xs sm:text-sm font-syne tracking-widest text-[#D4AF37] font-bold uppercase mb-2">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-jost tracking-widest text-[#D4AF37] font-bold uppercase mb-2">
               <span className="h-px w-8 bg-[#D4AF37]" />
               <span>DELIVERED WORK &amp; EDITIONS</span>
             </div>
@@ -60,7 +60,7 @@ export default function Chapter2025() {
             </p>
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-6 py-2.5 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all shadow-md group"
+              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-6 py-2.5 rounded-full font-jost text-xs sm:text-sm font-bold tracking-wider uppercase transition-all shadow-md group"
             >
               <span>EXPLORE MORE</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -91,10 +91,10 @@ export default function Chapter2025() {
                   />
                   
                   <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
-                    <span className="px-3 py-1 rounded-md text-[10px] font-syne font-bold uppercase tracking-wider bg-black/80 text-[#D4AF37] border border-[#D4AF37]/40 backdrop-blur-md">
+                    <span className="px-3 py-1 rounded-md text-[10px] font-jost font-bold uppercase tracking-wider bg-black/80 text-[#D4AF37] border border-[#D4AF37]/40 backdrop-blur-md">
                       {proj.category}
                     </span>
-                    <span className="px-3 py-1 rounded-md text-[10px] font-syne font-bold uppercase tracking-wider bg-[#D4AF37] text-black font-bold shadow-sm">
+                    <span className="px-3 py-1 rounded-md text-[10px] font-jost font-bold uppercase tracking-wider bg-[#D4AF37] text-black font-bold shadow-sm">
                       {proj.timing}
                     </span>
                   </div>
@@ -104,7 +104,7 @@ export default function Chapter2025() {
                 <h3 className="font-serif-display text-3xl sm:text-4xl font-light text-[#111111] dark:text-white uppercase leading-tight mb-1 group-hover:text-[#D4AF37] transition-colors">
                   {proj.title}
                 </h3>
-                <p className="font-syne text-xs sm:text-sm font-bold uppercase text-[#D4AF37] mb-3">
+                <p className="font-jost text-xs sm:text-sm font-bold uppercase text-[#D4AF37] mb-3">
                   {proj.subtitle}
                 </p>
                 <p className="font-sans text-sm sm:text-base text-gray-900 dark:text-neutral-200 font-normal leading-relaxed mb-6">
@@ -116,7 +116,7 @@ export default function Chapter2025() {
               <div className="pt-4 border-t border-black/10 dark:border-white/15 flex flex-wrap items-center justify-between gap-3 relative z-10">
                 <Link
                   href="/projects"
-                  className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-5 py-2.5 text-xs font-syne tracking-wider font-bold transition-all rounded-full shadow-md group/btn"
+                  className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-5 py-2.5 text-xs font-jost tracking-wider font-bold transition-all rounded-full shadow-md group/btn"
                 >
                   <span>EXPLORE MORE</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
@@ -151,7 +151,7 @@ export default function Chapter2025() {
         <div className="pt-4 text-center border-t border-black/10 dark:border-white/10">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-3 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-8 py-3.5 text-sm font-syne tracking-wider font-bold transition-all rounded-full shadow-lg group"
+            className="inline-flex items-center gap-3 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-8 py-3.5 text-sm font-jost tracking-wider font-bold transition-all rounded-full shadow-lg group"
           >
             <span>VIEW PROJECTS</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

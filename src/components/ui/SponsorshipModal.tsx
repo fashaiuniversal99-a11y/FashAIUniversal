@@ -153,7 +153,7 @@ export default function SponsorshipModal({
           <div className="mb-6 space-y-2">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
-              <span className="font-syne text-[11px] font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
+              <span className="font-jost text-[11px] font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
                 {initialMode === "DECK" ? "SPONSORSHIP DECK REQUEST" : "SPONSORSHIP ENQUIRY"}
               </span>
             </div>
@@ -193,7 +193,7 @@ export default function SponsorshipModal({
 
               {/* Truthful Controlled Deck State */}
               <div className="p-5 rounded-2xl bg-[#FAF8F5] dark:bg-white/5 border border-[#D4AF37]/30 text-left space-y-2">
-                <div className="flex items-center gap-2 text-[#D4AF37] font-syne text-xs font-bold uppercase tracking-wider">
+                <div className="flex items-center gap-2 text-[#D4AF37] font-jost text-xs font-bold uppercase tracking-wider">
                   <FileText className="w-4 h-4" />
                   <span>SPONSORSHIP DECK</span>
                 </div>
@@ -204,7 +204,7 @@ export default function SponsorshipModal({
 
               <button
                 onClick={onClose}
-                className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] font-bold border border-[#D4AF37] py-3.5 rounded-full font-syne text-xs tracking-wider uppercase transition-all duration-300 shadow-md"
+                className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] font-bold border border-[#D4AF37] py-3.5 rounded-full font-jost text-xs tracking-wider uppercase transition-all duration-300 shadow-md"
               >
                 CLOSE
               </button>
@@ -222,7 +222,7 @@ export default function SponsorshipModal({
               <div className="space-y-1.5">
                 <label
                   htmlFor="sponsor-fullName"
-                  className="block text-[11px] font-syne font-bold uppercase tracking-wider text-[#444444] dark:text-white/80"
+                  className="block text-[11px] font-jost font-bold uppercase tracking-wider text-[#444444] dark:text-white/80"
                 >
                   FULL NAME <span className="text-[#D4AF37]">*</span>
                 </label>
@@ -242,7 +242,7 @@ export default function SponsorshipModal({
               <div className="space-y-1.5">
                 <label
                   htmlFor="sponsor-company"
-                  className="block text-[11px] font-syne font-bold uppercase tracking-wider text-[#444444] dark:text-white/80"
+                  className="block text-[11px] font-jost font-bold uppercase tracking-wider text-[#444444] dark:text-white/80"
                 >
                   COMPANY / BRAND <span className="text-[#D4AF37]">*</span>
                 </label>
@@ -262,7 +262,7 @@ export default function SponsorshipModal({
               <div className="space-y-1.5">
                 <label
                   htmlFor="sponsor-email"
-                  className="block text-[11px] font-syne font-bold uppercase tracking-wider text-[#444444] dark:text-white/80"
+                  className="block text-[11px] font-jost font-bold uppercase tracking-wider text-[#444444] dark:text-white/80"
                 >
                   EMAIL ADDRESS <span className="text-[#D4AF37]">*</span>
                 </label>
@@ -282,7 +282,7 @@ export default function SponsorshipModal({
               <div className="space-y-1.5">
                 <label
                   htmlFor="sponsor-phone"
-                  className="block text-[11px] font-syne font-bold uppercase tracking-wider text-[#666666] dark:text-white/60"
+                  className="block text-[11px] font-jost font-bold uppercase tracking-wider text-[#666666] dark:text-white/60"
                 >
                   PHONE / WHATSAPP <span className="text-xs font-normal text-[#888888] dark:text-white/40">(OPTIONAL)</span>
                 </label>
@@ -301,7 +301,7 @@ export default function SponsorshipModal({
               <div className="space-y-1.5">
                 <label
                   htmlFor="sponsor-interest"
-                  className="block text-[11px] font-syne font-bold uppercase tracking-wider text-[#666666] dark:text-white/60"
+                  className="block text-[11px] font-jost font-bold uppercase tracking-wider text-[#666666] dark:text-white/60"
                 >
                   SPONSORSHIP INTEREST / REQUIREMENTS <span className="text-xs font-normal text-[#888888] dark:text-white/40">(OPTIONAL)</span>
                 </label>
@@ -321,7 +321,7 @@ export default function SponsorshipModal({
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full min-h-[48px] bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] font-bold border border-[#D4AF37] py-3.5 rounded-full font-syne text-xs tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-md disabled:opacity-50"
+                  className="w-full min-h-[48px] bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] font-bold border border-[#D4AF37] py-3.5 rounded-full font-jost text-xs tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2 shadow-md disabled:opacity-50"
                 >
                   {status === "loading" ? (
                     <>

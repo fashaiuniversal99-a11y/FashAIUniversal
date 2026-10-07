@@ -88,7 +88,7 @@ export default function HomepageTalentSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 mb-8 border-b border-black/10 dark:border-white/10">
           <div>
-            <div className="flex items-center gap-3 text-xs sm:text-sm font-syne tracking-micro text-[#D4AF37] font-bold uppercase mb-2">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-jost tracking-widest text-[#D4AF37] font-bold uppercase mb-2">
               <span className="h-px w-8 bg-[#D4AF37]" />
               <span>TALENT &amp; CREATIVE NETWORK</span>
             </div>
@@ -103,20 +103,20 @@ export default function HomepageTalentSection() {
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <Link
               href="/talent"
-              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-6 py-3 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-md"
+              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-6 py-3 rounded-full font-jost text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-md"
             >
               <span>BROWSE DIRECTORY →</span>
             </Link>
             <Link
               href="/hire-talent"
-              className="inline-flex items-center gap-2 bg-transparent border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 px-6 py-3 rounded-full font-syne text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-transparent border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 px-6 py-3 rounded-full font-jost text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300"
             >
               <Briefcase className="w-4 h-4" />
               <span>HIRE TALENT</span>
             </Link>
             <Link
               href="/apply"
-              className="inline-flex items-center gap-2 bg-black/5 dark:bg-white/5 border border-black/15 dark:border-white/15 text-[#111111] dark:text-white hover:border-[#D4AF37] hover:text-[#D4AF37] px-5 py-3 rounded-full font-syne text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-black/5 dark:bg-white/5 border border-black/15 dark:border-white/15 text-[#111111] dark:text-white hover:border-[#D4AF37] hover:text-[#D4AF37] px-5 py-3 rounded-full font-jost text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300"
             >
               <UserPlus className="w-4 h-4" />
               <span>APPLY</span>
@@ -149,7 +149,7 @@ export default function HomepageTalentSection() {
 
                 {/* Card Content */}
                 <div className="space-y-2 mb-4">
-                  <span className="text-[10px] font-syne tracking-widest font-bold text-[#D4AF37] uppercase block">
+                  <span className="text-[10px] font-jost tracking-widest font-bold text-[#D4AF37] uppercase block">
                     {cat.tagline}
                   </span>
 
@@ -163,22 +163,14 @@ export default function HomepageTalentSection() {
                 </div>
               </div>
 
-              {/* Action Buttons: BROWSE CATEGORY & HIRE TALENT */}
-              <div className="pt-3 border-t border-black/10 dark:border-white/10 flex flex-col gap-2">
+              {/* Single Clear Card Action */}
+              <div className="pt-3 border-t border-black/10 dark:border-white/10 flex items-center justify-between">
                 <Link
                   href={`/talent?category=${cat.id}`}
-                  className="w-full bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] py-2.5 px-4 rounded-xl text-xs font-syne font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-between shadow-sm"
+                  className="inline-flex items-center gap-1.5 text-xs font-jost font-bold uppercase text-[#D4AF37] hover:underline group/btn"
                 >
-                  <span>BROWSE {cat.title}</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </Link>
-
-                <Link
-                  href={`/hire-talent?category=${cat.categoryId}`}
-                  className="w-full border border-black/15 dark:border-white/15 bg-transparent hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 text-[#333333] dark:text-white/80 hover:text-[#111111] dark:hover:text-white py-2 px-4 rounded-xl text-xs font-syne font-semibold tracking-wider uppercase transition-all duration-300 flex items-center justify-between"
-                >
-                  <span>HIRE {cat.title}</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
+                  <span>EXPLORE {cat.title}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                 </Link>
               </div>
             </motion.div>

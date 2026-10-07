@@ -10,9 +10,9 @@ export default function HomepageProofSection() {
       id: "proof-01",
       icon: Globe,
       badge: "PRESENCE",
-      title: "UAE · INDIA · GLOBAL",
+      title: "DUBAI & INDIA ECOSYSTEM",
       description:
-        "International footprint connecting couture destinations across Dubai, Mumbai, New Delhi, and global fashion capitals.",
+        "Ecosystem connecting couture destinations across Dubai, Mumbai, New Delhi, and international fashion hubs.",
     },
     {
       id: "proof-02",
@@ -34,9 +34,9 @@ export default function HomepageProofSection() {
       id: "proof-04",
       icon: Users,
       badge: "NETWORK",
-      title: "GLOBAL TALENT NETWORK",
+      title: "TALENT & CREATIVE NETWORK",
       description:
-        "Verified roster of international models, couture designers, choreographers, beauty artists, and creative directors.",
+        "Roster of models, couture designers, choreographers, beauty artists, and creative directors.",
     },
   ];
 
@@ -97,7 +97,7 @@ export default function HomepageProofSection() {
       <div className="container-editorial relative z-10 space-y-12 sm:space-y-16">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 text-[#D4AF37] text-xs font-syne font-bold tracking-micro uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 text-[#D4AF37] text-xs font-jost font-bold tracking-wider uppercase">
             <span className="h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
             <span>TRUSTED EXPERIENCE</span>
           </div>
@@ -127,7 +127,7 @@ export default function HomepageProofSection() {
                     <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37]">
                       <IconComponent className="w-5 h-5" />
                     </div>
-                    <span className="text-[10px] font-syne tracking-widest font-bold text-[#D4AF37] uppercase">
+                    <span className="text-[10px] font-jost tracking-widest font-bold text-[#D4AF37] uppercase">
                       {pillar.badge}
                     </span>
                   </div>
@@ -145,7 +145,7 @@ export default function HomepageProofSection() {
 
         {/* 2. RESTRAINED APPROVED BRAND LOGO STRIP */}
         <div className="pt-6 border-t border-black/10 dark:border-white/10 text-center space-y-6">
-          <span className="text-xs font-syne tracking-micro text-[#D4AF37] font-bold uppercase block">
+          <span className="text-xs font-jost tracking-widest text-[#D4AF37] font-bold uppercase block">
             APPROVED BRAND &amp; PARTNER ECOSYSTEM
           </span>
           <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14 bg-white/50 dark:bg-[#0C0B0A]/80 border border-black/10 dark:border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-xs">
@@ -174,7 +174,7 @@ export default function HomepageProofSection() {
         {/* 3. PLATFORM & PARTNER POSITIONING (NON-TESTIMONIAL PLATFORM STATEMENTS) */}
         <div className="space-y-6 pt-6 border-t border-black/10 dark:border-white/10">
           <div className="text-center">
-            <span className="text-xs font-syne tracking-micro text-[#D4AF37] font-bold uppercase">
+            <span className="text-xs font-jost tracking-widest text-[#D4AF37] font-bold uppercase">
               EDITORIAL &amp; PLATFORM POSITIONING
             </span>
           </div>

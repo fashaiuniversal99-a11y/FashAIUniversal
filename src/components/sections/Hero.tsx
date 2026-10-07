@@ -83,13 +83,8 @@ export default function Hero() {
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#D4AF37]/10 blur-[130px] rounded-full pointer-events-none z-[1]" />
 
       {/* LAYER 3: Main Centered Editorial Composition */}
-      <div
-        className="relative z-10 my-auto py-6 sm:py-8 flex flex-col items-center justify-center text-center w-full"
-        style={{
-          width: "min(92vw, 1200px)",
-          marginInline: "auto",
-        }}
-      >
+      <div className="container-editorial relative z-10 my-auto py-6 sm:py-8 flex flex-col items-center justify-center text-center">
+        <div className="w-full max-w-5xl mx-auto">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -158,47 +153,45 @@ export default function Hero() {
             <span className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#D4AF37]/60 to-[#D4AF37]" />
           </motion.div>
 
-          {/* 4. TWO EQUAL PRIMARY DOORS & SUPPORTING HIRE TALENT ACTION */}
+          {/* 4. TWO PRIMARY CLIENT DOORS & SECONDARY TALENT PATHWAY */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } }
             }}
             style={{ willChange: "transform, opacity" }}
-            className="flex flex-col items-center justify-center gap-4 w-full pt-2 sm:pt-3"
+            className="flex flex-col items-center justify-center gap-3.5 sm:gap-4 w-full pt-2 sm:pt-3"
           >
-            {/* The 2 Primary Equal Doors */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto">
+            {/* The 2 Primary Client Conversion Actions */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5 w-full sm:w-auto">
               <DistortionCTAButton
                 href="/plan-your-event"
                 label="PLAN YOUR EVENT →"
                 variant="primary"
-                className="w-full sm:w-[250px] min-h-[54px]"
+                className="w-full sm:w-[240px] min-h-[52px]"
                 dataCursor="plan"
                 onClick={() => trackEvent("plan_event_click", { location: "hero" })}
               />
               <DistortionCTAButton
-                href="/apply"
-                label="APPLY AS TALENT ↗"
+                href="/hire-talent"
+                label="HIRE TALENT ↗"
                 variant="primary"
-                className="w-full sm:w-[250px] min-h-[54px]"
-                dataCursor="apply"
-                onClick={() => trackEvent("apply_talent_click", { location: "hero" })}
+                className="w-full sm:w-[240px] min-h-[52px]"
+                dataCursor="hire"
+                onClick={() => trackEvent("hire_talent_click", { location: "hero" })}
               />
             </div>
 
-            {/* Clearly Visible Supporting Action for Hire Talent */}
-            <div className="pt-2">
-              <Link
-                href="/hire-talent"
-                onClick={() => trackEvent("hire_talent_click", { location: "hero" })}
-                className="inline-flex items-center gap-2 text-xs sm:text-sm font-syne font-semibold tracking-wider text-brand-white/85 hover:text-[#D4AF37] transition-colors group"
-              >
-                <span>Looking to book creative talent?</span>
-                <span className="text-[#D4AF37] font-bold underline underline-offset-4 group-hover:text-white transition-colors inline-flex items-center gap-1">
-                  HIRE TALENT <ArrowRight className="w-3.5 h-3.5 inline transition-transform group-hover:translate-x-1" />
-                </span>
-              </Link>
+            {/* Secondary Talent Pathway */}
+            <div className="w-full sm:w-auto pt-1">
+              <DistortionCTAButton
+                href="/apply"
+                label="APPLY AS TALENT ↗"
+                variant="secondary"
+                className="w-full sm:w-[260px] min-h-[46px]"
+                dataCursor="apply"
+                onClick={() => trackEvent("apply_talent_click", { location: "hero" })}
+              />
             </div>
           </motion.div>
 
@@ -220,6 +213,7 @@ export default function Hero() {
             />
           </motion.div>
         </motion.div>
+        </div>
       </div>
 
       {/* LAYER 4: LEFT EDITORIAL RAIL */}
@@ -229,7 +223,7 @@ export default function Hero() {
           <span className="w-2.5 h-2.5 rounded-full border border-brand-yellow-golden bg-black/80 shadow-[0_0_8px_rgba(250,182,10,0.6)]" />
           <span className="w-[1px] h-6 bg-brand-yellow-golden/60" />
         </div>
-        <div className="flex flex-col items-start space-y-3.5 text-xs sm:text-xs font-syne tracking-[0.2em] text-brand-white/80 keep-white uppercase font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
+        <div className="flex flex-col items-start space-y-3.5 text-xs sm:text-xs font-jost tracking-[0.2em] text-brand-white/80 keep-white uppercase font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
           <span className="hover:text-brand-yellow-golden transition-colors">EVENTS</span>
           <span className="hover:text-brand-yellow-golden transition-colors">IDEAS</span>
           <span className="hover:text-brand-yellow-golden transition-colors">CULTURE</span>

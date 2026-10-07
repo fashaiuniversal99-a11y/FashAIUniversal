@@ -176,11 +176,11 @@ export default function EventInfoModal() {
               <div className="absolute bottom-2 left-4 right-4 flex items-center justify-between">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-[#D4AF37] shadow-[0_0_6px_rgba(212,175,55,0.8)]" />
-                  <span className="font-syne text-[10px] tracking-widest text-[#D4AF37] font-bold uppercase">
+                  <span className="font-jost text-[10px] tracking-widest text-[#D4AF37] font-bold uppercase">
                     HAUTE COUTURE RUNWAY
                   </span>
                 </div>
-                <span className="font-syne text-[9px] tracking-wider text-white/80 font-bold uppercase bg-black/50 px-2 py-0.5 rounded border border-white/10">
+                <span className="font-jost text-[9px] tracking-wider text-white/80 font-bold uppercase bg-black/50 px-2 py-0.5 rounded border border-white/10">
                   DUBAI · 2026
                 </span>
               </div>
@@ -197,7 +197,7 @@ export default function EventInfoModal() {
                   {/* Eyebrow */}
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 bg-[#F15E1C] dark:bg-[#D4AF37] shadow-[0_0_8px_rgba(241,94,28,0.6)] dark:shadow-[0_0_8px_rgba(212,175,55,0.8)] shrink-0" />
-                    <span className="font-syne text-[10px] sm:text-xs tracking-[0.22em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
+                    <span className="font-jost text-[10px] sm:text-xs tracking-[0.22em] text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase">
                       LIFESTYLE 2026 · DUBAI · 2026
                     </span>
                   </div>
@@ -214,7 +214,7 @@ export default function EventInfoModal() {
 
                   {/* Location Tag */}
                   <div className="inline-block border-b border-[#F15E1C]/40 dark:border-[#D4AF37]/50 pb-1">
-                    <span className="font-syne text-[10px] sm:text-xs tracking-[0.25em] font-bold text-[#F15E1C] dark:text-[#D4AF37] uppercase">
+                    <span className="font-jost text-[10px] sm:text-xs tracking-[0.25em] font-bold text-[#F15E1C] dark:text-[#D4AF37] uppercase">
                       DUBAI · 2026
                     </span>
                   </div>
@@ -222,7 +222,7 @@ export default function EventInfoModal() {
 
                 {/* Announcement Notice Box */}
                 <div className="bg-white/5 backdrop-blur-md border border-[#F15E1C]/30 dark:border-[#D4AF37]/40 p-3 sm:p-4 rounded-xl shadow-md">
-                  <h3 className="font-syne text-[11px] sm:text-xs tracking-wider font-bold text-[#F15E1C] dark:text-[#D4AF37] uppercase mb-0.5">
+                  <h3 className="font-jost text-[11px] sm:text-xs tracking-wider font-bold text-[#F15E1C] dark:text-[#D4AF37] uppercase mb-0.5">
                     REGISTRATIONS &amp; SPONSORSHIPS ARE OPEN
                   </h3>
                   <p className="font-sans text-xs text-white/80 font-light leading-relaxed">
@@ -234,33 +234,33 @@ export default function EventInfoModal() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 pt-1">
                   {/* Event Date */}
                   <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-2.5 sm:p-3 rounded-xl flex flex-col justify-between shadow-sm">
-                    <div className="flex items-center gap-1.5 text-[9px] sm:text-[10px] font-syne tracking-micro text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-0.5">
+                    <div className="flex items-center gap-1.5 text-[9px] sm:text-[10px] font-jost tracking-micro text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-0.5">
                       <Calendar className="w-3 h-3" />
                       <span>EVENT DATE</span>
                     </div>
-                    <span className="font-syne text-[10px] sm:text-xs font-bold text-white uppercase tracking-wide">
+                    <span className="font-jost text-[10px] sm:text-xs font-bold text-white uppercase tracking-wide">
                       {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.dateDisplay : "DATE: TO BE ANNOUNCED"}
                     </span>
                   </div>
 
                   {/* Event Venue */}
                   <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-2.5 sm:p-3 rounded-xl flex flex-col justify-between shadow-sm">
-                    <div className="flex items-center gap-1.5 text-[9px] sm:text-[10px] font-syne tracking-micro text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-0.5">
+                    <div className="flex items-center gap-1.5 text-[9px] sm:text-[10px] font-jost tracking-micro text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-0.5">
                       <MapPin className="w-3 h-3" />
                       <span>EVENT VENUE</span>
                     </div>
-                    <span className="font-syne text-[10px] sm:text-xs font-bold text-white uppercase tracking-wide">
+                    <span className="font-jost text-[10px] sm:text-xs font-bold text-white uppercase tracking-wide">
                       {LIFESTYLE_2026.isConfirmed ? LIFESTYLE_2026.venueDisplay : "DUBAI · VENUE: TO BE ANNOUNCED"}
                     </span>
                   </div>
 
                   {/* Dress Code */}
                   <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-2.5 sm:p-3 rounded-xl flex flex-col justify-between shadow-sm">
-                    <div className="flex items-center gap-1.5 text-[9px] sm:text-[10px] font-syne tracking-micro text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-0.5">
+                    <div className="flex items-center gap-1.5 text-[9px] sm:text-[10px] font-jost tracking-micro text-[#F15E1C] dark:text-[#D4AF37] font-bold uppercase mb-0.5">
                       <Sparkles className="w-3 h-3" />
                       <span>DRESS CODE</span>
                     </div>
-                    <span className="font-syne text-[10px] sm:text-[11px] font-bold text-white uppercase tracking-wide leading-tight">
+                    <span className="font-jost text-[10px] sm:text-[11px] font-bold text-white uppercase tracking-wide leading-tight">
                       FASHIONABLE &amp; HAUTE COUTURE
                     </span>
                   </div>
@@ -270,7 +270,7 @@ export default function EventInfoModal() {
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
                   <button
                     onClick={handleRegisterClick}
-                    className="flex-1 bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] transition-all duration-300 min-h-[42px] sm:min-h-[46px] flex items-center justify-center gap-2 rounded-xl font-syne text-xs tracking-caps font-bold shadow-lg"
+                    className="flex-1 bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] transition-all duration-300 min-h-[42px] sm:min-h-[46px] flex items-center justify-center gap-2 rounded-xl font-jost text-xs tracking-caps font-bold shadow-lg"
                   >
                     <GradientFlowText variant="primary">REGISTER / ENQUIRE</GradientFlowText>
                     <ArrowRight className="w-4 h-4" />
@@ -278,7 +278,7 @@ export default function EventInfoModal() {
 
                   <button
                     onClick={handleSponsorshipClick}
-                    className="flex-1 border border-[#F15E1C]/60 dark:border-[#D4AF37]/70 bg-white/5 backdrop-blur-sm px-4 py-2.5 sm:py-3 text-xs font-syne tracking-caps font-bold text-white hover:bg-[#D4AF37]/15 hover:border-[#D4AF37] transition-all duration-300 min-h-[42px] sm:min-h-[46px] flex items-center justify-center gap-2 rounded-xl shadow-sm"
+                    className="flex-1 border border-[#F15E1C]/60 dark:border-[#D4AF37]/70 bg-white/5 backdrop-blur-sm px-4 py-2.5 sm:py-3 text-xs font-jost tracking-caps font-bold text-white hover:bg-[#D4AF37]/15 hover:border-[#D4AF37] transition-all duration-300 min-h-[42px] sm:min-h-[46px] flex items-center justify-center gap-2 rounded-xl shadow-sm"
                   >
                     <GradientFlowText variant="gold">SPONSORSHIP ENQUIRY</GradientFlowText>
                     <ExternalLink className="w-4 h-4 text-[#F15E1C] dark:text-[#D4AF37]" />
@@ -297,7 +297,7 @@ export default function EventInfoModal() {
                       className="h-5 sm:h-6 w-auto object-contain"
                     />
                   </div>
-                  <div className="font-syne text-[9px] sm:text-[10px] tracking-[0.18em] font-bold text-white/60 uppercase">
+                  <div className="font-jost text-[9px] sm:text-[10px] tracking-[0.18em] font-bold text-white/60 uppercase">
                     FASHAI UNIVERSAL · DUBAI 2026
                   </div>
                 </div>
@@ -321,7 +321,7 @@ export default function EventInfoModal() {
                   <div className="absolute bottom-4 left-4 right-4 p-3.5 bg-black/70 backdrop-blur-md rounded-xl border border-white/15">
                     <div className="flex items-center gap-1.5 mb-1">
                       <span className="w-2 h-2 rounded-full bg-[#D4AF37] shadow-[0_0_6px_rgba(212,175,55,0.8)]" />
-                      <span className="font-syne text-[10px] tracking-widest text-[#D4AF37] font-bold uppercase">
+                      <span className="font-jost text-[10px] tracking-widest text-[#D4AF37] font-bold uppercase">
                         HAUTE COUTURE RUNWAY
                       </span>
                     </div>
