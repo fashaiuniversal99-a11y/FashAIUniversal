@@ -24,28 +24,31 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   if (!article) return {};
 
   const url = `https://www.fashaiuniversal.com/fashion-magazine/${article.slug}`;
+  const imageUrl = `https://www.fashaiuniversal.com${article.primaryImage}`;
+  const title = `${article.seoTitle || article.title} | FashAI Universal`;
 
   return {
-    title: `${article.title} | FashAI Universal Magazine`,
-    description: article.subtitle,
+    title,
+    description: article.metaDescription || article.subtitle,
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title: `${article.title} | FashAI Universal Magazine`,
-      description: article.subtitle,
+      title,
+      description: article.metaDescription || article.subtitle,
       url,
       siteName: "FashAI Universal",
       type: "article",
       publishedTime: article.publishedDate,
-      authors: [article.author],
-      images: [{ url: article.primaryImage, width: 1200, height: 630, alt: article.primaryImageAlt }],
+      modifiedTime: article.publishedDate,
+      authors: ["FashAI Universal"],
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: article.primaryImageAlt }],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${article.title} | FashAI Universal Magazine`,
-      description: article.subtitle,
-      images: [article.primaryImage],
+      title,
+      description: article.metaDescription || article.subtitle,
+      images: [imageUrl],
     },
   };
 }
@@ -57,6 +60,10 @@ export default function MagazineArticleDetailPage({ params }: ArticlePageProps) 
     notFound();
   }
 
+  const currentIndex = MAGAZINE_ARTICLES.findIndex((a) => a.slug === article.slug || a.id === article.slug);
+  const prevArticle = currentIndex > 0 ? MAGAZINE_ARTICLES[currentIndex - 1] : null;
+  const nextArticle = currentIndex < MAGAZINE_ARTICLES.length - 1 ? MAGAZINE_ARTICLES[currentIndex + 1] : null;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -67,12 +74,13 @@ export default function MagazineArticleDetailPage({ params }: ArticlePageProps) 
           "@type": "WebPage",
           "@id": `https://www.fashaiuniversal.com/fashion-magazine/${article.slug}`,
           "url": `https://www.fashaiuniversal.com/fashion-magazine/${article.slug}`,
-          "name": article.title,
+          "name": article.seoTitle || article.title,
         },
         "headline": article.title,
-        "description": article.subtitle,
+        "description": article.metaDescription || article.subtitle,
         "image": `https://www.fashaiuniversal.com${article.primaryImage}`,
         "datePublished": article.publishedDate,
+        "dateModified": article.publishedDate,
         "author": {
           "@type": "Organization",
           "name": "FashAI Universal",
@@ -82,7 +90,14 @@ export default function MagazineArticleDetailPage({ params }: ArticlePageProps) 
           "@type": "Organization",
           "name": "FashAI Universal",
           "url": "https://www.fashaiuniversal.com",
-          "logo": "https://www.fashaiuniversal.com/assets/brand/fashai_logo_final.png",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.fashaiuniversal.com/assets/brand/fashai_logo_final.png",
+          },
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `https://www.fashaiuniversal.com/fashion-magazine/${article.slug}`,
         },
       },
       {
@@ -103,7 +118,7 @@ export default function MagazineArticleDetailPage({ params }: ArticlePageProps) 
           {
             "@type": "ListItem",
             "position": 3,
-            "name": article.title,
+            "name": article.seoTitle || article.title,
             "item": `https://www.fashaiuniversal.com/fashion-magazine/${article.slug}`,
           },
         ],
@@ -199,35 +214,64 @@ export default function MagazineArticleDetailPage({ params }: ArticlePageProps) 
           </div>
         )}
 
-        {/* RELATED COMMERCIAL LINKS */}
-        <div className="pt-6 border-t border-black/10 dark:border-white/10 space-y-3">
-          <span className="font-jost text-xs font-bold uppercase tracking-wider text-[#D4AF37] block">
-            EXPLORE RELATED SERVICES &amp; EVENTS
-          </span>
-          <div className="flex flex-wrap gap-4 text-xs font-jost font-bold uppercase">
-            <Link href="/services/fashion-show-management-dubai" className="text-[#D4AF37] hover:underline">
-              Fashion Show Management Dubai ↗
-            </Link>
-            <Link href="/services/corporate-events-dubai" className="text-[#D4AF37] hover:underline">
-              Corporate Events Dubai ↗
-            </Link>
-            <Link href="/events" className="text-[#D4AF37] hover:underline">
-              All Events ↗
-            </Link>
-            <Link href="/projects" className="text-[#D4AF37] hover:underline">
-              Projects Portfolio ↗
-            </Link>
+        {/* CONTEXTUAL RELATED SERVICES & EXPERIENCES */}
+        {article.relatedLinks && article.relatedLinks.length > 0 && (
+          <div className="pt-6 border-t border-black/10 dark:border-white/10 space-y-3">
+            <span className="font-jost text-xs font-bold uppercase tracking-wider text-[#D4AF37] block">
+              EXPLORE RELATED SERVICES &amp; EXPERIENCES
+            </span>
+            <div className="flex flex-wrap gap-4 text-xs font-jost font-bold uppercase">
+              {article.relatedLinks.map((link, i) => (
+                <Link key={i} href={link.href} className="text-[#D4AF37] hover:underline">
+                  {link.label} ↗
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
-        {/* CTA BANNER */}
+        {/* CONTEXTUAL TALENT & COLLABORATION LINKS */}
+        {article.talentLinks && article.talentLinks.length > 0 && (
+          <div className="pt-4 space-y-3">
+            <span className="font-jost text-xs font-bold uppercase tracking-wider text-[#D4AF37] block">
+              EXPLORE FASHION TALENT &amp; COLLABORATION
+            </span>
+            <div className="flex flex-wrap gap-4 text-xs font-jost font-bold uppercase">
+              {article.talentLinks.map((link, i) => (
+                <Link key={i} href={link.href} className="text-[#D4AF37] hover:underline">
+                  {link.label} ↗
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* ARTICLE NAVIGATION (PREV / NEXT) */}
+        {(prevArticle || nextArticle) && (
+          <div className="pt-6 border-t border-black/10 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-jost font-bold uppercase">
+            {prevArticle ? (
+              <Link href={`/fashion-magazine/${prevArticle.slug}`} className="inline-flex items-center gap-2 text-[#D4AF37] hover:underline">
+                <ArrowLeft className="w-3.5 h-3.5" />
+                <span>PREVIOUS: {prevArticle.seoTitle}</span>
+              </Link>
+            ) : <div />}
+            {nextArticle && (
+              <Link href={`/fashion-magazine/${nextArticle.slug}`} className="inline-flex items-center gap-2 text-[#D4AF37] hover:underline sm:ml-auto">
+                <span>NEXT: {nextArticle.seoTitle}</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            )}
+          </div>
+        )}
+
+        {/* TAILORED CTA BANNER */}
         <div className="pt-8">
           <div className="p-8 rounded-2xl bg-black text-white text-center space-y-4 border border-[#D4AF37]/30">
             <h3 className="font-serif-display text-2xl sm:text-3xl font-light uppercase">
-              READY TO PLAN YOUR EVENT OR SPONSORSHIP?
+              READY TO DISCUSS YOUR FASHION PRODUCTION?
             </h3>
             <p className="font-jost text-sm text-white/70 max-w-xl mx-auto">
-              Discuss your runway production, corporate summit, or event partnership parameters with FashAI Universal.
+              {article.ctaDescription || "Discuss your runway production, corporate summit, or event partnership parameters with FashAI Universal."}
             </p>
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link

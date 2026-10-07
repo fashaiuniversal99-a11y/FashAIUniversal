@@ -1,9 +1,17 @@
+export interface RelatedLink {
+  label: string;
+  href: string;
+}
+
 export interface MagazineArticle {
   id: string;
   slug: string;
   category: string;
   title: string;
   subtitle: string;
+  seoTitle: string;
+  metaDescription: string;
+  searchIntent: string;
   readTime: string;
   publishedDate: string;
   author: string;
@@ -15,6 +23,9 @@ export interface MagazineArticle {
   keyTakeaways?: string[];
   ctaText?: string;
   ctaHref?: string;
+  ctaDescription?: string;
+  relatedLinks?: RelatedLink[];
+  talentLinks?: RelatedLink[];
 }
 
 export const MAGAZINE_ARTICLES: MagazineArticle[] = [
@@ -24,6 +35,9 @@ export const MAGAZINE_ARTICLES: MagazineArticle[] = [
     category: "EVENT MANAGEMENT",
     title: "HOW MUCH DOES A FASHION SHOW COST IN DUBAI?",
     subtitle: "A comprehensive buyer guide to runway production parameters, venue budgeting, staging architecture, and talent orchestration in Dubai.",
+    seoTitle: "How Much Does a Fashion Show Cost in Dubai? Buyer Guide",
+    metaDescription: "Comprehensive buyer guide to fashion show costs in Dubai. Learn how venue scale, catwalk engineering, spatial lighting, and model casting shape production budgets.",
+    searchIntent: "commercial investigation / event budget planning",
     readTime: "5 MIN READ",
     publishedDate: "2026-09-15",
     author: "FashAI Universal Editorial",
@@ -44,7 +58,17 @@ export const MAGAZINE_ARTICLES: MagazineArticle[] = [
       "Tailored Briefs: Request a customized proposal based on your specific event parameters."
     ],
     ctaText: "PLAN YOUR EVENT →",
-    ctaHref: "/plan-your-event"
+    ctaHref: "/plan-your-event",
+    ctaDescription: "Discuss your runway production scope, spatial parameters, and budget planning directly with FashAI Universal.",
+    relatedLinks: [
+      { label: "Fashion Show Management Dubai", href: "/services/fashion-show-management-dubai" },
+      { label: "Brand Shoots Dubai", href: "/services/brand-shoots-dubai" },
+      { label: "Plan Your Event", href: "/plan-your-event" }
+    ],
+    talentLinks: [
+      { label: "Model Casting Dubai", href: "/talent/model-casting-dubai" },
+      { label: "Hire Fashion Talent", href: "/hire-talent" }
+    ]
   },
   {
     id: "runway-show-planning-checklist",
@@ -52,6 +76,9 @@ export const MAGAZINE_ARTICLES: MagazineArticle[] = [
     category: "PRODUCTION",
     title: "RUNWAY SHOW PLANNING CHECKLIST: FROM CONCEPT TO CATWALK",
     subtitle: "An essential step-by-step production blueprint for fashion brands, event directors, and creative producers.",
+    seoTitle: "Runway Show Planning Checklist: Concept to Catwalk",
+    metaDescription: "Step-by-step runway show planning checklist covering creative direction, venue permits, model casting, line-up choreography, and live staging control.",
+    searchIntent: "informational + commercial runway production planning",
     readTime: "6 MIN READ",
     publishedDate: "2026-09-28",
     author: "FashAI Universal Editorial",
@@ -72,7 +99,18 @@ export const MAGAZINE_ARTICLES: MagazineArticle[] = [
       "Media Ready: Ensure press kits and 4K visual assets are prepared for immediate post-show release."
     ],
     ctaText: "EXPLORE SHOW MANAGEMENT →",
-    ctaHref: "/services/fashion-show-management-dubai"
+    ctaHref: "/services/fashion-show-management-dubai",
+    ctaDescription: "Ensure flawless backstage coordination and staging execution for your upcoming runway presentation.",
+    relatedLinks: [
+      { label: "Fashion Show Management Dubai", href: "/services/fashion-show-management-dubai" },
+      { label: "All Events Showcase", href: "/events" },
+      { label: "Plan Your Event", href: "/plan-your-event" }
+    ],
+    talentLinks: [
+      { label: "Model Casting Dubai", href: "/talent/model-casting-dubai" },
+      { label: "Choreographer Collaborations", href: "/talent/choreographer-collaborations" },
+      { label: "Stylist Opportunities", href: "/talent/stylist-opportunities" }
+    ]
   },
   {
     id: "how-to-sponsor-a-fashion-event",
@@ -80,6 +118,9 @@ export const MAGAZINE_ARTICLES: MagazineArticle[] = [
     category: "SPONSORSHIP",
     title: "HOW TO SPONSOR A FASHION EVENT: BRAND ALIGNMENT & VIP EXPOSURE",
     subtitle: "How luxury, tech, and corporate brands integrate into haute couture fashion weeks and high-net-worth delegate galas.",
+    seoTitle: "How to Sponsor a Fashion Event: Brand Alignment Guide",
+    metaDescription: "Learn how luxury, technology, and corporate brands integrate into high-profile fashion galas, experiential lounges, and VIP salons in Dubai and India.",
+    searchIntent: "brand sponsorship & VIP event partnership research",
     readTime: "5 MIN READ",
     publishedDate: "2026-10-02",
     author: "FashAI Universal Editorial",
@@ -99,7 +140,17 @@ export const MAGAZINE_ARTICLES: MagazineArticle[] = [
       "Multi-Channel Exposure: Inclusion in event press kits, digital media campaigns, and official magazine features."
     ],
     ctaText: "SPONSORSHIP ENQUIRY →",
-    ctaHref: "/contact"
+    ctaHref: "/contact",
+    ctaDescription: "Connect with our brand partnership team to explore custom sponsorship packages for upcoming FashAI Universal productions.",
+    relatedLinks: [
+      { label: "Events & Galas", href: "/events" },
+      { label: "Projects Portfolio", href: "/projects" },
+      { label: "Contact Partnership Team", href: "/contact" }
+    ],
+    talentLinks: [
+      { label: "Creator Collaborations", href: "/talent/creator-collaborations" },
+      { label: "Designer Showcase", href: "/talent/fashion-designer-showcase-opportunities" }
+    ]
   },
   {
     id: "how-to-plan-a-corporate-event-in-dubai",
@@ -107,6 +158,9 @@ export const MAGAZINE_ARTICLES: MagazineArticle[] = [
     category: "CORPORATE EVENTS",
     title: "HOW TO PLAN A LUXURY CORPORATE EVENT IN DUBAI",
     subtitle: "Key spatial design, technical staging, and executive guest hospitality standards for Dubai summits.",
+    seoTitle: "How to Plan a Luxury Corporate Event in Dubai",
+    metaDescription: "Essential guide to spatial design, technical staging, LED environments, and executive guest hospitality for luxury corporate summits in Dubai.",
+    searchIntent: "corporate summit & luxury brand event planning",
     readTime: "5 MIN READ",
     publishedDate: "2026-10-05",
     author: "FashAI Universal Editorial",
@@ -125,7 +179,16 @@ export const MAGAZINE_ARTICLES: MagazineArticle[] = [
       "Full Production: End-to-end management from brief to post-event media."
     ],
     ctaText: "CORPORATE EVENTS DUBAI →",
-    ctaHref: "/services/corporate-events-dubai"
+    ctaHref: "/services/corporate-events-dubai",
+    ctaDescription: "Elevate your enterprise summit with runway-grade spatial aesthetics and full technical production in Dubai.",
+    relatedLinks: [
+      { label: "Corporate Events Dubai", href: "/services/corporate-events-dubai" },
+      { label: "Event Management Gurgaon", href: "/services/event-management-gurgaon" },
+      { label: "Plan Your Event", href: "/plan-your-event" }
+    ],
+    talentLinks: [
+      { label: "Hire Fashion Talent", href: "/hire-talent" }
+    ]
   },
   {
     id: "beauty-artistry",
@@ -133,6 +196,9 @@ export const MAGAZINE_ARTICLES: MagazineArticle[] = [
     category: "BEAUTY & BACKSTAGE",
     title: "BACKSTAGE BEAUTY & EDITORIAL ARTISTRY",
     subtitle: "Precision beauty direction and makeup artistry crafted for high-definition catwalk and camera lighting.",
+    seoTitle: "Backstage Beauty & Editorial Artistry | FashAI Universal",
+    metaDescription: "Explore backstage makeup artistry, skin preparation, and beauty direction engineered for high-definition camera lights and couture catwalks.",
+    searchIntent: "backstage beauty direction & makeup artistry discovery",
     readTime: "3 MIN READ",
     publishedDate: "2026-08-20",
     author: "FashAI Universal Editorial",
@@ -151,8 +217,18 @@ export const MAGAZINE_ARTICLES: MagazineArticle[] = [
       "Theme Harmonization: Matching beauty accents to collection textiles.",
       "Catwalk Final Touch: Quick backstage touch-ups seconds before stage entry."
     ],
-    ctaText: "MAKEUP ARTIST OPPORTUNITIES →",
-    ctaHref: "/talent/makeup-artist-opportunities"
+    ctaText: "EXPLORE BEAUTY ROSTER →",
+    ctaHref: "/talent/makeup-artist-opportunities",
+    ctaDescription: "Join our backstage beauty roster or hire certified makeup artists and stylists for your next editorial project.",
+    relatedLinks: [
+      { label: "Brand Shoots Dubai", href: "/services/brand-shoots-dubai" },
+      { label: "Fashion Magazine Index", href: "/fashion-magazine" }
+    ],
+    talentLinks: [
+      { label: "Makeup Artist Opportunities", href: "/talent/makeup-artist-opportunities" },
+      { label: "Stylist Opportunities", href: "/talent/stylist-opportunities" },
+      { label: "Talent Roster", href: "/talent" }
+    ]
   },
   {
     id: "gala-appearances",
@@ -160,6 +236,9 @@ export const MAGAZINE_ARTICLES: MagazineArticle[] = [
     category: "EVENTS",
     title: "VIP SALONS & GLOBAL PATRON ENGAGEMENT",
     subtitle: "High-profile VIP gatherings, luxury galas, and celebrity appearances across our event formats.",
+    seoTitle: "VIP Salons & Global Patron Engagement | FashAI Universal",
+    metaDescription: "Inside FashAI Universal VIP salons, high-profile galas, red carpet receptions, and executive networking events across Dubai and India.",
+    searchIntent: "VIP galas & high-profile event format discovery",
     readTime: "4 MIN READ",
     publishedDate: "2026-08-28",
     author: "FashAI Universal Editorial",
@@ -178,7 +257,17 @@ export const MAGAZINE_ARTICLES: MagazineArticle[] = [
       "Executive Salon Gatherings: High-level networking and brand collaboration.",
       "Couture Gala Presentation: Evening showcase celebrating creative excellence."
     ],
-    ctaText: "EXPLORE PROJECTS →",
-    ctaHref: "/projects"
+    ctaText: "VIEW EVENTS →",
+    ctaHref: "/events",
+    ctaDescription: "Discover upcoming FashAI Universal event formats, VIP salons, and fashion galas across Dubai and India.",
+    relatedLinks: [
+      { label: "Projects Portfolio", href: "/projects" },
+      { label: "All Events", href: "/events" },
+      { label: "About FashAI Universal", href: "/about" }
+    ],
+    talentLinks: [
+      { label: "Creator Collaborations", href: "/talent/creator-collaborations" },
+      { label: "Hire Fashion Talent", href: "/hire-talent" }
+    ]
   }
 ];
