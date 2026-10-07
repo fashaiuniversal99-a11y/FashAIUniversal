@@ -22,7 +22,7 @@ export default function TalentShareCardClient({ talent }: TalentShareCardClientP
       try {
         await navigator.share({
           title: `${talent.name} — FashAI Universal Talent Roster`,
-          text: `${talent.name} (${talent.category}) is part of the FashAI Universal talent network for LifeStyle 2026.`,
+          text: `${talent.name} (${talent.category}) is part of the FashAI Universal talent network.`,
           url: shareUrl,
         });
         return;

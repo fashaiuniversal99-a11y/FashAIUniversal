@@ -217,7 +217,7 @@ function TalentDirectoryContent() {
                         className="w-full bg-transparent border border-black/15 dark:border-white/15 text-[#333333] dark:text-white/80 hover:border-[#D4AF37] hover:text-[#D4AF37] py-1.5 px-3 rounded-xl text-[10px] font-jost font-bold tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-1.5"
                       >
                         <Sparkles className="w-3 h-3 text-[#D4AF37]" />
-                        <span>TALENT SHARE CARD</span>
+                        <span>VIEW PROFILE / SHARE</span>
                       </Link>
                     </div>
                   </motion.div>

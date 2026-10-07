@@ -154,17 +154,17 @@ export default function SponsorshipModal({
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
               <span className="font-jost text-[11px] font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
-                {initialMode === "DECK" ? "SPONSORSHIP DECK REQUEST" : "SPONSORSHIP ENQUIRY"}
+                SPONSORSHIP ENQUIRY
               </span>
             </div>
             <h2
               id="sponsor-modal-title"
               className="font-serif-display text-2xl sm:text-3xl md:text-4xl font-light uppercase tracking-tight"
             >
-              LIFESTYLE <span className="italic text-[#D4AF37] font-normal">2026</span>
+              SPONSOR LIFESTYLE <span className="italic text-[#D4AF37] font-normal">2026</span>
             </h2>
             <p className="font-sans text-xs sm:text-sm text-[#555555] dark:text-white/70 font-light leading-relaxed">
-              Enquire about brand partnership and sponsorship opportunities for LifeStyle 2026 (Dubai · Date: TO BE ANNOUNCED).
+              Submit a sponsorship enquiry for LifeStyle 2026 (Dubai · Date: TO BE ANNOUNCED). Sponsorship materials can be shared following enquiry evaluation.
             </p>
           </div>
 
@@ -187,18 +187,7 @@ export default function SponsorshipModal({
                   We&apos;ve received your sponsorship enquiry.
                 </p>
                 <p className="font-sans text-xs sm:text-sm text-[#666666] dark:text-white/70 font-light">
-                  Our team will contact you with the latest information.
-                </p>
-              </div>
-
-              {/* Truthful Controlled Deck State */}
-              <div className="p-5 rounded-2xl bg-[#FAF8F5] dark:bg-white/5 border border-[#D4AF37]/30 text-left space-y-2">
-                <div className="flex items-center gap-2 text-[#D4AF37] font-jost text-xs font-bold uppercase tracking-wider">
-                  <FileText className="w-4 h-4" />
-                  <span>SPONSORSHIP DECK</span>
-                </div>
-                <p className="font-sans text-xs sm:text-sm text-[#444444] dark:text-white/80 font-light leading-relaxed">
-                  Our official sponsorship deck is being prepared. Please submit your details and our team will share the latest information with you.
+                  Our team will evaluate your request and contact you with sponsorship details.
                 </p>
               </div>
 
@@ -330,7 +319,7 @@ export default function SponsorshipModal({
                     </>
                   ) : (
                     <>
-                      <span>GET SPONSORSHIP DECK</span>
+                      <span>SUBMIT SPONSORSHIP ENQUIRY</span>
                       <Send className="w-3.5 h-3.5" />
                     </>
                   )}

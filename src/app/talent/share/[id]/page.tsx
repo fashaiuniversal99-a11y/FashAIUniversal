@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: SharePageProps): Promise<Meta
   if (!talent) return {};
 
   const url = `https://www.fashaiuniversal.com/talent/share/${talent.id}`;
-  const title = `${talent.name} — ${talent.category} | FashAI Universal & LifeStyle 2026`;
-  const description = `${talent.name} (${talent.specialty}) is part of the approved FashAI Universal talent network for LifeStyle 2026 & international productions.`;
+  const title = `${talent.name} — ${talent.category} | FashAI Universal`;
+  const description = `${talent.name} (${talent.specialty}) is part of the approved FashAI Universal talent network.`;
 
   return {
     title,

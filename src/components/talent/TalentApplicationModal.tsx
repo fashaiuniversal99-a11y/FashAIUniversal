@@ -149,7 +149,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
           {/* Top Header Bar */}
           <div className="relative px-6 py-5 sm:px-8 sm:py-6 border-b border-white/10 bg-black/60 flex items-center justify-between flex-shrink-0">
             <div>
-              <div className="flex items-center gap-2 text-[10px] sm:text-xs font-syne tracking-micro text-brand-orange font-bold uppercase mb-1">
+              <div className="flex items-center gap-2 text-[10px] sm:text-xs font-jost tracking-micro text-brand-orange font-bold uppercase mb-1">
                 <span>OFFICIAL TALENT RECRUITMENT PORTAL</span>
               </div>
               <h2 className="font-serif-display text-2xl sm:text-4xl font-light text-brand-white uppercase tracking-tight">
@@ -177,7 +177,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                     setIsSubmitted(false);
                     setErrorMessage("");
                   }}
-                  className={`px-3 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-syne tracking-wider uppercase whitespace-nowrap transition-all duration-300 border ${
+                  className={`px-3 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-jost tracking-wider uppercase whitespace-nowrap transition-all duration-300 border ${
                     isActive
                       ? "bg-brand-orange text-white border-brand-orange font-bold shadow-[0_0_15px_rgba(241,94,28,0.4)]"
                       : "bg-black/40 text-brand-platinum/80 border-white/10 hover:border-white/30 hover:text-white"
@@ -197,7 +197,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                   <Check className="w-10 h-10" />
                 </div>
                 <div className="space-y-2">
-                  <span className="text-xs font-syne tracking-micro text-brand-green font-bold uppercase">
+                  <span className="text-xs font-jost tracking-micro text-brand-green font-bold uppercase">
                     CONFIRMATION CODE #TN-{Math.floor(100000 + Math.random() * 900000)}
                   </span>
                   <h3 className="font-serif-display text-3xl sm:text-5xl font-light text-brand-white uppercase">
@@ -210,7 +210,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                 <div className="pt-6">
                   <button
                     onClick={onClose}
-                    className="inline-flex items-center gap-3 bg-brand-orange hover:bg-[#ff6f2d] text-white px-8 py-3.5 text-xs font-syne tracking-caps font-bold transition-all shadow-lg hover:shadow-brand-orange/40"
+                    className="inline-flex items-center gap-3 bg-brand-orange hover:bg-[#ff6f2d] text-white px-8 py-3.5 text-xs font-jost tracking-caps font-bold transition-all shadow-lg hover:shadow-brand-orange/40"
                   >
                     <GradientFlowText variant="gold">BACK TO FASHAI UNIVERSAL</GradientFlowText>
                     <ArrowRight className="w-4 h-4" />
@@ -225,14 +225,14 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                 {/* Form Title & Sub-header */}
                 <div className="border-b border-white/10 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div>
-                    <span className="text-[10px] font-syne tracking-micro text-brand-green font-bold uppercase">
+                    <span className="text-[10px] font-jost tracking-micro text-brand-green font-bold uppercase">
                       ACTIVE CATEGORY RECRUITMENT
                     </span>
                     <h3 className="font-serif-display text-2xl sm:text-3xl font-light text-brand-white uppercase text-brand-yellow-golden">
                       {activeCategoryMeta.formTitle}
                     </h3>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-syne text-brand-platinum/70 bg-black/40 px-3 py-1.5 border border-white/10 self-start sm:self-auto">
+                  <div className="flex items-center gap-2 text-xs font-jost text-brand-platinum/70 bg-black/40 px-3 py-1.5 border border-white/10 self-start sm:self-auto">
                     <ShieldCheck className="w-4 h-4 text-brand-green" />
                     <span>CONFIDENTIAL APPLICATION</span>
                   </div>
@@ -248,7 +248,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                 {/* 01 — PERSONAL SECTION */}
                 <div className="space-y-6">
                   <div className="flex items-center gap-3 border-b border-white/10 pb-2">
-                    <span className="text-xs font-syne tracking-micro font-bold text-brand-orange">
+                    <span className="text-xs font-jost tracking-micro font-bold text-brand-orange">
                       01 — PERSONAL
                     </span>
                     <span className="text-xs text-brand-platinum/50 font-light">
@@ -261,7 +261,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                     {activeCategory === "celebrity_public_figure" ? (
                       <>
                         <div className="space-y-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             01. PROFESSIONAL / STAGE NAME <span className="text-brand-orange">*</span>
                           </label>
                           <input
@@ -275,10 +275,10 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
 
                         <div className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                            <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                               02. REAL NAME <span className="text-brand-orange">*</span>
                             </label>
-                            <span className="text-[10px] font-syne text-brand-green font-bold px-1.5 py-0.5 bg-brand-green/10 border border-brand-green/30 uppercase">
+                            <span className="text-[10px] font-jost text-brand-green font-bold px-1.5 py-0.5 bg-brand-green/10 border border-brand-green/30 uppercase">
                               PRIVATE / CONFIDENTIAL
                             </span>
                           </div>
@@ -293,7 +293,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                       </>
                     ) : (
                       <div className="space-y-2 sm:col-span-2">
-                        <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                        <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                           01. FULL NAME <span className="text-brand-orange">*</span>
                         </label>
                         <input
@@ -309,7 +309,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                     {/* Choreographer, Designer & Creator Stage/Brand name */}
                     {activeCategory === "choreographer" && (
                       <div className="space-y-2 sm:col-span-2">
-                        <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                        <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                           02. PROFESSIONAL / STAGE NAME
                         </label>
                         <input
@@ -323,7 +323,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
 
                     {activeCategory === "fashion_designer" && (
                       <div className="space-y-2 sm:col-span-2">
-                        <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                        <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                           02. BRAND / PROFESSIONAL NAME
                         </label>
                         <input
@@ -337,7 +337,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
 
                     {activeCategory === "influencer_creator" && (
                       <div className="space-y-2">
-                        <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                        <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                           02. CREATOR / STAGE NAME
                         </label>
                         <input
@@ -350,7 +350,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                     )}
 
                     <div className="space-y-2">
-                      <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                      <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                         EMAIL ADDRESS <span className="text-brand-orange">*</span>
                       </label>
                       <input
@@ -363,7 +363,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                     </div>
 
                     <div className="space-y-2">
-                      <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                      <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                         WHATSAPP / TELEPHONE <span className="text-brand-orange">*</span>
                       </label>
                       <input
@@ -376,7 +376,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                     </div>
 
                     <div className="space-y-2 sm:col-span-2">
-                      <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                      <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                         CITY / COUNTRY <span className="text-brand-orange">*</span>
                       </label>
                       <input
@@ -393,7 +393,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                 {/* 02 — PROFESSIONAL SECTION */}
                 <div className="space-y-6">
                   <div className="flex items-center gap-3 border-b border-white/10 pb-2">
-                    <span className="text-xs font-syne tracking-micro font-bold text-brand-orange">
+                    <span className="text-xs font-jost tracking-micro font-bold text-brand-orange">
                       02 — PROFESSIONAL
                     </span>
                     <span className="text-xs text-brand-platinum/50 font-light">
@@ -406,7 +406,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                     {activeCategory === "choreographer" && (
                       <>
                         <div className="space-y-2 sm:col-span-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             YEARS OF EXPERIENCE
                           </label>
                           <select name="experience" className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none">
@@ -419,7 +419,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2 sm:col-span-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             CHOREOGRAPHY SPECIALIZATION
                           </label>
                           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1">
@@ -443,7 +443,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2 sm:col-span-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             PROFESSIONAL SKILLS / DANCE STYLES
                           </label>
                           <input
@@ -460,7 +460,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                     {activeCategory === "fashion_designer" && (
                       <>
                         <div className="space-y-2 sm:col-span-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             DESIGN SPECIALIZATION
                           </label>
                           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
@@ -474,7 +474,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2 sm:col-span-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             YEARS OF EXPERIENCE
                           </label>
                           <select name="experience" className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none">
@@ -492,7 +492,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                     {activeCategory === "model" && (
                       <>
                         <div className="space-y-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             AGE <span className="text-brand-orange">*</span>
                           </label>
                           <input
@@ -507,7 +507,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             GENDER
                           </label>
                           <select name="gender" className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none">
@@ -520,7 +520,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             HEIGHT (CM) <span className="text-brand-orange">*</span>
                           </label>
                           <input
@@ -535,7 +535,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             MEASUREMENTS (BUST/CHEST – WAIST – HIPS)
                           </label>
                           <input
@@ -547,7 +547,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             SHOE SIZE
                           </label>
                           <select name="shoeSize" className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none">
@@ -562,7 +562,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2 sm:col-span-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             MODELING CATEGORY
                           </label>
                           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1">
@@ -581,7 +581,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                     {activeCategory === "makeup_artist" && (
                       <>
                         <div className="space-y-2 sm:col-span-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             YEARS OF EXPERIENCE
                           </label>
                           <select name="experience" className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none">
@@ -594,7 +594,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2 sm:col-span-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             SPECIALIZATION
                           </label>
                           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
@@ -608,7 +608,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2 sm:col-span-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             MAKEUP STYLE / EXPERTISE
                           </label>
                           <input
@@ -625,7 +625,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                     {activeCategory === "fashion_stylist" && (
                       <>
                         <div className="space-y-2 sm:col-span-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             YEARS OF EXPERIENCE
                           </label>
                           <select name="experience" className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none">
@@ -638,7 +638,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2 sm:col-span-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             STYLING SPECIALIZATION
                           </label>
                           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
@@ -652,7 +652,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2 sm:col-span-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             YOUR STYLING / AESTHETIC
                           </label>
                           <input
@@ -669,7 +669,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                     {activeCategory === "influencer_creator" && (
                       <>
                         <div className="space-y-2 sm:col-span-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             CONTENT CATEGORY
                           </label>
                           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1">
@@ -683,7 +683,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             PRIMARY PLATFORM
                           </label>
                           <select name="primaryPlatform" className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none">
@@ -695,7 +695,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             FOLLOWER COUNT <span className="text-brand-orange">*</span>
                           </label>
                           <input
@@ -708,7 +708,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             AVERAGE VIEWS / REACH <span className="text-brand-orange">*</span>
                           </label>
                           <input
@@ -721,7 +721,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             ENGAGEMENT RATE (OPTIONAL)
                           </label>
                           <input
@@ -738,7 +738,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                     {activeCategory === "celebrity_public_figure" && (
                       <>
                         <div className="space-y-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             PROFESSION
                           </label>
                           <select name="profession" className="w-full bg-[#151210] border border-white/20 text-brand-white px-4 py-3 text-sm font-sans focus:border-brand-orange focus:outline-none">
@@ -752,7 +752,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             PROFESSIONAL CONTACT / PHONE <span className="text-brand-orange">*</span>
                           </label>
                           <input
@@ -765,7 +765,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             FOLLOWER COUNT
                           </label>
                           <input
@@ -777,7 +777,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             MANAGEMENT / AGENT CONTACT
                           </label>
                           <input
@@ -789,7 +789,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2 sm:col-span-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             MAJOR WORK / ACHIEVEMENTS
                           </label>
                           <input
@@ -801,7 +801,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                         </div>
 
                         <div className="space-y-2 sm:col-span-2">
-                          <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                          <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                             INTERESTED IN
                           </label>
                           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1">
@@ -821,7 +821,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
                 {/* 03 — PORTFOLIO / SOCIAL SECTION */}
                 <div className="space-y-6">
                   <div className="flex items-center gap-3 border-b border-white/10 pb-2">
-                    <span className="text-xs font-syne tracking-micro font-bold text-brand-orange">
+                    <span className="text-xs font-jost tracking-micro font-bold text-brand-orange">
                       03 — PORTFOLIO / SOCIAL
                     </span>
                     <span className="text-xs text-brand-platinum/50 font-light">
@@ -831,7 +831,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                      <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                         INSTAGRAM / SOCIAL MEDIA PROFILE
                       </label>
                       <input
@@ -844,7 +844,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
 
                     {activeCategory === "choreographer" && (
                       <div className="space-y-2">
-                        <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                        <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                           PORTFOLIO / SHOWREEL LINK
                         </label>
                         <input
@@ -858,7 +858,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
 
                     {activeCategory !== "influencer_creator" && activeCategory !== "choreographer" && (
                       <div className="space-y-2">
-                        <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                        <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                           PORTFOLIO / WEBSITE LINK
                         </label>
                         <input
@@ -872,7 +872,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
 
                     {activeCategory === "influencer_creator" && (
                       <div className="space-y-2">
-                        <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                        <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                           SOCIAL MEDIA HANDLE / LINK
                         </label>
                         <input
@@ -886,7 +886,7 @@ export default function TalentApplicationModal({ isOpen, onClose, initialCategor
 
                     {activeCategory === "choreographer" && (
                       <div className="space-y-2 sm:col-span-2">
-                        <label className="block text-xs font-syne tracking-wider text-brand-platinum/90 uppercase font-semibold">
+                        <label className="block text-xs font-jost tracking-wider text-brand-platinum/90 uppercase font-semibold">
                           PREVIOUS SHOWS / MAJOR PROJECTS
                         </label>
                         <input

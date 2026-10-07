@@ -18,8 +18,8 @@ export default function EventInfoModal() {
     setIsOpen(false);
   }, []);
 
-  // Handle CTA Navigation: Register / Enquire
-  const handleRegisterClick = () => {
+  // Handle CTA Navigation: Waiting List
+  const handleWaitingListClick = () => {
     handleClose();
     if (pathname === "/") {
       const contactElem = document.getElementById("contact");
@@ -28,7 +28,7 @@ export default function EventInfoModal() {
         return;
       }
     }
-    router.push("/contact?type=Registration");
+    router.push("/contact?type=WaitingList");
   };
 
   // Handle CTA Navigation: Sponsorship Enquiry
@@ -223,10 +223,10 @@ export default function EventInfoModal() {
                 {/* Announcement Notice Box */}
                 <div className="bg-white/5 backdrop-blur-md border border-[#F15E1C]/30 dark:border-[#D4AF37]/40 p-3 sm:p-4 rounded-xl shadow-md">
                   <h3 className="font-jost text-[11px] sm:text-xs tracking-wider font-bold text-[#F15E1C] dark:text-[#D4AF37] uppercase mb-0.5">
-                    REGISTRATIONS &amp; SPONSORSHIPS ARE OPEN
+                    OFFICIAL WAITING LIST &amp; SPONSORSHIPS OPEN
                   </h3>
                   <p className="font-sans text-xs text-white/80 font-light leading-relaxed">
-                    Open for delegates, international designers, press, and brand partners.
+                    Join the waiting list to receive updates when official date &amp; venue details are announced.
                   </p>
                 </div>
 
@@ -269,10 +269,10 @@ export default function EventInfoModal() {
                 {/* 2 Functional Action CTAs */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
                   <button
-                    onClick={handleRegisterClick}
+                    onClick={handleWaitingListClick}
                     className="flex-1 bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] transition-all duration-300 min-h-[42px] sm:min-h-[46px] flex items-center justify-center gap-2 rounded-xl font-jost text-xs tracking-caps font-bold shadow-lg"
                   >
-                    <GradientFlowText variant="primary">REGISTER / ENQUIRE</GradientFlowText>
+                    <span>JOIN THE WAITING LIST</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
 
@@ -280,7 +280,7 @@ export default function EventInfoModal() {
                     onClick={handleSponsorshipClick}
                     className="flex-1 border border-[#F15E1C]/60 dark:border-[#D4AF37]/70 bg-white/5 backdrop-blur-sm px-4 py-2.5 sm:py-3 text-xs font-jost tracking-caps font-bold text-white hover:bg-[#D4AF37]/15 hover:border-[#D4AF37] transition-all duration-300 min-h-[42px] sm:min-h-[46px] flex items-center justify-center gap-2 rounded-xl shadow-sm"
                   >
-                    <GradientFlowText variant="gold">SPONSORSHIP ENQUIRY</GradientFlowText>
+                    <span>SPONSORSHIP ENQUIRY</span>
                     <ExternalLink className="w-4 h-4 text-[#F15E1C] dark:text-[#D4AF37]" />
                   </button>
                 </div>

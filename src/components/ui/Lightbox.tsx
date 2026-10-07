@@ -124,7 +124,7 @@ export default function Lightbox({
             <span className="font-serif-display text-base sm:text-xl text-brand-white tracking-wide uppercase">
               FASHAI UNIVERSAL VISUAL ARCHIVE
             </span>
-            <span className="font-syne text-[10px] sm:text-xs tracking-micro text-brand-gold border border-hairline-gold px-2.5 py-0.5 font-semibold">
+            <span className="font-jost text-[10px] sm:text-xs tracking-micro text-brand-gold border border-hairline-gold px-2.5 py-0.5 font-semibold">
               {String(currentIndex + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
             </span>
           </div>
@@ -191,13 +191,13 @@ export default function Lightbox({
               {currentItem.title}
             </h3>
             {currentItem.subtitle && (
-              <p className="font-syne text-[10px] sm:text-xs tracking-micro text-brand-platinum mt-0.5">
+              <p className="font-jost text-[10px] sm:text-xs tracking-micro text-brand-platinum mt-0.5">
                 {currentItem.subtitle} {currentItem.category ? `• ${currentItem.category}` : ""}
               </p>
             )}
           </div>
 
-          <div className="text-[9px] sm:text-[10px] font-syne tracking-micro text-brand-gold uppercase">
+          <div className="text-[9px] sm:text-[10px] font-jost tracking-micro text-brand-gold uppercase">
             KEYBOARD ← / → • SWIPE MOBILE • ESC CLOSE
           </div>
         </div>

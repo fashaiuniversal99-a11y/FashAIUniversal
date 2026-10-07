@@ -66,7 +66,7 @@ export default function LocalDevicePreview() {
       <div className="fixed bottom-4 right-4 z-[9999] pointer-events-auto select-none print:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-2 bg-[#090807] hover:bg-black text-brand-yellow-golden border border-brand-yellow-golden/60 px-3.5 py-2 rounded-full text-[10px] font-syne font-bold tracking-wider uppercase shadow-[0_0_20px_rgba(250,182,10,0.3)] transition-all hover:scale-105"
+          className="flex items-center gap-2 bg-[#090807] hover:bg-black text-brand-yellow-golden border border-brand-yellow-golden/60 px-3.5 py-2 rounded-full text-[10px] font-jost font-bold tracking-wider uppercase shadow-[0_0_20px_rgba(250,182,10,0.3)] transition-all hover:scale-105"
           title="Local Development Device Preview Switcher"
         >
           <Monitor className="w-3.5 h-3.5" />
@@ -81,7 +81,7 @@ export default function LocalDevicePreview() {
             <div className="flex items-center justify-between border-b border-white/10 pb-2">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-[10px] font-syne font-bold tracking-wider text-brand-yellow-golden uppercase">
+                <span className="text-[10px] font-jost font-bold tracking-wider text-brand-yellow-golden uppercase">
                   LOCAL DEV VIEWPORT PREVIEWER
                 </span>
                 <span className="text-[9px] font-mono text-white/50">
@@ -92,7 +92,7 @@ export default function LocalDevicePreview() {
                 {activePreset.category !== "full" && (
                   <button
                     onClick={toggleOrientation}
-                    className="p-1.5 bg-white/5 hover:bg-white/10 rounded-lg text-xs font-syne flex items-center gap-1 text-white/80"
+                    className="p-1.5 bg-white/5 hover:bg-white/10 rounded-lg text-xs font-jost flex items-center gap-1 text-white/80"
                     title="Rotate orientation"
                   >
                     <RotateCcw className="w-3 h-3" />
@@ -122,7 +122,7 @@ export default function LocalDevicePreview() {
                         setIframeUrl(window.location.href);
                       }
                     }}
-                    className={`px-2.5 py-1.5 rounded-lg text-[10px] font-syne font-semibold flex items-center gap-1.5 transition-all border ${
+                    className={`px-2.5 py-1.5 rounded-lg text-[10px] font-jost font-semibold flex items-center gap-1.5 transition-all border ${
                       isSelected
                         ? "bg-brand-yellow-golden text-black border-brand-yellow-golden font-bold shadow-md"
                         : "bg-black/60 text-white/70 border-white/10 hover:border-brand-yellow-golden/50 hover:text-white"
@@ -144,7 +144,7 @@ export default function LocalDevicePreview() {
           {/* Device Top Control Bar */}
           <div
             style={{ width: getEffectiveWidth(), maxWidth: "100%" }}
-            className="flex items-center justify-between bg-[#0D0D0D] border border-white/15 px-4 py-2 rounded-t-2xl text-[10px] font-syne font-bold text-white uppercase tracking-wider shadow-lg"
+            className="flex items-center justify-between bg-[#0D0D0D] border border-white/15 px-4 py-2 rounded-t-2xl text-[10px] font-jost font-bold text-white uppercase tracking-wider shadow-lg"
           >
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-red-500" />

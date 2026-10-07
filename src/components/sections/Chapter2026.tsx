@@ -46,7 +46,7 @@ export default function Chapter2026() {
         DUBAI 2026
       </div>
 
-      <div className="container-editorial relative z-10 w-full max-w-[1500px] w-[92vw] mx-auto">
+      <div className="container-editorial relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -99,11 +99,11 @@ export default function Chapter2026() {
             variants={itemVariants}
             className="w-full max-w-4xl lg:max-w-[1050px] bg-[#FAF8F5] dark:bg-white/5 border border-[#D4AF37]/40 rounded-2xl p-6 sm:p-8 text-center shadow-md space-y-3 mx-auto"
           >
-            <h3 className="font-serif-display text-xl sm:text-2xl tracking-wide font-normal text-[#D4AF37] block">
-              Registrations &amp; Sponsorships Open
+            <h3 className="font-serif-display text-xl sm:text-2xl tracking-wide font-normal text-[#D4AF37] block uppercase">
+              Official Waiting List &amp; Sponsorship Enquiries
             </h3>
-            <p className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-[#444444] dark:text-white/90 font-light max-w-3xl mx-auto leading-relaxed">
-              Enquire now for delegate registration, international designer participation, and brand sponsorship opportunities for LifeStyle 2026.
+            <p className="font-sans text-sm sm:text-base md:text-lg text-[#444444] dark:text-white/90 font-light max-w-3xl mx-auto leading-relaxed">
+              Join the official waiting list to receive announcements as date and venue details are finalized, or submit a sponsorship enquiry to discuss potential brand opportunities.
             </p>
           </motion.div>
 
@@ -158,7 +158,8 @@ export default function Chapter2026() {
           >
             <Link
               href={LIFESTYLE_2026.waitingListCtaUrl}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-6 py-3.5 rounded-full font-jost text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-md group"
+              onClick={() => trackEvent("plan_event_click", { location: "chapter_2026" })}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] border border-[#D4AF37] px-8 py-4 rounded-full font-jost text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-md group min-h-[48px]"
             >
               <span>JOIN THE WAITING LIST</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
@@ -167,27 +168,14 @@ export default function Chapter2026() {
             <button
               type="button"
               onClick={() => {
-                setSponsorModalMode("DECK");
-                setIsSponsorModalOpen(true);
-                trackEvent("sponsorship_cta_click", { location: "lifestyle_2026", mode: "DECK" });
-              }}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-transparent border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 px-6 py-3.5 rounded-full font-jost text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 group"
-            >
-              <FileText className="w-4 h-4 text-[#D4AF37]" />
-              <span>GET SPONSORSHIP DECK</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => {
                 setSponsorModalMode("ENQUIRY");
                 setIsSponsorModalOpen(true);
-                trackEvent("sponsorship_cta_click", { location: "lifestyle_2026", mode: "ENQUIRY" });
+                trackEvent("sponsorship_cta_click", { location: "chapter_2026", mode: "ENQUIRY" });
               }}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 text-[#666666] dark:text-white/70 hover:text-[#D4AF37] dark:hover:text-[#D4AF37] font-jost text-xs font-bold tracking-wider uppercase transition-colors py-2 px-3"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-transparent border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 px-8 py-4 rounded-full font-jost text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 group min-h-[48px]"
             >
+              <FileText className="w-4 h-4 text-[#D4AF37]" />
               <span>SPONSORSHIP ENQUIRY</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
             </button>
           </motion.div>
         </motion.div>
