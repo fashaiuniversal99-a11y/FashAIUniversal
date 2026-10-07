@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowUpRight, Instagram, Facebook } from "lucide-react";
 
 export default function InstagramSection() {
-  const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61573489951314";
+  const FACEBOOK_URL = "https://www.facebook.com/61594069457693";
   const INSTAGRAM_URL = "https://www.instagram.com/fashai_universal";
 
   return (
@@ -68,31 +68,29 @@ export default function InstagramSection() {
 
           {/* Short Description */}
           <p className="font-sans text-base sm:text-lg md:text-xl lg:text-2xl text-[#222222] dark:text-white/85 font-normal max-w-2xl mx-auto leading-relaxed">
-            Connect with our official channels for runway highlights, backstage captures, event updates, and announcements across Instagram &amp; Facebook.
+            Connect with our official channels for runway highlights, backstage captures, event updates, and announcements.
           </p>
 
-          {/* CTAs (Instagram & Facebook Social Destinations) */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          {/* CTAs (Instagram & Facebook Social Icon Destinations) */}
+          <div className="flex items-center justify-center gap-4 sm:gap-6 pt-4">
             <a
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#E4405F] hover:bg-[#d63350] text-white px-8 py-4 rounded-full font-syne text-sm sm:text-base font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
+              aria-label="FashAI Universal Instagram"
+              className="w-14 h-14 sm:w-16 sm:h-16 inline-flex items-center justify-center bg-[#E4405F] hover:bg-[#d63350] text-white rounded-full transition-all duration-300 shadow-lg hover:scale-105 active:scale-95"
             >
-              <Instagram className="w-5 h-5 text-white" />
-              <span>INSTAGRAM</span>
-              <ArrowUpRight className="w-5 h-5 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <Instagram className="w-7 h-7 text-white" />
             </a>
 
             <a
               href={FACEBOOK_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#1877F2] hover:bg-[#1565d8] text-white px-8 py-4 rounded-full font-syne text-sm sm:text-base font-bold tracking-wider uppercase transition-all duration-300 shadow-lg group"
+              aria-label="FashAI Universal Facebook"
+              className="w-14 h-14 sm:w-16 sm:h-16 inline-flex items-center justify-center bg-[#1877F2] hover:bg-[#1565d8] text-white rounded-full transition-all duration-300 shadow-lg hover:scale-105 active:scale-95"
             >
-              <Facebook className="w-5 h-5 text-white" />
-              <span>FACEBOOK</span>
-              <ArrowUpRight className="w-5 h-5 text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <Facebook className="w-7 h-7 text-white" />
             </a>
           </div>
         </motion.div>

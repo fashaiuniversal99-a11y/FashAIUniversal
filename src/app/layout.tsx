@@ -77,7 +77,7 @@ export default function RootLayout({
         logo: "https://www.fashaiuniversal.com/assets/brand/fashai_logo_final.png",
         sameAs: [
           "https://www.instagram.com/fashai_universal",
-          "https://www.facebook.com/profile.php?id=61573489951314"
+          "https://www.facebook.com/61594069457693"
         ],
         description:
           "FashAI Universal provides end-to-end event management, planning, and production for luxury fashion and lifestyle events across the UAE, India, and worldwide.",

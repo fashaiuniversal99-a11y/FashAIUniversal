@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ExternalLink, Instagram, Facebook } from "lucide-react";
 
 export default function Chapter2025() {
   const homepageProjects = [
@@ -127,21 +127,19 @@ export default function Chapter2025() {
                     href={proj.instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 bg-[#D4AF37]/10 dark:bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-gray-900 dark:text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all px-3.5 py-2 text-[11px] font-syne font-bold rounded-lg"
-                    title="FashPrism Instagram"
+                    aria-label="FashPrism Instagram"
+                    className="inline-flex items-center justify-center bg-[#D4AF37]/10 dark:bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-gray-900 dark:text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all p-2 rounded-lg"
                   >
-                    <span>INSTAGRAM</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
+                    <Instagram className="w-4 h-4" />
                   </a>
                   <a
                     href={proj.projectSocialUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 bg-[#D4AF37]/10 dark:bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-gray-900 dark:text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all px-3.5 py-2 text-[11px] font-syne font-bold rounded-lg"
-                    title="Project Facebook Social"
+                    aria-label="FashPrism Facebook"
+                    className="inline-flex items-center justify-center bg-[#D4AF37]/10 dark:bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-gray-900 dark:text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all p-2 rounded-lg"
                   >
-                    <span>FACEBOOK</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    <Facebook className="w-4 h-4" />
                   </a>
                 </div>
               </div>

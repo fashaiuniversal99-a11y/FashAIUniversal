@@ -2,8 +2,9 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Loader2, CheckCircle, AlertCircle } from "lucide-react";
+import { Loader2, CheckCircle, AlertCircle, ArrowRight } from "lucide-react";
 import GradientFlowText from "../ui/GradientFlowText";
 import SubmitSuccessExpand from "../ui/SubmitSuccessExpand";
 import OfficeLocations from "./OfficeLocations";
@@ -123,7 +124,7 @@ function ContactContent({ showOfficeLocations = false }: ContactSectionProps) {
   };
 
   return (
-    <section id="contact" className="relative py-8 sm:py-12 md:py-14 bg-brand-void border-b border-hairline-orange overflow-hidden">
+    <section id="contact" className="relative py-8 sm:py-12 md:py-14 bg-brand-void border-b border-hairline-orange overflow-hidden select-none">
       <div className="container-editorial relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-6 sm:mb-8">
@@ -134,9 +135,32 @@ function ContactContent({ showOfficeLocations = false }: ContactSectionProps) {
           <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl font-light text-brand-white uppercase mb-4">
             LET&apos;S CREATE THE <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#FFEC69] font-normal">NEXT CHAPTER.</span>
           </h2>
-          <p className="font-sans text-lg sm:text-xl text-brand-platinum/90 font-light leading-relaxed">
-            For registrations, sponsorships, talent, press, brand partnerships and event participation across the FashAI Universal platform, submit an enquiry to the FashAI Universal team.
+          <p className="font-sans text-lg sm:text-xl text-brand-platinum/90 font-light leading-relaxed mb-6">
+            For registrations, sponsorships, talent, press, brand partnerships and event participation across the FashAI Universal platform, submit an enquiry or contact us directly at <span className="text-[#D4AF37] font-medium">contact@fashaiuniversal.com</span>.
           </p>
+
+          {/* Action CTAs / Conversion Paths */}
+          <div className="flex flex-wrap items-center gap-3">
+            <Link
+              href="/plan-your-event"
+              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#FFEC69] text-[#111111] font-syne text-xs font-bold tracking-wider uppercase px-5 py-2.5 rounded-full transition-all shadow-md"
+            >
+              <span>PLAN YOUR EVENT</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+            <Link
+              href="/hire-talent"
+              className="inline-flex items-center gap-2 border border-[#D4AF37] hover:bg-[#D4AF37]/10 text-white font-syne text-xs font-bold tracking-wider uppercase px-5 py-2.5 rounded-full transition-all"
+            >
+              <span>HIRE TALENT</span>
+            </Link>
+            <Link
+              href="/apply"
+              className="inline-flex items-center gap-2 border border-white/20 hover:border-[#D4AF37] text-white font-syne text-xs font-bold tracking-wider uppercase px-5 py-2.5 rounded-full transition-all"
+            >
+              <span>APPLY AS TALENT</span>
+            </Link>
+          </div>
         </div>
 
         {/* Office Locations Section */}

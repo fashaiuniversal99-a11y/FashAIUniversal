@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, ArrowRight, Instagram, MapPin } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Instagram, Facebook, MapPin } from "lucide-react";
 import { OFFICE_LOCATIONS } from "@/data/locations";
 
 export default function Footer() {
@@ -86,17 +86,25 @@ export default function Footer() {
               Fashion events and fashion talent, together. Dubai and India. Events and talent, handled by one team.
             </p>
 
-            {/* Social Links Badges */}
+            {/* Social Links Badges (Icon-Only, Clickable) */}
             <div className="pt-1 flex flex-wrap items-center gap-2">
               <a
                 href="https://www.instagram.com/fashai_universal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-black/10 dark:border-white/15 bg-white/80 dark:bg-white/10 text-xs font-syne font-semibold text-[#111111] dark:text-white hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-300 shadow-sm"
+                aria-label="FashAI Universal Instagram"
+                className="inline-flex items-center justify-center p-2.5 rounded-lg border border-black/10 dark:border-white/15 bg-white/80 dark:bg-white/10 text-[#111111] dark:text-white hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-300 shadow-sm"
               >
-                <Instagram className="w-4 h-4 text-[#D4AF37]" />
-                <span>@fashai_universal</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <Instagram className="w-5 h-5 text-[#D4AF37]" />
+              </a>
+              <a
+                href="https://www.facebook.com/61594069457693"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="FashAI Universal Facebook"
+                className="inline-flex items-center justify-center p-2.5 rounded-lg border border-black/10 dark:border-white/15 bg-white/80 dark:bg-white/10 text-[#111111] dark:text-white hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all duration-300 shadow-sm"
+              >
+                <Facebook className="w-5 h-5 text-[#D4AF37]" />
               </a>
             </div>
           </motion.div>
@@ -118,6 +126,7 @@ export default function Footer() {
               <ul className="space-y-2.5 sm:space-y-3 pt-1.5">
                 {[
                   { label: "Home", href: "/" },
+                  { label: "About Us", href: "/about" },
                   { label: "Upcoming", href: "/upcoming" },
                   { label: "Services", href: "/services" },
                   { label: "Events", href: "/events" },
@@ -240,28 +249,44 @@ export default function Footer() {
           className="my-6 p-4 sm:p-5 rounded-xl border border-black/15 dark:border-white/15 bg-transparent flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-none"
         >
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center shrink-0">
-              <Instagram className="w-5 h-5 text-[#D4AF37]" />
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center shrink-0">
+                <Instagram className="w-5 h-5 text-[#D4AF37]" />
+              </div>
+              <div className="w-10 h-10 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center shrink-0">
+                <Facebook className="w-5 h-5 text-[#D4AF37]" />
+              </div>
             </div>
             <div>
               <h5 className="font-syne text-xs sm:text-sm font-bold text-[#111111] dark:text-white uppercase tracking-wider">
                 FashAI Universal Socials
               </h5>
               <p className="font-sans text-xs text-[#555555] dark:text-white/70 leading-relaxed">
-                Connect with our official Instagram page (@fashai_universal) for event highlights, runway news &amp; announcements.
+                Connect with our official Instagram and Facebook channels for event highlights, runway news &amp; announcements.
               </p>
             </div>
           </div>
 
-          <a
-            href="https://www.instagram.com/fashai_universal"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold text-xs tracking-caps px-5 py-3 rounded-xl transition-all duration-300 shadow-md shrink-0 whitespace-nowrap w-full sm:w-auto"
-          >
-            <span>VIEW SOCIALS</span>
-            <ArrowUpRight className="w-4 h-4" />
-          </a>
+          <div className="flex items-center gap-2 shrink-0 w-full sm:w-auto">
+            <a
+              href="https://www.instagram.com/fashai_universal"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="FashAI Universal Instagram"
+              className="inline-flex items-center justify-center bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold p-3 rounded-xl transition-all duration-300 shadow-md shrink-0"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.facebook.com/61594069457693"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="FashAI Universal Facebook"
+              className="inline-flex items-center justify-center bg-[#D4AF37] text-[#111111] hover:bg-[#FFEC69] font-syne font-bold p-3 rounded-xl transition-all duration-300 shadow-md shrink-0"
+            >
+              <Facebook className="w-5 h-5" />
+            </a>
+          </div>
         </motion.div>
 
         {/* BOTTOM LEGAL BAR */}

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, ExternalLink, Instagram, Sparkles, Film, Compass, Users } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Instagram, Facebook, Sparkles, Film, Compass, Users } from "lucide-react";
 import { FASHPRISM_INDIA_DATA, FASHPRISM_INTERNATIONAL_DATA, FASHPRISM_VIP_DATA, FashPrismItem } from "@/data/fashprism";
 
 export default function ProjectsPageContent() {
@@ -41,19 +41,19 @@ export default function ProjectsPageContent() {
               href={FACEBOOK_PROJECT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#b89528] text-black px-5 py-2 rounded-full font-syne text-xs font-bold uppercase tracking-wider transition-all shadow-md"
+              aria-label="FashPrism Facebook"
+              className="inline-flex items-center justify-center bg-[#D4AF37] hover:bg-[#b89528] text-black p-3 rounded-full transition-all shadow-md"
             >
-              <ExternalLink className="w-3.5 h-3.5" />
-              <span>PROJECT FACEBOOK PAGE</span>
+              <Facebook className="w-4 h-4 text-black" />
             </a>
             <a
               href={INSTAGRAM_FASHPRISM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#D4AF37] hover:bg-[#b89528] text-black px-5 py-2 rounded-full font-syne text-xs font-bold uppercase tracking-wider transition-all shadow-md"
+              aria-label="FashPrism Instagram"
+              className="inline-flex items-center justify-center bg-[#D4AF37] hover:bg-[#b89528] text-black p-3 rounded-full transition-all shadow-md"
             >
-              <Instagram className="w-3.5 h-3.5" />
-              <span>FASHPRISM INSTAGRAM</span>
+              <Instagram className="w-4 h-4 text-black" />
             </a>
           </div>
 
@@ -101,19 +101,19 @@ export default function ProjectsPageContent() {
                   href={INSTAGRAM_FASHPRISM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 px-4 py-2 text-xs font-syne font-bold uppercase rounded-full hover:border-[#D4AF37] transition-colors text-gray-900 dark:text-white"
+                  aria-label="FashPrism Instagram"
+                  className="inline-flex items-center justify-center bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 p-2.5 rounded-full hover:border-[#D4AF37] transition-colors text-gray-900 dark:text-white"
                 >
-                  <Instagram className="w-3.5 h-3.5 text-[#D4AF37]" />
-                  <span>INSTAGRAM</span>
+                  <Instagram className="w-4 h-4 text-[#D4AF37]" />
                 </a>
                 <a
                   href={FACEBOOK_PROJECT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 px-4 py-2 text-xs font-syne font-bold uppercase rounded-full hover:border-[#D4AF37] transition-colors text-gray-900 dark:text-white"
+                  aria-label="FashPrism Facebook"
+                  className="inline-flex items-center justify-center bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 p-2.5 rounded-full hover:border-[#D4AF37] transition-colors text-gray-900 dark:text-white"
                 >
-                  <ExternalLink className="w-3.5 h-3.5 text-[#D4AF37]" />
-                  <span>VIEW SOCIAL</span>
+                  <Facebook className="w-4 h-4 text-[#D4AF37]" />
                 </a>
               </div>
             </div>
@@ -203,19 +203,19 @@ export default function ProjectsPageContent() {
                   href={INSTAGRAM_FASHPRISM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 px-4 py-2 text-xs font-syne font-bold uppercase rounded-full hover:border-[#D4AF37] transition-colors text-gray-900 dark:text-white"
+                  aria-label="FashPrism Instagram"
+                  className="inline-flex items-center justify-center bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 p-2.5 rounded-full hover:border-[#D4AF37] transition-colors text-gray-900 dark:text-white"
                 >
-                  <Instagram className="w-3.5 h-3.5 text-[#D4AF37]" />
-                  <span>INSTAGRAM</span>
+                  <Instagram className="w-4 h-4 text-[#D4AF37]" />
                 </a>
                 <a
                   href={FACEBOOK_PROJECT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 px-4 py-2 text-xs font-syne font-bold uppercase rounded-full hover:border-[#D4AF37] transition-colors text-gray-900 dark:text-white"
+                  aria-label="FashPrism Facebook"
+                  className="inline-flex items-center justify-center bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 p-2.5 rounded-full hover:border-[#D4AF37] transition-colors text-gray-900 dark:text-white"
                 >
-                  <ExternalLink className="w-3.5 h-3.5 text-[#D4AF37]" />
-                  <span>VIEW SOCIAL</span>
+                  <Facebook className="w-4 h-4 text-[#D4AF37]" />
                 </a>
               </div>
             </div>
@@ -304,10 +304,10 @@ export default function ProjectsPageContent() {
                 href={FACEBOOK_PROJECT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 px-4 py-2 text-xs font-syne font-bold uppercase rounded-full hover:border-[#D4AF37] transition-colors text-gray-900 dark:text-white"
+                aria-label="FashPrism Facebook"
+                className="inline-flex items-center justify-center bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 p-2.5 rounded-full hover:border-[#D4AF37] transition-colors text-gray-900 dark:text-white"
               >
-                <ExternalLink className="w-3.5 h-3.5 text-[#D4AF37]" />
-                <span>VIEW SOCIAL</span>
+                <Facebook className="w-4 h-4 text-[#D4AF37]" />
               </a>
             </div>
 

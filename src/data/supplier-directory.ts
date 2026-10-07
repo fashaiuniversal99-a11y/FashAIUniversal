@@ -30,7 +30,7 @@ export const OFFICIAL_SUPPLIER_CONFIG: SupplierDirectoryConfig = {
   contactEmail: "contact@fashaiuniversal.com",
   socials: {
     instagram: "https://www.instagram.com/fashai_universal",
-    facebook: "https://www.facebook.com/profile.php?id=61573489951314",
+    facebook: "https://www.facebook.com/61594069457693",
     // linkedin & youtube intentionally omitted until official verified URLs are established
   },
   locations: [
