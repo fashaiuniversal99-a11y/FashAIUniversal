@@ -20,6 +20,13 @@ export const metadata: Metadata = {
     siteName: "FashAI Universal",
     images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Brand Shoots & Editorial Production Dubai | FashAI Universal",
+    description:
+      "End-to-end brand shoot management, editorial creative direction, location curation, and model/talent coordination in Dubai, UAE.",
+    images: ["/assets/brand/fashai-og-share.png"],
+  },
 };
 
 const DELIVERABLES = [
@@ -63,20 +70,49 @@ const FAQS = [
 export default function BrandShootsDubaiPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Brand Shoots & Editorial Production Dubai",
-    "provider": {
-      "@type": "Organization",
-      "name": "FashAI Universal",
-      "url": "https://www.fashaiuniversal.com",
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Dubai",
-    },
-    "serviceType": "Fashion & Brand Shoot Production",
-    "url": "https://www.fashaiuniversal.com/services/brand-shoots-dubai",
-    "description": "Luxury brand shoot production, fashion editorial coordination, talent booking, and creative direction in Dubai, UAE.",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://www.fashaiuniversal.com/services/brand-shoots-dubai#service",
+        "name": "Brand Shoots & Editorial Production Dubai",
+        "provider": {
+          "@type": "Organization",
+          "name": "FashAI Universal",
+          "url": "https://www.fashaiuniversal.com",
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Dubai",
+        },
+        "serviceType": "Fashion & Brand Shoot Production",
+        "url": "https://www.fashaiuniversal.com/services/brand-shoots-dubai",
+        "description": "Luxury brand shoot production, fashion editorial coordination, talent booking, and creative direction in Dubai, UAE.",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.fashaiuniversal.com/services/brand-shoots-dubai#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.fashaiuniversal.com",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://www.fashaiuniversal.com/services",
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Brand Shoots Dubai",
+            "item": "https://www.fashaiuniversal.com/services/brand-shoots-dubai",
+          },
+        ],
+      },
+    ],
   };
 
   return (

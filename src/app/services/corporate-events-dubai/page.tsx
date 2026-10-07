@@ -20,6 +20,13 @@ export const metadata: Metadata = {
     siteName: "FashAI Universal",
     images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Corporate Event Management & Brand Launches Dubai | FashAI Universal",
+    description:
+      "Full-service corporate event management, executive summits, product launches, and IT tech activations in Dubai, UAE.",
+    images: ["/assets/brand/fashai-og-share.png"],
+  },
 };
 
 const DELIVERABLES = [
@@ -63,20 +70,49 @@ const FAQS = [
 export default function CorporateEventsDubaiPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Corporate Event Management & Brand Launches Dubai",
-    "provider": {
-      "@type": "Organization",
-      "name": "FashAI Universal",
-      "url": "https://www.fashaiuniversal.com",
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Dubai",
-    },
-    "serviceType": "Corporate Event Management",
-    "url": "https://www.fashaiuniversal.com/services/corporate-events-dubai",
-    "description": "Full-service corporate event management, executive summits, and luxury brand launches in Dubai, UAE.",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://www.fashaiuniversal.com/services/corporate-events-dubai#service",
+        "name": "Corporate Event Management & Brand Launches Dubai",
+        "provider": {
+          "@type": "Organization",
+          "name": "FashAI Universal",
+          "url": "https://www.fashaiuniversal.com",
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Dubai",
+        },
+        "serviceType": "Corporate Event Management",
+        "url": "https://www.fashaiuniversal.com/services/corporate-events-dubai",
+        "description": "Full-service corporate event management, executive summits, and luxury brand launches in Dubai, UAE.",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.fashaiuniversal.com/services/corporate-events-dubai#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.fashaiuniversal.com",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://www.fashaiuniversal.com/services",
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Corporate Events Dubai",
+            "item": "https://www.fashaiuniversal.com/services/corporate-events-dubai",
+          },
+        ],
+      },
+    ],
   };
 
   return (

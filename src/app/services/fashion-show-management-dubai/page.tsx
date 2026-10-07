@@ -21,6 +21,13 @@ export const metadata: Metadata = {
     siteName: "FashAI Universal",
     images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fashion Show Management & Runway Production Dubai | FashAI Universal",
+    description:
+      "End-to-end catwalk presentation, runway staging, backstage coordination, and talent management for fashion shows in Dubai, UAE.",
+    images: ["/assets/brand/fashai-og-share.png"],
+  },
 };
 
 const DELIVERABLES = [
@@ -64,20 +71,49 @@ const FAQS = [
 export default function FashionShowManagementDubaiPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Fashion Show Management & Runway Production Dubai",
-    "provider": {
-      "@type": "Organization",
-      "name": "FashAI Universal",
-      "url": "https://www.fashaiuniversal.com",
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Dubai",
-    },
-    "serviceType": "Fashion Show Production & Management",
-    "url": "https://www.fashaiuniversal.com/services/fashion-show-management-dubai",
-    "description": "End-to-end runway production, catwalk staging, and talent management for fashion shows in Dubai, UAE.",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://www.fashaiuniversal.com/services/fashion-show-management-dubai#service",
+        "name": "Fashion Show Management & Runway Production Dubai",
+        "provider": {
+          "@type": "Organization",
+          "name": "FashAI Universal",
+          "url": "https://www.fashaiuniversal.com",
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Dubai",
+        },
+        "serviceType": "Fashion Show Production & Management",
+        "url": "https://www.fashaiuniversal.com/services/fashion-show-management-dubai",
+        "description": "End-to-end runway production, catwalk staging, and talent management for fashion shows in Dubai, UAE.",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.fashaiuniversal.com/services/fashion-show-management-dubai#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.fashaiuniversal.com",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://www.fashaiuniversal.com/services",
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Fashion Show Management Dubai",
+            "item": "https://www.fashaiuniversal.com/services/fashion-show-management-dubai",
+          },
+        ],
+      },
+    ],
   };
 
   return (

@@ -20,6 +20,13 @@ export const metadata: Metadata = {
     siteName: "FashAI Universal",
     images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Event Management Company in Gurgaon & Delhi NCR | FashAI Universal",
+    description:
+      "Full-service event management, planning, and production based at our Gurgaon India HQ. Corporate events, fashion galas, and luxury brand experiences.",
+    images: ["/assets/brand/fashai-og-share.png"],
+  },
 };
 
 const DELIVERABLES = [
@@ -63,19 +70,65 @@ const FAQS = [
 export default function EventManagementGurgaonPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "FashAI Universal — Event Management Gurgaon",
-    "url": "https://www.fashaiuniversal.com/services/event-management-gurgaon",
-    "email": "contact@fashaiuniversal.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Platinum Floor, 14/23, Ardee City, Sector 52",
-      "addressLocality": "Gurgaon",
-      "addressRegion": "Haryana",
-      "postalCode": "122002",
-      "addressCountry": "IN",
-    },
-    "description": "Full-service event management, corporate event planning, and luxury fashion production in Gurgaon and Delhi NCR.",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://www.fashaiuniversal.com/services/event-management-gurgaon#service",
+        "name": "Event Management Company in Gurgaon & Delhi NCR",
+        "provider": {
+          "@type": "Organization",
+          "name": "FashAI Universal",
+          "url": "https://www.fashaiuniversal.com",
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Gurgaon" },
+          { "@type": "AdministrativeArea", "name": "Delhi NCR" }
+        ],
+        "serviceType": "Event Management & Production",
+        "url": "https://www.fashaiuniversal.com/services/event-management-gurgaon",
+        "description": "Full-service event management, corporate event planning, and luxury fashion production in Gurgaon and Delhi NCR.",
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.fashaiuniversal.com/services/event-management-gurgaon#localbusiness",
+        "name": "FashAI Universal — Event Management Gurgaon",
+        "url": "https://www.fashaiuniversal.com/services/event-management-gurgaon",
+        "email": "contact@fashaiuniversal.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Platinum Floor, 14/23, Ardee City, Sector 52",
+          "addressLocality": "Gurgaon",
+          "addressRegion": "Haryana",
+          "postalCode": "122002",
+          "addressCountry": "IN",
+        },
+        "description": "Full-service event management, corporate event planning, and luxury fashion production in Gurgaon and Delhi NCR.",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.fashaiuniversal.com/services/event-management-gurgaon#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.fashaiuniversal.com",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://www.fashaiuniversal.com/services",
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Event Management Gurgaon",
+            "item": "https://www.fashaiuniversal.com/services/event-management-gurgaon",
+          },
+        ],
+      },
+    ],
   };
 
   return (
