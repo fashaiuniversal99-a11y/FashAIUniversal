@@ -2,11 +2,26 @@ import type { Metadata } from "next";
 import ProjectsPageContent from "@/components/sections/ProjectsPageContent";
 
 export const metadata: Metadata = {
-  title: "Delivered Projects & Portfolio — FashAI Universal",
+  title: "Delivered Fashion Shows & Case Studies | FashAI Universal",
   description:
-    "Explore delivered fashion showcases, FashPrism India & International editions, VIP guest salons, catwalk choreography direction, and video editing production by FashAI Universal.",
+    "Explore delivered fashion show productions, FashPrism showcases, VIP guest salons, catwalk choreography, and video editing production by FashAI Universal.",
   alternates: {
     canonical: "https://www.fashaiuniversal.com/projects",
+  },
+  openGraph: {
+    title: "Delivered Fashion Shows & Case Studies | FashAI Universal",
+    description:
+      "Explore delivered fashion show productions, FashPrism showcases, VIP guest salons, catwalk choreography, and video editing production by FashAI Universal.",
+    url: "https://www.fashaiuniversal.com/projects",
+    siteName: "FashAI Universal",
+    images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Delivered Fashion Shows & Case Studies | FashAI Universal",
+    description:
+      "Explore delivered fashion show productions, FashPrism showcases, VIP guest salons, catwalk choreography, and video editing production by FashAI Universal.",
+    images: ["/assets/brand/fashai-og-share.png"],
   },
 };
 

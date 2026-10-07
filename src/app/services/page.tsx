@@ -6,11 +6,26 @@ import Link from "next/link";
 import { ArrowRight, Sparkles, Layers, ShieldCheck, Cpu, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services & Event Architecture — FashAI Universal",
+  title: "Fashion Show Production & Event Management Services | FashAI Universal",
   description:
-    "Events and talent, handled by one team. Discover FashAI Universal's core services: Haute Couture Catwalk Presentations, Luxury Brand Activations, International Talent Curation, and Event Architecture across Dubai and India.",
+    "FashAI Universal provides fashion show management, catwalk production, spatial digital design, luxury brand activations, and creative talent solutions across Dubai and India.",
   alternates: {
     canonical: "https://www.fashaiuniversal.com/services",
+  },
+  openGraph: {
+    title: "Fashion Show Production & Event Management Services | FashAI Universal",
+    description:
+      "FashAI Universal provides fashion show management, catwalk production, spatial digital design, luxury brand activations, and creative talent solutions across Dubai and India.",
+    url: "https://www.fashaiuniversal.com/services",
+    siteName: "FashAI Universal",
+    images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fashion Show Production & Event Management Services | FashAI Universal",
+    description:
+      "FashAI Universal provides fashion show management, catwalk production, spatial digital design, luxury brand activations, and creative talent solutions across Dubai and India.",
+    images: ["/assets/brand/fashai-og-share.png"],
   },
 };
 

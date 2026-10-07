@@ -4,11 +4,26 @@ import Chapter2026 from "@/components/sections/Chapter2026";
 import Chapter2025 from "@/components/sections/Chapter2025";
 
 export const metadata: Metadata = {
-  title: "All Events & Flagship Formats — FashAI Universal",
+  title: "Fashion Events, Catwalk Presentations & Galas | FashAI Universal",
   description:
-    "Explore all event experiences produced by FashAI Universal including LifeStyle 2026 Dubai, Haute Catwalk Presentations, Product Launches, Brand Shoots, Corporate Galas, and IT Summits.",
+    "Explore fashion shows, luxury brand activations, LifeStyle 2026, and corporate event presentations managed by FashAI Universal across Dubai and India.",
   alternates: {
     canonical: "https://www.fashaiuniversal.com/events",
+  },
+  openGraph: {
+    title: "Fashion Events, Catwalk Presentations & Galas | FashAI Universal",
+    description:
+      "Explore fashion shows, luxury brand activations, LifeStyle 2026, and corporate event presentations managed by FashAI Universal across Dubai and India.",
+    url: "https://www.fashaiuniversal.com/events",
+    siteName: "FashAI Universal",
+    images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fashion Events, Catwalk Presentations & Galas | FashAI Universal",
+    description:
+      "Explore fashion shows, luxury brand activations, LifeStyle 2026, and corporate event presentations managed by FashAI Universal across Dubai and India.",
+    images: ["/assets/brand/fashai-og-share.png"],
   },
 };
 

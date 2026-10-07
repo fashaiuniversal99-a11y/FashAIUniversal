@@ -21,6 +21,13 @@ export const metadata: Metadata = {
     siteName: "FashAI Universal",
     images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Press & Media Kit | FashAI Universal",
+    description:
+      "Official media kit, press statements, business overview, and verified office details for FashAI Universal.",
+    images: ["/assets/brand/fashai-og-share.png"],
+  },
 };
 
 export default function PressPage() {

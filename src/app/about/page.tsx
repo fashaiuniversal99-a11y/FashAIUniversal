@@ -8,11 +8,26 @@ import OfficeLocations from "@/components/sections/OfficeLocations";
 import InstagramSection from "@/components/sections/InstagramSection";
 
 export const metadata: Metadata = {
-  title: "About FashAI Universal — Event Management & Talent Ecosystem",
+  title: "About FashAI Universal | Fashion Events & Talent Platform",
   description:
-    "Learn about FashAI Universal: a global event management and production platform connecting luxury fashion experiences, brand activations, and creative talent across the UAE, India, and international destinations.",
+    "FashAI Universal delivers end-to-end fashion show management, brand activations, and creative talent solutions across Dubai, UAE, and Gurgaon, India. Powered by Arav Innovations.",
   alternates: {
     canonical: "https://www.fashaiuniversal.com/about",
+  },
+  openGraph: {
+    title: "About FashAI Universal | Fashion Events & Talent Platform",
+    description:
+      "FashAI Universal delivers end-to-end fashion show management, brand activations, and creative talent solutions across Dubai, UAE, and Gurgaon, India. Powered by Arav Innovations.",
+    url: "https://www.fashaiuniversal.com/about",
+    siteName: "FashAI Universal",
+    images: [{ url: "/assets/brand/fashai-og-share.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About FashAI Universal | Fashion Events & Talent Platform",
+    description:
+      "FashAI Universal delivers end-to-end fashion show management, brand activations, and creative talent solutions across Dubai, UAE, and Gurgaon, India. Powered by Arav Innovations.",
+    images: ["/assets/brand/fashai-og-share.png"],
   },
 };
 
