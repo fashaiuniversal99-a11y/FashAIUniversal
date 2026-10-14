@@ -13,6 +13,8 @@ export default function WhatWeDoSection() {
       subtitle: "FLAGSHIP RUNWAY",
       description: "High-impact runway productions, haute couture presentations, and designer showcases planned and executed end to end.",
       image: "/assets/events/fashion_events.png",
+      alt: "Haute couture fashion runway productions and designer showcases",
+      imagePosition: "object-top",
       badges: ["RUNWAY PRODUCTIONS", "COUTURE SALONS"],
       link: "/services/fashion_events",
     },
@@ -22,6 +24,8 @@ export default function WhatWeDoSection() {
       subtitle: "EXPERIENTIAL GALAS",
       description: "Curated VIP galas, red carpet receptions, luxury salons, and high-profile lifestyle activations across key destinations.",
       image: "/assets/events/lifestyle_events.png",
+      alt: "Curated VIP galas and luxury lifestyle activations",
+      imagePosition: "object-top",
       badges: ["VIP GALAS", "RED CARPET"],
       link: "/services/lifestyle_events",
     },
@@ -30,7 +34,9 @@ export default function WhatWeDoSection() {
       title: "CORPORATE & BRAND LAUNCHES",
       subtitle: "BRAND EXPERIENCES",
       description: "Strategic event management for tech summits, global brand unveilings, corporate conferences, and flagship product launches.",
-      image: "/assets/final/project-fashprism-india.jpg",
+      image: "/assets/events/corporate-brand-launches.png",
+      alt: "Luxury corporate events and brand launches",
+      imagePosition: "object-center",
       badges: ["BRAND LAUNCHES", "TECH SUMMITS"],
       link: "/services",
     },
@@ -39,7 +45,9 @@ export default function WhatWeDoSection() {
       title: "BRAND SHOOTS",
       subtitle: "CAMPAIGNS & LOOKBOOKS",
       description: "Full-service creative direction, commercial lookbooks, editorial campaigns, and high-fashion photo & video productions.",
-      image: "/assets/final/talent-model-01.jpg",
+      image: "/assets/events/brand-shoots.png",
+      alt: "Luxury fashion brand shoots and editorial production",
+      imagePosition: "object-center",
       badges: ["CAMPAIGNS", "LOOKBOOKS"],
       link: "/services",
     },
@@ -98,10 +106,10 @@ export default function WhatWeDoSection() {
                 <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-black/5 dark:bg-[#030303] border border-black/10 dark:border-white/10">
                   <Image
                     src={item.image}
-                    alt={item.title}
+                    alt={item.alt || item.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    className="object-cover object-top group-hover:scale-[1.04] transition-transform duration-500"
+                    className={`object-cover ${item.imagePosition || "object-top"} group-hover:scale-[1.04] transition-transform duration-500`}
                   />
                 </div>
 
