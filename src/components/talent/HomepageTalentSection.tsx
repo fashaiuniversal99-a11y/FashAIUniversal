@@ -14,7 +14,8 @@ export default function HomepageTalentSection() {
       tagline: "RUNWAY & CATWALK DIRECTION",
       subtitle: "Runway models, commercial talent, editorial fit, and high-fashion catwalk presentation.",
       primaryImage: "/assets/master/models/model_01.png",
-      objectPosition: "object-top",
+      alt: "High-fashion runway model in couture gown on catwalk",
+      objectPosition: "center 20%",
     },
     {
       id: "designers",
@@ -23,7 +24,8 @@ export default function HomepageTalentSection() {
       tagline: "COUTURE ATELIER & DIRECTION",
       subtitle: "Couture designers, fashion houses, luxury apparel creators, and creative directors.",
       primaryImage: "/assets/master/designer/designer_01.png",
-      objectPosition: "object-top",
+      alt: "Fashion designer working in luxury couture atelier",
+      objectPosition: "center 20%",
     },
     {
       id: "makeup-artists",
@@ -32,7 +34,8 @@ export default function HomepageTalentSection() {
       tagline: "BEAUTY & BACKSTAGE ARTISTRY",
       subtitle: "Editorial beauty directors, runway makeup artists, and professional aesthetic specialists.",
       primaryImage: "/assets/master/makeup/makeup_01.png",
-      objectPosition: "object-top",
+      alt: "Professional editorial makeup artist preparing model backstage",
+      objectPosition: "center 25%",
     },
     {
       id: "stylists",
@@ -41,7 +44,8 @@ export default function HomepageTalentSection() {
       tagline: "WARDROBE & STYLING DIRECTION",
       subtitle: "Fashion stylists, wardrobe consultants, luxury lookbook curators, and campaign directors.",
       primaryImage: "/assets/master/stylist/stylist_01.png",
-      objectPosition: "object-top",
+      alt: "Fashion stylist directing wardrobe and styling couture look",
+      objectPosition: "center 15%",
     },
     {
       id: "choreographers",
@@ -50,7 +54,8 @@ export default function HomepageTalentSection() {
       tagline: "MOVEMENT & CHOREOGRAPHY",
       subtitle: "Runway movement directors, stage choreographers, and spatial performance artists.",
       primaryImage: "/assets/master/choreographer/choreographer.png",
-      objectPosition: "object-top",
+      alt: "Runway choreographer directing models on fashion catwalk",
+      objectPosition: "center center",
     },
     {
       id: "creators",
@@ -59,7 +64,8 @@ export default function HomepageTalentSection() {
       tagline: "DIGITAL CREATORS & VOICES",
       subtitle: "Fashion content creators, digital storytellers, lifestyle influencers, and brand ambassadors.",
       primaryImage: "/assets/master/influencers/influencer_01.png",
-      objectPosition: "object-top",
+      alt: "Digital fashion creator and lifestyle influencer capturing content",
+      objectPosition: "center 18%",
     },
     {
       id: "public-figures",
@@ -68,7 +74,8 @@ export default function HomepageTalentSection() {
       tagline: "GLOBAL PATRONS & VIP SALONS",
       subtitle: "Celebrities, public figures, industry icons, and luxury brand patrons.",
       primaryImage: "/assets/master/celebrity/celebrity_01.png",
-      objectPosition: "object-top",
+      alt: "Celebrity public figure and cultural patron at luxury gala",
+      objectPosition: "center 18%",
     },
   ];
 
@@ -133,22 +140,26 @@ export default function HomepageTalentSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="group relative bg-[#FAF8F5] dark:bg-[#0E0D0C] border border-black/10 dark:border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between p-5 hover:border-[#D4AF37]/60 transition-all duration-300 shadow-sm dark:shadow-xl"
+              className="group relative bg-[#FAF8F5] dark:bg-[#0E0D0C] border border-black/10 dark:border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between p-5 hover:border-[#D4AF37]/60 transition-all duration-300 shadow-sm dark:shadow-xl h-full"
             >
-              <div>
+              <div className="flex-1 flex flex-col">
                 {/* Category Image Frame */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/10 dark:bg-black rounded-xl mb-4 border border-black/5 dark:border-white/10">
+                <div
+                  className="relative w-full aspect-[16/10] overflow-hidden bg-black/10 dark:bg-black rounded-xl mb-4 border border-black/5 dark:border-white/10 shrink-0"
+                  style={{ aspectRatio: "16 / 10" }}
+                >
                   <Image
                     src={cat.primaryImage}
-                    alt={cat.title}
+                    alt={cat.alt || `${cat.title} - FashAI Universal Talent Network`}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className={`object-cover ${cat.objectPosition} filter contrast-105 group-hover:scale-105 transition-transform duration-500`}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                    className="object-cover w-full h-full filter contrast-105 group-hover:scale-105 transition-transform duration-500"
+                    style={{ objectPosition: cat.objectPosition || "center center" }}
                   />
                 </div>
 
                 {/* Card Content */}
-                <div className="space-y-2 mb-4">
+                <div className="space-y-2 mb-4 flex-1">
                   <span className="text-[10px] font-jost tracking-widest font-bold text-[#D4AF37] uppercase block">
                     {cat.tagline}
                   </span>
@@ -164,7 +175,7 @@ export default function HomepageTalentSection() {
               </div>
 
               {/* Single Clear Card Action */}
-              <div className="pt-3 border-t border-black/10 dark:border-white/10 flex items-center justify-between">
+              <div className="pt-3 border-t border-black/10 dark:border-white/10 flex items-center justify-between mt-auto">
                 <Link
                   href={`/talent?category=${cat.id}`}
                   className="inline-flex items-center gap-1.5 text-xs font-jost font-bold uppercase text-[#D4AF37] hover:underline group/btn"
