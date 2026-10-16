@@ -17,6 +17,10 @@ export default function FinalConversionSection() {
       badge: "EVENT CLIENTS",
       ctaLabel: "PLAN YOUR EVENT →",
       eventKey: "plan_event_click" as const,
+      borderStyle: "border-[#D4AF37]/35 dark:border-white/10 hover:border-[#D4AF37]",
+      badgeStyle: "text-[#D4AF37]",
+      iconStyle: "bg-[#D4AF37]/15 border-[#D4AF37]/35 text-[#D4AF37]",
+      hoverTitleStyle: "group-hover:text-[#D4AF37]",
     },
     {
       id: "hire-talent",
@@ -27,6 +31,10 @@ export default function FinalConversionSection() {
       badge: "TALENT BOOKING",
       ctaLabel: "HIRE TALENT ↗",
       eventKey: "hire_talent_click" as const,
+      borderStyle: "border-[#F15E1C]/35 dark:border-white/10 hover:border-[#F15E1C] dark:hover:border-[#D4AF37]",
+      badgeStyle: "text-[#F15E1C] dark:text-[#D4AF37]",
+      iconStyle: "bg-[#F15E1C]/15 border-[#F15E1C]/35 text-[#F15E1C] dark:bg-[#D4AF37]/15 dark:border-[#D4AF37]/35 dark:text-[#D4AF37]",
+      hoverTitleStyle: "group-hover:text-[#F15E1C] dark:group-hover:text-[#D4AF37]",
     },
     {
       id: "apply-talent",
@@ -37,17 +45,21 @@ export default function FinalConversionSection() {
       badge: "CREATIVE NETWORK",
       ctaLabel: "APPLY AS TALENT ↗",
       eventKey: "apply_talent_click" as const,
+      borderStyle: "border-[#2E936F]/35 dark:border-white/10 hover:border-[#2E936F] dark:hover:border-[#D4AF37]",
+      badgeStyle: "text-[#2E936F] dark:text-[#D4AF37]",
+      iconStyle: "bg-[#2E936F]/15 border-[#2E936F]/35 text-[#2E936F] dark:bg-[#D4AF37]/15 dark:border-[#D4AF37]/35 dark:text-[#D4AF37]",
+      hoverTitleStyle: "group-hover:text-[#2E936F] dark:group-hover:text-[#D4AF37]",
     },
   ];
 
   return (
     <section
       id="final-conversion"
-      className="relative py-12 sm:py-16 lg:py-20 bg-black text-white border-b border-white/10 select-none overflow-hidden"
+      className="relative py-12 sm:py-16 lg:py-20 bg-white dark:bg-black text-[#111111] dark:text-white border-b border-black/10 dark:border-white/10 select-none overflow-hidden"
     >
       {/* Background Watermark Accent */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
-        <div className="editorial-watermark absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[16vw] font-serif-display font-light uppercase tracking-tighter leading-none opacity-20 text-white/[0.02]">
+        <div className="editorial-watermark absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[16vw] font-serif-display font-light uppercase tracking-tighter leading-none opacity-20 text-black/[0.03] dark:text-white/[0.02]">
           FASHAI
         </div>
       </div>
@@ -60,11 +72,11 @@ export default function FinalConversionSection() {
             <span>TAKE THE NEXT STEP</span>
           </div>
 
-          <h2 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-white tracking-tight">
+          <h2 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-white tracking-tight">
             Start Your Journey with <span className="italic text-[#D4AF37]">FashAI</span>
           </h2>
 
-          <p className="font-jost text-sm sm:text-base text-brand-platinum/85 font-light max-w-xl mx-auto leading-relaxed">
+          <p className="font-jost text-sm sm:text-base text-[#555555] dark:text-brand-platinum/85 font-light max-w-xl mx-auto leading-relaxed">
             Select your destination to connect with our team across Dubai, UAE, and Gurgaon, India.
           </p>
         </div>
@@ -80,29 +92,29 @@ export default function FinalConversionSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="group relative bg-[#0C0B0A] border border-white/10 hover:border-[#D4AF37] rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 shadow-xl"
+                className={`group relative bg-[#FAF8F5] dark:bg-[#0C0B0A] border ${path.borderStyle} rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-xl`}
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-2xl bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37]">
+                    <div className={`w-12 h-12 rounded-2xl border flex items-center justify-center ${path.iconStyle}`}>
                       <IconComponent className="w-6 h-6" />
                     </div>
-                    <span className="text-[10px] font-jost tracking-widest font-bold text-[#D4AF37] uppercase">
+                    <span className={`text-[10px] font-jost tracking-widest font-bold uppercase ${path.badgeStyle}`}>
                       {path.badge}
                     </span>
                   </div>
 
                   <div>
-                    <h3 className="font-serif-display text-2xl sm:text-3xl font-light text-white tracking-tight group-hover:text-[#D4AF37] transition-colors">
+                    <h3 className={`font-serif-display text-2xl sm:text-3xl font-light text-[#111111] dark:text-white tracking-tight ${path.hoverTitleStyle} transition-colors`}>
                       {path.title}
                     </h3>
-                    <p className="font-jost text-xs sm:text-sm text-brand-platinum/75 font-light leading-relaxed mt-2">
+                    <p className="font-jost text-xs sm:text-sm text-[#555555] dark:text-brand-platinum/75 font-light leading-relaxed mt-2">
                       {path.subtitle}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-white/10">
+                <div className="pt-6 mt-6 border-t border-black/10 dark:border-white/10">
                   <Link
                     href={path.href}
                     onClick={() => trackEvent(path.eventKey, { location: "final_cta" })}
@@ -118,16 +130,16 @@ export default function FinalConversionSection() {
         </div>
 
         {/* SUPPORTING CONTACT OPTION BAR */}
-        <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-[#080706] border-white/10">
+        <div className="pt-4 border-t border-black/10 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-[#FAF8F5] dark:bg-[#080706] border border-black/10 dark:border-white/10 shadow-xs">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-[#D4AF37] shrink-0">
+            <div className="w-9 h-9 rounded-xl bg-[#D4AF37]/15 dark:bg-white/10 flex items-center justify-center text-[#D4AF37] shrink-0">
               <Mail className="w-4 h-4" />
             </div>
             <div>
-              <h4 className="font-jost text-sm font-bold text-white tracking-wide">
+              <h4 className="font-jost text-sm font-bold text-[#111111] dark:text-white tracking-wide">
                 Looking for General Enquiries or Press Relations?
               </h4>
-              <p className="font-jost text-xs text-brand-platinum/70 font-light">
+              <p className="font-jost text-xs text-[#555555] dark:text-brand-platinum/70 font-light">
                 Reach out directly for media accreditation, partnerships, or corporate questions.
               </p>
             </div>
@@ -135,7 +147,7 @@ export default function FinalConversionSection() {
           <Link
             href="/contact"
             onClick={() => trackEvent("contact_click", { location: "final_cta" })}
-            className="inline-flex items-center gap-2 text-xs font-jost font-bold text-[#D4AF37] hover:text-white transition-colors shrink-0 uppercase tracking-wider"
+            className="inline-flex items-center gap-2 text-xs font-jost font-bold text-[#D4AF37] hover:text-[#111111] dark:hover:text-white transition-colors shrink-0 uppercase tracking-wider"
           >
             <span>CONTACT US</span>
             <ArrowRight className="w-3.5 h-3.5" />

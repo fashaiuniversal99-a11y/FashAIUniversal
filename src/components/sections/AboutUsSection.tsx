@@ -111,15 +111,15 @@ export default function AboutUsSection() {
                 className="object-cover object-top filter contrast-105"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70" />
-              <div className="absolute bottom-6 left-6 right-6 p-6 bg-black/70 backdrop-blur-md border border-white/10 rounded-2xl">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 dark:from-black via-transparent to-transparent opacity-60 dark:opacity-70" />
+              <div className="absolute bottom-6 left-6 right-6 p-6 bg-[#FAF8F5]/92 dark:bg-black/70 backdrop-blur-md border border-[#D4AF37]/35 dark:border-white/10 rounded-2xl shadow-xl">
                 <span className="font-jost text-xs font-bold text-[#D4AF37] tracking-widest uppercase block mb-1">
                   FASHAI UNIVERSAL
                 </span>
-                <span className="font-jost text-xs font-bold text-white uppercase tracking-wider block mb-1">
+                <span className="font-jost text-xs font-bold text-[#111111] dark:text-white uppercase tracking-wider block mb-1">
                   Fashion Events &amp; Talent Platform
                 </span>
-                <span className="font-sans text-xs text-white/90 font-light block">
+                <span className="font-sans text-xs text-[#555555] dark:text-white/90 font-light block">
                   Dubai, UAE · Gurgaon, India · Powered by Arav Innovations
                 </span>
               </div>

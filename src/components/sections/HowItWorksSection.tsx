@@ -64,7 +64,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
   return (
     <section
       id="how-it-works"
-      className={`py-12 sm:py-16 bg-[#050505] text-white border-b border-white/10 select-none overflow-hidden ${className}`}
+      className={`py-12 sm:py-16 bg-white dark:bg-[#050505] text-[#111111] dark:text-white border-b border-black/10 dark:border-white/10 select-none overflow-hidden ${className}`}
     >
       <div className="container-editorial relative z-10 space-y-12">
         {showHeading && (
@@ -74,11 +74,11 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
               <span>THE PROCESS</span>
             </div>
 
-            <h2 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-white tracking-tight">
+            <h2 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl font-light text-[#111111] dark:text-white tracking-tight">
               How It <span className="italic text-[#D4AF37]">Works</span>
             </h2>
 
-            <p className="font-jost text-sm sm:text-base text-brand-platinum/85 font-light max-w-xl mx-auto leading-relaxed">
+            <p className="font-jost text-sm sm:text-base text-[#555555] dark:text-brand-platinum/85 font-light max-w-xl mx-auto leading-relaxed">
               Events and talent, handled by one team. Clear pathways for event clients and creative talent across Dubai and India.
             </p>
           </div>
@@ -87,9 +87,9 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
         {/* TWO EQUAL TRACKS GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* CLIENT TRACK */}
-          <div className="bg-[#090807] border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xl relative group hover:border-[#D4AF37]/50 transition-all">
+          <div className="bg-[#FAF8F5] dark:bg-[#090807] border border-[#D4AF37]/30 dark:border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-md dark:shadow-xl relative group hover:border-[#D4AF37] transition-all">
             <div className="space-y-6">
-              <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <div className="flex items-center justify-between border-b border-black/10 dark:border-white/10 pb-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37]">
                     <Calendar className="w-5 h-5" />
@@ -98,7 +98,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                     <span className="text-xs font-jost font-bold uppercase tracking-wider text-[#D4AF37]">
                       FOR EVENT CLIENTS & BRANDS
                     </span>
-                    <h3 className="font-serif-display text-xl sm:text-2xl font-light text-white tracking-tight">
+                    <h3 className="font-serif-display text-xl sm:text-2xl font-light text-[#111111] dark:text-white tracking-tight">
                       Event Planning &amp; Production Track
                     </h3>
                   </div>
@@ -110,16 +110,16 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                 {clientSteps.map((step) => (
                   <div
                     key={step.num}
-                    className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-4"
+                    className="p-4 rounded-xl bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 flex items-start gap-4 shadow-2xs"
                   >
-                    <span className="w-8 h-8 rounded-lg bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] font-jost font-bold text-xs flex items-center justify-center shrink-0">
+                    <span className="w-8 h-8 rounded-lg bg-[#D4AF37]/15 dark:bg-[#D4AF37]/20 border border-[#D4AF37]/35 dark:border-[#D4AF37]/40 text-[#D4AF37] font-jost font-bold text-xs flex items-center justify-center shrink-0">
                       {step.num}
                     </span>
                     <div>
-                      <h4 className="font-jost text-base font-bold text-white tracking-wide">
+                      <h4 className="font-jost text-base font-bold text-[#111111] dark:text-white tracking-wide">
                         {step.title}
                       </h4>
-                      <p className="font-jost text-xs sm:text-sm text-brand-platinum/80 font-light leading-relaxed mt-0.5">
+                      <p className="font-jost text-xs sm:text-sm text-[#555555] dark:text-brand-platinum/80 font-light leading-relaxed mt-0.5">
                         {step.description}
                       </p>
                     </div>
@@ -128,7 +128,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
               </div>
             </div>
 
-            <div className="pt-4 border-t border-white/10">
+            <div className="pt-4 border-t border-black/10 dark:border-white/10">
               <Link
                 href="/plan-your-event"
                 onClick={() => trackEvent("plan_event_click", { location: "how_it_works" })}
@@ -141,9 +141,9 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
           </div>
 
           {/* TALENT TRACK */}
-          <div className="bg-[#090807] border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xl relative group hover:border-[#D4AF37]/50 transition-all">
+          <div className="bg-[#FAF8F5] dark:bg-[#090807] border border-[#D4AF37]/30 dark:border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-md dark:shadow-xl relative group hover:border-[#D4AF37] transition-all">
             <div className="space-y-6">
-              <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <div className="flex items-center justify-between border-b border-black/10 dark:border-white/10 pb-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37]">
                     <UserCheck className="w-5 h-5" />
@@ -152,7 +152,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                     <span className="text-xs font-jost font-bold uppercase tracking-wider text-[#D4AF37]">
                       FOR CREATIVE TALENT
                     </span>
-                    <h3 className="font-serif-display text-xl sm:text-2xl font-light text-white tracking-tight">
+                    <h3 className="font-serif-display text-xl sm:text-2xl font-light text-[#111111] dark:text-white tracking-tight">
                       Talent Application &amp; Roster Track
                     </h3>
                   </div>
@@ -164,16 +164,16 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                 {talentSteps.map((step) => (
                   <div
                     key={step.num}
-                    className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-4"
+                    className="p-4 rounded-xl bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 flex items-start gap-4 shadow-2xs"
                   >
-                    <span className="w-8 h-8 rounded-lg bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] font-jost font-bold text-xs flex items-center justify-center shrink-0">
+                    <span className="w-8 h-8 rounded-lg bg-[#D4AF37]/15 dark:bg-[#D4AF37]/20 border border-[#D4AF37]/35 dark:border-[#D4AF37]/40 text-[#D4AF37] font-jost font-bold text-xs flex items-center justify-center shrink-0">
                       {step.num}
                     </span>
                     <div>
-                      <h4 className="font-jost text-base font-bold text-white tracking-wide">
+                      <h4 className="font-jost text-base font-bold text-[#111111] dark:text-white tracking-wide">
                         {step.title}
                       </h4>
-                      <p className="font-jost text-xs sm:text-sm text-brand-platinum/80 font-light leading-relaxed mt-0.5">
+                      <p className="font-jost text-xs sm:text-sm text-[#555555] dark:text-brand-platinum/80 font-light leading-relaxed mt-0.5">
                         {step.description}
                       </p>
                     </div>
@@ -182,11 +182,11 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
               </div>
             </div>
 
-            <div className="pt-4 border-t border-white/10">
+            <div className="pt-4 border-t border-black/10 dark:border-white/10">
               <Link
                 href="/apply"
                 onClick={() => trackEvent("apply_talent_click", { location: "how_it_works" })}
-                className="w-full inline-flex items-center justify-between bg-transparent border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/15 py-3.5 px-6 rounded-full font-jost text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-md group/btn"
+                className="w-full inline-flex items-center justify-between bg-transparent border border-[#D4AF37] text-[#111111] dark:text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black dark:hover:bg-[#D4AF37]/15 py-3.5 px-6 rounded-full font-jost text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-md group/btn"
               >
                 <span>APPLY AS TALENT ↗</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />

@@ -13,7 +13,7 @@ import FinalConversionSection from "@/components/sections/FinalConversionSection
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-brand-white selection:bg-[#D4AF37] selection:text-black">
+    <main className="min-h-screen bg-white dark:bg-black text-[#111111] dark:text-brand-white selection:bg-[#D4AF37] selection:text-black">
       {/* 01. HERO */}
       <Hero />
 

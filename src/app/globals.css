@@ -161,7 +161,9 @@ html.light [class*="bg-[#060504]"],
 html.light [class*="bg-[#090706]"],
 html.light [class*="bg-[#0D0B0A]"],
 html.light [class*="bg-[#0B0A09]"],
-html.light [class*="bg-[#0B0908]"] {
+html.light [class*="bg-[#0B0908]"],
+html.light [class*="bg-[#0C0B0A]"],
+html.light [class*="bg-[#0E0D0C]"] {
   background-color: #FAF8F5 !important;
   color: #111111 !important;
 }
