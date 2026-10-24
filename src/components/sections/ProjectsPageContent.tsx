@@ -142,12 +142,14 @@ export default function ProjectsPageContent() {
                 </div>
               </div>
 
-              <div className="lg:col-span-5 relative aspect-[4/3] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-black p-2 flex items-center justify-center">
+              <div className="lg:col-span-5 relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] w-full min-h-[300px] sm:min-h-[380px] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-neutral-900 shadow-lg">
                 <Image
                   src="/assets/final/photo-2026-09-18-15.03.32.jpeg"
                   alt="FashPrism India Feature"
                   fill
-                  className="object-contain object-center"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-cover object-top"
+                  priority
                 />
               </div>
             </div>
@@ -157,24 +159,27 @@ export default function ProjectsPageContent() {
               <h4 className="font-syne text-xs font-bold uppercase tracking-wider text-[#888888] mb-4">
                 FASHPRISM INDIA CREATED GALLERY &amp; DELIVERABLES
               </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 {FASHPRISM_INDIA_DATA.slice(0, 4).map((item) => (
-                  <div key={item.id} className="group bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-xl overflow-hidden p-4 space-y-3">
-                    <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden bg-black p-1 flex items-center justify-center">
+                  <div key={item.id} className="group bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-xl overflow-hidden p-4 flex flex-col justify-between hover:border-[#D4AF37]/50 transition-all duration-300 shadow-sm hover:shadow-md">
+                    <div className="relative aspect-[4/5] sm:aspect-[3/4] w-full rounded-lg overflow-hidden bg-neutral-900">
                       <Image
                         src={item.src}
                         alt={item.alt}
                         fill
-                        className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    <div>
-                      <span className="text-[10px] font-syne font-bold uppercase text-[#D4AF37] block">
-                        {item.tag}
-                      </span>
-                      <h5 className="font-serif-display text-lg font-light uppercase text-[#111111] dark:text-white">
-                        {item.title}
-                      </h5>
+                    <div className="flex-1 flex flex-col justify-between pt-3 space-y-2">
+                      <div>
+                        <span className="text-[10px] font-syne font-bold uppercase tracking-wider text-[#D4AF37] block mb-1">
+                          {item.tag}
+                        </span>
+                        <h5 className="font-serif-display text-lg font-light uppercase text-[#111111] dark:text-white leading-snug">
+                          {item.title}
+                        </h5>
+                      </div>
                       <p className="font-sans text-xs text-gray-800 dark:text-brand-platinum/80 line-clamp-2">
                         {item.caption}
                       </p>
@@ -244,12 +249,13 @@ export default function ProjectsPageContent() {
                 </div>
               </div>
 
-              <div className="lg:col-span-5 relative aspect-[4/3] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-black p-2 flex items-center justify-center">
+              <div className="lg:col-span-5 relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] w-full min-h-[300px] sm:min-h-[380px] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-neutral-900 shadow-lg">
                 <Image
                   src="/assets/final/photo-2026-09-18-15.02.37.jpeg"
                   alt="FashPrism International Feature"
                   fill
-                  className="object-contain object-center"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-cover object-top"
                 />
               </div>
             </div>
@@ -259,24 +265,27 @@ export default function ProjectsPageContent() {
               <h4 className="font-syne text-xs font-bold uppercase tracking-wider text-[#888888] mb-4">
                 FASHPRISM INTERNATIONAL GALLERY &amp; DELIVERABLES
               </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 {FASHPRISM_INTERNATIONAL_DATA.map((item) => (
-                  <div key={item.id} className="group bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-xl overflow-hidden p-4 space-y-3">
-                    <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden bg-black p-1 flex items-center justify-center">
+                  <div key={item.id} className="group bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-xl overflow-hidden p-4 flex flex-col justify-between hover:border-[#D4AF37]/50 transition-all duration-300 shadow-sm hover:shadow-md">
+                    <div className="relative aspect-[4/5] sm:aspect-[3/4] w-full rounded-lg overflow-hidden bg-neutral-900">
                       <Image
                         src={item.src}
                         alt={item.alt}
                         fill
-                        className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    <div>
-                      <span className="text-[10px] font-syne font-bold uppercase text-[#D4AF37] block">
-                        {item.tag}
-                      </span>
-                      <h5 className="font-serif-display text-lg font-light uppercase text-[#111111] dark:text-white">
-                        {item.title}
-                      </h5>
+                    <div className="flex-1 flex flex-col justify-between pt-3 space-y-2">
+                      <div>
+                        <span className="text-[10px] font-syne font-bold uppercase tracking-wider text-[#D4AF37] block mb-1">
+                          {item.tag}
+                        </span>
+                        <h5 className="font-serif-display text-lg font-light uppercase text-[#111111] dark:text-white leading-snug">
+                          {item.title}
+                        </h5>
+                      </div>
                       <p className="font-sans text-xs text-gray-800 dark:text-brand-platinum/80 line-clamp-2">
                         {item.caption}
                       </p>
@@ -311,24 +320,27 @@ export default function ProjectsPageContent() {
               </a>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {FASHPRISM_VIP_DATA.map((item) => (
-                <div key={item.id} className="group bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-xl overflow-hidden p-4 space-y-3">
-                  <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden bg-black p-1 flex items-center justify-center">
+                <div key={item.id} className="group bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-xl overflow-hidden p-4 flex flex-col justify-between hover:border-[#D4AF37]/50 transition-all duration-300 shadow-sm hover:shadow-md">
+                  <div className="relative aspect-[4/5] sm:aspect-[3/4] w-full rounded-lg overflow-hidden bg-neutral-900">
                     <Image
                       src={item.src}
                       alt={item.alt}
                       fill
-                      className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <div>
-                    <span className="text-[10px] font-syne font-bold uppercase text-[#D4AF37] block">
-                      {item.tag}
-                    </span>
-                    <h5 className="font-serif-display text-lg font-light uppercase text-[#111111] dark:text-white">
-                      {item.title}
-                    </h5>
+                  <div className="flex-1 flex flex-col justify-between pt-3 space-y-2">
+                    <div>
+                      <span className="text-[10px] font-syne font-bold uppercase tracking-wider text-[#D4AF37] block mb-1">
+                        {item.tag}
+                      </span>
+                      <h5 className="font-serif-display text-lg font-light uppercase text-[#111111] dark:text-white leading-snug">
+                        {item.title}
+                      </h5>
+                    </div>
                     <p className="font-sans text-xs text-gray-800 dark:text-brand-platinum/80 line-clamp-2">
                       {item.caption}
                     </p>
@@ -380,12 +392,13 @@ export default function ProjectsPageContent() {
                 </div>
               </div>
 
-              <div className="lg:col-span-5 relative aspect-[16/10] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-black p-2 flex items-center justify-center">
+              <div className="lg:col-span-5 relative aspect-[16/10] sm:aspect-[16/9] w-full min-h-[240px] sm:min-h-[280px] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-neutral-900 shadow-lg">
                 <Image
                   src="/assets/homepage/Moments.png"
                   alt="Catwalk Choreography Direction"
                   fill
-                  className="object-contain object-center"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
@@ -433,12 +446,13 @@ export default function ProjectsPageContent() {
                 </div>
               </div>
 
-              <div className="lg:col-span-5 relative aspect-[16/10] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-black p-2 flex items-center justify-center">
+              <div className="lg:col-span-5 relative aspect-[16/10] sm:aspect-[16/9] w-full min-h-[240px] sm:min-h-[280px] rounded-xl overflow-hidden border border-black/10 dark:border-white/15 bg-neutral-900 shadow-lg">
                 <Image
                   src="/assets/events/lifestyle_banner.png"
                   alt="Video Editing Showreel Frame"
                   fill
-                  className="object-contain object-center"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
