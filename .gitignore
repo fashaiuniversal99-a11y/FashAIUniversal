@@ -34,3 +34,6 @@ admin-credentials.txt
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw source photos
+Images/real Images/

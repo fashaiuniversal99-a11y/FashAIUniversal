@@ -228,6 +228,26 @@ export interface ServiceStatusConfig {
   ctaUrl?: string;
 }
 
+export interface ProjectShowcaseItem {
+  id: string;
+  title: string;
+  altText: string;
+  src: string;
+  order: number;
+  enabled: boolean;
+  aspectRatio?: string;
+}
+
+export interface ProjectShowcaseSettings {
+  enabled: boolean;
+  heading: string;
+  subheading: string;
+  direction: "left" | "right";
+  speedSeconds: number;
+  pauseOnHover: boolean;
+  items: ProjectShowcaseItem[];
+}
+
 export interface MasterSiteConfig {
   maintenanceSettings: MaintenanceSettings;
   globalSettings: GlobalSettings;
@@ -245,6 +265,7 @@ export interface MasterSiteConfig {
   pages: PageConfig[];
   galleryItems: GalleryItemConfig[];
   mediaLibrary: MediaItem[];
+  projectShowcaseSettings?: ProjectShowcaseSettings;
   lastUpdated: string;
   lastMediaUpdate: string;
   isDraft?: boolean;

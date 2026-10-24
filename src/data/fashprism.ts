@@ -128,8 +128,8 @@ export const FASHPRISM_VIP_DATA: FashPrismItem[] = [
     title: "DISTINGUISHED GUEST PORTRAIT",
     caption: "Featured personality attending the FashPrism experience.",
     category: "VIP",
-    src: "/assets/fashprism/vip/photo-2026-09-17-01.36.11-1.jpeg",
-    alt: "VIP Guest Portrait 1",
+    src: "/assets/fashprism/vip/distinguished-guest-portrait.png",
+    alt: "Minimal luxury editorial portrait of a female fashion-event guest in couture evening wear - Distinguished Guest Portrait",
     tag: "VIP GUEST",
   },
   {
@@ -137,8 +137,8 @@ export const FASHPRISM_VIP_DATA: FashPrismItem[] = [
     title: "VIP SALON PARTICIPATION",
     caption: "Industry partner and guest representation.",
     category: "VIP",
-    src: "/assets/fashprism/vip/photo-2026-09-17-01.36.11-2.jpeg",
-    alt: "VIP Guest Portrait 2",
+    src: "/assets/fashprism/vip/vip-salon-participation.png",
+    alt: "VIP fashion event guest with champagne in an intimate luxury reception salon - VIP Salon Participation",
     tag: "FEATURED PERSONALITY",
   },
   {
@@ -146,8 +146,8 @@ export const FASHPRISM_VIP_DATA: FashPrismItem[] = [
     title: "CREATIVE NETWORK DELEGATE",
     caption: "Prominent industry participant from the FashPrism retrospective.",
     category: "VIP",
-    src: "/assets/fashprism/vip/photo-2026-09-17-01.36.11-3.jpeg",
-    alt: "VIP Guest Portrait 3",
+    src: "/assets/fashprism/vip/creative-network-delegate.png",
+    alt: "Fashion-industry creative network delegate in a tailored black suit - Creative Network Delegate",
     tag: "DELEGATE GUEST",
   },
   {
@@ -155,8 +155,8 @@ export const FASHPRISM_VIP_DATA: FashPrismItem[] = [
     title: "EVENT DIGNITARY & PARTNER",
     caption: "Distinguished guest capture from the official showcase.",
     category: "VIP",
-    src: "/assets/fashprism/vip/photo-2026-09-17-01.36.12.jpeg",
-    alt: "VIP Guest Portrait 4",
+    src: "/assets/fashprism/vip/event-dignitary-partner.png",
+    alt: "Sophisticated luxury event dignitary and brand partner at couture exhibition - Event Dignitary & Partner",
     tag: "SPECIAL GUEST",
   },
 ];

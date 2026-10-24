@@ -6,8 +6,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, ExternalLink, Instagram, Facebook, Sparkles, Film, Compass, Users } from "lucide-react";
 import { FASHPRISM_INDIA_DATA, FASHPRISM_INTERNATIONAL_DATA, FASHPRISM_VIP_DATA, FashPrismItem } from "@/data/fashprism";
+import { useSiteConfig } from "@/context/SiteConfigContext";
+import ProjectImageMarquee from "@/components/projects/ProjectImageMarquee";
 
 export default function ProjectsPageContent() {
+  const { config } = useSiteConfig();
+  const showcaseSettings = config?.projectShowcaseSettings;
   const [activeTab, setActiveTab] = useState<"ALL" | "FASHPRISM_INDIA" | "FASHPRISM_INTERNATIONAL" | "VIP_GUESTS" | "CHOREOGRAPHY" | "VIDEO_EDITING">("ALL");
 
   const FACEBOOK_PROJECT_URL = "https://www.facebook.com/profile.php?id=61573489951314";
@@ -191,6 +195,13 @@ export default function ProjectsPageContent() {
           </div>
         )}
 
+        {/* CINEMATIC EDITORIAL SHOWCASE FILMSTRIP (POSITIONED BEFORE FASHPRISM INTERNATIONAL) */}
+        {(activeTab === "ALL" || activeTab === "FASHPRISM_INTERNATIONAL") && (
+          <div className="mb-14 sm:mb-20 -mx-4 sm:-mx-6 lg:-mx-8">
+            <ProjectImageMarquee settings={showcaseSettings} />
+          </div>
+        )}
+
         {/* SECTION 2: FASHPRISM INTERNATIONAL & MISS INTERNATIONAL */}
         {(activeTab === "ALL" || activeTab === "FASHPRISM_INTERNATIONAL") && (
           <div className="mb-14 sm:mb-20 space-y-8 border-b border-black/10 dark:border-white/10 pb-12">
@@ -323,7 +334,7 @@ export default function ProjectsPageContent() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {FASHPRISM_VIP_DATA.map((item) => (
                 <div key={item.id} className="group bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-xl overflow-hidden p-4 flex flex-col justify-between hover:border-[#D4AF37]/50 transition-all duration-300 shadow-sm hover:shadow-md">
-                  <div className="relative aspect-[4/5] sm:aspect-[3/4] w-full rounded-lg overflow-hidden bg-neutral-900">
+                  <div className="relative aspect-[4/5] w-full rounded-lg overflow-hidden bg-neutral-900">
                     <Image
                       src={item.src}
                       alt={item.alt}

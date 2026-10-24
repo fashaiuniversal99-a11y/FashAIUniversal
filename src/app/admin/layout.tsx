@@ -12,6 +12,7 @@ import {
   LayoutTemplate,
   Image as ImageIcon,
   Grid,
+  Film,
   Calendar,
   Layers,
   FileText,
@@ -190,6 +191,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     if (path === "/admin/services") return "Services & Availability";
     if (path === "/admin/media") return "Media Library";
     if (path === "/admin/gallery") return "Gallery Manager";
+    if (path === "/admin/showcase") return "Project Showcase Filmstrip";
     if (path === "/admin/applications") return "Talent Applications";
     if (path === "/admin/submissions") return "Submitted Forms";
     if (path === "/admin/theme") return "Theme Editor";
@@ -258,6 +260,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         { label: "Buttons & CTAs", href: "/admin/hero", icon: Sliders },
         { label: "Media Library", href: "/admin/media", icon: ImageIcon },
         { label: "Galleries", href: "/admin/gallery", icon: Grid },
+        { label: "Showcase Filmstrip", href: "/admin/showcase", icon: Film },
       ],
     },
     {

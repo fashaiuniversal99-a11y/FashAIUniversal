@@ -841,7 +841,63 @@ ol.editorial-list li {
   margin-bottom: 0.4rem;
 }
 
+/* ==================================================== */
+/* CONTINUOUS LUXURY MARQUEE & FILMSTRIP ANIMATIONS */
+/* ==================================================== */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
 
+@keyframes marquee-reverse {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
 
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
 
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
 
+.animate-marquee-reverse {
+  animation: marquee-reverse 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-reverse {
+    animation: none !important;
+  }
+}
+
+/* Project Showcase Filmstrip High-Contrast Card Typography */
+.showcase-card-title,
+html.light .showcase-card-title,
+html.dark .showcase-card-title {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.85);
+}
+
+.showcase-card-label,
+html.light .showcase-card-label,
+html.dark .showcase-card-label {
+  color: #D4AF37 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+}
