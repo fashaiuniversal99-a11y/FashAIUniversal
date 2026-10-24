@@ -162,7 +162,7 @@ export default function ProjectsPageContent() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 {FASHPRISM_INDIA_DATA.slice(0, 4).map((item) => (
                   <div key={item.id} className="group bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-xl overflow-hidden p-4 flex flex-col justify-between hover:border-[#D4AF37]/50 transition-all duration-300 shadow-sm hover:shadow-md">
-                    <div className="relative aspect-[4/5] sm:aspect-[3/4] w-full rounded-lg overflow-hidden bg-neutral-900">
+                    <div className="relative aspect-[4/5] w-full rounded-lg overflow-hidden bg-neutral-900">
                       <Image
                         src={item.src}
                         alt={item.alt}
@@ -268,7 +268,7 @@ export default function ProjectsPageContent() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 {FASHPRISM_INTERNATIONAL_DATA.map((item) => (
                   <div key={item.id} className="group bg-[#FAF8F5] dark:bg-[#0A0908] border border-black/10 dark:border-white/10 rounded-xl overflow-hidden p-4 flex flex-col justify-between hover:border-[#D4AF37]/50 transition-all duration-300 shadow-sm hover:shadow-md">
-                    <div className="relative aspect-[4/5] sm:aspect-[3/4] w-full rounded-lg overflow-hidden bg-neutral-900">
+                    <div className="relative aspect-[4/5] w-full rounded-lg overflow-hidden bg-neutral-900">
                       <Image
                         src={item.src}
                         alt={item.alt}
