@@ -9,18 +9,37 @@ import SubmitSuccessExpand from "../ui/SubmitSuccessExpand";
 
 export type RoleSlug =
   | "model"
+  | "models"
   | "designer"
+  | "designers"
+  | "fashion-designer"
+  | "fashion-designers"
+  | "fashion_designer"
   | "makeup-artist"
+  | "makeup-artists"
   | "makeup_artist"
+  | "makeup_artists"
   | "fashion-stylist"
+  | "fashion-stylists"
+  | "fashion_stylist"
   | "stylist"
+  | "stylists"
   | "choreographer"
+  | "choreographers"
   | "influencer"
+  | "influencers"
+  | "creator"
+  | "creators"
   | "celebrity"
+  | "celebrities"
+  | "public-figure"
+  | "public-figures"
+  | "celebrity-public-figure"
   | "cstp"
   | "fashion-commentary"
   | "fashion_commentary"
-  | "nomination";
+  | "nomination"
+  | "nominations";
 
 export interface RoleApplicationFormProps {
   roleSlug: RoleSlug;
@@ -157,7 +176,22 @@ const initialFormState: FormState = {
 };
 
 export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = false }: RoleApplicationFormProps) {
-  const normalizedRole = (roleSlug || "designer").toLowerCase().replace(/-/g, "_");
+  const getCanonicalRoleKey = (r: string): string => {
+    const s = (r || "designer").toLowerCase().replace(/[\s-]/g, "_");
+    if (s === "models" || s === "model") return "model";
+    if (s === "makeup_artists" || s === "makeup_artist" || s === "makeup") return "makeup_artist";
+    if (s === "fashion_designers" || s === "fashion_designer" || s === "designers" || s === "designer") return "designer";
+    if (s === "fashion_stylists" || s === "fashion_stylist" || s === "stylists" || s === "stylist") return "fashion_stylist";
+    if (s === "choreographers" || s === "choreographer") return "choreographer";
+    if (s === "creators" || s === "creator" || s === "influencers" || s === "influencer" || s === "influencer_creator") return "influencer";
+    if (s === "public_figures" || s === "public_figure" || s === "celebrities" || s === "celebrity" || s === "celebrity_public_figure") return "celebrity";
+    if (s === "cstp") return "cstp";
+    if (s === "fashion_commentary" || s === "commentary") return "fashion_commentary";
+    if (s === "nominations" || s === "nomination") return "nomination";
+    return s;
+  };
+
+  const normalizedRole = getCanonicalRoleKey(roleSlug);
 
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<FormState>(initialFormState);
@@ -282,9 +316,32 @@ export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = fal
     setErrorMessage("");
 
     try {
-      const payload = {
-        roleApplied: normalizedRole,
+      const roleToCategoryMap: Record<string, { applicationType: string; categorySlug: string; categoryName: string }> = {
+        model: { applicationType: "model", categorySlug: "models", categoryName: "Model" },
+        designer: { applicationType: "fashion_designer", categorySlug: "fashion-designers", categoryName: "Fashion Designer" },
+        makeup_artist: { applicationType: "makeup_artist", categorySlug: "makeup-artists", categoryName: "Makeup Artist" },
+        fashion_stylist: { applicationType: "fashion_stylist", categorySlug: "fashion-stylists", categoryName: "Fashion Stylist" },
+        choreographer: { applicationType: "choreographer", categorySlug: "choreographers", categoryName: "Choreographer" },
+        influencer: { applicationType: "influencer_creator", categorySlug: "creators", categoryName: "Influencer / Creator" },
+        celebrity: { applicationType: "celebrity_public_figure", categorySlug: "public-figures", categoryName: "Celebrity / Public Figure" },
+        cstp: { applicationType: "cstp", categorySlug: "cstp", categoryName: "CSTP Application" },
+        fashion_commentary: { applicationType: "fashion_commentary", categorySlug: "fashion-commentary", categoryName: "Fashion Commentary" },
+        nomination: { applicationType: "nomination", categorySlug: "nomination", categoryName: "Creative Nomination" },
+      };
+
+      const catMeta = roleToCategoryMap[normalizedRole] || {
         applicationType: normalizedRole,
+        categorySlug: normalizedRole.replace(/_/g, "-"),
+        categoryName: meta.title,
+      };
+
+      const payload = {
+        roleApplied: catMeta.applicationType,
+        applicationType: catMeta.applicationType,
+        category: catMeta.categoryName,
+        categorySlug: catMeta.categorySlug,
+        domain: catMeta.categoryName,
+        sourceUrl: typeof window !== "undefined" ? window.location.pathname : `/apply/${catMeta.categorySlug}`,
         fullName: formData.fullName || formData.stageName,
         stageName: formData.stageName,
         realNamePrivate: formData.realNamePrivate,
@@ -695,6 +752,22 @@ export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = fal
                         <option value="Beauty">Beauty</option>
                         <option value="Bridal">Bridal</option>
                         <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-sm sm:text-base md:text-lg font-syne tracking-wider text-brand-white/95 uppercase font-bold mb-1.5 sm:mb-2">
+                        Modeling / Runway Experience
+                      </label>
+                      <select
+                        name="yearsExperience"
+                        value={formData.yearsExperience}
+                        onChange={handleChange}
+                        className="w-full bg-black/90 border border-white/15 px-4 py-3 sm:px-5 sm:py-3.5 text-base sm:text-lg text-white rounded-xl focus:border-brand-yellow-golden outline-none"
+                      >
+                        <option value="New Face (0-1 year)">New Face (0–1 year)</option>
+                        <option value="1-3 years">1–3 years</option>
+                        <option value="3-5 years">3–5 years</option>
+                        <option value="5+ years">5+ years</option>
                       </select>
                     </div>
                   </div>
@@ -1242,14 +1315,24 @@ export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = fal
 
               <div>
                 <label className="block text-sm sm:text-base md:text-lg font-syne tracking-wider text-brand-white/95 uppercase font-bold mb-1.5 sm:mb-2">
-                  Work Samples / Drive / Cloud Storage Link
+                  {normalizedRole === "model"
+                    ? "Comp Card / Photoshoot Drive Link / Portfolio"
+                    : normalizedRole === "makeup_artist"
+                    ? "Lookbook / Beauty Portfolio / Drive Link"
+                    : "Work Samples / Drive / Cloud Storage Link"}
                 </label>
                 <input
                   type="url"
                   name="workSamplesUrl"
                   value={formData.workSamplesUrl}
                   onChange={handleChange}
-                  placeholder="Link to photos, comp card, PDF portfolio, or press kit"
+                  placeholder={
+                    normalizedRole === "model"
+                      ? "Link to photos, comp card, lookbook, or portfolio drive"
+                      : normalizedRole === "makeup_artist"
+                      ? "Link to makeup looks, editorial photoshoots, or press kit"
+                      : "Link to photos, comp card, PDF portfolio, or press kit"
+                  }
                   className="w-full bg-black/90 border border-white/15 px-4 py-3 sm:px-5 sm:py-3.5 text-base sm:text-lg text-white rounded-xl focus:border-brand-yellow-golden outline-none placeholder:text-white/40"
                 />
               </div>

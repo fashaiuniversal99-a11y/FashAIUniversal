@@ -57,26 +57,51 @@ export async function POST(request: Request) {
 
     // 2. Parse Body Payload
     const body = await request.json();
-    const rawType = (body.applicationType || body.roleApplied || "").toString().toLowerCase().replace(/[\s-]/g, "_");
+    const rawType = (body.categorySlug || body.applicationType || body.roleApplied || "")
+      .toString()
+      .toLowerCase()
+      .replace(/[\s-]/g, "_");
 
-    const validTypesMap: Record<string, string> = {
-      fashion_designer: "fashion_designer",
-      designer: "fashion_designer",
-      model: "model",
-      makeup_artist: "makeup_artist",
-      fashion_stylist: "fashion_stylist",
-      stylist: "fashion_stylist",
-      influencer_creator: "influencer_creator",
-      influencer: "influencer_creator",
-      celebrity_public_figure: "celebrity_public_figure",
-      celebrity: "celebrity_public_figure",
-      choreographer: "choreographer",
-      cstp: "cstp",
-      fashion_commentary: "fashion_commentary",
-      nomination: "nomination",
+    const validCategoryConfigMap: Record<string, { type: string; domain: string; categorySlug: string }> = {
+      model: { type: "model", domain: "Model", categorySlug: "models" },
+      models: { type: "model", domain: "Model", categorySlug: "models" },
+      makeup_artist: { type: "makeup_artist", domain: "Makeup Artist", categorySlug: "makeup-artists" },
+      makeup_artists: { type: "makeup_artist", domain: "Makeup Artist", categorySlug: "makeup-artists" },
+      makeup: { type: "makeup_artist", domain: "Makeup Artist", categorySlug: "makeup-artists" },
+      fashion_designer: { type: "fashion_designer", domain: "Fashion Designer", categorySlug: "fashion-designers" },
+      fashion_designers: { type: "fashion_designer", domain: "Fashion Designer", categorySlug: "fashion-designers" },
+      designer: { type: "fashion_designer", domain: "Fashion Designer", categorySlug: "fashion-designers" },
+      designers: { type: "fashion_designer", domain: "Fashion Designer", categorySlug: "fashion-designers" },
+      fashion_stylist: { type: "fashion_stylist", domain: "Fashion Stylist", categorySlug: "fashion-stylists" },
+      fashion_stylists: { type: "fashion_stylist", domain: "Fashion Stylist", categorySlug: "fashion-stylists" },
+      stylist: { type: "fashion_stylist", domain: "Fashion Stylist", categorySlug: "fashion-stylists" },
+      stylists: { type: "fashion_stylist", domain: "Fashion Stylist", categorySlug: "fashion-stylists" },
+      choreographer: { type: "choreographer", domain: "Choreographer", categorySlug: "choreographers" },
+      choreographers: { type: "choreographer", domain: "Choreographer", categorySlug: "choreographers" },
+      influencer_creator: { type: "influencer_creator", domain: "Influencer / Creator", categorySlug: "creators" },
+      influencer: { type: "influencer_creator", domain: "Influencer / Creator", categorySlug: "creators" },
+      influencers: { type: "influencer_creator", domain: "Influencer / Creator", categorySlug: "creators" },
+      creator: { type: "influencer_creator", domain: "Influencer / Creator", categorySlug: "creators" },
+      creators: { type: "influencer_creator", domain: "Influencer / Creator", categorySlug: "creators" },
+      celebrity_public_figure: { type: "celebrity_public_figure", domain: "Celebrity / Public Figure", categorySlug: "public-figures" },
+      celebrity: { type: "celebrity_public_figure", domain: "Celebrity / Public Figure", categorySlug: "public-figures" },
+      celebrities: { type: "celebrity_public_figure", domain: "Celebrity / Public Figure", categorySlug: "public-figures" },
+      public_figure: { type: "celebrity_public_figure", domain: "Celebrity / Public Figure", categorySlug: "public-figures" },
+      public_figures: { type: "celebrity_public_figure", domain: "Celebrity / Public Figure", categorySlug: "public-figures" },
+      cstp: { type: "cstp", domain: "Creative & Technical Professional", categorySlug: "cstp" },
+      fashion_commentary: { type: "fashion_commentary", domain: "Fashion Commentary / Media", categorySlug: "fashion-commentary" },
+      commentary: { type: "fashion_commentary", domain: "Fashion Commentary / Media", categorySlug: "fashion-commentary" },
+      nomination: { type: "nomination", domain: "Industry Nomination", categorySlug: "nomination" },
+      nominations: { type: "nomination", domain: "Industry Nomination", categorySlug: "nomination" },
     };
 
-    const applicationType = validTypesMap[rawType] || "fashion_designer";
+    const categoryConfig = validCategoryConfigMap[rawType] || {
+      type: "fashion_designer",
+      domain: "Fashion Designer",
+      categorySlug: "fashion-designers",
+    };
+
+    const applicationType = categoryConfig.type;
 
     // Common Personal Data
     const fullName = sanitizeInput(body.fullName);
@@ -139,6 +164,9 @@ export async function POST(request: Request) {
           ? body.categories.map(sanitizeInput)
           : [sanitizeInput(body.categories)];
         const instagramLink = sanitizeInput(body.instagramUrl || body.portfolioUrl);
+        const portfolioUrl = sanitizeInput(body.portfolioUrl);
+        const compCardUrl = sanitizeInput(body.workSamplesUrl || body.compCardUrl);
+        const experience = sanitizeInput(body.experience || body.yearsExperience);
         const availableTravel = body.availableTravel === true || body.availableTravel === "Yes";
         const notes = sanitizeInput(body.notes || body.additionalInfo);
 
@@ -149,6 +177,9 @@ export async function POST(request: Request) {
           measurements,
           shoeSize,
           categories,
+          experience,
+          portfolioUrl,
+          compCardUrl,
           instagramLink,
           availableTravel,
           notes,
@@ -388,8 +419,11 @@ export async function POST(request: Request) {
       await saveSubmission({
         type: "APPLICATION",
         source: (body.source as any) || "APPLICATION_FORM",
-        applicationType,
-        domain: domainLabelsMap[applicationType] || applicationType,
+        applicationType: categoryConfig.type,
+        domain: categoryConfig.domain,
+        category: categoryConfig.domain,
+        categorySlug: categoryConfig.categorySlug,
+        sourceUrl: sanitizeInput(body.sourceUrl) || `/apply/${categoryConfig.categorySlug}`,
         fullName,
         email,
         phone: whatsapp,

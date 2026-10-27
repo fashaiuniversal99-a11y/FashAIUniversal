@@ -293,6 +293,9 @@ export interface SubmissionRecord {
   source?: "CHATBOT" | "CONTACT_FORM" | "APPLICATION_FORM" | "WEBSITE_POPUP" | "EVENT_MANAGEMENT_FORM" | "LIFESTYLE_2026_SPONSORSHIP" | "OTHER";
   applicationType?: string;
   domain?: string;
+  category?: string;
+  categorySlug?: string;
+  sourceUrl?: string;
   fullName: string;
   email: string;
   phone?: string;

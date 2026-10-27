@@ -20,17 +20,82 @@ import {
   UserCheck,
   Tag,
   ChevronRight,
+  Download,
 } from "lucide-react";
 import { SubmissionRecord } from "@/lib/admin/config-schema";
 
+interface CategoryMeta {
+  slug: string;
+  label: string;
+}
+
+export const ESTABLISHED_CATEGORIES: CategoryMeta[] = [
+  { slug: "models", label: "Models" },
+  { slug: "makeup-artists", label: "Makeup Artists" },
+  { slug: "fashion-designers", label: "Fashion Designers" },
+  { slug: "fashion-stylists", label: "Fashion Stylists" },
+  { slug: "choreographers", label: "Choreographers" },
+  { slug: "creators", label: "Influencers / Creators" },
+  { slug: "public-figures", label: "Celebrity / Public Figures" },
+  { slug: "cstp", label: "CSTP Application" },
+  { slug: "fashion-commentary", label: "Fashion Commentary" },
+  { slug: "nomination", label: "Creative Nomination" },
+];
+
+export function getAppCategory(app: SubmissionRecord): CategoryMeta {
+  if (app.categorySlug) {
+    const match = ESTABLISHED_CATEGORIES.find((c) => c.slug === app.categorySlug);
+    if (match) return match;
+  }
+  if (app.category) {
+    const match = ESTABLISHED_CATEGORIES.find((c) => c.label.toLowerCase() === app.category!.toLowerCase());
+    if (match) return match;
+  }
+
+  const raw = `${app.categorySlug || ""} ${app.category || ""} ${app.domain || ""} ${app.applicationType || ""}`.toLowerCase();
+
+  if (raw.includes("makeup") || raw.includes("mua")) {
+    return { slug: "makeup-artists", label: "Makeup Artists" };
+  }
+  if (raw.includes("model")) {
+    return { slug: "models", label: "Models" };
+  }
+  if (raw.includes("designer")) {
+    return { slug: "fashion-designers", label: "Fashion Designers" };
+  }
+  if (raw.includes("stylist")) {
+    return { slug: "fashion-stylists", label: "Fashion Stylists" };
+  }
+  if (raw.includes("choreographer")) {
+    return { slug: "choreographers", label: "Choreographers" };
+  }
+  if (raw.includes("creator") || raw.includes("influencer")) {
+    return { slug: "creators", label: "Influencers / Creators" };
+  }
+  if (raw.includes("celebrity") || raw.includes("public")) {
+    return { slug: "public-figures", label: "Celebrity / Public Figures" };
+  }
+  if (raw.includes("cstp") || raw.includes("technical")) {
+    return { slug: "cstp", label: "CSTP Application" };
+  }
+  if (raw.includes("commentary") || raw.includes("media")) {
+    return { slug: "fashion-commentary", label: "Fashion Commentary" };
+  }
+  if (raw.includes("nomination")) {
+    return { slug: "nomination", label: "Creative Nomination" };
+  }
+
+  return { slug: "other", label: app.domain || app.applicationType || "Other Application" };
+}
+
 export default function ApplicationManagerPage() {
   const searchParams = useSearchParams();
-  const initialView = searchParams.get("view") || "all";
+  const initialCategory = searchParams.get("category") || "ALL";
 
   const [submissions, setSubmissions] = useState<SubmissionRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [statusFilter, setStatusFilter] = useState("ALL");
-  const [domainFilter, setDomainFilter] = useState("ALL");
+  const [categoryFilter, setCategoryFilter] = useState(initialCategory);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedApp, setSelectedApp] = useState<SubmissionRecord | null>(null);
 
@@ -74,25 +139,11 @@ export default function ApplicationManagerPage() {
   // Filter only Applications
   const applications = submissions.filter((s) => s.type === "APPLICATION");
 
-  // Supported Domains
-  const supportedDomains = [
-    { key: "fashion_designer", label: "Fashion Designer" },
-    { key: "model", label: "Model" },
-    { key: "makeup_artist", label: "Makeup Artist" },
-    { key: "fashion_stylist", label: "Fashion Stylist" },
-    { key: "influencer_creator", label: "Influencer / Creator" },
-    { key: "celebrity_public_figure", label: "Celebrity / Public Figure" },
-    { key: "choreographer", label: "Choreographer" },
-    { key: "cstp", label: "Creative & Technical Professional" },
-    { key: "fashion_commentary", label: "Fashion Commentary / Media" },
-    { key: "nomination", label: "Industry Nomination" },
-  ];
-
-  // Counts by Domain
-  const domainCounts: Record<string, number> = {};
+  // Counts by Established Category
+  const categoryCounts: Record<string, number> = {};
   applications.forEach((app) => {
-    const key = app.domain || app.applicationType || "Other";
-    domainCounts[key] = (domainCounts[key] || 0) + 1;
+    const cat = getAppCategory(app);
+    categoryCounts[cat.slug] = (categoryCounts[cat.slug] || 0) + 1;
   });
 
   // Status counts
@@ -106,16 +157,68 @@ export default function ApplicationManagerPage() {
   };
 
   const filteredApps = applications.filter((app) => {
+    const appCat = getAppCategory(app);
     const matchesStatus = statusFilter === "ALL" || app.status === statusFilter;
-    const matchesDomain =
-      domainFilter === "ALL" || app.domain === domainFilter || app.applicationType === domainFilter;
+    const matchesCategory =
+      categoryFilter === "ALL" ||
+      appCat.slug === categoryFilter ||
+      appCat.label.toLowerCase() === categoryFilter.toLowerCase();
+
     const matchesSearch =
       app.fullName.toLowerCase().includes(searchQuery.toLowerCase()) ||
       app.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (app.domain && app.domain.toLowerCase().includes(searchQuery.toLowerCase()));
+      appCat.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (app.domain && app.domain.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (app.city && app.city.toLowerCase().includes(searchQuery.toLowerCase()));
 
-    return matchesStatus && matchesDomain && matchesSearch;
+    return matchesStatus && matchesCategory && matchesSearch;
   });
+
+  const handleExportCSV = () => {
+    const headers = [
+      "ID",
+      "Full Name",
+      "Email",
+      "Phone",
+      "Category",
+      "Category Slug",
+      "Domain",
+      "City",
+      "Country",
+      "Status",
+      "Source URL",
+      "Submitted At",
+    ];
+    const rows = filteredApps.map((app) => {
+      const cat = getAppCategory(app);
+      return [
+        `"${app.id}"`,
+        `"${app.fullName.replace(/"/g, '""')}"`,
+        `"${app.email}"`,
+        `"${app.phone || ""}"`,
+        `"${cat.label}"`,
+        `"${cat.slug}"`,
+        `"${app.domain || ""}"`,
+        `"${app.city || ""}"`,
+        `"${app.country || ""}"`,
+        `"${app.status}"`,
+        `"${app.sourceUrl || `/apply/${cat.slug}`}"`,
+        `"${new Date(app.submittedAt).toISOString()}"`,
+      ].join(",");
+    });
+
+    const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows].join("\n");
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute(
+      "download",
+      `fashprism-applications-${categoryFilter.toLowerCase()}-${new Date().toISOString().split("T")[0]}.csv`
+    );
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="max-w-7xl mx-auto space-y-6 select-none font-sans">
@@ -129,12 +232,22 @@ export default function ApplicationManagerPage() {
             TALENT <span className="text-[#D4AF37]">APPLICATIONS</span>
           </h1>
           <p className="font-sans text-xs text-white/60">
-            Intake management across designers, models, stylists, creators, and industry nominees.
+            Intake management across models, makeup artists, designers, stylists, choreographers, creators, and nominees.
           </p>
         </div>
+
+        <button
+          onClick={handleExportCSV}
+          disabled={filteredApps.length === 0}
+          className="inline-flex items-center gap-2 self-start sm:self-auto px-4 py-2 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#D4AF37]/25 text-xs font-syne font-bold uppercase tracking-wider transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          title="Export currently filtered applications to CSV"
+        >
+          <Download className="w-3.5 h-3.5" />
+          <span>Export CSV ({filteredApps.length})</span>
+        </button>
       </div>
 
-      {/* APPLICATION DASHBOARD METRICS */}
+      {/* APPLICATION DASHBOARD STATUS METRICS */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <button
           onClick={() => setStatusFilter("ALL")}
@@ -197,37 +310,38 @@ export default function ApplicationManagerPage() {
         </button>
       </div>
 
-      {/* APPLICATIONS BY DOMAIN GRID (Requirement #5) */}
+      {/* APPLICATIONS BY CATEGORY GRID */}
       <div className="p-5 rounded-3xl bg-[#0F0E0D] border border-white/10 space-y-3 shadow-lg">
         <div className="flex items-center justify-between border-b border-white/10 pb-2">
-          <span className="font-syne text-[11px] font-bold text-[#D4AF37] uppercase tracking-wider">
-            APPLICATIONS BY DOMAIN
+          <span className="font-syne text-[11px] font-bold text-[#D4AF37] uppercase tracking-wider flex items-center gap-1.5">
+            <Layers className="w-3.5 h-3.5" />
+            APPLICATIONS BY CATEGORY
           </span>
-          {domainFilter !== "ALL" && (
+          {categoryFilter !== "ALL" && (
             <button
-              onClick={() => setDomainFilter("ALL")}
+              onClick={() => setCategoryFilter("ALL")}
               className="text-[11px] font-syne text-[#D4AF37] hover:underline"
             >
-              Reset Domain Filter
+              Reset Category Filter
             </button>
           )}
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-          {supportedDomains.map((dom) => {
-            const count = domainCounts[dom.label] || domainCounts[dom.key] || 0;
-            const isSelected = domainFilter === dom.label || domainFilter === dom.key;
+          {ESTABLISHED_CATEGORIES.map((cat) => {
+            const count = categoryCounts[cat.slug] || 0;
+            const isSelected = categoryFilter === cat.slug;
             return (
               <button
-                key={dom.key}
-                onClick={() => setDomainFilter(isSelected ? "ALL" : dom.label)}
+                key={cat.slug}
+                onClick={() => setCategoryFilter(isSelected ? "ALL" : cat.slug)}
                 className={`p-3 rounded-2xl border transition-all text-left flex items-center justify-between ${
                   isSelected
-                    ? "bg-[#D4AF37]/20 border-[#D4AF37] text-white"
+                    ? "bg-[#D4AF37]/20 border-[#D4AF37] text-white ring-1 ring-[#D4AF37]"
                     : "bg-[#161514] border-white/10 text-white/80 hover:border-white/30"
                 }`}
               >
-                <span className="text-xs font-syne font-bold truncate mr-2">{dom.label}</span>
+                <span className="text-xs font-syne font-bold truncate mr-2">{cat.label}</span>
                 <span className="px-2 py-0.5 rounded-md bg-[#D4AF37]/15 text-[#D4AF37] font-serif-display text-xs font-bold shrink-0">
                   {count}
                 </span>
@@ -243,7 +357,7 @@ export default function ApplicationManagerPage() {
           <Search className="w-3.5 h-3.5 text-white/40 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
-            placeholder="Search applicant name, role, or email..."
+            placeholder="Search applicant name, category, or email..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full bg-[#181715] border border-white/10 rounded-xl pl-9 pr-3 py-2 text-xs text-white outline-none focus:border-[#D4AF37]"
@@ -252,14 +366,14 @@ export default function ApplicationManagerPage() {
 
         <div className="flex items-center gap-3">
           <select
-            value={domainFilter}
-            onChange={(e) => setDomainFilter(e.target.value)}
+            value={categoryFilter}
+            onChange={(e) => setCategoryFilter(e.target.value)}
             className="bg-[#181715] border border-white/15 text-white text-xs rounded-xl px-3 py-2 outline-none font-syne uppercase"
           >
-            <option value="ALL">ALL DOMAINS</option>
-            {supportedDomains.map((d) => (
-              <option key={d.key} value={d.label}>
-                {d.label}
+            <option value="ALL">ALL CATEGORIES</option>
+            {ESTABLISHED_CATEGORIES.map((c) => (
+              <option key={c.slug} value={c.slug}>
+                {c.label} ({categoryCounts[c.slug] || 0})
               </option>
             ))}
           </select>
@@ -296,57 +410,60 @@ export default function ApplicationManagerPage() {
       ) : (
         <div className="bg-[#0F0E0D] border border-white/10 rounded-2xl overflow-hidden shadow-md">
           <div className="divide-y divide-white/5">
-            {filteredApps.map((app) => (
-              <div
-                key={app.id}
-                onClick={() => setSelectedApp(app)}
-                className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-white/5 cursor-pointer transition-colors"
-              >
-                <div className="flex items-center gap-3.5 min-w-0">
-                  <div className="w-9 h-9 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] font-bold font-syne flex items-center justify-center shrink-0 border border-[#D4AF37]/30">
-                    {app.fullName.charAt(0)}
-                  </div>
-                  <div className="space-y-0.5 min-w-0">
-                    <div className="flex items-center gap-2">
-                      <span className="font-syne font-bold text-white text-xs sm:text-sm truncate">
-                        {app.fullName}
-                      </span>
-                      <span className="text-[10px] font-mono text-[#D4AF37] bg-[#D4AF37]/10 px-2 py-0.5 rounded-md border border-[#D4AF37]/20">
-                        {app.domain || app.applicationType}
-                      </span>
+            {filteredApps.map((app) => {
+              const cat = getAppCategory(app);
+              return (
+                <div
+                  key={app.id}
+                  onClick={() => setSelectedApp(app)}
+                  className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-white/5 cursor-pointer transition-colors"
+                >
+                  <div className="flex items-center gap-3.5 min-w-0">
+                    <div className="w-9 h-9 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] font-bold font-syne flex items-center justify-center shrink-0 border border-[#D4AF37]/30">
+                      {app.fullName.charAt(0)}
                     </div>
-                    <div className="text-[11px] text-white/50 truncate font-sans">
-                      {app.email} • {app.phone || app.city || "Direct Submitter"}
+                    <div className="space-y-0.5 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="font-syne font-bold text-white text-xs sm:text-sm truncate">
+                          {app.fullName}
+                        </span>
+                        <span className="text-[10px] font-syne font-bold uppercase text-[#D4AF37] bg-[#D4AF37]/10 px-2 py-0.5 rounded-md border border-[#D4AF37]/30">
+                          {cat.label}
+                        </span>
+                      </div>
+                      <div className="text-[11px] text-white/50 truncate font-sans">
+                        {app.email} • {app.phone || app.city || "Direct Submitter"}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="flex items-center justify-between sm:justify-end gap-4 shrink-0">
-                  <span className="text-[10px] font-mono text-white/40">
-                    {new Date(app.submittedAt).toLocaleDateString()}
-                  </span>
-                  <span
-                    className={`text-[9px] font-syne font-bold uppercase px-3 py-1 rounded-full border ${
-                      app.status === "NEW"
-                        ? "bg-[#F15E1C]/20 border-[#F15E1C] text-[#F15E1C]"
-                        : app.status === "UNDER REVIEW"
-                        ? "bg-blue-500/20 border-blue-500 text-blue-400"
-                        : app.status === "CONTACTED"
-                        ? "bg-[#2E936F]/20 border-[#2E936F] text-[#2E936F]"
-                        : "bg-white/10 border-white/20 text-white/50"
-                    }`}
-                  >
-                    {app.status}
-                  </span>
-                  <ChevronRight className="w-4 h-4 text-white/40" />
+                  <div className="flex items-center justify-between sm:justify-end gap-4 shrink-0">
+                    <span className="text-[10px] font-mono text-white/40">
+                      {new Date(app.submittedAt).toLocaleDateString()}
+                    </span>
+                    <span
+                      className={`text-[9px] font-syne font-bold uppercase px-3 py-1 rounded-full border ${
+                        app.status === "NEW"
+                          ? "bg-[#F15E1C]/20 border-[#F15E1C] text-[#F15E1C]"
+                          : app.status === "UNDER REVIEW"
+                          ? "bg-blue-500/20 border-blue-500 text-blue-400"
+                          : app.status === "CONTACTED"
+                          ? "bg-[#2E936F]/20 border-[#2E936F] text-[#2E936F]"
+                          : "bg-white/10 border-white/20 text-white/50"
+                      }`}
+                    >
+                      {app.status}
+                    </span>
+                    <ChevronRight className="w-4 h-4 text-white/40" />
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       )}
 
-      {/* FULL APPLICANT DETAIL VIEW MODAL (Requirement #7) */}
+      {/* FULL APPLICANT DETAIL VIEW MODAL */}
       {selectedApp && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
           <div className="relative w-full max-w-2xl bg-[#0F0E0D] border border-white/20 rounded-3xl p-6 space-y-5 max-h-[85vh] overflow-y-auto text-white shadow-2xl">
@@ -368,33 +485,50 @@ export default function ApplicationManagerPage() {
             </div>
 
             {/* APPLICANT METADATA */}
-            <div className="p-4 rounded-2xl bg-[#161514] border border-white/10 space-y-3">
-              <div className="text-xs font-syne font-bold text-[#D4AF37] uppercase">
-                DOMAIN: {selectedApp.domain || selectedApp.applicationType}
-              </div>
-              <div className="grid grid-cols-2 gap-3 text-xs font-sans">
-                <div>
-                  <span className="text-white/50 block font-syne text-[10px]">EMAIL ADDRESS:</span>
-                  <a href={`mailto:${selectedApp.email}`} className="font-mono text-white hover:underline">
-                    {selectedApp.email}
-                  </a>
+            {(() => {
+              const cat = getAppCategory(selectedApp);
+              const canonicalUrl = selectedApp.sourceUrl || `/apply/${cat.slug}`;
+              return (
+                <div className="p-4 rounded-2xl bg-[#161514] border border-white/10 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-syne font-bold text-[#D4AF37] uppercase tracking-wider">
+                      CATEGORY: {cat.label}
+                    </span>
+                    <span className="text-[10px] font-mono text-white/60">
+                      Slug: /{cat.slug}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 text-xs font-sans">
+                    <div>
+                      <span className="text-white/50 block font-syne text-[10px]">EMAIL ADDRESS:</span>
+                      <a href={`mailto:${selectedApp.email}`} className="font-mono text-white hover:underline">
+                        {selectedApp.email}
+                      </a>
+                    </div>
+                    <div>
+                      <span className="text-white/50 block font-syne text-[10px]">PHONE / WHATSAPP:</span>
+                      <span className="font-mono text-white">{selectedApp.phone || "N/A"}</span>
+                    </div>
+                    <div>
+                      <span className="text-white/50 block font-syne text-[10px]">LOCATION:</span>
+                      <span className="text-white">{selectedApp.city || selectedApp.country || "N/A"}</span>
+                    </div>
+                    <div>
+                      <span className="text-white/50 block font-syne text-[10px]">CANONICAL ROUTE / SOURCE:</span>
+                      <a
+                        href={canonicalUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-[#D4AF37] hover:underline flex items-center gap-1 font-mono text-[11px]"
+                      >
+                        <span>{canonicalUrl}</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <span className="text-white/50 block font-syne text-[10px]">PHONE / WHATSAPP:</span>
-                  <span className="font-mono text-white">{selectedApp.phone || "N/A"}</span>
-                </div>
-                <div>
-                  <span className="text-white/50 block font-syne text-[10px]">LOCATION:</span>
-                  <span className="text-white">{selectedApp.city || selectedApp.country || "N/A"}</span>
-                </div>
-                <div>
-                  <span className="text-white/50 block font-syne text-[10px]">SUBMISSION SOURCE:</span>
-                  <span className="px-2 py-0.5 rounded-full bg-[#D4AF37]/15 text-[#D4AF37] font-mono text-[10px] uppercase border border-[#D4AF37]/30">
-                    {selectedApp.source || "APPLICATION_FORM"}
-                  </span>
-                </div>
-              </div>
-            </div>
+              );
+            })()}
 
             {/* DYNAMIC CATEGORY DETAILS (All submitted fields rendered) */}
             {selectedApp.categoryDetails && Object.keys(selectedApp.categoryDetails).length > 0 && (

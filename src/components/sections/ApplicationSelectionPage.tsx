@@ -16,50 +16,50 @@ export interface ApplicationCategory {
 
 export const CATEGORIES: ApplicationCategory[] = [
   {
-    id: "designer",
-    slug: "designer",
-    label: "FASHION DESIGNER",
-    badge: "COUTURE & ATELIER",
-    description: "Present haute couture collections, fashion lines, or apparel designs.",
-  },
-  {
     id: "model",
-    slug: "model",
+    slug: "models",
     label: "MODEL",
     badge: "RUNWAY & EDITORIAL",
     description: "Runway, editorial, and commercial modeling participation.",
   },
   {
     id: "makeup-artist",
-    slug: "makeup-artist",
+    slug: "makeup-artists",
     label: "MAKEUP ARTIST",
     badge: "BEAUTY & BACKSTAGE",
     description: "Beauty direction, backstage artistry, and look styling.",
   },
   {
+    id: "designer",
+    slug: "fashion-designers",
+    label: "FASHION DESIGNER",
+    badge: "COUTURE & ATELIER",
+    description: "Present haute couture collections, fashion lines, or apparel designs.",
+  },
+  {
     id: "fashion-stylist",
-    slug: "stylist",
+    slug: "fashion-stylists",
     label: "FASHION STYLIST",
     badge: "WARDROBE & STYLING",
     description: "Wardrobe coordination, campaign lookbook, and editorial styling.",
   },
   {
     id: "choreographer",
-    slug: "choreographer",
+    slug: "choreographers",
     label: "CHOREOGRAPHER",
     badge: "STAGE & CATWALK",
     description: "Catwalk choreography, runway movement, and stage direction.",
   },
   {
     id: "influencer",
-    slug: "influencer",
+    slug: "creators",
     label: "INFLUENCER / CREATOR",
     badge: "DIGITAL MEDIA",
     description: "Digital media storytelling and event content amplification.",
   },
   {
     id: "celebrity",
-    slug: "celebrity",
+    slug: "public-figures",
     label: "CELEBRITY / PUBLIC FIGURE",
     badge: "CONFIDENTIAL VIP",
     description: "Special appearances, VIP participation, and campaign roles.",
@@ -124,7 +124,7 @@ export default function ApplicationSelectionPage({
           </p>
 
           <p className="font-sans text-base sm:text-lg md:text-xl text-brand-platinum/95 font-light leading-relaxed max-w-3xl pt-1">
-            Official application portal for fashion designers, runway models, makeup artists, stylists, choreographers, and creative talent seeking participation in international fashion shows, campaigns, and luxury experiences across Dubai, India, and global hubs.
+            Official application portal for runway models, makeup artists, fashion designers, stylists, choreographers, and creative talent seeking participation in international fashion shows, campaigns, and luxury experiences across Dubai, India, and global hubs.
           </p>
 
           {/* 4-STEP TALENT JOURNEY */}
@@ -167,9 +167,9 @@ export default function ApplicationSelectionPage({
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {CATEGORIES.map((cat) => (
-                <div
+                <Link
                   key={cat.id}
-                  onClick={() => setSelectedRole(cat.id)}
+                  href={`${basePath}/${cat.slug}`}
                   className="group relative flex flex-col justify-between p-5 sm:p-7 bg-[#080706] border border-white/10 rounded-2xl hover:border-brand-yellow-golden/70 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-[0_0_25px_rgba(250,182,10,0.15)]"
                 >
                   <div className="space-y-3">
@@ -195,7 +195,7 @@ export default function ApplicationSelectionPage({
                     <span>APPLY NOW</span>
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-brand-yellow-golden group-hover:translate-x-1.5 transition-transform duration-300" />
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -203,12 +203,12 @@ export default function ApplicationSelectionPage({
           /* If a role IS selected: Show ONLY that single category's form */
           <div className="space-y-5">
             <div className="flex items-center justify-between border-b border-white/10 pb-3.5">
-              <button
-                onClick={() => setSelectedRole(null)}
+              <Link
+                href={basePath}
                 className="inline-flex items-center gap-2 text-xs sm:text-sm font-jost tracking-wider font-bold text-brand-yellow-golden hover:text-white transition-colors uppercase"
               >
                 <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" /> ALL CATEGORIES
-              </button>
+              </Link>
               {activeCategory && (
                 <span className="text-xs sm:text-sm font-jost text-brand-yellow-golden font-bold uppercase">
                   {activeCategory.label}
