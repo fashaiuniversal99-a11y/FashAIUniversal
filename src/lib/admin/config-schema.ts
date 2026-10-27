@@ -309,6 +309,11 @@ export interface SubmissionRecord {
   eventInterest?: string;
   message?: string;
   categoryDetails?: Record<string, unknown>;
+
+  // Talent Intake Specific Travel & Readiness
+  hasValidPassport?: string;
+  willingToTravelToDubai?: string;
+  investmentReadiness?: string;
   
   // Event Inquiry Specific Fields
   eventName?: string;

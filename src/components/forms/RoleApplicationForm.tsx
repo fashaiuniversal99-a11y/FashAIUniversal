@@ -120,7 +120,30 @@ export interface FormState {
   workSamplesUrl: string;
   availableTravel: string;
   additionalInfo: string;
+
+  // Travel & Readiness Questions
+  hasValidPassport: string;
+  willingToTravelToDubai: string;
+  investmentReadiness: string;
 }
+
+export const PASSPORT_OPTIONS = [
+  { value: "Yes", label: "Yes" },
+  { value: "No", label: "No" },
+  { value: "Passport application in progress", label: "Passport application in progress" },
+];
+
+export const TRAVEL_DUBAI_OPTIONS = [
+  { value: "Yes", label: "Yes" },
+  { value: "No", label: "No" },
+  { value: "Need more information", label: "Need more information" },
+];
+
+export const INVESTMENT_OPTIONS = [
+  { value: "Yes", label: "Yes" },
+  { value: "No", label: "No" },
+  { value: "I would like more information", label: "I would like more information" },
+];
 
 const initialFormState: FormState = {
   fullName: "",
@@ -173,6 +196,9 @@ const initialFormState: FormState = {
   workSamplesUrl: "",
   availableTravel: "Yes",
   additionalInfo: "",
+  hasValidPassport: "",
+  willingToTravelToDubai: "",
+  investmentReadiness: "",
 };
 
 export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = false }: RoleApplicationFormProps) {
@@ -192,6 +218,18 @@ export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = fal
   };
 
   const normalizedRole = getCanonicalRoleKey(roleSlug);
+  const isTalentApplicantCategory = [
+    "model",
+    "makeup_artist",
+    "designer",
+    "stylist",
+    "fashion_stylist",
+    "choreographer",
+    "influencer",
+    "influencer_creator",
+    "celebrity",
+    "celebrity_public_figure",
+  ].includes(normalizedRole);
 
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<FormState>(initialFormState);
@@ -316,6 +354,24 @@ export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = fal
     setErrorMessage("");
 
     try {
+      if (isTalentApplicantCategory) {
+        if (!formData.hasValidPassport) {
+          setErrorMessage("Please answer: Do you have a valid passport? (*)");
+          setIsSubmitting(false);
+          return;
+        }
+        if (!formData.willingToTravelToDubai) {
+          setErrorMessage("Please answer: Are you willing to travel to Dubai for the event if selected? (*)");
+          setIsSubmitting(false);
+          return;
+        }
+        if (!formData.investmentReadiness) {
+          setErrorMessage("Please answer: If selected, are you ready to secure your spot and invest in your opportunity? (*)");
+          setIsSubmitting(false);
+          return;
+        }
+      }
+
       const roleToCategoryMap: Record<string, { applicationType: string; categorySlug: string; categoryName: string }> = {
         model: { applicationType: "model", categorySlug: "models", categoryName: "Model" },
         designer: { applicationType: "fashion_designer", categorySlug: "fashion-designers", categoryName: "Fashion Designer" },
@@ -403,6 +459,11 @@ export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = fal
         nomineeName: formData.nomineeName,
         nomineeRole: formData.nomineeRole,
         nomineeContact: formData.nomineeContact,
+
+        // Travel & Readiness Questions
+        hasValidPassport: formData.hasValidPassport,
+        willingToTravelToDubai: formData.willingToTravelToDubai,
+        investmentReadiness: formData.investmentReadiness,
 
         // Shared
         portfolioUrl: formData.portfolioUrl || formData.workSamplesUrl,
@@ -1397,6 +1458,113 @@ export default function RoleApplicationForm({ roleSlug, onSuccess, isModal = fal
                   </div>
                 ) : null}
               </div>
+
+              {/* EVENT PARTICIPATION & READINESS (Relevant Talent Categories) */}
+              {isTalentApplicantCategory && (
+                <div className="pt-4 border-t border-white/10 space-y-6">
+                  <div>
+                    <span className="font-syne text-[11px] font-bold text-brand-yellow-golden uppercase tracking-widest block mb-4">
+                      EVENT ELIGIBILITY &amp; READINESS
+                    </span>
+
+                    {/* Question 1: Passport */}
+                    <div className="space-y-2 mb-5">
+                      <label className="block text-sm sm:text-base font-syne tracking-wider text-brand-white/95 uppercase font-bold">
+                        Do you have a valid passport? <span className="text-[#F15E1C] dark:text-[#D4AF37]">*</span>
+                      </label>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                        {PASSPORT_OPTIONS.map((opt) => {
+                          const isSelected = formData.hasValidPassport === opt.value;
+                          return (
+                            <label
+                              key={opt.value}
+                              className={`flex items-center gap-3 p-3.5 rounded-xl border cursor-pointer transition-all ${
+                                isSelected
+                                  ? "bg-[#D4AF37]/15 border-[#D4AF37] text-white shadow-sm ring-1 ring-[#D4AF37]"
+                                  : "bg-black/60 border-white/15 text-white/80 hover:border-white/30 hover:bg-black/80"
+                              }`}
+                            >
+                              <input
+                                type="radio"
+                                name="hasValidPassport"
+                                value={opt.value}
+                                checked={isSelected}
+                                onChange={handleChange}
+                                className="w-4 h-4 text-[#D4AF37] accent-[#D4AF37] cursor-pointer"
+                              />
+                              <span className="text-xs sm:text-sm font-sans font-medium">{opt.label}</span>
+                            </label>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Question 2: Travel to Dubai */}
+                    <div className="space-y-2 mb-5">
+                      <label className="block text-sm sm:text-base font-syne tracking-wider text-brand-white/95 uppercase font-bold">
+                        Are you willing to travel to Dubai for the event if selected? <span className="text-[#F15E1C] dark:text-[#D4AF37]">*</span>
+                      </label>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                        {TRAVEL_DUBAI_OPTIONS.map((opt) => {
+                          const isSelected = formData.willingToTravelToDubai === opt.value;
+                          return (
+                            <label
+                              key={opt.value}
+                              className={`flex items-center gap-3 p-3.5 rounded-xl border cursor-pointer transition-all ${
+                                isSelected
+                                  ? "bg-[#D4AF37]/15 border-[#D4AF37] text-white shadow-sm ring-1 ring-[#D4AF37]"
+                                  : "bg-black/60 border-white/15 text-white/80 hover:border-white/30 hover:bg-black/80"
+                              }`}
+                            >
+                              <input
+                                type="radio"
+                                name="willingToTravelToDubai"
+                                value={opt.value}
+                                checked={isSelected}
+                                onChange={handleChange}
+                                className="w-4 h-4 text-[#D4AF37] accent-[#D4AF37] cursor-pointer"
+                              />
+                              <span className="text-xs sm:text-sm font-sans font-medium">{opt.label}</span>
+                            </label>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Question 3: Investment Readiness */}
+                    <div className="space-y-2">
+                      <label className="block text-sm sm:text-base font-syne tracking-wider text-brand-white/95 uppercase font-bold">
+                        If selected, are you ready to secure your spot and invest in your opportunity? <span className="text-[#F15E1C] dark:text-[#D4AF37]">*</span>
+                      </label>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                        {INVESTMENT_OPTIONS.map((opt) => {
+                          const isSelected = formData.investmentReadiness === opt.value;
+                          return (
+                            <label
+                              key={opt.value}
+                              className={`flex items-center gap-3 p-3.5 rounded-xl border cursor-pointer transition-all ${
+                                isSelected
+                                  ? "bg-[#D4AF37]/15 border-[#D4AF37] text-white shadow-sm ring-1 ring-[#D4AF37]"
+                                  : "bg-black/60 border-white/15 text-white/80 hover:border-white/30 hover:bg-black/80"
+                              }`}
+                            >
+                              <input
+                                type="radio"
+                                name="investmentReadiness"
+                                value={opt.value}
+                                checked={isSelected}
+                                onChange={handleChange}
+                                className="w-4 h-4 text-[#D4AF37] accent-[#D4AF37] cursor-pointer"
+                              />
+                              <span className="text-xs sm:text-sm font-sans font-medium">{opt.label}</span>
+                            </label>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               <div>
                 <label className="block text-sm sm:text-base md:text-lg font-syne tracking-wider text-brand-white/95 uppercase font-bold mb-1.5 sm:mb-2">

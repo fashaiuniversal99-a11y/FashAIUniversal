@@ -185,12 +185,19 @@ export default function ApplicationManagerPage() {
       "Domain",
       "City",
       "Country",
+      "Valid Passport",
+      "Travel to Dubai",
+      "Investment Readiness",
       "Status",
       "Source URL",
       "Submitted At",
     ];
     const rows = filteredApps.map((app) => {
       const cat = getAppCategory(app);
+      const passport = app.hasValidPassport || (app.categoryDetails?.hasValidPassport as string) || "N/A";
+      const travelDubai = app.willingToTravelToDubai || (app.categoryDetails?.willingToTravelToDubai as string) || "N/A";
+      const invest = app.investmentReadiness || (app.categoryDetails?.investmentReadiness as string) || "N/A";
+
       return [
         `"${app.id}"`,
         `"${app.fullName.replace(/"/g, '""')}"`,
@@ -201,6 +208,9 @@ export default function ApplicationManagerPage() {
         `"${app.domain || ""}"`,
         `"${app.city || ""}"`,
         `"${app.country || ""}"`,
+        `"${passport.replace(/"/g, '""')}"`,
+        `"${travelDubai.replace(/"/g, '""')}"`,
+        `"${invest.replace(/"/g, '""')}"`,
         `"${app.status}"`,
         `"${app.sourceUrl || `/apply/${cat.slug}`}"`,
         `"${new Date(app.submittedAt).toISOString()}"`,
@@ -530,6 +540,49 @@ export default function ApplicationManagerPage() {
               );
             })()}
 
+            {/* TRAVEL & READINESS DETAILS */}
+            {(() => {
+              const passport = selectedApp.hasValidPassport || (selectedApp.categoryDetails?.hasValidPassport as string);
+              const travelDubai = selectedApp.willingToTravelToDubai || (selectedApp.categoryDetails?.willingToTravelToDubai as string);
+              const invest = selectedApp.investmentReadiness || (selectedApp.categoryDetails?.investmentReadiness as string);
+
+              if (!passport && !travelDubai && !invest) return null;
+
+              return (
+                <div className="p-4 rounded-2xl bg-[#161514] border border-[#D4AF37]/30 space-y-3">
+                  <span className="font-syne text-[10px] text-[#D4AF37] uppercase font-bold tracking-wider block">
+                    EVENT TRAVEL &amp; READINESS
+                  </span>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-sans">
+                    <div className="p-2.5 rounded-xl bg-black/40 border border-white/5">
+                      <span className="text-white/50 block font-syne text-[9px] uppercase tracking-wider mb-1">
+                        VALID PASSPORT
+                      </span>
+                      <span className="font-medium text-white">
+                        {passport || "N/A"}
+                      </span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-black/40 border border-white/5">
+                      <span className="text-white/50 block font-syne text-[9px] uppercase tracking-wider mb-1">
+                        WILLING TO TRAVEL TO DUBAI
+                      </span>
+                      <span className="font-medium text-white">
+                        {travelDubai || "N/A"}
+                      </span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-black/40 border border-white/5">
+                      <span className="text-white/50 block font-syne text-[9px] uppercase tracking-wider mb-1">
+                        INVESTMENT READINESS
+                      </span>
+                      <span className="font-medium text-white">
+                        {invest || "N/A"}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              );
+            })()}
+
             {/* DYNAMIC CATEGORY DETAILS (All submitted fields rendered) */}
             {selectedApp.categoryDetails && Object.keys(selectedApp.categoryDetails).length > 0 && (
               <div className="p-4 rounded-2xl bg-[#161514] border border-white/10 space-y-3">
@@ -539,6 +592,7 @@ export default function ApplicationManagerPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-sans">
                   {Object.entries(selectedApp.categoryDetails).map(([key, val]) => {
                     if (val === undefined || val === null || val === "") return null;
+                    if (["hasValidPassport", "willingToTravelToDubai", "investmentReadiness"].includes(key)) return null;
                     const readableKey = key.replace(/([A-Z])/g, " $1").toUpperCase();
                     const formattedVal = Array.isArray(val)
                       ? val.join(", ")

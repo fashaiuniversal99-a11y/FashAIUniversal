@@ -123,6 +123,46 @@ export async function POST(request: Request) {
       );
     }
 
+    // 3. Travel & Readiness Questions Validation for Relevant Talent Categories
+    const TALENT_CATEGORIES_REQUIRING_READINESS = [
+      "model",
+      "makeup_artist",
+      "fashion_designer",
+      "fashion_stylist",
+      "choreographer",
+      "influencer_creator",
+      "celebrity_public_figure",
+    ];
+
+    const VALID_PASSPORT_OPTIONS = ["Yes", "No", "Passport application in progress"];
+    const VALID_TRAVEL_DUBAI_OPTIONS = ["Yes", "No", "Need more information"];
+    const VALID_INVESTMENT_OPTIONS = ["Yes", "No", "I would like more information"];
+
+    const hasValidPassport = sanitizeInput(body.hasValidPassport);
+    const willingToTravelToDubai = sanitizeInput(body.willingToTravelToDubai);
+    const investmentReadiness = sanitizeInput(body.investmentReadiness);
+
+    if (TALENT_CATEGORIES_REQUIRING_READINESS.includes(applicationType)) {
+      if (!hasValidPassport || !VALID_PASSPORT_OPTIONS.includes(hasValidPassport)) {
+        return NextResponse.json(
+          { error: "Please provide a valid answer for the passport question." },
+          { status: 400 }
+        );
+      }
+      if (!willingToTravelToDubai || !VALID_TRAVEL_DUBAI_OPTIONS.includes(willingToTravelToDubai)) {
+        return NextResponse.json(
+          { error: "Please provide a valid answer for the travel to Dubai question." },
+          { status: 400 }
+        );
+      }
+      if (!investmentReadiness || !VALID_INVESTMENT_OPTIONS.includes(investmentReadiness)) {
+        return NextResponse.json(
+          { error: "Please provide a valid answer for the investment readiness question." },
+          { status: 400 }
+        );
+      }
+    }
+
     // Category Specific Sanitized & Validated Record
     let categoryDetails: Record<string, unknown> = {};
 
@@ -390,6 +430,10 @@ export async function POST(request: Request) {
       }
     }
 
+    if (hasValidPassport) categoryDetails.hasValidPassport = hasValidPassport;
+    if (willingToTravelToDubai) categoryDetails.willingToTravelToDubai = willingToTravelToDubai;
+    if (investmentReadiness) categoryDetails.investmentReadiness = investmentReadiness;
+
     const applicationRecord = {
       applicationType,
       fullName,
@@ -397,6 +441,9 @@ export async function POST(request: Request) {
       whatsapp,
       cityCountry,
       categoryDetails,
+      hasValidPassport: hasValidPassport || undefined,
+      willingToTravelToDubai: willingToTravelToDubai || undefined,
+      investmentReadiness: investmentReadiness || undefined,
       submittedAt: new Date().toISOString(),
     };
 
@@ -428,6 +475,9 @@ export async function POST(request: Request) {
         email,
         phone: whatsapp,
         city: cityCountry,
+        hasValidPassport: hasValidPassport || undefined,
+        willingToTravelToDubai: willingToTravelToDubai || undefined,
+        investmentReadiness: investmentReadiness || undefined,
         categoryDetails,
         status: "NEW",
       });
